@@ -15,6 +15,8 @@
 		61A3DA1524198D210071C7E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A3DA1324198D210071C7E9 /* LaunchScreen.storyboard */; };
 		61A3DA2024198D210071C7E9 /* Survey_ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA1F24198D210071C7E9 /* Survey_ScheduleTests.swift */; };
 		61A3DA2B24198D210071C7E9 /* Survey_ScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA2A24198D210071C7E9 /* Survey_ScheduleUITests.swift */; };
+		61A3DA3D2419C3820071C7E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA3C2419C3820071C7E9 /* MainViewController.swift */; };
+		61A3DA412419E3B30071C7E9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA402419E3B30071C7E9 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		61A3DA2624198D210071C7E9 /* Survey ScheduleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Survey ScheduleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A3DA2A24198D210071C7E9 /* Survey_ScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey_ScheduleUITests.swift; sourceTree = "<group>"; };
 		61A3DA2C24198D210071C7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61A3DA3C2419C3820071C7E9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		61A3DA402419E3B30071C7E9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +106,12 @@
 				61A3DA0824198D200071C7E9 /* AppDelegate.swift */,
 				61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */,
 				61A3DA0C24198D200071C7E9 /* ContentView.swift */,
+				61A3DA402419E3B30071C7E9 /* MapView.swift */,
 				61A3DA0E24198D210071C7E9 /* Assets.xcassets */,
 				61A3DA1324198D210071C7E9 /* LaunchScreen.storyboard */,
 				61A3DA1624198D210071C7E9 /* Info.plist */,
 				61A3DA1024198D210071C7E9 /* Preview Content */,
+				61A3DA3C2419C3820071C7E9 /* MainViewController.swift */,
 			);
 			path = "Survey Schedule";
 			sourceTree = "<group>";
@@ -269,7 +275,9 @@
 			files = (
 				61A3DA0924198D200071C7E9 /* AppDelegate.swift in Sources */,
 				61A3DA0B24198D200071C7E9 /* SceneDelegate.swift in Sources */,
+				61A3DA412419E3B30071C7E9 /* MapView.swift in Sources */,
 				61A3DA0D24198D200071C7E9 /* ContentView.swift in Sources */,
+				61A3DA3D2419C3820071C7E9 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
