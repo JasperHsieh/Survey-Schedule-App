@@ -21,25 +21,10 @@ struct MapView: UIViewRepresentable {
         let mapView = MKMapView(frame: UIScreen.main.bounds)
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
-        //mapView.delegate = context.coordinator
-        //mapView.delegate = mapView
         return mapView
-        //return MKMapView(frame: .zero)
     }
     func updateUIView(_ uiView: MKMapView, context: Context) {
     }
-    /*
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-
-    class Coordinator: NSObject, MKMapViewDelegate {
-        var parent: MapView
-
-        init(_ parent: MapView) {
-            self.parent = parent
-        }
-    }*/
 }
 
 struct MapView_Previews: PreviewProvider {

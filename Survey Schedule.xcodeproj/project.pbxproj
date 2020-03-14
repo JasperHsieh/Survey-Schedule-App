@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		61A3DA0924198D200071C7E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA0824198D200071C7E9 /* AppDelegate.swift */; };
 		61A3DA0B24198D200071C7E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */; };
-		61A3DA0D24198D200071C7E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA0C24198D200071C7E9 /* ContentView.swift */; };
 		61A3DA0F24198D210071C7E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A3DA0E24198D210071C7E9 /* Assets.xcassets */; };
 		61A3DA1224198D210071C7E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A3DA1124198D210071C7E9 /* Preview Assets.xcassets */; };
 		61A3DA1524198D210071C7E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A3DA1324198D210071C7E9 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,8 @@
 		61A3DA2B24198D210071C7E9 /* Survey_ScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA2A24198D210071C7E9 /* Survey_ScheduleUITests.swift */; };
 		61A3DA3D2419C3820071C7E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA3C2419C3820071C7E9 /* MainViewController.swift */; };
 		61A3DA412419E3B30071C7E9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA402419E3B30071C7E9 /* MapView.swift */; };
+		61A3DA4A241B46C00071C7E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA49241B46C00071C7E9 /* ContentView.swift */; };
+		61A3DA50241D690F0071C7E9 /* SlideOverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,6 @@
 		61A3DA0524198D200071C7E9 /* Survey Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survey Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A3DA0824198D200071C7E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		61A3DA0C24198D200071C7E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		61A3DA0E24198D210071C7E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61A3DA1124198D210071C7E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		61A3DA1424198D210071C7E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +53,8 @@
 		61A3DA2C24198D210071C7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61A3DA3C2419C3820071C7E9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		61A3DA402419E3B30071C7E9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		61A3DA49241B46C00071C7E9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../../../../../.Trash/ContentView.swift; sourceTree = "<group>"; };
+		61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOverCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +107,9 @@
 			children = (
 				61A3DA0824198D200071C7E9 /* AppDelegate.swift */,
 				61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */,
-				61A3DA0C24198D200071C7E9 /* ContentView.swift */,
 				61A3DA402419E3B30071C7E9 /* MapView.swift */,
+				61A3DA49241B46C00071C7E9 /* ContentView.swift */,
+				61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */,
 				61A3DA0E24198D210071C7E9 /* Assets.xcassets */,
 				61A3DA1324198D210071C7E9 /* LaunchScreen.storyboard */,
 				61A3DA1624198D210071C7E9 /* Info.plist */,
@@ -158,6 +161,8 @@
 			dependencies = (
 			);
 			name = "Survey Schedule";
+			packageProductDependencies = (
+			);
 			productName = "Survey Schedule";
 			productReference = 61A3DA0524198D200071C7E9 /* Survey Schedule.app */;
 			productType = "com.apple.product-type.application";
@@ -230,6 +235,8 @@
 				Base,
 			);
 			mainGroup = 61A3D9FC24198D200071C7E9;
+			packageReferences = (
+			);
 			productRefGroup = 61A3DA0624198D200071C7E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -275,8 +282,9 @@
 			files = (
 				61A3DA0924198D200071C7E9 /* AppDelegate.swift in Sources */,
 				61A3DA0B24198D200071C7E9 /* SceneDelegate.swift in Sources */,
+				61A3DA4A241B46C00071C7E9 /* ContentView.swift in Sources */,
 				61A3DA412419E3B30071C7E9 /* MapView.swift in Sources */,
-				61A3DA0D24198D200071C7E9 /* ContentView.swift in Sources */,
+				61A3DA50241D690F0071C7E9 /* SlideOverCard.swift in Sources */,
 				61A3DA3D2419C3820071C7E9 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
