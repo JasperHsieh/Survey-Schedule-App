@@ -113,7 +113,8 @@ struct Card: ViewModifier {
                 }
 
                 if backgroundStyle == .solid {
-                    colorScheme == .dark ? Color.black : Color.white
+                    //colorScheme == .dark ? Color.black : Color.white
+                    colorScheme == .dark ? Color.black : Color.gray
                 }
 
                 Handle()

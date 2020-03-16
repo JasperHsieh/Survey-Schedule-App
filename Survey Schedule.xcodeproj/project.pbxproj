@@ -12,30 +12,20 @@
 		61A3DA0F24198D210071C7E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A3DA0E24198D210071C7E9 /* Assets.xcassets */; };
 		61A3DA1224198D210071C7E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A3DA1124198D210071C7E9 /* Preview Assets.xcassets */; };
 		61A3DA1524198D210071C7E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A3DA1324198D210071C7E9 /* LaunchScreen.storyboard */; };
-		61A3DA2024198D210071C7E9 /* Survey_ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA1F24198D210071C7E9 /* Survey_ScheduleTests.swift */; };
-		61A3DA2B24198D210071C7E9 /* Survey_ScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA2A24198D210071C7E9 /* Survey_ScheduleUITests.swift */; };
 		61A3DA3D2419C3820071C7E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA3C2419C3820071C7E9 /* MainViewController.swift */; };
 		61A3DA412419E3B30071C7E9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA402419E3B30071C7E9 /* MapView.swift */; };
 		61A3DA4A241B46C00071C7E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA49241B46C00071C7E9 /* ContentView.swift */; };
 		61A3DA50241D690F0071C7E9 /* SlideOverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */; };
+		61A3DA54241DA0690071C7E9 /* HelloSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA53241DA0690071C7E9 /* HelloSwiftUIView.swift */; };
+		61A3DA56241DA6790071C7E9 /* NextStatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA55241DA6790071C7E9 /* NextStatCardView.swift */; };
+		61A3DA5A241EA1B00071C7E9 /* DoneButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA59241EA1B00071C7E9 /* DoneButtonView.swift */; };
+		61A3DA65241EB7780071C7E9 /* MasterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA64241EB7780071C7E9 /* MasterButtonView.swift */; };
+		61A3DA67241EB8C60071C7E9 /* AllStationsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA66241EB8C60071C7E9 /* AllStationsButtonView.swift */; };
+		61A3DA69241EB9750071C7E9 /* ScheduleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA68241EB9750071C7E9 /* ScheduleCardView.swift */; };
+		61A3DA6C241EC5940071C7E9 /* HavingTroubleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA6B241EC5940071C7E9 /* HavingTroubleButtonView.swift */; };
+		61A3DA6E241EFC5E0071C7E9 /* TroublesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA6D241EFC5D0071C7E9 /* TroublesCardView.swift */; };
+		61A3DA70241F04750071C7E9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA6F241F04750071C7E9 /* MainView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		61A3DA1C24198D210071C7E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 61A3D9FD24198D200071C7E9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 61A3DA0424198D200071C7E9;
-			remoteInfo = "Survey Schedule";
-		};
-		61A3DA2724198D210071C7E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 61A3D9FD24198D200071C7E9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 61A3DA0424198D200071C7E9;
-			remoteInfo = "Survey Schedule";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		61A3DA0524198D200071C7E9 /* Survey Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survey Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,34 +35,23 @@
 		61A3DA1124198D210071C7E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		61A3DA1424198D210071C7E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61A3DA1624198D210071C7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61A3DA1B24198D210071C7E9 /* Survey ScheduleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Survey ScheduleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		61A3DA1F24198D210071C7E9 /* Survey_ScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey_ScheduleTests.swift; sourceTree = "<group>"; };
-		61A3DA2124198D210071C7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61A3DA2624198D210071C7E9 /* Survey ScheduleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Survey ScheduleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		61A3DA2A24198D210071C7E9 /* Survey_ScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey_ScheduleUITests.swift; sourceTree = "<group>"; };
-		61A3DA2C24198D210071C7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61A3DA3C2419C3820071C7E9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		61A3DA402419E3B30071C7E9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		61A3DA49241B46C00071C7E9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../../../../../.Trash/ContentView.swift; sourceTree = "<group>"; };
 		61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOverCard.swift; sourceTree = "<group>"; };
+		61A3DA53241DA0690071C7E9 /* HelloSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUIView.swift; sourceTree = "<group>"; };
+		61A3DA55241DA6790071C7E9 /* NextStatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStatCardView.swift; sourceTree = "<group>"; };
+		61A3DA59241EA1B00071C7E9 /* DoneButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButtonView.swift; sourceTree = "<group>"; };
+		61A3DA64241EB7780071C7E9 /* MasterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterButtonView.swift; sourceTree = "<group>"; };
+		61A3DA66241EB8C60071C7E9 /* AllStationsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStationsButtonView.swift; sourceTree = "<group>"; };
+		61A3DA68241EB9750071C7E9 /* ScheduleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCardView.swift; sourceTree = "<group>"; };
+		61A3DA6B241EC5940071C7E9 /* HavingTroubleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HavingTroubleButtonView.swift; sourceTree = "<group>"; };
+		61A3DA6D241EFC5D0071C7E9 /* TroublesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TroublesCardView.swift; sourceTree = "<group>"; };
+		61A3DA6F241F04750071C7E9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		61A3DA0224198D200071C7E9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		61A3DA1824198D210071C7E9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		61A3DA2324198D210071C7E9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -86,8 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				61A3DA0724198D200071C7E9 /* Survey Schedule */,
-				61A3DA1E24198D210071C7E9 /* Survey ScheduleTests */,
-				61A3DA2924198D210071C7E9 /* Survey ScheduleUITests */,
 				61A3DA0624198D200071C7E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,8 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				61A3DA0524198D200071C7E9 /* Survey Schedule.app */,
-				61A3DA1B24198D210071C7E9 /* Survey ScheduleTests.xctest */,
-				61A3DA2624198D210071C7E9 /* Survey ScheduleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,9 +82,14 @@
 			children = (
 				61A3DA0824198D200071C7E9 /* AppDelegate.swift */,
 				61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */,
+				61A3DA53241DA0690071C7E9 /* HelloSwiftUIView.swift */,
 				61A3DA402419E3B30071C7E9 /* MapView.swift */,
-				61A3DA49241B46C00071C7E9 /* ContentView.swift */,
 				61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */,
+				61A3DA49241B46C00071C7E9 /* ContentView.swift */,
+				61A3DA6F241F04750071C7E9 /* MainView.swift */,
+				61A3DA5E241EAF580071C7E9 /* Next Station */,
+				61A3DA5F241EAFC90071C7E9 /* Schedule */,
+				61A3DA6A241EC47F0071C7E9 /* Troubles */,
 				61A3DA0E24198D210071C7E9 /* Assets.xcassets */,
 				61A3DA1324198D210071C7E9 /* LaunchScreen.storyboard */,
 				61A3DA1624198D210071C7E9 /* Info.plist */,
@@ -127,22 +107,33 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		61A3DA1E24198D210071C7E9 /* Survey ScheduleTests */ = {
+		61A3DA5E241EAF580071C7E9 /* Next Station */ = {
 			isa = PBXGroup;
 			children = (
-				61A3DA1F24198D210071C7E9 /* Survey_ScheduleTests.swift */,
-				61A3DA2124198D210071C7E9 /* Info.plist */,
+				61A3DA55241DA6790071C7E9 /* NextStatCardView.swift */,
+				61A3DA59241EA1B00071C7E9 /* DoneButtonView.swift */,
 			);
-			path = "Survey ScheduleTests";
+			name = "Next Station";
 			sourceTree = "<group>";
 		};
-		61A3DA2924198D210071C7E9 /* Survey ScheduleUITests */ = {
+		61A3DA5F241EAFC90071C7E9 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				61A3DA2A24198D210071C7E9 /* Survey_ScheduleUITests.swift */,
-				61A3DA2C24198D210071C7E9 /* Info.plist */,
+				61A3DA68241EB9750071C7E9 /* ScheduleCardView.swift */,
+				61A3DA64241EB7780071C7E9 /* MasterButtonView.swift */,
+				61A3DA66241EB8C60071C7E9 /* AllStationsButtonView.swift */,
 			);
-			path = "Survey ScheduleUITests";
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		61A3DA6A241EC47F0071C7E9 /* Troubles */ = {
+			isa = PBXGroup;
+			children = (
+				61A3DA6D241EFC5D0071C7E9 /* TroublesCardView.swift */,
+				61A3DA6B241EC5940071C7E9 /* HavingTroubleButtonView.swift */,
+			);
+			name = Troubles;
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,42 +158,6 @@
 			productReference = 61A3DA0524198D200071C7E9 /* Survey Schedule.app */;
 			productType = "com.apple.product-type.application";
 		};
-		61A3DA1A24198D210071C7E9 /* Survey ScheduleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 61A3DA3224198D210071C7E9 /* Build configuration list for PBXNativeTarget "Survey ScheduleTests" */;
-			buildPhases = (
-				61A3DA1724198D210071C7E9 /* Sources */,
-				61A3DA1824198D210071C7E9 /* Frameworks */,
-				61A3DA1924198D210071C7E9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				61A3DA1D24198D210071C7E9 /* PBXTargetDependency */,
-			);
-			name = "Survey ScheduleTests";
-			productName = "Survey ScheduleTests";
-			productReference = 61A3DA1B24198D210071C7E9 /* Survey ScheduleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		61A3DA2524198D210071C7E9 /* Survey ScheduleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 61A3DA3524198D210071C7E9 /* Build configuration list for PBXNativeTarget "Survey ScheduleUITests" */;
-			buildPhases = (
-				61A3DA2224198D210071C7E9 /* Sources */,
-				61A3DA2324198D210071C7E9 /* Frameworks */,
-				61A3DA2424198D210071C7E9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				61A3DA2824198D210071C7E9 /* PBXTargetDependency */,
-			);
-			name = "Survey ScheduleUITests";
-			productName = "Survey ScheduleUITests";
-			productReference = 61A3DA2624198D210071C7E9 /* Survey ScheduleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,14 +170,6 @@
 				TargetAttributes = {
 					61A3DA0424198D200071C7E9 = {
 						CreatedOnToolsVersion = 11.3.1;
-					};
-					61A3DA1A24198D210071C7E9 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 61A3DA0424198D200071C7E9;
-					};
-					61A3DA2524198D210071C7E9 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 61A3DA0424198D200071C7E9;
 					};
 				};
 			};
@@ -242,8 +189,6 @@
 			projectRoot = "";
 			targets = (
 				61A3DA0424198D200071C7E9 /* Survey Schedule */,
-				61A3DA1A24198D210071C7E9 /* Survey ScheduleTests */,
-				61A3DA2524198D210071C7E9 /* Survey ScheduleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,20 +204,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61A3DA1924198D210071C7E9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		61A3DA2424198D210071C7E9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -280,45 +211,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61A3DA65241EB7780071C7E9 /* MasterButtonView.swift in Sources */,
+				61A3DA69241EB9750071C7E9 /* ScheduleCardView.swift in Sources */,
+				61A3DA6E241EFC5E0071C7E9 /* TroublesCardView.swift in Sources */,
 				61A3DA0924198D200071C7E9 /* AppDelegate.swift in Sources */,
+				61A3DA56241DA6790071C7E9 /* NextStatCardView.swift in Sources */,
+				61A3DA6C241EC5940071C7E9 /* HavingTroubleButtonView.swift in Sources */,
 				61A3DA0B24198D200071C7E9 /* SceneDelegate.swift in Sources */,
 				61A3DA4A241B46C00071C7E9 /* ContentView.swift in Sources */,
+				61A3DA54241DA0690071C7E9 /* HelloSwiftUIView.swift in Sources */,
 				61A3DA412419E3B30071C7E9 /* MapView.swift in Sources */,
 				61A3DA50241D690F0071C7E9 /* SlideOverCard.swift in Sources */,
 				61A3DA3D2419C3820071C7E9 /* MainViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		61A3DA1724198D210071C7E9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				61A3DA2024198D210071C7E9 /* Survey_ScheduleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		61A3DA2224198D210071C7E9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				61A3DA2B24198D210071C7E9 /* Survey_ScheduleUITests.swift in Sources */,
+				61A3DA5A241EA1B00071C7E9 /* DoneButtonView.swift in Sources */,
+				61A3DA70241F04750071C7E9 /* MainView.swift in Sources */,
+				61A3DA67241EB8C60071C7E9 /* AllStationsButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		61A3DA1D24198D210071C7E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 61A3DA0424198D200071C7E9 /* Survey Schedule */;
-			targetProxy = 61A3DA1C24198D210071C7E9 /* PBXContainerItemProxy */;
-		};
-		61A3DA2824198D210071C7E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 61A3DA0424198D200071C7E9 /* Survey Schedule */;
-			targetProxy = 61A3DA2724198D210071C7E9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		61A3DA1324198D210071C7E9 /* LaunchScreen.storyboard */ = {
@@ -484,86 +395,6 @@
 			};
 			name = Release;
 		};
-		61A3DA3324198D210071C7E9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Survey ScheduleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "abc.Survey-ScheduleTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Survey Schedule.app/Survey Schedule";
-			};
-			name = Debug;
-		};
-		61A3DA3424198D210071C7E9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Survey ScheduleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "abc.Survey-ScheduleTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Survey Schedule.app/Survey Schedule";
-			};
-			name = Release;
-		};
-		61A3DA3624198D210071C7E9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Survey ScheduleUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "abc.Survey-ScheduleUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Survey Schedule";
-			};
-			name = Debug;
-		};
-		61A3DA3724198D210071C7E9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Survey ScheduleUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "abc.Survey-ScheduleUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Survey Schedule";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -581,24 +412,6 @@
 			buildConfigurations = (
 				61A3DA3024198D210071C7E9 /* Debug */,
 				61A3DA3124198D210071C7E9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		61A3DA3224198D210071C7E9 /* Build configuration list for PBXNativeTarget "Survey ScheduleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				61A3DA3324198D210071C7E9 /* Debug */,
-				61A3DA3424198D210071C7E9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		61A3DA3524198D210071C7E9 /* Build configuration list for PBXNativeTarget "Survey ScheduleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				61A3DA3624198D210071C7E9 /* Debug */,
-				61A3DA3724198D210071C7E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
