@@ -36,6 +36,7 @@ struct NextStatCardView: View {
         .frame(width:UIScreen.main.bounds.width * 0.9/*, height: 200*/)
         .background(Color.white)
         .cornerRadius(10)
+        .padding(.top)
     }
     public func test(){
         print("HI test")

@@ -11,7 +11,7 @@ import SwiftUI
 struct TroublesCardView: View {
     var body: some View {
         VStack(){
-            Text("Trouble Shooting")
+            Text("Troubleshooting")
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.primary)

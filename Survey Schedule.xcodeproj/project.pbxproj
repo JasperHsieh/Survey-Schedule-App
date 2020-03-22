@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ADF1187CDEE636BDC96F92A /* Pods_Survey_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A86CD61C21DAF87A9CD818 /* Pods_Survey_Schedule.framework */; };
+		615A92822426CA76000AEEE5 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 615A92812426CA76000AEEE5 /* test.json */; };
+		615A92862426FAD7000AEEE5 /* cluster_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 615A92832426FAD7000AEEE5 /* cluster_info.json */; };
+		615A92872426FAD7000AEEE5 /* stat_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 615A92842426FAD7000AEEE5 /* stat_info.json */; };
+		615A92882426FAD7000AEEE5 /* stat_travel_time.json in Resources */ = {isa = PBXBuildFile; fileRef = 615A92852426FAD7000AEEE5 /* stat_travel_time.json */; };
+		615A928A242723FC000AEEE5 /* DataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A9289242723FC000AEEE5 /* DataUtil.swift */; };
 		61A3DA0924198D200071C7E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA0824198D200071C7E9 /* AppDelegate.swift */; };
 		61A3DA0B24198D200071C7E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */; };
 		61A3DA0F24198D210071C7E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A3DA0E24198D210071C7E9 /* Assets.xcassets */; };
@@ -14,7 +20,6 @@
 		61A3DA1524198D210071C7E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A3DA1324198D210071C7E9 /* LaunchScreen.storyboard */; };
 		61A3DA3D2419C3820071C7E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA3C2419C3820071C7E9 /* MainViewController.swift */; };
 		61A3DA412419E3B30071C7E9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA402419E3B30071C7E9 /* MapView.swift */; };
-		61A3DA4A241B46C00071C7E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA49241B46C00071C7E9 /* ContentView.swift */; };
 		61A3DA50241D690F0071C7E9 /* SlideOverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */; };
 		61A3DA54241DA0690071C7E9 /* HelloSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA53241DA0690071C7E9 /* HelloSwiftUIView.swift */; };
 		61A3DA56241DA6790071C7E9 /* NextStatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA55241DA6790071C7E9 /* NextStatCardView.swift */; };
@@ -25,9 +30,17 @@
 		61A3DA6C241EC5940071C7E9 /* HavingTroubleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA6B241EC5940071C7E9 /* HavingTroubleButtonView.swift */; };
 		61A3DA6E241EFC5E0071C7E9 /* TroublesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA6D241EFC5D0071C7E9 /* TroublesCardView.swift */; };
 		61A3DA70241F04750071C7E9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA6F241F04750071C7E9 /* MainView.swift */; };
+		61AFC7AB2426A6E0002B2B80 /* travelTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AFC7AA2426A6E0002B2B80 /* travelTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B4511DF892270897DD2FD6F /* Pods-Survey Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule.debug.xcconfig"; sourceTree = "<group>"; };
+		3CA31DC08A2C805C7794E953 /* Pods-Survey Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey Schedule.release.xcconfig"; path = "Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule.release.xcconfig"; sourceTree = "<group>"; };
+		615A92812426CA76000AEEE5 /* test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		615A92832426FAD7000AEEE5 /* cluster_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_info.json; sourceTree = "<group>"; };
+		615A92842426FAD7000AEEE5 /* stat_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stat_info.json; sourceTree = "<group>"; };
+		615A92852426FAD7000AEEE5 /* stat_travel_time.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stat_travel_time.json; sourceTree = "<group>"; };
+		615A9289242723FC000AEEE5 /* DataUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtil.swift; sourceTree = "<group>"; };
 		61A3DA0524198D200071C7E9 /* Survey Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survey Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A3DA0824198D200071C7E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +50,6 @@
 		61A3DA1624198D210071C7E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61A3DA3C2419C3820071C7E9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		61A3DA402419E3B30071C7E9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		61A3DA49241B46C00071C7E9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../../../../../.Trash/ContentView.swift; sourceTree = "<group>"; };
 		61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOverCard.swift; sourceTree = "<group>"; };
 		61A3DA53241DA0690071C7E9 /* HelloSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUIView.swift; sourceTree = "<group>"; };
 		61A3DA55241DA6790071C7E9 /* NextStatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStatCardView.swift; sourceTree = "<group>"; };
@@ -48,6 +60,8 @@
 		61A3DA6B241EC5940071C7E9 /* HavingTroubleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HavingTroubleButtonView.swift; sourceTree = "<group>"; };
 		61A3DA6D241EFC5D0071C7E9 /* TroublesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TroublesCardView.swift; sourceTree = "<group>"; };
 		61A3DA6F241F04750071C7E9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		61AFC7AA2426A6E0002B2B80 /* travelTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = travelTime.swift; sourceTree = "<group>"; };
+		89A86CD61C21DAF87A9CD818 /* Pods_Survey_Schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey_Schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,17 +69,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ADF1187CDEE636BDC96F92A /* Pods_Survey_Schedule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DEAE3CA79FB20FC5A4FE22E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89A86CD61C21DAF87A9CD818 /* Pods_Survey_Schedule.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		61A3D9FC24198D200071C7E9 = {
 			isa = PBXGroup;
 			children = (
 				61A3DA0724198D200071C7E9 /* Survey Schedule */,
 				61A3DA0624198D200071C7E9 /* Products */,
+				CA81FAA1C752A06B4E55655D /* Pods */,
+				1DEAE3CA79FB20FC5A4FE22E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,12 +105,14 @@
 		61A3DA0724198D200071C7E9 /* Survey Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				61A3DA722425DFB40071C7E9 /* resources */,
 				61A3DA0824198D200071C7E9 /* AppDelegate.swift */,
 				61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */,
 				61A3DA53241DA0690071C7E9 /* HelloSwiftUIView.swift */,
 				61A3DA402419E3B30071C7E9 /* MapView.swift */,
+				61AFC7AA2426A6E0002B2B80 /* travelTime.swift */,
+				615A9289242723FC000AEEE5 /* DataUtil.swift */,
 				61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */,
-				61A3DA49241B46C00071C7E9 /* ContentView.swift */,
 				61A3DA6F241F04750071C7E9 /* MainView.swift */,
 				61A3DA5E241EAF580071C7E9 /* Next Station */,
 				61A3DA5F241EAFC90071C7E9 /* Schedule */,
@@ -136,6 +163,26 @@
 			path = Schedule;
 			sourceTree = "<group>";
 		};
+		61A3DA722425DFB40071C7E9 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				615A92832426FAD7000AEEE5 /* cluster_info.json */,
+				615A92842426FAD7000AEEE5 /* stat_info.json */,
+				615A92852426FAD7000AEEE5 /* stat_travel_time.json */,
+				615A92812426CA76000AEEE5 /* test.json */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		CA81FAA1C752A06B4E55655D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B4511DF892270897DD2FD6F /* Pods-Survey Schedule.debug.xcconfig */,
+				3CA31DC08A2C805C7794E953 /* Pods-Survey Schedule.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,17 +190,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 61A3DA2F24198D210071C7E9 /* Build configuration list for PBXNativeTarget "Survey Schedule" */;
 			buildPhases = (
+				5D5D86B088C703AF805BBA22 /* [CP] Check Pods Manifest.lock */,
 				61A3DA0124198D200071C7E9 /* Sources */,
 				61A3DA0224198D200071C7E9 /* Frameworks */,
 				61A3DA0324198D200071C7E9 /* Resources */,
+				94FC4EF03E84086BF2BD693D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Survey Schedule";
-			packageProductDependencies = (
-			);
 			productName = "Survey Schedule";
 			productReference = 61A3DA0524198D200071C7E9 /* Survey Schedule.app */;
 			productType = "com.apple.product-type.application";
@@ -182,8 +229,6 @@
 				Base,
 			);
 			mainGroup = 61A3D9FC24198D200071C7E9;
-			packageReferences = (
-			);
 			productRefGroup = 61A3DA0624198D200071C7E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -199,12 +244,58 @@
 			buildActionMask = 2147483647;
 			files = (
 				61A3DA1524198D210071C7E9 /* LaunchScreen.storyboard in Resources */,
+				615A92872426FAD7000AEEE5 /* stat_info.json in Resources */,
 				61A3DA1224198D210071C7E9 /* Preview Assets.xcassets in Resources */,
+				615A92822426CA76000AEEE5 /* test.json in Resources */,
 				61A3DA0F24198D210071C7E9 /* Assets.xcassets in Resources */,
+				615A92882426FAD7000AEEE5 /* stat_travel_time.json in Resources */,
+				615A92862426FAD7000AEEE5 /* cluster_info.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D5D86B088C703AF805BBA22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Survey Schedule-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94FC4EF03E84086BF2BD693D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		61A3DA0124198D200071C7E9 /* Sources */ = {
@@ -212,13 +303,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				61A3DA65241EB7780071C7E9 /* MasterButtonView.swift in Sources */,
+				615A928A242723FC000AEEE5 /* DataUtil.swift in Sources */,
 				61A3DA69241EB9750071C7E9 /* ScheduleCardView.swift in Sources */,
 				61A3DA6E241EFC5E0071C7E9 /* TroublesCardView.swift in Sources */,
 				61A3DA0924198D200071C7E9 /* AppDelegate.swift in Sources */,
 				61A3DA56241DA6790071C7E9 /* NextStatCardView.swift in Sources */,
 				61A3DA6C241EC5940071C7E9 /* HavingTroubleButtonView.swift in Sources */,
 				61A3DA0B24198D200071C7E9 /* SceneDelegate.swift in Sources */,
-				61A3DA4A241B46C00071C7E9 /* ContentView.swift in Sources */,
+				61AFC7AB2426A6E0002B2B80 /* travelTime.swift in Sources */,
 				61A3DA54241DA0690071C7E9 /* HelloSwiftUIView.swift in Sources */,
 				61A3DA412419E3B30071C7E9 /* MapView.swift in Sources */,
 				61A3DA50241D690F0071C7E9 /* SlideOverCard.swift in Sources */,
@@ -359,6 +451,7 @@
 		};
 		61A3DA3024198D210071C7E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B4511DF892270897DD2FD6F /* Pods-Survey Schedule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +471,7 @@
 		};
 		61A3DA3124198D210071C7E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CA31DC08A2C805C7794E953 /* Pods-Survey Schedule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

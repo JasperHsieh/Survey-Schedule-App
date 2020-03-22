@@ -157,7 +157,7 @@ struct Card: ViewModifier {
             nearestPosition = lowerStop
         }
 
-        // Determining the drawer's position.
+        // Determining the drawer"s position.
         if dragDirection > 0 {
             position = lowerStop
         } else if dragDirection < 0 {
