@@ -14,6 +14,10 @@ struct DataUtil{
     static let statInfoFile = "stat_travel_time"
     static let statTravelTimeFile = "stat_travel_time"
 
+    static let clusterInfo = readJsonFromFile(filePath: clusterInfoFile)
+    static let statInfo = readJsonFromFile(filePath: statInfoFile)
+    static let statTravelTime = readJsonFromFile(filePath: statTravelTimeFile)
+
     static func readJsonFromFile(filePath: String) -> JSON?{
         //var jsonObj:JSON? = nil
         if let path = Bundle.main.path(forResource: filePath, ofType: "json") {

@@ -13,6 +13,7 @@
 		615A92872426FAD7000AEEE5 /* stat_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 615A92842426FAD7000AEEE5 /* stat_info.json */; };
 		615A92882426FAD7000AEEE5 /* stat_travel_time.json in Resources */ = {isa = PBXBuildFile; fileRef = 615A92852426FAD7000AEEE5 /* stat_travel_time.json */; };
 		615A928A242723FC000AEEE5 /* DataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A9289242723FC000AEEE5 /* DataUtil.swift */; };
+		615A928C24282382000AEEE5 /* DynamicRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A928B24282382000AEEE5 /* DynamicRouting.swift */; };
 		61A3DA0924198D200071C7E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA0824198D200071C7E9 /* AppDelegate.swift */; };
 		61A3DA0B24198D200071C7E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */; };
 		61A3DA0F24198D210071C7E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A3DA0E24198D210071C7E9 /* Assets.xcassets */; };
@@ -21,7 +22,6 @@
 		61A3DA3D2419C3820071C7E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA3C2419C3820071C7E9 /* MainViewController.swift */; };
 		61A3DA412419E3B30071C7E9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA402419E3B30071C7E9 /* MapView.swift */; };
 		61A3DA50241D690F0071C7E9 /* SlideOverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */; };
-		61A3DA54241DA0690071C7E9 /* HelloSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA53241DA0690071C7E9 /* HelloSwiftUIView.swift */; };
 		61A3DA56241DA6790071C7E9 /* NextStatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA55241DA6790071C7E9 /* NextStatCardView.swift */; };
 		61A3DA5A241EA1B00071C7E9 /* DoneButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA59241EA1B00071C7E9 /* DoneButtonView.swift */; };
 		61A3DA65241EB7780071C7E9 /* MasterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA64241EB7780071C7E9 /* MasterButtonView.swift */; };
@@ -30,7 +30,6 @@
 		61A3DA6C241EC5940071C7E9 /* HavingTroubleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA6B241EC5940071C7E9 /* HavingTroubleButtonView.swift */; };
 		61A3DA6E241EFC5E0071C7E9 /* TroublesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA6D241EFC5D0071C7E9 /* TroublesCardView.swift */; };
 		61A3DA70241F04750071C7E9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA6F241F04750071C7E9 /* MainView.swift */; };
-		61AFC7AB2426A6E0002B2B80 /* travelTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AFC7AA2426A6E0002B2B80 /* travelTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +40,7 @@
 		615A92842426FAD7000AEEE5 /* stat_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stat_info.json; sourceTree = "<group>"; };
 		615A92852426FAD7000AEEE5 /* stat_travel_time.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stat_travel_time.json; sourceTree = "<group>"; };
 		615A9289242723FC000AEEE5 /* DataUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtil.swift; sourceTree = "<group>"; };
+		615A928B24282382000AEEE5 /* DynamicRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicRouting.swift; sourceTree = "<group>"; };
 		61A3DA0524198D200071C7E9 /* Survey Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survey Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A3DA0824198D200071C7E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +51,6 @@
 		61A3DA3C2419C3820071C7E9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		61A3DA402419E3B30071C7E9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOverCard.swift; sourceTree = "<group>"; };
-		61A3DA53241DA0690071C7E9 /* HelloSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUIView.swift; sourceTree = "<group>"; };
 		61A3DA55241DA6790071C7E9 /* NextStatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStatCardView.swift; sourceTree = "<group>"; };
 		61A3DA59241EA1B00071C7E9 /* DoneButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButtonView.swift; sourceTree = "<group>"; };
 		61A3DA64241EB7780071C7E9 /* MasterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterButtonView.swift; sourceTree = "<group>"; };
@@ -60,7 +59,6 @@
 		61A3DA6B241EC5940071C7E9 /* HavingTroubleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HavingTroubleButtonView.swift; sourceTree = "<group>"; };
 		61A3DA6D241EFC5D0071C7E9 /* TroublesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TroublesCardView.swift; sourceTree = "<group>"; };
 		61A3DA6F241F04750071C7E9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		61AFC7AA2426A6E0002B2B80 /* travelTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = travelTime.swift; sourceTree = "<group>"; };
 		89A86CD61C21DAF87A9CD818 /* Pods_Survey_Schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey_Schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,12 +106,11 @@
 				61A3DA722425DFB40071C7E9 /* resources */,
 				61A3DA0824198D200071C7E9 /* AppDelegate.swift */,
 				61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */,
-				61A3DA53241DA0690071C7E9 /* HelloSwiftUIView.swift */,
-				61A3DA402419E3B30071C7E9 /* MapView.swift */,
-				61AFC7AA2426A6E0002B2B80 /* travelTime.swift */,
-				615A9289242723FC000AEEE5 /* DataUtil.swift */,
-				61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */,
 				61A3DA6F241F04750071C7E9 /* MainView.swift */,
+				61A3DA402419E3B30071C7E9 /* MapView.swift */,
+				615A9289242723FC000AEEE5 /* DataUtil.swift */,
+				615A928B24282382000AEEE5 /* DynamicRouting.swift */,
+				61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */,
 				61A3DA5E241EAF580071C7E9 /* Next Station */,
 				61A3DA5F241EAFC90071C7E9 /* Schedule */,
 				61A3DA6A241EC47F0071C7E9 /* Troubles */,
@@ -308,10 +305,9 @@
 				61A3DA6E241EFC5E0071C7E9 /* TroublesCardView.swift in Sources */,
 				61A3DA0924198D200071C7E9 /* AppDelegate.swift in Sources */,
 				61A3DA56241DA6790071C7E9 /* NextStatCardView.swift in Sources */,
+				615A928C24282382000AEEE5 /* DynamicRouting.swift in Sources */,
 				61A3DA6C241EC5940071C7E9 /* HavingTroubleButtonView.swift in Sources */,
 				61A3DA0B24198D200071C7E9 /* SceneDelegate.swift in Sources */,
-				61AFC7AB2426A6E0002B2B80 /* travelTime.swift in Sources */,
-				61A3DA54241DA0690071C7E9 /* HelloSwiftUIView.swift in Sources */,
 				61A3DA412419E3B30071C7E9 /* MapView.swift in Sources */,
 				61A3DA50241D690F0071C7E9 /* SlideOverCard.swift in Sources */,
 				61A3DA3D2419C3820071C7E9 /* MainViewController.swift in Sources */,

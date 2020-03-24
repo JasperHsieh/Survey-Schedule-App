@@ -22,12 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
         //let contentView = ContentView()
         let contentView = MainView()
+        /*print("clusterInfo: \(DataUtil.clusterInfo)")
         if let jsonData = DataUtil.readJsonFromFile(filePath: DataUtil.clusterInfoFile){
             print("jsonData1: \(jsonData["0"]["stations"])")
         }
         if let jsonData = DataUtil.readJsonFromFile(filePath: DataUtil.statTravelTimeFile){
             print("jsonData2: \(jsonData["B-14"]["J4"])")
-        }
+        }*/
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

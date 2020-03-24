@@ -9,6 +9,13 @@
 import SwiftUI
 
 struct NextStatCardView: View {
+    @State var nextStation: String = DynamicRouting.baseStat
+    @State var nextTravelTime: String = "1:00"
+    //var dynamicRouting = DynamicRouting(Day: 1, PreStat: DynamicRouting.baseStat)
+    let dynamicRouting: DynamicRouting
+    init(routingInstance dynamicRouting: DynamicRouting){
+        self.dynamicRouting = dynamicRouting
+    }
     var body: some View {
         VStack(){
             Text("Next Station")
@@ -24,12 +31,21 @@ struct NextStatCardView: View {
                 Image("Next Station Img").resizable().frame(width: 50, height: 50)
                 Spacer()
                 VStack(alignment: .leading){
-                    Text("CS25 (ID: 72)").font(.headline)
-                    Text("4.9 miles").foregroundColor(.gray)
+                    Text(nextStation).font(.headline)
+                    Text(nextTravelTime).foregroundColor(.gray)
                 }
                 Spacer()
                 Spacer()
-                DoneButtonView()
+                //DoneButtonView()
+                Button(action: doneAction){
+                    Text("Done")
+                        .fontWeight(.bold)
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(20)
+                }
+
                 Spacer()
             }.padding(.bottom)
         }
@@ -38,15 +54,17 @@ struct NextStatCardView: View {
         .cornerRadius(10)
         .padding(.top)
     }
-    public func test(){
-        print("HI test")
+    func doneAction(){
+        print("Click Done")
+        //nextStation = "North Park"
+        nextStation = dynamicRouting.getNextStation(PreStat: nextStation)
     }
 }
 
 
-
+/*
 struct NextStatCardView_Previews: PreviewProvider {
     static var previews: some View {
         NextStatCardView()
     }
-}
+}*/

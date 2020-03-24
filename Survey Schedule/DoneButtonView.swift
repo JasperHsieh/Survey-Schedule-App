@@ -10,9 +10,7 @@ import SwiftUI
 
 struct DoneButtonView: View {
     var body: some View {
-        Button(action: doneAction/*action: {
-            print("click Done")
-        }*/){
+        Button(action: doneAction){
             Text("Done")
                 .fontWeight(.bold)
                 .padding()
