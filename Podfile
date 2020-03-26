@@ -8,4 +8,5 @@ target 'Survey Schedule' do
   # Pods for Survey Schedule
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SwiftDate', '~> 6.1.0'
+  pod 'Combinatorics'
 end

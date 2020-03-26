@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Combinatorics/Combinatorics.framework
 ${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

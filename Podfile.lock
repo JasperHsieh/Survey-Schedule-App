@@ -1,20 +1,24 @@
 PODS:
+  - Combinatorics (1.4)
   - SwiftDate (6.1.0)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
+  - Combinatorics
   - SwiftDate (~> 6.1.0)
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
+    - Combinatorics
     - SwiftDate
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Combinatorics: 890b1bc586642f25f81c2274572295c1fe3a6460
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 4ac0969181a103a506b348711b0c04d906179277
+PODFILE CHECKSUM: a702424c19bfa0930bcff0c7e94474040aab9b39
 
 COCOAPODS: 1.8.4

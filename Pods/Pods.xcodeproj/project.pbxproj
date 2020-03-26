@@ -7,145 +7,166 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		073D58C924EBAC5DF59D87938F543A02 /* RelativeFormatterLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBEC857F34319F82567B91638758408 /* RelativeFormatterLanguage.swift */; };
-		0995D153EBE26BFC566FF3336F1ECA5E /* DotNetParserFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906F89CDE47E682F5B2B6EE1A88B1EA /* DotNetParserFormatter.swift */; };
-		0F377111846A587376BBE8E4A467AD41 /* Int+DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15E4C7D4A20B93E9C195494DDBE4B7D /* Int+DateComponents.swift */; };
-		1465B023003B74FD145CC3F01AE65F8C /* DateComponents+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B3C168AAB76512826A061B2398FC6 /* DateComponents+Extras.swift */; };
-		14E1BE8EDA1E323BB8AAD5212B9FFB12 /* TimePeriod+Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDDD69A9E2FF3DBECE0F0054D6E0CF /* TimePeriod+Support.swift */; };
-		1942F7D3B7722A5637C3FC0BE44B1E6C /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B198E41736C958A733EFAC23BADBF159 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B5E07B521E4AADF4E24EC39B7014080 /* Date+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30325BBFCDFC1D64F60091FE9F7AE12 /* Date+Compare.swift */; };
-		2BF6FBC0A64BF107C5D64C61F1397770 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B20EF70553A493F6C5B577244E09F /* SwiftyJSON-dummy.m */; };
-		36BEC5617259C56934C39D350DE32F17 /* Locales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B3D5BFBFCCB9E82DCD112DD545C29 /* Locales.swift */; };
-		38EABE62E192B1BA56147AEDA7944007 /* TimePeriodCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C4453167E5B0FC7876876E3C6B44C /* TimePeriodCollection.swift */; };
-		44CCF26D36C6F2A2A6C7E547B0BB26CE /* TimePeriodGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A0D70D0248C478767588398AE0DCC3 /* TimePeriodGroup.swift */; };
+		073D58C924EBAC5DF59D87938F543A02 /* RelativeFormatterLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F1BF0B55AEF28D3B00BFD8714AB008 /* RelativeFormatterLanguage.swift */; };
+		0995D153EBE26BFC566FF3336F1ECA5E /* DotNetParserFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27401CBC184CFDBF969361C1565D2C3 /* DotNetParserFormatter.swift */; };
+		09F05B86BEEF49B1CC94FEC7A424F62A /* Combinatorics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCF2AA5E508942142498D5383086FFF /* Combinatorics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F377111846A587376BBE8E4A467AD41 /* Int+DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8E6AE153C2E8C53B02D7EFF9622006 /* Int+DateComponents.swift */; };
+		1465B023003B74FD145CC3F01AE65F8C /* DateComponents+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3541CA8155E4E20F7E6C8C91119144D4 /* DateComponents+Extras.swift */; };
+		14E1BE8EDA1E323BB8AAD5212B9FFB12 /* TimePeriod+Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0E578512CE98F0B8FD5CEF7231C3E3 /* TimePeriod+Support.swift */; };
+		1942F7D3B7722A5637C3FC0BE44B1E6C /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 327F0F35B47298BB50AEAB6CD67D4E19 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B5E07B521E4AADF4E24EC39B7014080 /* Date+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265B7BFD7FC2A4898961D16CFC016EC2 /* Date+Compare.swift */; };
+		2BF6FBC0A64BF107C5D64C61F1397770 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDA553F2DB6BDBC04B1DA39374CE6CD /* SwiftyJSON-dummy.m */; };
+		36BEC5617259C56934C39D350DE32F17 /* Locales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1792338FB2FB41F6E4ED0C4E006AB097 /* Locales.swift */; };
+		38EABE62E192B1BA56147AEDA7944007 /* TimePeriodCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC327278F21B4D1DEEFC426A76729B /* TimePeriodCollection.swift */; };
+		44CCF26D36C6F2A2A6C7E547B0BB26CE /* TimePeriodGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72282EE66A60C92B4496CD4D925ED11 /* TimePeriodGroup.swift */; };
 		464450D037D17ED5EE2322E180A6A9F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		4793C5306D63A8A6194AEBE87931A624 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503CA9CE2337EF65AA6ED038CA385E6D /* TimePeriod.swift */; };
-		5C2B11AD3706F2A828F267B8AF5FA1F4 /* DateInRegion+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7A5B14189D93C90F2C2295AE79BDEB /* DateInRegion+Components.swift */; };
-		636DB433A183CC26D8902AE2B18A8E5A /* TimeInterval+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE548AB6C52C956A7694D2B54125C990 /* TimeInterval+Formatter.swift */; };
-		66FF37DDCB23F1DC9D59E74CE0FD4EA1 /* Pods-Survey Schedule-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0765CD4E6E039BC0B76E98A742B3BB25 /* Pods-Survey Schedule-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		678E43954A4EB360F356B90A6B68C460 /* Calendars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAB72ACF1EA74407AA287EC8B76B3A5 /* Calendars.swift */; };
-		6A15282F3FCAC7CF4154B5155001A63D /* RelativeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7688CF7CF10E2C94BCF26E4FEB59F7 /* RelativeFormatter.swift */; };
-		6AA458D361CB0B6A6424318191046CA3 /* SwiftDate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CB3DFF531D481896788C2C3E343A87 /* SwiftDate-dummy.m */; };
-		72B3FA09072C7DCA75B0D2B9C6D7C570 /* DateInRegion+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9272F62D168F48E7D03772D4CA5A6A65 /* DateInRegion+Math.swift */; };
-		72CEB8D2AA9A82759E40D3DF91E8DE46 /* TimeStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8FE39DB37E0DA0608D4BC2915B8EB7 /* TimeStructures.swift */; };
-		7B4CE5C84161E2BFE477F42DFD634382 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84032920C1912E7FB6120C92945ECE /* SwiftyJSON.swift */; };
-		835BAD832AAFBA5CB9A1A75FE631D338 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D0A4C08CF234088F764A88F02868F2 /* Region.swift */; };
-		87E5346166359253236FF8256C231E2F /* Pods-Survey Schedule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F90CAD07306A8267B43E9ED8ABA83 /* Pods-Survey Schedule-dummy.m */; };
-		9529A27CA5D248AACAEE97F7A95F49DB /* DateInRegion+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882313D6AEB30E2C2F791ACAB1B41965 /* DateInRegion+Create.swift */; };
-		96FF64E847F5A0980AB21407587436EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		4793C5306D63A8A6194AEBE87931A624 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A68B9CB6493C870D8C5FCAD3853FC3 /* TimePeriod.swift */; };
+		5C2B11AD3706F2A828F267B8AF5FA1F4 /* DateInRegion+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3D3E8620322D7BFF847E1FAED93234 /* DateInRegion+Components.swift */; };
+		636DB433A183CC26D8902AE2B18A8E5A /* TimeInterval+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5F362D42A946E64E91DC4E9F60A5DB /* TimeInterval+Formatter.swift */; };
+		678A9ACAD4EDD1460D395D9D3BC9330D /* Pods-Survey Schedule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F90CAD07306A8267B43E9ED8ABA83 /* Pods-Survey Schedule-dummy.m */; };
+		678E43954A4EB360F356B90A6B68C460 /* Calendars.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8624C52D00651E672BB699B1B89F5 /* Calendars.swift */; };
+		6A15282F3FCAC7CF4154B5155001A63D /* RelativeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8BC4693BDDE7B438DAFFFDAB1A0872 /* RelativeFormatter.swift */; };
+		6AA458D361CB0B6A6424318191046CA3 /* SwiftDate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C73536C8400355C67204C8F8F1EDCC3 /* SwiftDate-dummy.m */; };
+		72B3FA09072C7DCA75B0D2B9C6D7C570 /* DateInRegion+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946AB9CDBC3602DC869D37FBB725DF4 /* DateInRegion+Math.swift */; };
+		72CEB8D2AA9A82759E40D3DF91E8DE46 /* TimeStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A0B277DB0781612ACABA2377F7A5B9 /* TimeStructures.swift */; };
+		7B4CE5C84161E2BFE477F42DFD634382 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72775A66DB111F61214491E3D9A1F595 /* SwiftyJSON.swift */; };
+		835BAD832AAFBA5CB9A1A75FE631D338 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46AE0113608F5E6494CD23ECB1C0FCC /* Region.swift */; };
+		88663B7F46605F56A27D6D2FAB4279EB /* Combinatorics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0509BBEDEDFC25FF927892FD4A898D9F /* Combinatorics-dummy.m */; };
+		9529A27CA5D248AACAEE97F7A95F49DB /* DateInRegion+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362896B8216D59663A8FD8D3F07093EC /* DateInRegion+Create.swift */; };
+		97B03DD77A485C68345C60B148834C7A /* Pods-Survey Schedule-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0765CD4E6E039BC0B76E98A742B3BB25 /* Pods-Survey Schedule-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F7A4F9069B21B086E4C0B5C48027898 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		AF24D9B52BF1DEA3111A00651265E016 /* Formatter+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F37843E22AD82FD07285C1F69E4A73 /* Formatter+Protocols.swift */; };
-		B0A6A57A2E8CA1E4BB466357A82DB9D7 /* DateInRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC156A08FADE660A23786C8D339009C /* DateInRegion.swift */; };
-		B41D94BED7BD2B2728C80F0479BFAFBA /* Date+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710E9055E2F1EBB543FEEE732FBDE35 /* Date+Math.swift */; };
-		BD2F9C317AE69C85ACB02F0D5989C5FC /* TimePeriodProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5692E376C4AF6787BC9C46856C826D /* TimePeriodProtocol.swift */; };
-		C61CF6456D99FE9DF78D9CCD6DED8D8B /* SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D14470E7D23AAAF57399C406073D58 /* SwiftDate.swift */; };
-		C9640B05AE5E0A380992369794CCB425 /* AssociatedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1579CE11334F23765F0DAAD59BB5421 /* AssociatedValues.swift */; };
-		CC736B7DD8C04BD1A09F4C129DA7E826 /* TimePeriodChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6180D31CB4FB6B8565843E6D5CAA47 /* TimePeriodChain.swift */; };
-		CFE7E115030F13234F3F77C78C7503A0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97916BF3426DE49AC37EC010C6B841A3 /* Date.swift */; };
-		D10A1A0A15865E50C5BA2CA55ABB8AAC /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC689A259E73B6315CF39701AE37F18 /* Date+Components.swift */; };
-		D3A85838CBDD5655BE4558D57C7F053B /* String+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B800551ECED32242A9EFFF3B7378C738 /* String+Parser.swift */; };
-		D409D03A3F401A6086CB0C233BA0E27A /* DateInRegion+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9BCE05855E2EAF00F3441364C68992 /* DateInRegion+Compare.swift */; };
-		D628A133D9E57D91B60A89D7157E97AA /* RelativeFormatter+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CD4F8D270D75563DF4066D1058E041 /* RelativeFormatter+Style.swift */; };
-		D8ABDEA1D615E22488ABB57529375E7B /* Date+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CDEB21425418EE11E5CC6055D56265 /* Date+Create.swift */; };
-		E1318F32BB098EFC1AFE64F9A0E9725F /* DateRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A5E5940BA7840610CAA4ED140339E5 /* DateRepresentable.swift */; };
-		EC7CBB56A22C8D8CC084B4844B99615A /* Zones.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE918802FE54B92F680A769335A99592 /* Zones.swift */; };
-		EEFBB9B0DDD2FADB095080F3B644303E /* ISOParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78303B4F00A114EB5014243346A70F58 /* ISOParser.swift */; };
-		F03F38CC113EE98E70C495A79AC68B7E /* ISOFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F03FD99F66F1528CEBD7DF2C30AEF /* ISOFormatter.swift */; };
-		F3A44066BC57A48842378DAF2B011EC7 /* langs in Resources */ = {isa = PBXBuildFile; fileRef = BF94B53BE68A8C0B460194D14D4BA0C9 /* langs */; };
-		F4771B5E9728FE589F1888C720412D09 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41D563E6A65E5C6DD2FDE6A0DC9D280 /* Commons.swift */; };
-		F705950FA31C2729E1112069D577C1A2 /* SwiftDate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6721397FDA9F5FA2A0573523B6783627 /* SwiftDate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF24D9B52BF1DEA3111A00651265E016 /* Formatter+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FBDAA32782AB17B8FB5B79DE2FA5EC /* Formatter+Protocols.swift */; };
+		B0A6A57A2E8CA1E4BB466357A82DB9D7 /* DateInRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B8D12DCA7A275148076630856320E0 /* DateInRegion.swift */; };
+		B12448BE602166F3DD2BA533955C4ABC /* Combinatorics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE8CE5B6EA33EF88D129C9A5ED0FBF /* Combinatorics.swift */; };
+		B41D94BED7BD2B2728C80F0479BFAFBA /* Date+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24635AFE31A07A179B973DA059F6896B /* Date+Math.swift */; };
+		BD2F9C317AE69C85ACB02F0D5989C5FC /* TimePeriodProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC21E674F61998E48D1C79FA2D4C9C /* TimePeriodProtocol.swift */; };
+		C61CF6456D99FE9DF78D9CCD6DED8D8B /* SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CED906A7697FA19A55FACC5709DB15 /* SwiftDate.swift */; };
+		C9640B05AE5E0A380992369794CCB425 /* AssociatedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27840F71A791F0949D6613D9537680AF /* AssociatedValues.swift */; };
+		CC736B7DD8C04BD1A09F4C129DA7E826 /* TimePeriodChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE5488318B51C18B46A6EE6BD4F3A0 /* TimePeriodChain.swift */; };
+		CFE7E115030F13234F3F77C78C7503A0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737078D9BFC03E4042F44898A58E918C /* Date.swift */; };
+		D10A1A0A15865E50C5BA2CA55ABB8AAC /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5D1CDB155B7450855B2E05DB54AB6 /* Date+Components.swift */; };
+		D3A85838CBDD5655BE4558D57C7F053B /* String+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753F5836417DEF09C0E0EC425F02BC3A /* String+Parser.swift */; };
+		D409D03A3F401A6086CB0C233BA0E27A /* DateInRegion+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADAD1C18D2B0FD5050B5071A75B95A /* DateInRegion+Compare.swift */; };
+		D628A133D9E57D91B60A89D7157E97AA /* RelativeFormatter+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = C323819B873B7D19D4DEF148DD19470E /* RelativeFormatter+Style.swift */; };
+		D8ABDEA1D615E22488ABB57529375E7B /* Date+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56929A8048ED35BE0780BEE7CA9722 /* Date+Create.swift */; };
+		D94A33D923F52FD15EA493B58EFB94A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		E1318F32BB098EFC1AFE64F9A0E9725F /* DateRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395D16C6DBF5BE0424A8361DDC78173D /* DateRepresentable.swift */; };
+		EC7CBB56A22C8D8CC084B4844B99615A /* Zones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B4AC0FC27B37D752545DC558FF38D9 /* Zones.swift */; };
+		EEFBB9B0DDD2FADB095080F3B644303E /* ISOParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780F94A8CFEE8FEE77983941BF14C562 /* ISOParser.swift */; };
+		F03F38CC113EE98E70C495A79AC68B7E /* ISOFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E6A6869F0793A43F3244B51E65C7C /* ISOFormatter.swift */; };
+		F3A44066BC57A48842378DAF2B011EC7 /* langs in Resources */ = {isa = PBXBuildFile; fileRef = 4E2DBAB96E27E715B24369BBE931CCA3 /* langs */; };
+		F4771B5E9728FE589F1888C720412D09 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C2932481F33FF4F742F26E7645EF0 /* Commons.swift */; };
+		F705950FA31C2729E1112069D577C1A2 /* SwiftDate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97774B604F8B00F075D0E8CF1D05A988 /* SwiftDate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCF4774060D63CEFFA5C5FAF02529709 /* Combinatorics.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4642B372820BA21D8B3E0DA8812FFB /* Combinatorics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFC06025A05453C26D2F31B2C0E122E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8193A50D29929ADA1FC7BA5DF8B61683 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D118A6A04828FD3CDA8640CD2B6796D2;
-			remoteInfo = SwiftyJSON;
-		};
-		A241AD7D88F4213C1228A27DCD9B4685 /* PBXContainerItemProxy */ = {
+		0B9EC1F843C9173097AB86452146AE1D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6038CE6006EFBE9D905454CF01909C42;
 			remoteInfo = SwiftDate;
 		};
+		948BAE932685127E0E60033CC0B4F3A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 752D14E7BCCA2499E9076595D6FC4B7F;
+			remoteInfo = Combinatorics;
+		};
+		E9439166102DB67F8E92FE6D9D57751B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D118A6A04828FD3CDA8640CD2B6796D2;
+			remoteInfo = SwiftyJSON;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		03DB4468E2173521F42245B384EBDEB0 /* Pods_Survey_Schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Survey_Schedule.framework; path = "Pods-Survey Schedule.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0509BBEDEDFC25FF927892FD4A898D9F /* Combinatorics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Combinatorics-dummy.m"; sourceTree = "<group>"; };
+		05AE5488318B51C18B46A6EE6BD4F3A0 /* TimePeriodChain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodChain.swift; path = Sources/SwiftDate/TimePeriod/Groups/TimePeriodChain.swift; sourceTree = "<group>"; };
 		0765CD4E6E039BC0B76E98A742B3BB25 /* Pods-Survey Schedule-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Survey Schedule-umbrella.h"; sourceTree = "<group>"; };
-		0DAB72ACF1EA74407AA287EC8B76B3A5 /* Calendars.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Calendars.swift; path = Sources/SwiftDate/Supports/Calendars.swift; sourceTree = "<group>"; };
-		11EA8ADABFF60A9505757CDC4C24CD65 /* SwiftDate-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftDate-Info.plist"; sourceTree = "<group>"; };
-		18D14470E7D23AAAF57399C406073D58 /* SwiftDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftDate.swift; path = Sources/SwiftDate/SwiftDate.swift; sourceTree = "<group>"; };
-		1BBEC857F34319F82567B91638758408 /* RelativeFormatterLanguage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RelativeFormatterLanguage.swift; path = Sources/SwiftDate/Formatters/RelativeFormatter/RelativeFormatterLanguage.swift; sourceTree = "<group>"; };
-		1C7C4453167E5B0FC7876876E3C6B44C /* TimePeriodCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodCollection.swift; path = Sources/SwiftDate/TimePeriod/Groups/TimePeriodCollection.swift; sourceTree = "<group>"; };
+		10941D6A22446342ED4E3A4CCA249239 /* Combinatorics-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Combinatorics-prefix.pch"; sourceTree = "<group>"; };
+		1792338FB2FB41F6E4ED0C4E006AB097 /* Locales.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locales.swift; path = Sources/SwiftDate/Supports/Locales.swift; sourceTree = "<group>"; };
+		1DEC21E674F61998E48D1C79FA2D4C9C /* TimePeriodProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodProtocol.swift; path = Sources/SwiftDate/TimePeriod/TimePeriodProtocol.swift; sourceTree = "<group>"; };
+		1EDA553F2DB6BDBC04B1DA39374CE6CD /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
 		21A65CCB0E1D0B0F4A4601C5B5900F5F /* Pods-Survey Schedule-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Survey Schedule-frameworks.sh"; sourceTree = "<group>"; };
+		24635AFE31A07A179B973DA059F6896B /* Date+Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Math.swift"; path = "Sources/SwiftDate/Date/Date+Math.swift"; sourceTree = "<group>"; };
+		265B7BFD7FC2A4898961D16CFC016EC2 /* Date+Compare.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Compare.swift"; path = "Sources/SwiftDate/Date/Date+Compare.swift"; sourceTree = "<group>"; };
+		27840F71A791F0949D6613D9537680AF /* AssociatedValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedValues.swift; path = Sources/SwiftDate/Supports/AssociatedValues.swift; sourceTree = "<group>"; };
+		2E8BC4693BDDE7B438DAFFFDAB1A0872 /* RelativeFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RelativeFormatter.swift; path = Sources/SwiftDate/Formatters/RelativeFormatter/RelativeFormatter.swift; sourceTree = "<group>"; };
+		30BE38E6910E7A2E19E97786A366E38E /* SwiftDate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftDate.xcconfig; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		345DBD100820F8091799B7BE6053C666 /* SwiftDate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftDate.xcconfig; sourceTree = "<group>"; };
-		38064C0783043E6072262B7BD9F6E3B4 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
-		401B20EF70553A493F6C5B577244E09F /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
-		47CD4F8D270D75563DF4066D1058E041 /* RelativeFormatter+Style.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "RelativeFormatter+Style.swift"; path = "Sources/SwiftDate/Formatters/RelativeFormatter/RelativeFormatter+Style.swift"; sourceTree = "<group>"; };
+		327F0F35B47298BB50AEAB6CD67D4E19 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		3541CA8155E4E20F7E6C8C91119144D4 /* DateComponents+Extras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateComponents+Extras.swift"; path = "Sources/SwiftDate/Foundation+Extras/DateComponents+Extras.swift"; sourceTree = "<group>"; };
+		362896B8216D59663A8FD8D3F07093EC /* DateInRegion+Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Create.swift"; path = "Sources/SwiftDate/DateInRegion/DateInRegion+Create.swift"; sourceTree = "<group>"; };
+		395D16C6DBF5BE0424A8361DDC78173D /* DateRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateRepresentable.swift; path = Sources/SwiftDate/DateRepresentable.swift; sourceTree = "<group>"; };
+		3B1C2932481F33FF4F742F26E7645EF0 /* Commons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Commons.swift; path = Sources/SwiftDate/Supports/Commons.swift; sourceTree = "<group>"; };
+		3C73536C8400355C67204C8F8F1EDCC3 /* SwiftDate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftDate-dummy.m"; sourceTree = "<group>"; };
+		3CB319A53317EB2A64019C651E1CA810 /* SwiftDate-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftDate-Info.plist"; sourceTree = "<group>"; };
+		40EA1511C12EFF6E8F2812B9280F7F62 /* Combinatorics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Combinatorics.framework; path = Combinatorics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44C6800B384D32817763D20669C0C61C /* Combinatorics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Combinatorics.modulemap; sourceTree = "<group>"; };
 		499871A15611192409D049EA8BB3201E /* Pods-Survey Schedule-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Survey Schedule-acknowledgements.plist"; sourceTree = "<group>"; };
-		49A0D70D0248C478767588398AE0DCC3 /* TimePeriodGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodGroup.swift; path = Sources/SwiftDate/TimePeriod/Groups/TimePeriodGroup.swift; sourceTree = "<group>"; };
-		4EC689A259E73B6315CF39701AE37F18 /* Date+Components.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Components.swift"; path = "Sources/SwiftDate/Date/Date+Components.swift"; sourceTree = "<group>"; };
-		503CA9CE2337EF65AA6ED038CA385E6D /* TimePeriod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriod.swift; path = Sources/SwiftDate/TimePeriod/TimePeriod.swift; sourceTree = "<group>"; };
+		4C4642B372820BA21D8B3E0DA8812FFB /* Combinatorics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Combinatorics.h; path = Combinatorics/Combinatorics.h; sourceTree = "<group>"; };
+		4E2DBAB96E27E715B24369BBE931CCA3 /* langs */ = {isa = PBXFileReference; includeInIndex = 1; name = langs; path = Sources/SwiftDate/Formatters/RelativeFormatter/langs; sourceTree = "<group>"; };
+		53FC828D75B04C5554D5B2284E6F6160 /* Combinatorics.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Combinatorics.xcconfig; sourceTree = "<group>"; };
 		58AE0544E0C381DDBD09356C357EC82B /* SwiftDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftDate.framework; path = SwiftDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		58D0A4C08CF234088F764A88F02868F2 /* Region.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Region.swift; path = Sources/SwiftDate/DateInRegion/Region.swift; sourceTree = "<group>"; };
-		66F37843E22AD82FD07285C1F69E4A73 /* Formatter+Protocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Formatter+Protocols.swift"; path = "Sources/SwiftDate/Formatters/Formatter+Protocols.swift"; sourceTree = "<group>"; };
-		6721397FDA9F5FA2A0573523B6783627 /* SwiftDate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftDate-umbrella.h"; sourceTree = "<group>"; };
-		6B5692E376C4AF6787BC9C46856C826D /* TimePeriodProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodProtocol.swift; path = Sources/SwiftDate/TimePeriod/TimePeriodProtocol.swift; sourceTree = "<group>"; };
-		6C6180D31CB4FB6B8565843E6D5CAA47 /* TimePeriodChain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodChain.swift; path = Sources/SwiftDate/TimePeriod/Groups/TimePeriodChain.swift; sourceTree = "<group>"; };
-		6DC156A08FADE660A23786C8D339009C /* DateInRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateInRegion.swift; path = Sources/SwiftDate/DateInRegion/DateInRegion.swift; sourceTree = "<group>"; };
-		78303B4F00A114EB5014243346A70F58 /* ISOParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISOParser.swift; path = Sources/SwiftDate/Formatters/ISOParser.swift; sourceTree = "<group>"; };
-		7906F89CDE47E682F5B2B6EE1A88B1EA /* DotNetParserFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DotNetParserFormatter.swift; path = Sources/SwiftDate/Formatters/DotNetParserFormatter.swift; sourceTree = "<group>"; };
-		7B7A5B14189D93C90F2C2295AE79BDEB /* DateInRegion+Components.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Components.swift"; path = "Sources/SwiftDate/DateInRegion/DateInRegion+Components.swift"; sourceTree = "<group>"; };
+		59B8D12DCA7A275148076630856320E0 /* DateInRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateInRegion.swift; path = Sources/SwiftDate/DateInRegion/DateInRegion.swift; sourceTree = "<group>"; };
+		59F1BF0B55AEF28D3B00BFD8714AB008 /* RelativeFormatterLanguage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RelativeFormatterLanguage.swift; path = Sources/SwiftDate/Formatters/RelativeFormatter/RelativeFormatterLanguage.swift; sourceTree = "<group>"; };
+		5F7A34C897EAD088D9E29FF38E9DD42B /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		6B5F362D42A946E64E91DC4E9F60A5DB /* TimeInterval+Formatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TimeInterval+Formatter.swift"; path = "Sources/SwiftDate/Foundation+Extras/TimeInterval+Formatter.swift"; sourceTree = "<group>"; };
+		6C3D3E8620322D7BFF847E1FAED93234 /* DateInRegion+Components.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Components.swift"; path = "Sources/SwiftDate/DateInRegion/DateInRegion+Components.swift"; sourceTree = "<group>"; };
+		72775A66DB111F61214491E3D9A1F595 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
+		737078D9BFC03E4042F44898A58E918C /* Date.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Sources/SwiftDate/Date/Date.swift; sourceTree = "<group>"; };
+		753F5836417DEF09C0E0EC425F02BC3A /* String+Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Parser.swift"; path = "Sources/SwiftDate/Foundation+Extras/String+Parser.swift"; sourceTree = "<group>"; };
+		780F94A8CFEE8FEE77983941BF14C562 /* ISOParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISOParser.swift; path = Sources/SwiftDate/Formatters/ISOParser.swift; sourceTree = "<group>"; };
+		79CED906A7697FA19A55FACC5709DB15 /* SwiftDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftDate.swift; path = Sources/SwiftDate/SwiftDate.swift; sourceTree = "<group>"; };
 		7E3F90CAD07306A8267B43E9ED8ABA83 /* Pods-Survey Schedule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Survey Schedule-dummy.m"; sourceTree = "<group>"; };
-		85CB3DFF531D481896788C2C3E343A87 /* SwiftDate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftDate-dummy.m"; sourceTree = "<group>"; };
+		7EDF87BA4295701C53AEB8B3BE4356EF /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		81C5D1CDB155B7450855B2E05DB54AB6 /* Date+Components.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Components.swift"; path = "Sources/SwiftDate/Date/Date+Components.swift"; sourceTree = "<group>"; };
+		84CC327278F21B4D1DEEFC426A76729B /* TimePeriodCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodCollection.swift; path = Sources/SwiftDate/TimePeriod/Groups/TimePeriodCollection.swift; sourceTree = "<group>"; };
 		8757F91AEE2FDBDCB1B57A4C7E618A06 /* Pods-Survey Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Survey Schedule.debug.xcconfig"; sourceTree = "<group>"; };
-		882313D6AEB30E2C2F791ACAB1B41965 /* DateInRegion+Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Create.swift"; path = "Sources/SwiftDate/DateInRegion/DateInRegion+Create.swift"; sourceTree = "<group>"; };
 		8B6465B2CBFF140864A6D1CD1C57C465 /* Pods-Survey Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Survey Schedule.release.xcconfig"; sourceTree = "<group>"; };
-		8D8B3D5BFBFCCB9E82DCD112DD545C29 /* Locales.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locales.swift; path = Sources/SwiftDate/Supports/Locales.swift; sourceTree = "<group>"; };
-		91744A6F692EC577CEAB70115453B3E1 /* SwiftDate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftDate-prefix.pch"; sourceTree = "<group>"; };
-		922B3C168AAB76512826A061B2398FC6 /* DateComponents+Extras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateComponents+Extras.swift"; path = "Sources/SwiftDate/Foundation+Extras/DateComponents+Extras.swift"; sourceTree = "<group>"; };
-		9272F62D168F48E7D03772D4CA5A6A65 /* DateInRegion+Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Math.swift"; path = "Sources/SwiftDate/DateInRegion/DateInRegion+Math.swift"; sourceTree = "<group>"; };
-		97916BF3426DE49AC37EC010C6B841A3 /* Date.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Sources/SwiftDate/Date/Date.swift; sourceTree = "<group>"; };
-		97A5E5940BA7840610CAA4ED140339E5 /* DateRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateRepresentable.swift; path = Sources/SwiftDate/DateRepresentable.swift; sourceTree = "<group>"; };
+		93A0B277DB0781612ACABA2377F7A5B9 /* TimeStructures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimeStructures.swift; path = Sources/SwiftDate/Supports/TimeStructures.swift; sourceTree = "<group>"; };
+		93F7271B75406C904C2235EAD564E053 /* SwiftDate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftDate-prefix.pch"; sourceTree = "<group>"; };
+		94B4AC0FC27B37D752545DC558FF38D9 /* Zones.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zones.swift; path = Sources/SwiftDate/Supports/Zones.swift; sourceTree = "<group>"; };
+		97774B604F8B00F075D0E8CF1D05A988 /* SwiftDate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftDate-umbrella.h"; sourceTree = "<group>"; };
+		97ADAD1C18D2B0FD5050B5071A75B95A /* DateInRegion+Compare.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Compare.swift"; path = "Sources/SwiftDate/DateInRegion/DateInRegion+Compare.swift"; sourceTree = "<group>"; };
+		9CCF2AA5E508942142498D5383086FFF /* Combinatorics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Combinatorics-umbrella.h"; sourceTree = "<group>"; };
+		9D6E6A6869F0793A43F3244B51E65C7C /* ISOFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISOFormatter.swift; path = Sources/SwiftDate/Formatters/ISOFormatter.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A15E4C7D4A20B93E9C195494DDBE4B7D /* Int+DateComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+DateComponents.swift"; path = "Sources/SwiftDate/Foundation+Extras/Int+DateComponents.swift"; sourceTree = "<group>"; };
-		A273D9E13CA43D2B96EB41BCC0746332 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
-		A30325BBFCDFC1D64F60091FE9F7AE12 /* Date+Compare.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Compare.swift"; path = "Sources/SwiftDate/Date/Date+Compare.swift"; sourceTree = "<group>"; };
-		A710E9055E2F1EBB543FEEE732FBDE35 /* Date+Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Math.swift"; path = "Sources/SwiftDate/Date/Date+Math.swift"; sourceTree = "<group>"; };
-		AE84032920C1912E7FB6120C92945ECE /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
-		B198E41736C958A733EFAC23BADBF159 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
-		B6EDDD69A9E2FF3DBECE0F0054D6E0CF /* TimePeriod+Support.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TimePeriod+Support.swift"; path = "Sources/SwiftDate/TimePeriod/TimePeriod+Support.swift"; sourceTree = "<group>"; };
-		B800551ECED32242A9EFFF3B7378C738 /* String+Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Parser.swift"; path = "Sources/SwiftDate/Foundation+Extras/String+Parser.swift"; sourceTree = "<group>"; };
-		B99635FC6FBFFAEADCB3E0E7028F8A23 /* SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
+		9F56929A8048ED35BE0780BEE7CA9722 /* Date+Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Create.swift"; path = "Sources/SwiftDate/Date/Date+Create.swift"; sourceTree = "<group>"; };
+		A7D8624C52D00651E672BB699B1B89F5 /* Calendars.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Calendars.swift; path = Sources/SwiftDate/Supports/Calendars.swift; sourceTree = "<group>"; };
+		AD0E578512CE98F0B8FD5CEF7231C3E3 /* TimePeriod+Support.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TimePeriod+Support.swift"; path = "Sources/SwiftDate/TimePeriod/TimePeriod+Support.swift"; sourceTree = "<group>"; };
+		AE8E6AE153C2E8C53B02D7EFF9622006 /* Int+DateComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+DateComponents.swift"; path = "Sources/SwiftDate/Foundation+Extras/Int+DateComponents.swift"; sourceTree = "<group>"; };
+		B4125E142B932495E17FDCFF35AC08FB /* SwiftDate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftDate.modulemap; sourceTree = "<group>"; };
+		B80243C808517B8D60AC310135517C62 /* SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
 		BBF30263FC59F5393DF80A80CBB2AC2B /* Pods-Survey Schedule-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Survey Schedule-Info.plist"; sourceTree = "<group>"; };
-		BF94B53BE68A8C0B460194D14D4BA0C9 /* langs */ = {isa = PBXFileReference; includeInIndex = 1; name = langs; path = Sources/SwiftDate/Formatters/RelativeFormatter/langs; sourceTree = "<group>"; };
-		CA7688CF7CF10E2C94BCF26E4FEB59F7 /* RelativeFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RelativeFormatter.swift; path = Sources/SwiftDate/Formatters/RelativeFormatter/RelativeFormatter.swift; sourceTree = "<group>"; };
+		C27401CBC184CFDBF969361C1565D2C3 /* DotNetParserFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DotNetParserFormatter.swift; path = Sources/SwiftDate/Formatters/DotNetParserFormatter.swift; sourceTree = "<group>"; };
+		C323819B873B7D19D4DEF148DD19470E /* RelativeFormatter+Style.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "RelativeFormatter+Style.swift"; path = "Sources/SwiftDate/Formatters/RelativeFormatter/RelativeFormatter+Style.swift"; sourceTree = "<group>"; };
+		C7A68B9CB6493C870D8C5FCAD3853FC3 /* TimePeriod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriod.swift; path = Sources/SwiftDate/TimePeriod/TimePeriod.swift; sourceTree = "<group>"; };
+		C946AB9CDBC3602DC869D37FBB725DF4 /* DateInRegion+Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Math.swift"; path = "Sources/SwiftDate/DateInRegion/DateInRegion+Math.swift"; sourceTree = "<group>"; };
 		CDE84676B83CFD42F1A5AB1EA202FFBF /* Pods-Survey Schedule-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Survey Schedule-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CFDC319943CE9DACA9ECB4FD79B90E18 /* SwiftDate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftDate.modulemap; sourceTree = "<group>"; };
-		D67F03FD99F66F1528CEBD7DF2C30AEF /* ISOFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISOFormatter.swift; path = Sources/SwiftDate/Formatters/ISOFormatter.swift; sourceTree = "<group>"; };
-		DA8FE39DB37E0DA0608D4BC2915B8EB7 /* TimeStructures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimeStructures.swift; path = Sources/SwiftDate/Supports/TimeStructures.swift; sourceTree = "<group>"; };
-		E1579CE11334F23765F0DAAD59BB5421 /* AssociatedValues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedValues.swift; path = Sources/SwiftDate/Supports/AssociatedValues.swift; sourceTree = "<group>"; };
+		D16555EFE2F753245D4F21E959DDE1FB /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E41D563E6A65E5C6DD2FDE6A0DC9D280 /* Commons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Commons.swift; path = Sources/SwiftDate/Supports/Commons.swift; sourceTree = "<group>"; };
 		E4E5DA93603035D0FC43F75DF624A2CD /* Pods-Survey Schedule.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Survey Schedule.modulemap"; sourceTree = "<group>"; };
-		E6CDEB21425418EE11E5CC6055D56265 /* Date+Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Create.swift"; path = "Sources/SwiftDate/Date/Date+Create.swift"; sourceTree = "<group>"; };
-		EE548AB6C52C956A7694D2B54125C990 /* TimeInterval+Formatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TimeInterval+Formatter.swift"; path = "Sources/SwiftDate/Foundation+Extras/TimeInterval+Formatter.swift"; sourceTree = "<group>"; };
-		EE918802FE54B92F680A769335A99592 /* Zones.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zones.swift; path = Sources/SwiftDate/Supports/Zones.swift; sourceTree = "<group>"; };
-		EF820C5E0F9C5D48EF258EF965D98729 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
-		FB9BCE05855E2EAF00F3441364C68992 /* DateInRegion+Compare.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Compare.swift"; path = "Sources/SwiftDate/DateInRegion/DateInRegion+Compare.swift"; sourceTree = "<group>"; };
+		E72282EE66A60C92B4496CD4D925ED11 /* TimePeriodGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TimePeriodGroup.swift; path = Sources/SwiftDate/TimePeriod/Groups/TimePeriodGroup.swift; sourceTree = "<group>"; };
+		F2063E1C9FD4646ADEB5F5FA849313D0 /* Combinatorics-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Combinatorics-Info.plist"; sourceTree = "<group>"; };
+		F46AE0113608F5E6494CD23ECB1C0FCC /* Region.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Region.swift; path = Sources/SwiftDate/DateInRegion/Region.swift; sourceTree = "<group>"; };
+		F4CE8CE5B6EA33EF88D129C9A5ED0FBF /* Combinatorics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combinatorics.swift; path = Combinatorics/Combinatorics.swift; sourceTree = "<group>"; };
+		F6FBDAA32782AB17B8FB5B79DE2FA5EC /* Formatter+Protocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Formatter+Protocols.swift"; path = "Sources/SwiftDate/Formatters/Formatter+Protocols.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		207CA0EFDE25DBBBF5B6DA8793BD478E /* Frameworks */ = {
+		1E7809B609A4E04A4A41E0C950DC9E88 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96FF64E847F5A0980AB21407587436EB /* Foundation.framework in Frameworks */,
+				D94A33D923F52FD15EA493B58EFB94A9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +175,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F7A4F9069B21B086E4C0B5C48027898 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BCED4D0C320E1F45FBBE12CB6E9082D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFC06025A05453C26D2F31B2C0E122E9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +197,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03EA9111609A98FBECB32422DF50B63A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4E2DBAB96E27E715B24369BBE931CCA3 /* langs */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		0C905B6DC0766556CD91C31C8BD18ADC /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,47 +213,50 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		26008DC3D01A33F9713F224DA3BA495C /* SwiftyJSON */ = {
+		5553A6411827CFCBB3DA4599536F8CC2 /* SwiftDate */ = {
 			isa = PBXGroup;
 			children = (
-				AE84032920C1912E7FB6120C92945ECE /* SwiftyJSON.swift */,
-				4E78046BF9B5C35C312D2F52CB64C6EC /* Support Files */,
+				27840F71A791F0949D6613D9537680AF /* AssociatedValues.swift */,
+				A7D8624C52D00651E672BB699B1B89F5 /* Calendars.swift */,
+				3B1C2932481F33FF4F742F26E7645EF0 /* Commons.swift */,
+				737078D9BFC03E4042F44898A58E918C /* Date.swift */,
+				265B7BFD7FC2A4898961D16CFC016EC2 /* Date+Compare.swift */,
+				81C5D1CDB155B7450855B2E05DB54AB6 /* Date+Components.swift */,
+				9F56929A8048ED35BE0780BEE7CA9722 /* Date+Create.swift */,
+				24635AFE31A07A179B973DA059F6896B /* Date+Math.swift */,
+				3541CA8155E4E20F7E6C8C91119144D4 /* DateComponents+Extras.swift */,
+				59B8D12DCA7A275148076630856320E0 /* DateInRegion.swift */,
+				97ADAD1C18D2B0FD5050B5071A75B95A /* DateInRegion+Compare.swift */,
+				6C3D3E8620322D7BFF847E1FAED93234 /* DateInRegion+Components.swift */,
+				362896B8216D59663A8FD8D3F07093EC /* DateInRegion+Create.swift */,
+				C946AB9CDBC3602DC869D37FBB725DF4 /* DateInRegion+Math.swift */,
+				395D16C6DBF5BE0424A8361DDC78173D /* DateRepresentable.swift */,
+				C27401CBC184CFDBF969361C1565D2C3 /* DotNetParserFormatter.swift */,
+				F6FBDAA32782AB17B8FB5B79DE2FA5EC /* Formatter+Protocols.swift */,
+				AE8E6AE153C2E8C53B02D7EFF9622006 /* Int+DateComponents.swift */,
+				9D6E6A6869F0793A43F3244B51E65C7C /* ISOFormatter.swift */,
+				780F94A8CFEE8FEE77983941BF14C562 /* ISOParser.swift */,
+				1792338FB2FB41F6E4ED0C4E006AB097 /* Locales.swift */,
+				F46AE0113608F5E6494CD23ECB1C0FCC /* Region.swift */,
+				2E8BC4693BDDE7B438DAFFFDAB1A0872 /* RelativeFormatter.swift */,
+				C323819B873B7D19D4DEF148DD19470E /* RelativeFormatter+Style.swift */,
+				59F1BF0B55AEF28D3B00BFD8714AB008 /* RelativeFormatterLanguage.swift */,
+				753F5836417DEF09C0E0EC425F02BC3A /* String+Parser.swift */,
+				79CED906A7697FA19A55FACC5709DB15 /* SwiftDate.swift */,
+				6B5F362D42A946E64E91DC4E9F60A5DB /* TimeInterval+Formatter.swift */,
+				C7A68B9CB6493C870D8C5FCAD3853FC3 /* TimePeriod.swift */,
+				AD0E578512CE98F0B8FD5CEF7231C3E3 /* TimePeriod+Support.swift */,
+				05AE5488318B51C18B46A6EE6BD4F3A0 /* TimePeriodChain.swift */,
+				84CC327278F21B4D1DEEFC426A76729B /* TimePeriodCollection.swift */,
+				E72282EE66A60C92B4496CD4D925ED11 /* TimePeriodGroup.swift */,
+				1DEC21E674F61998E48D1C79FA2D4C9C /* TimePeriodProtocol.swift */,
+				93A0B277DB0781612ACABA2377F7A5B9 /* TimeStructures.swift */,
+				94B4AC0FC27B37D752545DC558FF38D9 /* Zones.swift */,
+				03EA9111609A98FBECB32422DF50B63A /* Resources */,
+				BC8BEF44154DFC7865191FC77632AD86 /* Support Files */,
 			);
-			name = SwiftyJSON;
-			path = SwiftyJSON;
-			sourceTree = "<group>";
-		};
-		280109EF4A2A261FDB4A615EE2277673 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				03DB4468E2173521F42245B384EBDEB0 /* Pods_Survey_Schedule.framework */,
-				58AE0544E0C381DDBD09356C357EC82B /* SwiftDate.framework */,
-				E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4BADF87D584F37E15DB7F5C7B86954CE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				96551AA5469AF85754BDD417F49F9929 /* SwiftDate */,
-				26008DC3D01A33F9713F224DA3BA495C /* SwiftyJSON */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		4E78046BF9B5C35C312D2F52CB64C6EC /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				38064C0783043E6072262B7BD9F6E3B4 /* SwiftyJSON.modulemap */,
-				EF820C5E0F9C5D48EF258EF965D98729 /* SwiftyJSON.xcconfig */,
-				401B20EF70553A493F6C5B577244E09F /* SwiftyJSON-dummy.m */,
-				B99635FC6FBFFAEADCB3E0E7028F8A23 /* SwiftyJSON-Info.plist */,
-				A273D9E13CA43D2B96EB41BCC0746332 /* SwiftyJSON-prefix.pch */,
-				B198E41736C958A733EFAC23BADBF159 /* SwiftyJSON-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyJSON";
+			name = SwiftDate;
+			path = SwiftDate;
 			sourceTree = "<group>";
 		};
 		64B00581657F95637EC0873E96DBBEC5 /* Pods-Survey Schedule */ = {
@@ -236,50 +276,63 @@
 			path = "Target Support Files/Pods-Survey Schedule";
 			sourceTree = "<group>";
 		};
-		96551AA5469AF85754BDD417F49F9929 /* SwiftDate */ = {
+		6C5C9C14C0FC142C943BD15EF770F4CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E1579CE11334F23765F0DAAD59BB5421 /* AssociatedValues.swift */,
-				0DAB72ACF1EA74407AA287EC8B76B3A5 /* Calendars.swift */,
-				E41D563E6A65E5C6DD2FDE6A0DC9D280 /* Commons.swift */,
-				97916BF3426DE49AC37EC010C6B841A3 /* Date.swift */,
-				A30325BBFCDFC1D64F60091FE9F7AE12 /* Date+Compare.swift */,
-				4EC689A259E73B6315CF39701AE37F18 /* Date+Components.swift */,
-				E6CDEB21425418EE11E5CC6055D56265 /* Date+Create.swift */,
-				A710E9055E2F1EBB543FEEE732FBDE35 /* Date+Math.swift */,
-				922B3C168AAB76512826A061B2398FC6 /* DateComponents+Extras.swift */,
-				6DC156A08FADE660A23786C8D339009C /* DateInRegion.swift */,
-				FB9BCE05855E2EAF00F3441364C68992 /* DateInRegion+Compare.swift */,
-				7B7A5B14189D93C90F2C2295AE79BDEB /* DateInRegion+Components.swift */,
-				882313D6AEB30E2C2F791ACAB1B41965 /* DateInRegion+Create.swift */,
-				9272F62D168F48E7D03772D4CA5A6A65 /* DateInRegion+Math.swift */,
-				97A5E5940BA7840610CAA4ED140339E5 /* DateRepresentable.swift */,
-				7906F89CDE47E682F5B2B6EE1A88B1EA /* DotNetParserFormatter.swift */,
-				66F37843E22AD82FD07285C1F69E4A73 /* Formatter+Protocols.swift */,
-				A15E4C7D4A20B93E9C195494DDBE4B7D /* Int+DateComponents.swift */,
-				D67F03FD99F66F1528CEBD7DF2C30AEF /* ISOFormatter.swift */,
-				78303B4F00A114EB5014243346A70F58 /* ISOParser.swift */,
-				8D8B3D5BFBFCCB9E82DCD112DD545C29 /* Locales.swift */,
-				58D0A4C08CF234088F764A88F02868F2 /* Region.swift */,
-				CA7688CF7CF10E2C94BCF26E4FEB59F7 /* RelativeFormatter.swift */,
-				47CD4F8D270D75563DF4066D1058E041 /* RelativeFormatter+Style.swift */,
-				1BBEC857F34319F82567B91638758408 /* RelativeFormatterLanguage.swift */,
-				B800551ECED32242A9EFFF3B7378C738 /* String+Parser.swift */,
-				18D14470E7D23AAAF57399C406073D58 /* SwiftDate.swift */,
-				EE548AB6C52C956A7694D2B54125C990 /* TimeInterval+Formatter.swift */,
-				503CA9CE2337EF65AA6ED038CA385E6D /* TimePeriod.swift */,
-				B6EDDD69A9E2FF3DBECE0F0054D6E0CF /* TimePeriod+Support.swift */,
-				6C6180D31CB4FB6B8565843E6D5CAA47 /* TimePeriodChain.swift */,
-				1C7C4453167E5B0FC7876876E3C6B44C /* TimePeriodCollection.swift */,
-				49A0D70D0248C478767588398AE0DCC3 /* TimePeriodGroup.swift */,
-				6B5692E376C4AF6787BC9C46856C826D /* TimePeriodProtocol.swift */,
-				DA8FE39DB37E0DA0608D4BC2915B8EB7 /* TimeStructures.swift */,
-				EE918802FE54B92F680A769335A99592 /* Zones.swift */,
-				C13FC0660BA4D8448D45BEBAA44E586A /* Resources */,
-				EFF209E47C8017875331B0DFCCC54F34 /* Support Files */,
+				40EA1511C12EFF6E8F2812B9280F7F62 /* Combinatorics.framework */,
+				03DB4468E2173521F42245B384EBDEB0 /* Pods_Survey_Schedule.framework */,
+				58AE0544E0C381DDBD09356C357EC82B /* SwiftDate.framework */,
+				E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */,
 			);
-			name = SwiftDate;
-			path = SwiftDate;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		82D0D620EF40A39F617619CF4A11E785 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF97176A5296B3EB05606D27C5A69212 /* Combinatorics */,
+				5553A6411827CFCBB3DA4599536F8CC2 /* SwiftDate */,
+				A7656DD56D06D0454518F97A6357D135 /* SwiftyJSON */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A7656DD56D06D0454518F97A6357D135 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				72775A66DB111F61214491E3D9A1F595 /* SwiftyJSON.swift */,
+				E81A3C3539BF83A6E02D1959A33819BD /* Support Files */,
+			);
+			name = SwiftyJSON;
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		B8B1DE450956A81398C2FAFBCCC2910E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				44C6800B384D32817763D20669C0C61C /* Combinatorics.modulemap */,
+				53FC828D75B04C5554D5B2284E6F6160 /* Combinatorics.xcconfig */,
+				0509BBEDEDFC25FF927892FD4A898D9F /* Combinatorics-dummy.m */,
+				F2063E1C9FD4646ADEB5F5FA849313D0 /* Combinatorics-Info.plist */,
+				10941D6A22446342ED4E3A4CCA249239 /* Combinatorics-prefix.pch */,
+				9CCF2AA5E508942142498D5383086FFF /* Combinatorics-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Combinatorics";
+			sourceTree = "<group>";
+		};
+		BC8BEF44154DFC7865191FC77632AD86 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B4125E142B932495E17FDCFF35AC08FB /* SwiftDate.modulemap */,
+				30BE38E6910E7A2E19E97786A366E38E /* SwiftDate.xcconfig */,
+				3C73536C8400355C67204C8F8F1EDCC3 /* SwiftDate-dummy.m */,
+				3CB319A53317EB2A64019C651E1CA810 /* SwiftDate-Info.plist */,
+				93F7271B75406C904C2235EAD564E053 /* SwiftDate-prefix.pch */,
+				97774B604F8B00F075D0E8CF1D05A988 /* SwiftDate-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftDate";
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -290,21 +343,13 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C13FC0660BA4D8448D45BEBAA44E586A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				BF94B53BE68A8C0B460194D14D4BA0C9 /* langs */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				4BADF87D584F37E15DB7F5C7B86954CE /* Pods */,
-				280109EF4A2A261FDB4A615EE2277673 /* Products */,
+				82D0D620EF40A39F617619CF4A11E785 /* Pods */,
+				6C5C9C14C0FC142C943BD15EF770F4CE /* Products */,
 				0C905B6DC0766556CD91C31C8BD18ADC /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -317,28 +362,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EFF209E47C8017875331B0DFCCC54F34 /* Support Files */ = {
+		DF97176A5296B3EB05606D27C5A69212 /* Combinatorics */ = {
 			isa = PBXGroup;
 			children = (
-				CFDC319943CE9DACA9ECB4FD79B90E18 /* SwiftDate.modulemap */,
-				345DBD100820F8091799B7BE6053C666 /* SwiftDate.xcconfig */,
-				85CB3DFF531D481896788C2C3E343A87 /* SwiftDate-dummy.m */,
-				11EA8ADABFF60A9505757CDC4C24CD65 /* SwiftDate-Info.plist */,
-				91744A6F692EC577CEAB70115453B3E1 /* SwiftDate-prefix.pch */,
-				6721397FDA9F5FA2A0573523B6783627 /* SwiftDate-umbrella.h */,
+				4C4642B372820BA21D8B3E0DA8812FFB /* Combinatorics.h */,
+				F4CE8CE5B6EA33EF88D129C9A5ED0FBF /* Combinatorics.swift */,
+				B8B1DE450956A81398C2FAFBCCC2910E /* Support Files */,
+			);
+			name = Combinatorics;
+			path = Combinatorics;
+			sourceTree = "<group>";
+		};
+		E81A3C3539BF83A6E02D1959A33819BD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EDF87BA4295701C53AEB8B3BE4356EF /* SwiftyJSON.modulemap */,
+				5F7A34C897EAD088D9E29FF38E9DD42B /* SwiftyJSON.xcconfig */,
+				1EDA553F2DB6BDBC04B1DA39374CE6CD /* SwiftyJSON-dummy.m */,
+				B80243C808517B8D60AC310135517C62 /* SwiftyJSON-Info.plist */,
+				D16555EFE2F753245D4F21E959DDE1FB /* SwiftyJSON-prefix.pch */,
+				327F0F35B47298BB50AEAB6CD67D4E19 /* SwiftyJSON-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SwiftDate";
+			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		38BA8081DE33CFA558754B8398EB63E3 /* Headers */ = {
+		37798EDFC523BDEF8DA731F771D4CA68 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FF37DDCB23F1DC9D59E74CE0FD4EA1 /* Pods-Survey Schedule-umbrella.h in Headers */,
+				97B03DD77A485C68345C60B148834C7A /* Pods-Survey Schedule-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BD3A66CF5F14DD1829900287FEBD35F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09F05B86BEEF49B1CC94FEC7A424F62A /* Combinatorics-umbrella.h in Headers */,
+				FCF4774060D63CEFFA5C5FAF02529709 /* Combinatorics.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,22 +446,41 @@
 		};
 		73A91EECF4735F12A75BF03774F69950 /* Pods-Survey Schedule */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 10256B72E4C8CC9B106FC1F1F21EE362 /* Build configuration list for PBXNativeTarget "Pods-Survey Schedule" */;
+			buildConfigurationList = 44A77652DC948407E0952DF7130E6647 /* Build configuration list for PBXNativeTarget "Pods-Survey Schedule" */;
 			buildPhases = (
-				38BA8081DE33CFA558754B8398EB63E3 /* Headers */,
-				4418400614F96C2C32EBBA5B4BC174E4 /* Sources */,
-				207CA0EFDE25DBBBF5B6DA8793BD478E /* Frameworks */,
-				8BDD5CB3EADB47A034A019393E073938 /* Resources */,
+				37798EDFC523BDEF8DA731F771D4CA68 /* Headers */,
+				2BF1096885AEBCC4514DA7DEE62C720D /* Sources */,
+				1E7809B609A4E04A4A41E0C950DC9E88 /* Frameworks */,
+				1FC5BD28F81BDBEC8F990F7A97734455 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3EC00AD67EB0A7C7968A09C76DF42137 /* PBXTargetDependency */,
-				266271F980F0FBFD283FE0CDE550A4FB /* PBXTargetDependency */,
+				F948FDF947B27C7757E3C013466E48BB /* PBXTargetDependency */,
+				B72C4C168CE9334496C7A2F04CCCDD37 /* PBXTargetDependency */,
+				EDFA62A57BC52DD10B7339828E59ECF1 /* PBXTargetDependency */,
 			);
 			name = "Pods-Survey Schedule";
 			productName = "Pods-Survey Schedule";
 			productReference = 03DB4468E2173521F42245B384EBDEB0 /* Pods_Survey_Schedule.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		752D14E7BCCA2499E9076595D6FC4B7F /* Combinatorics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D58E65DCAC34E034F9B5A4AB3362A356 /* Build configuration list for PBXNativeTarget "Combinatorics" */;
+			buildPhases = (
+				3BD3A66CF5F14DD1829900287FEBD35F /* Headers */,
+				279B2B62D6B92555546950F32783F0D2 /* Sources */,
+				6BCED4D0C320E1F45FBBE12CB6E9082D /* Frameworks */,
+				5784CF3F0613F5B0AB038F6511C93BC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Combinatorics;
+			productName = Combinatorics;
+			productReference = 40EA1511C12EFF6E8F2812B9280F7F62 /* Combinatorics.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */ = {
@@ -435,10 +519,11 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 280109EF4A2A261FDB4A615EE2277673 /* Products */;
+			productRefGroup = 6C5C9C14C0FC142C943BD15EF770F4CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				752D14E7BCCA2499E9076595D6FC4B7F /* Combinatorics */,
 				73A91EECF4735F12A75BF03774F69950 /* Pods-Survey Schedule */,
 				6038CE6006EFBE9D905454CF01909C42 /* SwiftDate */,
 				D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */,
@@ -447,18 +532,25 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1FC5BD28F81BDBEC8F990F7A97734455 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5784CF3F0613F5B0AB038F6511C93BC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		83E31DD8254C83D559E145FEA5125532 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F3A44066BC57A48842378DAF2B011EC7 /* langs in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8BDD5CB3EADB47A034A019393E073938 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,11 +573,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4418400614F96C2C32EBBA5B4BC174E4 /* Sources */ = {
+		279B2B62D6B92555546950F32783F0D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87E5346166359253236FF8256C231E2F /* Pods-Survey Schedule-dummy.m in Sources */,
+				88663B7F46605F56A27D6D2FAB4279EB /* Combinatorics-dummy.m in Sources */,
+				B12448BE602166F3DD2BA533955C4ABC /* Combinatorics.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BF1096885AEBCC4514DA7DEE62C720D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				678A9ACAD4EDD1460D395D9D3BC9330D /* Pods-Survey Schedule-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,63 +637,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		266271F980F0FBFD283FE0CDE550A4FB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftyJSON;
-			target = D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */;
-			targetProxy = 8193A50D29929ADA1FC7BA5DF8B61683 /* PBXContainerItemProxy */;
-		};
-		3EC00AD67EB0A7C7968A09C76DF42137 /* PBXTargetDependency */ = {
+		B72C4C168CE9334496C7A2F04CCCDD37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftDate;
 			target = 6038CE6006EFBE9D905454CF01909C42 /* SwiftDate */;
-			targetProxy = A241AD7D88F4213C1228A27DCD9B4685 /* PBXContainerItemProxy */;
+			targetProxy = 0B9EC1F843C9173097AB86452146AE1D /* PBXContainerItemProxy */;
+		};
+		EDFA62A57BC52DD10B7339828E59ECF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */;
+			targetProxy = E9439166102DB67F8E92FE6D9D57751B /* PBXContainerItemProxy */;
+		};
+		F948FDF947B27C7757E3C013466E48BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Combinatorics;
+			target = 752D14E7BCCA2499E9076595D6FC4B7F /* Combinatorics */;
+			targetProxy = 948BAE932685127E0E60033CC0B4F3A7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		25FF5C3BA0CFA0673C67C55873B8263D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B6465B2CBFF140864A6D1CD1C57C465 /* Pods-Survey Schedule.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		6E2226BAF771B9AEEA8FE646C18E7879 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF820C5E0F9C5D48EF258EF965D98729 /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = 5F7A34C897EAD088D9E29FF38E9DD42B /* SwiftyJSON.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -690,9 +758,82 @@
 			};
 			name = Debug;
 		};
+		AD263530621E68054E3FB9FA5F61862E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8757F91AEE2FDBDCB1B57A4C7E618A06 /* Pods-Survey Schedule.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BF639CD919B8F66F11F972F2FF843FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53FC828D75B04C5554D5B2284E6F6160 /* Combinatorics.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Combinatorics/Combinatorics-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Combinatorics/Combinatorics-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Combinatorics/Combinatorics.modulemap";
+				PRODUCT_MODULE_NAME = Combinatorics;
+				PRODUCT_NAME = Combinatorics;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		BF749B4FA54E1BADF6817FCF7F65EBFD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 345DBD100820F8091799B7BE6053C666 /* SwiftDate.xcconfig */;
+			baseConfigurationReference = 30BE38E6910E7A2E19E97786A366E38E /* SwiftDate.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -725,9 +866,84 @@
 			};
 			name = Debug;
 		};
+		C029954D9109D9AE71738EA9CE1C841F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B6465B2CBFF140864A6D1CD1C57C465 /* Pods-Survey Schedule.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DAB07D54B2C9E44737F122A70D70903D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53FC828D75B04C5554D5B2284E6F6160 /* Combinatorics.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Combinatorics/Combinatorics-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Combinatorics/Combinatorics-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Combinatorics/Combinatorics.modulemap";
+				PRODUCT_MODULE_NAME = Combinatorics;
+				PRODUCT_NAME = Combinatorics;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E8F35927ECB754A46E0AC8C2BACAF32D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF820C5E0F9C5D48EF258EF965D98729 /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = 5F7A34C897EAD088D9E29FF38E9DD42B /* SwiftyJSON.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -820,47 +1036,9 @@
 			};
 			name = Release;
 		};
-		F9FFC448D1F3C99F48C389C35AC37B7B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8757F91AEE2FDBDCB1B57A4C7E618A06 /* Pods-Survey Schedule.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		FD870DFCF4F6080C966DF04DB0C2732D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 345DBD100820F8091799B7BE6053C666 /* SwiftDate.xcconfig */;
+			baseConfigurationReference = 30BE38E6910E7A2E19E97786A366E38E /* SwiftDate.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -897,11 +1075,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		10256B72E4C8CC9B106FC1F1F21EE362 /* Build configuration list for PBXNativeTarget "Pods-Survey Schedule" */ = {
+		44A77652DC948407E0952DF7130E6647 /* Build configuration list for PBXNativeTarget "Pods-Survey Schedule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F9FFC448D1F3C99F48C389C35AC37B7B /* Debug */,
-				25FF5C3BA0CFA0673C67C55873B8263D /* Release */,
+				AD263530621E68054E3FB9FA5F61862E /* Debug */,
+				C029954D9109D9AE71738EA9CE1C841F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -929,6 +1107,15 @@
 			buildConfigurations = (
 				E8F35927ECB754A46E0AC8C2BACAF32D /* Debug */,
 				6E2226BAF771B9AEEA8FE646C18E7879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D58E65DCAC34E034F9B5A4AB3362A356 /* Build configuration list for PBXNativeTarget "Combinatorics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF639CD919B8F66F11F972F2FF843FFF /* Debug */,
+				DAB07D54B2C9E44737F122A70D70903D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

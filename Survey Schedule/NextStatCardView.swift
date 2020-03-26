@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import SwiftyJSON
+import Combinatorics
 
 struct NextStatCardView: View {
     @State var nextStation: String = DynamicRouting.baseStat
@@ -56,8 +58,15 @@ struct NextStatCardView: View {
     }
     func doneAction(){
         print("Click Done")
+        var stats = ["test", "JOy", "KKK"]
+        print(stats.permutations())
+        //let stationRouting: StationRouting = StationRouting()
+        //stationRouting.getStatsTravelTime(stat1: "BBB", stat2: "B-15")
+        //print(DataUtil.statTravelTime!["B-14"]["B-15"])
+        //let cr = ClusterRouting(clusterInfo: JSON(), workingTime: 8)
+        //cr.getNextDaySchedule(info: JSON(), workingTime: 8)
         //nextStation = "North Park"
-        nextStation = dynamicRouting.getNextStation(PreStat: nextStation)
+        //nextStation = dynamicRouting.getNextStation(PreStat: nextStation)
     }
 }
 
