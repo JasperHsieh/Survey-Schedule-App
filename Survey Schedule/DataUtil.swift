@@ -37,4 +37,19 @@ struct DataUtil{
         //return jsonObj
         return nil
     }
+
+    func getStatsTravelTime(stat1: String, stat2: String) -> Int {
+        print("getStatsTravelTime \(stat1) and \(stat2)")
+        if DataUtil.statTravelTime?[stat1].string == nil || DataUtil.statTravelTime?[stat2].string == nil {
+            print("\(stat1) or \(stat2) not found in travel time file")
+            return Int.max
+        }
+        if let time = DataUtil.statTravelTime?[stat1][stat2].int {
+            return time
+        } else{
+            print("Coundn't find \(stat2) from \(stat1) item")
+            return Int.max
+        }
+    }
+
 }

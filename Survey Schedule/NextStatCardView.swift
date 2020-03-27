@@ -59,7 +59,12 @@ struct NextStatCardView: View {
     func doneAction(){
         print("Click Done")
         var stats = ["test", "JOy", "KKK"]
-        print(stats.permutations())
+        //print(stats.permutations())
+        var jsonObj = JSON(["1": "Joy", "2": "Jasper"])
+        jsonObj["3"] = JSON()
+        jsonObj["3"]["visit"] = false
+        jsonObj["3"]["id"] = ["abc", "test"]
+        print(jsonObj)
         //let stationRouting: StationRouting = StationRouting()
         //stationRouting.getStatsTravelTime(stat1: "BBB", stat2: "B-15")
         //print(DataUtil.statTravelTime!["B-14"]["B-15"])

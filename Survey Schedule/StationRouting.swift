@@ -90,6 +90,15 @@ class StationRouting {
         return visitPath
     }
 
+    func getStartStat(statList: [String]) -> String {
+        if statList.isEmpty {
+            print("statList is empty")
+            return ""
+        }
+        let minPerm = getMinTimePermutation(statList: statList)
+        return minPerm.first!
+    }
+
     func getMinTimePermutationWithStart(startStat: String, statList: [String]) -> [String] {
         let allPerms = statList.permutations()
         var minTime = Int.max
