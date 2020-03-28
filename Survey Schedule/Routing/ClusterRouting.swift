@@ -33,6 +33,7 @@ class ClusterRouting{
         let startTime = 0
         var preStat = startStat
         var visitPath: [VisitLog] = [VisitLog(stat: preStat, timestamp: startTime)]
+        var day = 1
 
         //while !visitedAll(jsonObj: clusterInfo){
         while true {
@@ -54,17 +55,19 @@ class ClusterRouting{
             }
 
             // Check if we finish next cluster in time
-            //print("*** Go to cluster \(nextCluster) ***")
+            print("*** Checking cluster \(nextCluster) ***")
             var nextClusterVisitPath = stationRouting.getVisitPath(statList: clusterInfo[nextCluster]["stations"].arrayObject as! [String], pathSoFar: visitPath)
             let nextClusterLastVisitLog = nextClusterVisitPath.last!
             let nextClusterTime = nextClusterLastVisitLog.timestamp + dataUtil.getStatsTravelTime(stat1: nextClusterLastVisitLog.station, stat2: startStat)
 
             if nextClusterTime > workingTime {
                 // Exceed workingTime today, cut cluster
+                print("Exceed workingTime limit, check cutting cluster")
                 for (i, visitLog) in nextClusterVisitPath.reversed().enumerated() {
                     let timeToFinish = visitLog.timestamp + dataUtil.getStatsTravelTime(stat1: visitLog.station, stat2: startStat)
                     if timeToFinish < workingTime {
                         // Form new cluster from left stations
+                        print("Cut cluster")
                         let newCluster = String(clusterStartId)
                         clusterStartId += 1
                         clusterInfo[newCluster] = JSON()
@@ -86,6 +89,7 @@ class ClusterRouting{
                 }
             }else {
                 // Add next cluster visited path
+                print("Go to cluster \(nextCluster)")
                 clusterInfo[nextCluster]["visited"] = true
                 visitPath.append(contentsOf: nextClusterVisitPath)
                 preStat = nextClusterLastVisitLog.station
@@ -97,9 +101,10 @@ class ClusterRouting{
                 visitedAllCluster = true
             }
             if visitedAllCluster || (nextClusterTime > workingTime) {
+                print("Day \(day) done")
                 preStat = startStat
                 visitPath = [VisitLog(stat: preStat, timestamp: startTime)]
-
+                day += 1
                 if visitedAllCluster {
                     break
                 }

@@ -10,7 +10,7 @@ import Foundation
 
 class VisitLog {
     var station: String
-    var timestamp: Int!
+    var timestamp: Int
     init(stat: String, timestamp: Int) {
         self.station = stat
         self.timestamp = timestamp

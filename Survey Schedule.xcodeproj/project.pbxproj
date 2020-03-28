@@ -88,6 +88,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		615A92D7242EAEE2000AEEE5 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				615A928B24282382000AEEE5 /* DynamicRouting.swift */,
+				615A92CF2429E6A2000AEEE5 /* ClusterRouting.swift */,
+				615A92D1242AD989000AEEE5 /* StationRouting.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 		61A3D9FC24198D200071C7E9 = {
 			isa = PBXGroup;
 			children = (
@@ -113,13 +123,11 @@
 				61A3DA0824198D200071C7E9 /* AppDelegate.swift */,
 				61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */,
 				61A3DA6F241F04750071C7E9 /* MainView.swift */,
+				61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */,
 				61A3DA402419E3B30071C7E9 /* MapView.swift */,
 				615A9289242723FC000AEEE5 /* DataUtil.swift */,
 				615A92D5242C06BF000AEEE5 /* VisitLog.swift */,
-				615A928B24282382000AEEE5 /* DynamicRouting.swift */,
-				615A92CF2429E6A2000AEEE5 /* ClusterRouting.swift */,
-				615A92D1242AD989000AEEE5 /* StationRouting.swift */,
-				61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */,
+				615A92D7242EAEE2000AEEE5 /* Routing */,
 				61A3DA5E241EAF580071C7E9 /* Next Station */,
 				61A3DA5F241EAFC90071C7E9 /* Schedule */,
 				61A3DA6A241EC47F0071C7E9 /* Troubles */,

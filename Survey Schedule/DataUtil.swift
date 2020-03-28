@@ -16,7 +16,7 @@ struct DataUtil{
 
     static let clusterInfo = readJsonFromFile(filePath: clusterInfoFile)
     static let statInfo = readJsonFromFile(filePath: statInfoFile)
-    static let statTravelTime = readJsonFromFile(filePath: statTravelTimeFile)
+    static let statTravelTimeInfo = readJsonFromFile(filePath: statTravelTimeFile)
 
     static func readJsonFromFile(filePath: String) -> JSON?{
         //var jsonObj:JSON? = nil
@@ -39,17 +39,18 @@ struct DataUtil{
     }
 
     func getStatsTravelTime(stat1: String, stat2: String) -> Int {
-        print("getStatsTravelTime \(stat1) and \(stat2)")
-        if DataUtil.statTravelTime?[stat1].string == nil || DataUtil.statTravelTime?[stat2].string == nil {
-            print("\(stat1) or \(stat2) not found in travel time file")
-            return Int.max
+        //print("getStatsTravelTime \(stat1) and \(stat2)")
+        if DataUtil.statTravelTimeInfo![stat1].exists() {
+            //if let time = DataUtil.statTravelTimeInfo?[stat1][stat2].int {
+            if DataUtil.statTravelTimeInfo![stat1][stat2].exists() {
+                return DataUtil.statTravelTimeInfo![stat1][stat2].intValue
+            }else {
+                print("stat2 \(stat2) not found in \(stat1)")
+            }
+        }else{
+            print("stat1 \(stat1) not found in statTravelTimeInfo")
         }
-        if let time = DataUtil.statTravelTime?[stat1][stat2].int {
-            return time
-        } else{
-            print("Coundn't find \(stat2) from \(stat1) item")
-            return Int.max
-        }
+        return Int.max
     }
 
 }

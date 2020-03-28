@@ -15,9 +15,15 @@ struct NextStatCardView: View {
     @State var nextTravelTime: String = "1:00"
     //var dynamicRouting = DynamicRouting(Day: 1, PreStat: DynamicRouting.baseStat)
     let dynamicRouting: DynamicRouting
+    let stationRouting: StationRouting
+    let dataUtil: DataUtil
+
     init(routingInstance dynamicRouting: DynamicRouting){
         self.dynamicRouting = dynamicRouting
+        self.stationRouting = StationRouting()
+        self.dataUtil = DataUtil()
     }
+
     var body: some View {
         VStack(){
             Text("Next Station")
@@ -58,20 +64,23 @@ struct NextStatCardView: View {
     }
     func doneAction(){
         print("Click Done")
-        var stats = ["test", "JOy", "KKK"]
-        //print(stats.permutations())
-        var jsonObj = JSON(["1": "Joy", "2": "Jasper"])
-        jsonObj["3"] = JSON()
-        jsonObj["3"]["visit"] = false
-        jsonObj["3"]["id"] = ["abc", "test"]
-        print(jsonObj)
-        //let stationRouting: StationRouting = StationRouting()
-        //stationRouting.getStatsTravelTime(stat1: "BBB", stat2: "B-15")
-        //print(DataUtil.statTravelTime!["B-14"]["B-15"])
-        //let cr = ClusterRouting(clusterInfo: JSON(), workingTime: 8)
-        //cr.getNextDaySchedule(info: JSON(), workingTime: 8)
-        //nextStation = "North Park"
-        //nextStation = dynamicRouting.getNextStation(PreStat: nextStation)
+        //let statList = DataUtil.clusterInfo!["1"]["stations"].arrayObject
+        //let statList = DataUtil.clusterInfo!["1"]["stations"].arrayValue.map {$0.stringValue}
+        //print("statList: \(statList)")
+        let statList = ["J217", "CS28", "CS23", "CS22", "CS24", "CS66", "CS25", "CS26", "COSO2"]
+        //stationRouting.getMinTimePermutation(statList: statList)
+        //stationRouting.getVisitPath(statList: statList as! [String], pathSoFar: [])
+        stationRouting.simulateVisitStations(statList: statList, pathSoFar: [])
+        //let tmp = ["DOR39", "DOR38", "DOR37", "CS8"]
+        //stationRouting.getTotalVisitTime(statList: tmp)
+        //let time = dataUtil.getStatsTravelTime(stat1: statList[0], stat2: statList[1])
+        //print("time: \(time)")
+//        let tmpj: JSON = ["t1": "abc", "t2": "cdf"]
+//        let k = "t1"
+//        if tmpj[k].exists() {
+//            print(tmpj[k])
+//        }
+
     }
 }
 
