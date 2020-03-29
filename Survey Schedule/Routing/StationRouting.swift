@@ -131,6 +131,7 @@ class StationRouting {
     }
 
     func getMinTimePermutation(statList: [String]) -> [String]{
+        print("getMinTimePermutation start...")
         let allPerms = statList.permutations()
         var minTime = Int.max
         var minPerm: [String] = []
@@ -142,6 +143,7 @@ class StationRouting {
                 minPerm = perm
             }
         }
+        print("getMinTimePermutation complete...")
         print("minPerm: \(minTime) \(minPerm)")
         return minPerm
     }
