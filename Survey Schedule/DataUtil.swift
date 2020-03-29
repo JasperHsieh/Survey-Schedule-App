@@ -40,6 +40,9 @@ struct DataUtil{
 
     func getStatsTravelTime(stat1: String, stat2: String) -> Int {
         //print("getStatsTravelTime \(stat1) and \(stat2)")
+        if stat1 == stat2 {
+            return 0
+        }
         if DataUtil.statTravelTimeInfo![stat1].exists() {
             //if let time = DataUtil.statTravelTimeInfo?[stat1][stat2].int {
             if DataUtil.statTravelTimeInfo![stat1][stat2].exists() {
