@@ -67,7 +67,7 @@ struct NextStatCardView: View {
         //let statList = DataUtil.clusterInfo!["1"]["stations"].arrayObject
         //let statList = DataUtil.clusterInfo!["1"]["stations"].arrayValue.map {$0.stringValue}
         //print("statList: \(statList)")
-        let statList = ["CS13", "CS12", "CS11", "RE33", "CS38", "CS36", "CS37"]
+        let statList = ["RE3", "RE35", "RE2", "CS31", "RE40", "COSO3", "RE39"]
         //stationRouting.getMinTimePermutation(statList: statList)
         //stationRouting.getVisitPath(statList: statList as! [String], pathSoFar: [])
         stationRouting.simulateVisitStations(statList: statList, pathSoFar: [])

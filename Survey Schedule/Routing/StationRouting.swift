@@ -111,7 +111,7 @@ class StationRouting {
     }
 
     func getMinTimePermutationWithStart(startStat: String, statList: [String]) -> [String] {
-        print("getMinTimePermutationWithStart start...")
+        print("getMinTimePermutationWithStart start... \(startStat)")
         let allPerms = statList.permutations()
         var minTime = Int.max
         var minPerm: [String] = []
@@ -120,13 +120,14 @@ class StationRouting {
             if perm[0] != startStat {
                 continue
             }
-            let time = getTotalVisitTime(statList: statList)
-            if time < minTime {
-                minTime = time
+            let curTime = getTotalVisitTime(statList: perm)
+            //print("\(perm) \(curTime)")
+            if curTime < minTime {
+                minTime = curTime
                 minPerm = perm
             }
         }
-        print("getMinTimePermutationWithStart complete...")
+        print("getMinTimePermutationWithStart complete... \(minTime)")
         return minPerm
     }
 
@@ -150,10 +151,11 @@ class StationRouting {
 
     func getTotalVisitTime(statList: [String]) -> Int {
         var totalTime = 0
-        var preStat = statList[0]
+        var preStat = ""
 
-        for stat in statList {
-            if stat != statList[0] {
+        for (i, stat) in statList.enumerated() {
+            //print("i=\(i) \(preStat) \(stat)")
+            if i > 0 {
                 totalTime += dataUtil.getStatsTravelTime(stat1: preStat, stat2: stat)
             }
             totalTime += measureTime

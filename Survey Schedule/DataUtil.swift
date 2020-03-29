@@ -43,6 +43,8 @@ struct DataUtil{
         if DataUtil.statTravelTimeInfo![stat1].exists() {
             //if let time = DataUtil.statTravelTimeInfo?[stat1][stat2].int {
             if DataUtil.statTravelTimeInfo![stat1][stat2].exists() {
+                //let time = DataUtil.statTravelTimeInfo![stat1][stat2].intValue
+                //print("getStatsTravelTime \(stat1) and \(stat2) \(time)")
                 return DataUtil.statTravelTimeInfo![stat1][stat2].intValue
             }else {
                 print("stat2 \(stat2) not found in \(stat1)")
