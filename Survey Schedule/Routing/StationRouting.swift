@@ -17,6 +17,8 @@ class StationRouting {
     let dataUtil = DataUtil()
     let clusterInfo = DataUtil.clusterInfo
 
+    var lastRepeatTime = 0
+
     func getVisitPath(statList: [String], pathSoFar: [VisitLog]) -> [VisitLog]{
         let minTimePerm = getMinTimePermutation(statList: statList)
         let simulateResult = simulateVisitStations(statList: minTimePerm, pathSoFar: pathSoFar)
@@ -39,7 +41,6 @@ class StationRouting {
     func simulateVisitStations(statList: [String], pathSoFar: [VisitLog]) -> [VisitLog] {
 
         var curTime = 0
-        var lastRepeatTime = 0
         var visitPath: [VisitLog] = []
         var statSeq = statList
 
@@ -88,11 +89,10 @@ class StationRouting {
                     }
                     if let visitLog = minVisitLog {
                         // Revisit station and update current station and time
-                        print("Revisit \(visitLog.station)")
                         curStat = visitLog.station
                         curTime += minTravelTime
                         lastRepeatTime = curTime
-
+                        print("Revisit \(visitLog.station) \(curTime)")
                         // Update visit order
                         let tmpStatList = [curStat] + statSeq
                         statSeq = getMinTimePermutationWithStart(startStat: curStat, statList: tmpStatList)
