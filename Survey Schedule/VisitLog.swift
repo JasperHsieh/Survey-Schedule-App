@@ -11,9 +11,11 @@ import Foundation
 class VisitLog {
     var station: String
     var timestamp: Int
-    init(stat: String, timestamp: Int) {
+    var isRevisit: Bool
+    init(stat: String, timestamp: Int, isRevisit: Bool) {
         self.station = stat
         self.timestamp = timestamp
+        self.isRevisit = isRevisit
     }
 
     static func dumpPath(path visitPath: [VisitLog]) {
@@ -25,7 +27,7 @@ class VisitLog {
     }
 
     static func dumpLog(visitLog: VisitLog) {
-        print("(\(visitLog.station),\(visitLog.timestamp)) ", terminator: "")
+        print("(\(visitLog.station),\(visitLog.timestamp),\(visitLog.isRevisit)) ", terminator: "")
     }
 
 }

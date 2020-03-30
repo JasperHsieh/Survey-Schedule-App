@@ -55,17 +55,17 @@ class StationRouting {
         }
 
         print("simulateVisitStations: \(statList)")
-        var curStat = statSeq.first ?? ""
+        var curVisitLog = VisitLog(stat: statSeq.first ?? "", timestamp: curTime, isRevisit: false)
 
         while !statSeq.isEmpty {
             //print()
             //print("*** \(curStat) \(curTime) \(statSeq) ***")
             //VisitLog.dumpPath(path: visitPath)
-            if let index = statSeq.firstIndex(of: curStat) {
+            if let index = statSeq.firstIndex(of: curVisitLog.station) {
                 statSeq.remove(at: index)
             }
 
-            visitPath.append(VisitLog(stat: curStat, timestamp: curTime))
+            visitPath.append(curVisitLog)
             curTime += measureTime * 3
 
             if curTime - lastRepeatTime > N {
@@ -78,10 +78,10 @@ class StationRouting {
                     var minTravelTime = Int.max
                     var minVisitLog: VisitLog?
                     for visitLog in (visitPath + pathSoFar) {
-                        if curStat == visitLog.station {
+                        if curVisitLog.station == visitLog.station {
                             continue
                         }
-                        let curTravelTime = dataUtil.getStatsTravelTime(stat1: curStat, stat2: visitLog.station)
+                        let curTravelTime = dataUtil.getStatsTravelTime(stat1: curVisitLog.station, stat2: visitLog.station)
                         if curTravelTime < M && (curTime + curTravelTime - visitLog.timestamp > N) && curTravelTime < minTravelTime {
                             minTravelTime = curTravelTime
                             minVisitLog = visitLog
@@ -89,13 +89,13 @@ class StationRouting {
                     }
                     if let visitLog = minVisitLog {
                         // Revisit station and update current station and time
-                        curStat = visitLog.station
                         curTime += minTravelTime
                         lastRepeatTime = curTime
+                        curVisitLog = VisitLog(stat: visitLog.station, timestamp: curTime, isRevisit: true)
                         print("Revisit \(visitLog.station) \(curTime)")
                         // Update visit order
-                        let tmpStatList = [curStat] + statSeq
-                        statSeq = getMinTimePermutationWithStart(startStat: curStat, statList: tmpStatList)
+                        let tmpStatList = [curVisitLog.station] + statSeq
+                        statSeq = getMinTimePermutationWithStart(startStat: curVisitLog.station, statList: tmpStatList)
                         //print("New visit sequence \(statSeq)")
                         continue
                     }else{
@@ -107,9 +107,9 @@ class StationRouting {
             // Update current station
             if !statSeq.isEmpty {
                 let nextStat = statSeq[0]
-                let travelToNextTime = dataUtil.getStatsTravelTime(stat1: curStat, stat2: nextStat)
+                let travelToNextTime = dataUtil.getStatsTravelTime(stat1: curVisitLog.station, stat2: nextStat)
                 curTime += travelToNextTime
-                curStat = nextStat
+                curVisitLog = VisitLog(stat: nextStat, timestamp: curTime, isRevisit: false)
             }
             //VisitLog.dumpPath(path: visitPath)
             //print("\(curTime)")

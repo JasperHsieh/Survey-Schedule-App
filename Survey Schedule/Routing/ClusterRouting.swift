@@ -32,7 +32,7 @@ class ClusterRouting{
         let startStat = "CS25"
         let startTime = 0
         var preStat = startStat
-        var visitPath: [VisitLog] = [VisitLog(stat: preStat, timestamp: startTime)]
+        var visitPath: [VisitLog] = [VisitLog(stat: preStat, timestamp: startTime, isRevisit: false)]
         var day = 1
 
         print("getNextDaySchedule \(workingTime)")
@@ -115,7 +115,7 @@ class ClusterRouting{
                 print("----- Day \(day) done -----")
                 print()
                 preStat = startStat
-                visitPath = [VisitLog(stat: preStat, timestamp: startTime)]
+                visitPath = [VisitLog(stat: startStat, timestamp: startTime, isRevisit: false)]
                 day += 1
                 if visitedAll(jsonObj: clusterInfo) {
                     break
