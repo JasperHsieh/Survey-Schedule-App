@@ -35,17 +35,21 @@ class ClusterRouting{
         var visitPath: [VisitLog] = [VisitLog(stat: preStat, timestamp: startTime)]
         var day = 1
 
+        print("getNextDaySchedule \(workingTime)")
         //while !visitedAll(jsonObj: clusterInfo){
         while true {
             // choose the closest cluster
             var nextCluster = "-1"
-            var minTime = -1
+            var minTime = Int.max
+            //print(clusterInfo)
             for (cluster, _) in clusterInfo {
                 if !clusterInfo[cluster]["visited"].bool! {
+                    //print("Checking cluster \(cluster)")
                     let travelTime = dataUtil.getStatsTravelTime(stat1: preStat, stat2: clusterInfo[cluster]["start"].string!)
                     if travelTime < minTime {
                         minTime = travelTime
                         nextCluster = cluster
+                        //print("nextCluster \(nextCluster) \(minTime)")
                     }
                 }
             }
@@ -55,16 +59,22 @@ class ClusterRouting{
             }
 
             // Check if we finish next cluster in time
+            print()
             print("*** Checking cluster \(nextCluster) ***")
-            var nextClusterVisitPath = stationRouting.getVisitPath(statList: clusterInfo[nextCluster]["stations"].arrayObject as! [String], pathSoFar: visitPath)
+            //var nextClusterVisitPath = stationRouting.getVisitPath(statList: clusterInfo[nextCluster]["stations"].arrayObject as! [String], pathSoFar: visitPath)
+            var nextClusterVisitPath = stationRouting.getVisitPath(statList: clusterInfo[nextCluster]["stations"].arrayObject as! [String], pathSoFar: visitPath, cluster: nextCluster)
             let nextClusterLastVisitLog = nextClusterVisitPath.last!
-            let nextClusterTime = nextClusterLastVisitLog.timestamp + dataUtil.getStatsTravelTime(stat1: nextClusterLastVisitLog.station, stat2: startStat)
+            let nextClusterFinishTime = nextClusterLastVisitLog.timestamp + dataUtil.getStatsTravelTime(stat1: nextClusterLastVisitLog.station, stat2: startStat)
 
-            if nextClusterTime > workingTime {
+            if nextClusterFinishTime > workingTime {
                 // Exceed workingTime today, cut cluster
                 print("Exceed workingTime limit, check cutting cluster")
-                for (i, visitLog) in nextClusterVisitPath.reversed().enumerated() {
-                    let timeToFinish = visitLog.timestamp + dataUtil.getStatsTravelTime(stat1: visitLog.station, stat2: startStat)
+                //for (i, visitLog) in nextClusterVisitPath.reversed().enumerated() {
+                for i in (0..<nextClusterVisitPath.count).reversed() {
+                    let log = nextClusterVisitPath[i]
+                    let timeToFinish = log.timestamp + dataUtil.getStatsTravelTime(stat1: log.station, stat2: startStat)
+                    //print("Checking \()")
+                    print("Checking last station \(log.station) \(timeToFinish)")
                     if timeToFinish < workingTime {
                         // Form new cluster from left stations
                         print("Cut cluster")
@@ -76,14 +86,17 @@ class ClusterRouting{
                         for visitLog in Array(nextClusterVisitPath[(i+1)...]) {
                             remainStats.append(visitLog.station)
                         }
+                        print("RemainStats: \(remainStats)")
                         clusterInfo[newCluster]["stations"] = JSON(remainStats)
                         clusterInfo[newCluster]["start"] = JSON(stationRouting.getStartStat(statList: remainStats))
 
                         // Update cluster info
                         clusterInfo[nextCluster]["visited"] = true
                         nextClusterVisitPath.removeSubrange((i+1)...)
+                        print("Visit next cluster on", terminator: "")
+                        VisitLog.dumpPath(path: nextClusterVisitPath)
                         visitPath.append(contentsOf: nextClusterVisitPath)
-                        preStat = visitLog.station
+                        preStat = log.station
                         break
                     }
                 }
@@ -95,19 +108,19 @@ class ClusterRouting{
                 preStat = nextClusterLastVisitLog.station
             }
 
+            VisitLog.dumpPath(path: visitPath)
+
             // Reset path value when done today
-            var visitedAllCluster = false
-            if visitedAll(jsonObj: clusterInfo) {
-                visitedAllCluster = true
-            }
-            if visitedAllCluster || (nextClusterTime > workingTime) {
-                print("Day \(day) done")
+            if visitedAll(jsonObj: clusterInfo) || (nextClusterFinishTime > workingTime) {
+                print("----- Day \(day) done -----")
+                print()
                 preStat = startStat
                 visitPath = [VisitLog(stat: preStat, timestamp: startTime)]
                 day += 1
-                if visitedAllCluster {
+                if visitedAll(jsonObj: clusterInfo) {
                     break
                 }
+                //print(clusterInfo)
             }
         }
         return Dictionary()
@@ -118,7 +131,7 @@ class ClusterRouting{
             //var tmp = jsonObj[k]["visited"]
             //print(tmp)
             if jsonObj[k]["visited"] == false {
-                print("\(k) hasn't visited")
+                //print("\(k) hasn't visited")
                 return false
             }
         }

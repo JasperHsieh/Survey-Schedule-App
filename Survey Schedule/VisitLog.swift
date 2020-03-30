@@ -15,4 +15,17 @@ class VisitLog {
         self.station = stat
         self.timestamp = timestamp
     }
+
+    static func dumpPath(path visitPath: [VisitLog]) {
+        for log in visitPath {
+            dumpLog(visitLog: log)
+            //print("\(visitLog.station), \(visitLog.timestamp)")
+        }
+        print()
+    }
+
+    static func dumpLog(visitLog: VisitLog) {
+        print("(\(visitLog.station), \(visitLog.timestamp))", terminator: "")
+    }
+
 }

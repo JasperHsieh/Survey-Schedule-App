@@ -10,15 +10,28 @@ import Foundation
 import Combinatorics
 
 class StationRouting {
-    let N: Int = 30 * 60
+    let N: Int = 2 * 60 * 60
     let M: Int = 15 * 60
     let measureTime = 150
     let dataUtil = DataUtil()
+    let clusterInfo = DataUtil.clusterInfo
 
     func getVisitPath(statList: [String], pathSoFar: [VisitLog]) -> [VisitLog]{
         let minTimePerm = getMinTimePermutation(statList: statList)
         let simulateResult = simulateVisitStations(statList: minTimePerm, pathSoFar: pathSoFar)
-        dumpPath(visitPath: simulateResult)
+        //dumpPath(visitPath: simulateResult)
+        return simulateResult
+    }
+
+    func getVisitPath(statList: [String], pathSoFar: [VisitLog], cluster: String) -> [VisitLog]{
+        let minTimePerm: [String]
+        if clusterInfo![cluster]["min_permutation"].exists() {
+            minTimePerm = clusterInfo![cluster]["min_permutation"].arrayValue.map {$0.stringValue}
+        }else{
+            minTimePerm = getMinTimePermutation(statList: statList)
+        }
+        let simulateResult = simulateVisitStations(statList: minTimePerm, pathSoFar: pathSoFar)
+        //dumpPath(visitPath: simulateResult)
         return simulateResult
     }
 
@@ -31,7 +44,10 @@ class StationRouting {
 
         // Update current time
         if !pathSoFar.isEmpty {
+            print("pathSoFar:")
+            VisitLog.dumpPath(path: pathSoFar)
             curTime = pathSoFar.last!.timestamp + dataUtil.getStatsTravelTime(stat1: pathSoFar.last!.station, stat2: statSeq.first!)
+            print("Update currentTime to \(curTime)")
             // update repeat time?
         }
 
@@ -39,9 +55,9 @@ class StationRouting {
         var curStat = statSeq.first ?? ""
 
         while !statSeq.isEmpty {
-            print()
-            print("*** \(curStat) \(curTime) \(statSeq) ***")
-            dumpPath(visitPath: visitPath)
+            //print()
+            //print("*** \(curStat) \(curTime) \(statSeq) ***")
+            //dumpPath(visitPath: visitPath)
             if let index = statSeq.firstIndex(of: curStat) {
                 statSeq.remove(at: index)
             }
@@ -51,7 +67,7 @@ class StationRouting {
 
             if curTime - lastRepeatTime > N {
                 // Handle revisit
-                print("Time to revisit \(curTime), last repeat: \(lastRepeatTime)")
+                //print("Time to revisit \(curTime), last repeat: \(lastRepeatTime)")
                 if visitPath.isEmpty {
                     print("Couldn't find revisit station")
                 } else{
@@ -70,7 +86,7 @@ class StationRouting {
                     }
                     if let visitLog = minVisitLog {
                         // Revisit station and update current station and time
-                        print("Revisit \(visitLog.station)")
+                        //print("Revisit \(visitLog.station)")
                         curStat = visitLog.station
                         curTime += minTravelTime
                         lastRepeatTime = curTime
@@ -78,10 +94,10 @@ class StationRouting {
                         // Update visit order
                         let tmpStatList = [curStat] + statSeq
                         statSeq = getMinTimePermutationWithStart(startStat: curStat, statList: tmpStatList)
-                        print("New visit sequence \(statSeq)")
+                        //print("New visit sequence \(statSeq)")
                         continue
                     }else{
-                        print("No valid station to revisit")
+                        //print("No valid station to revisit")
                     }
                 }
             }
@@ -111,7 +127,7 @@ class StationRouting {
     }
 
     func getMinTimePermutationWithStart(startStat: String, statList: [String]) -> [String] {
-        print("getMinTimePermutationWithStart start... \(startStat)")
+        //print("getMinTimePermutationWithStart start... \(startStat)")
         let allPerms = statList.permutations()
         var minTime = Int.max
         var minPerm: [String] = []
@@ -127,12 +143,12 @@ class StationRouting {
                 minPerm = perm
             }
         }
-        print("getMinTimePermutationWithStart complete... \(minTime)")
+        //print("getMinTimePermutationWithStart complete... \(minTime)")
         return minPerm
     }
 
     func getMinTimePermutation(statList: [String]) -> [String]{
-        print("getMinTimePermutation start...")
+        //print("getMinTimePermutation start...")
         let allPerms = statList.permutations()
         var minTime = Int.max
         var minPerm: [String] = []
@@ -144,8 +160,8 @@ class StationRouting {
                 minPerm = perm
             }
         }
-        print("getMinTimePermutation complete...")
-        print("minPerm: \(minTime) \(minPerm)")
+        //print("getMinTimePermutation complete...")
+        //print("minPerm: \(minTime) \(minPerm)")
         return minPerm
     }
 

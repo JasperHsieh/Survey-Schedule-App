@@ -15,13 +15,16 @@ struct NextStatCardView: View {
     @State var nextTravelTime: String = "1:00"
     //var dynamicRouting = DynamicRouting(Day: 1, PreStat: DynamicRouting.baseStat)
     let dynamicRouting: DynamicRouting
+    let clusterRouting: ClusterRouting
     let stationRouting: StationRouting
     let dataUtil: DataUtil
+    let timeLimit = 8*60*60
 
     init(routingInstance dynamicRouting: DynamicRouting){
         self.dynamicRouting = dynamicRouting
         self.stationRouting = StationRouting()
         self.dataUtil = DataUtil()
+        self.clusterRouting = ClusterRouting(clusterInfo: DataUtil.clusterInfo!, workingTime: timeLimit)
     }
 
     var body: some View {
@@ -64,13 +67,14 @@ struct NextStatCardView: View {
     }
     func doneAction(){
         print("Click Done")
+        clusterRouting.getNextDaySchedule(info: DataUtil.clusterInfo!, workingTime: timeLimit)
         //let statList = DataUtil.clusterInfo!["1"]["stations"].arrayObject
         //let statList = DataUtil.clusterInfo!["1"]["stations"].arrayValue.map {$0.stringValue}
         //print("statList: \(statList)")
-        let statList = ["RE3", "RE35", "RE2", "CS31", "RE40", "COSO3", "RE39"]
+        //let statList = ["RE3", "RE35", "RE2", "CS31", "RE40", "COSO3", "RE39"]
         //stationRouting.getMinTimePermutation(statList: statList)
         //stationRouting.getVisitPath(statList: statList as! [String], pathSoFar: [])
-        stationRouting.simulateVisitStations(statList: statList, pathSoFar: [])
+        //stationRouting.simulateVisitStations(statList: statList, pathSoFar: [])
         //let tmp = ["DOR39", "DOR38", "DOR37", "CS8"]
         //stationRouting.getTotalVisitTime(statList: tmp)
         //let time = dataUtil.getStatsTravelTime(stat1: statList[0], stat2: statList[1])
