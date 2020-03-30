@@ -10,7 +10,8 @@ import Foundation
 import Combinatorics
 
 class StationRouting {
-    let N: Int = 2 * 60 * 60
+    //let N: Int = 2 * 60 * 60
+    let N: Int = 30 * 60
     let M: Int = 15 * 60
     let measureTime = 150
     let dataUtil = DataUtil()
@@ -42,11 +43,12 @@ class StationRouting {
         var visitPath: [VisitLog] = []
         var statSeq = statList
 
-        // Update current time
+        // Update current path and time
         if !pathSoFar.isEmpty {
             print("pathSoFar:")
             VisitLog.dumpPath(path: pathSoFar)
             curTime = pathSoFar.last!.timestamp + dataUtil.getStatsTravelTime(stat1: pathSoFar.last!.station, stat2: statSeq.first!)
+            //lastRepeatTime = curTime
             print("Update currentTime to \(curTime)")
             // update repeat time?
         }
@@ -67,14 +69,14 @@ class StationRouting {
 
             if curTime - lastRepeatTime > N {
                 // Handle revisit
-                //print("Time to revisit \(curTime), last repeat: \(lastRepeatTime)")
+                print("Time to revisit \(curTime), last repeat: \(lastRepeatTime)")
                 if visitPath.isEmpty {
                     print("Couldn't find revisit station")
                 } else{
                     // Find closest revisit station
                     var minTravelTime = Int.max
                     var minVisitLog: VisitLog?
-                    for visitLog in visitPath {
+                    for visitLog in (visitPath + pathSoFar) {
                         if curStat == visitLog.station {
                             continue
                         }
@@ -86,7 +88,7 @@ class StationRouting {
                     }
                     if let visitLog = minVisitLog {
                         // Revisit station and update current station and time
-                        //print("Revisit \(visitLog.station)")
+                        print("Revisit \(visitLog.station)")
                         curStat = visitLog.station
                         curTime += minTravelTime
                         lastRepeatTime = curTime
@@ -97,7 +99,7 @@ class StationRouting {
                         //print("New visit sequence \(statSeq)")
                         continue
                     }else{
-                        //print("No valid station to revisit")
+                        print("No valid station to revisit")
                     }
                 }
             }
