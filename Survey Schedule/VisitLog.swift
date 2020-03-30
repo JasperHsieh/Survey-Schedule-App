@@ -25,7 +25,7 @@ class VisitLog {
     }
 
     static func dumpLog(visitLog: VisitLog) {
-        print("(\(visitLog.station), \(visitLog.timestamp))", terminator: "")
+        print("(\(visitLog.station),\(visitLog.timestamp)) ", terminator: "")
     }
 
 }

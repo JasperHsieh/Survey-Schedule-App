@@ -22,7 +22,7 @@ class StationRouting {
     func getVisitPath(statList: [String], pathSoFar: [VisitLog]) -> [VisitLog]{
         let minTimePerm = getMinTimePermutation(statList: statList)
         let simulateResult = simulateVisitStations(statList: minTimePerm, pathSoFar: pathSoFar)
-        //dumpPath(visitPath: simulateResult)
+        //VisitLog.dumpPath(path: simulateResult)
         return simulateResult
     }
 
@@ -34,7 +34,7 @@ class StationRouting {
             minTimePerm = getMinTimePermutation(statList: statList)
         }
         let simulateResult = simulateVisitStations(statList: minTimePerm, pathSoFar: pathSoFar)
-        //dumpPath(visitPath: simulateResult)
+        //VisitLog.dumpPath(path: simulateResult)
         return simulateResult
     }
 
@@ -60,7 +60,7 @@ class StationRouting {
         while !statSeq.isEmpty {
             //print()
             //print("*** \(curStat) \(curTime) \(statSeq) ***")
-            //dumpPath(visitPath: visitPath)
+            //VisitLog.dumpPath(path: visitPath)
             if let index = statSeq.firstIndex(of: curStat) {
                 statSeq.remove(at: index)
             }
@@ -111,11 +111,11 @@ class StationRouting {
                 curTime += travelToNextTime
                 curStat = nextStat
             }
-            //dumpPath(visitPath: visitPath)
+            //VisitLog.dumpPath(path: visitPath)
             //print("\(curTime)")
         }
         print("Done simulation")
-        dumpPath(visitPath: visitPath)
+        VisitLog.dumpPath(path: visitPath)
         return visitPath
     }
 
@@ -182,19 +182,6 @@ class StationRouting {
         //print("getTotalVisitTime: \(totalTime)")
         return totalTime
     }
-
-    func dumpPath(visitPath: [VisitLog]) {
-        for log in visitPath {
-            dumpLog(visitLog: log)
-            //print("\(visitLog.station), \(visitLog.timestamp)")
-        }
-        print()
-    }
-
-    func dumpLog(visitLog: VisitLog) {
-        print("(\(visitLog.station), \(visitLog.timestamp))", terminator: "")
-    }
-
 //    func getStatsTravelTime(stat1: String, stat2: String) -> Int {
 //        print("getStatsTravelTime \(stat1) and \(stat2)")
 //        if DataUtil.statTravelTimeInfo?[stat1].string == nil || DataUtil.statTravelTimeInfo?[stat2].string == nil {
