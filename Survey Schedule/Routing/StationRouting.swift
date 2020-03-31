@@ -10,8 +10,8 @@ import Foundation
 import Combinatorics
 
 class StationRouting {
-    //let N: Int = 2 * 60 * 60
-    let N: Int = 30 * 60
+    let N: Int = 2 * 60 * 60
+    //let N: Int = 30 * 60
     let M: Int = 15 * 60
     let measureTime = 150
     let dataUtil = DataUtil()
@@ -44,6 +44,7 @@ class StationRouting {
         var visitPath: [VisitLog] = []
         var statSeq = statList
 
+        print("simulateVisitStations: \(statList), lastRepeat:\(lastRepeatTime), N:\(N)")
         // Update current path and time
         if !pathSoFar.isEmpty {
             print("pathSoFar:")
@@ -54,7 +55,6 @@ class StationRouting {
             // update repeat time?
         }
 
-        print("simulateVisitStations: \(statList)")
         var curVisitLog = VisitLog(stat: statSeq.first ?? "", timestamp: curTime, isRevisit: false)
 
         while !statSeq.isEmpty {
@@ -182,19 +182,8 @@ class StationRouting {
         //print("getTotalVisitTime: \(totalTime)")
         return totalTime
     }
-//    func getStatsTravelTime(stat1: String, stat2: String) -> Int {
-//        print("getStatsTravelTime \(stat1) and \(stat2)")
-//        if DataUtil.statTravelTimeInfo?[stat1].string == nil || DataUtil.statTravelTimeInfo?[stat2].string == nil {
-//            print("\(stat1) or \(stat2) not found in travel time file")
-//            //return Int.max
-//        }
-//
-//        if let time = DataUtil.statTravelTimeInfo?[stat1][stat2].int {
-//            print("\(stat1) and \(stat2) time: \(time)")
-//            return time
-//        } else{
-//            print("Coundn't find \(stat2) from \(stat1) item")
-//            return Int.max
-//        }
-//    }
+
+    func resetRepeatTime(){
+        self.lastRepeatTime = 0
+    }
 }

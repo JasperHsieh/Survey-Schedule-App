@@ -69,9 +69,12 @@ class ClusterRouting{
             if nextClusterFinishTime > workingTime {
                 // Exceed workingTime today, cut cluster
                 print("Exceed workingTime limit, check cutting cluster")
-                //for (i, visitLog) in nextClusterVisitPath.reversed().enumerated() {
                 for i in (0..<nextClusterVisitPath.count).reversed() {
                     let log = nextClusterVisitPath[i]
+                    if log.isRevisit {
+                        print("Ignore repeat station")
+                        continue
+                    }
                     let timeToFinish = log.timestamp + dataUtil.getStatsTravelTime(stat1: log.station, stat2: startStat)
                     //print("Checking \()")
                     print("Checking last station \(log.station) \(timeToFinish)")
@@ -117,6 +120,7 @@ class ClusterRouting{
                 preStat = startStat
                 visitPath = [VisitLog(stat: startStat, timestamp: startTime, isRevisit: false)]
                 day += 1
+                stationRouting.resetRepeatTime()
                 if visitedAll(jsonObj: clusterInfo) {
                     break
                 }
