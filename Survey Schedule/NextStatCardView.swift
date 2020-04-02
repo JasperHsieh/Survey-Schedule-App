@@ -8,11 +8,13 @@
 
 import SwiftUI
 import SwiftyJSON
+import SwiftDate
 import Combinatorics
 
 struct NextStatCardView: View {
     @State var nextStation: String = DynamicRouting.baseStat
     @State var nextTravelTime: String = "1:00"
+    @State var nextButton: String = "Start"
     //var dynamicRouting = DynamicRouting(Day: 1, PreStat: DynamicRouting.baseStat)
     let dynamicRouting: DynamicRouting
     let clusterRouting: ClusterRouting
@@ -20,7 +22,10 @@ struct NextStatCardView: View {
     let dataUtil: DataUtil
     let timeLimit = 8*60*60
 
-    init(routingInstance dynamicRouting: DynamicRouting){
+    //var isStarted = false
+    //ar nextButton = "Start"
+
+    init(routing dynamicRouting: DynamicRouting){
         self.dynamicRouting = dynamicRouting
         self.stationRouting = StationRouting()
         self.dataUtil = DataUtil()
@@ -49,7 +54,7 @@ struct NextStatCardView: View {
                 Spacer()
                 //DoneButtonView()
                 Button(action: doneAction){
-                    Text("Done")
+                    Text(nextButton)
                         .fontWeight(.bold)
                         .padding()
                         .background(Color.green)
@@ -67,7 +72,18 @@ struct NextStatCardView: View {
     }
     func doneAction(){
         print("Click Done")
-        clusterRouting.getNextDaySchedule(info: DataUtil.clusterInfo!, workingTime: timeLimit)
+        if !dynamicRouting.isStarted {
+            //self.isStarted = true
+            print("Start dynamic routing")
+            dynamicRouting.isStarted = true
+            //clusterRouting.getNextDaySchedule(info: DataUtil.clusterInfo!, workingTime: timeLimit)
+            dynamicRouting.getSchedule()
+            nextButton = "Done"
+            let here = Region(calendar: Calendars.gregorian, zone: Zones.current, locale: Locales.englishUnitedStatesComputer)
+            //dynamicRouting.startTime = DateInRegion(Date(), region: here)
+            print(dynamicRouting.startTime)
+        }
+        //
         //let statList = DataUtil.clusterInfo!["1"]["stations"].arrayObject
         //let statList = DataUtil.clusterInfo!["1"]["stations"].arrayValue.map {$0.stringValue}
         //print("statList: \(statList)")

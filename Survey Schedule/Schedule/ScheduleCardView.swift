@@ -9,6 +9,12 @@
 import SwiftUI
 
 struct ScheduleCardView: View {
+    let dynamicRouting: DynamicRouting
+
+    init(routing dynamicRouting: DynamicRouting){
+        self.dynamicRouting = dynamicRouting
+    }
+
     var body: some View {
         VStack(){
             Text("Schedule")
@@ -20,7 +26,7 @@ struct ScheduleCardView: View {
                 .padding(.top)
             HStack(){
                 Spacer()
-                MasterButtonView()
+                MasterButtonView(routing: dynamicRouting)
                 Spacer()
                 AllStationsButtonView()
                 Spacer()
@@ -36,8 +42,8 @@ struct ScheduleCardView: View {
     }
 }
 
-struct ScheduleCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScheduleCardView()
-    }
-}
+//struct ScheduleCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScheduleCardView()
+//    }
+//}

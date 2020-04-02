@@ -17,6 +17,7 @@
 		615A92D02429E6A2000AEEE5 /* ClusterRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A92CF2429E6A2000AEEE5 /* ClusterRouting.swift */; };
 		615A92D2242AD989000AEEE5 /* StationRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A92D1242AD989000AEEE5 /* StationRouting.swift */; };
 		615A92D6242C06C0000AEEE5 /* VisitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A92D5242C06BF000AEEE5 /* VisitLog.swift */; };
+		615A92DA24350760000AEEE5 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A92D92435075F000AEEE5 /* Station.swift */; };
 		61A3DA0924198D200071C7E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA0824198D200071C7E9 /* AppDelegate.swift */; };
 		61A3DA0B24198D200071C7E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */; };
 		61A3DA0F24198D210071C7E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A3DA0E24198D210071C7E9 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		615A92CF2429E6A2000AEEE5 /* ClusterRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterRouting.swift; sourceTree = "<group>"; };
 		615A92D1242AD989000AEEE5 /* StationRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRouting.swift; sourceTree = "<group>"; };
 		615A92D5242C06BF000AEEE5 /* VisitLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitLog.swift; sourceTree = "<group>"; };
+		615A92D92435075F000AEEE5 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		61A3DA0524198D200071C7E9 /* Survey Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survey Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A3DA0824198D200071C7E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 			path = Routing;
 			sourceTree = "<group>";
 		};
+		615A92D82435071D000AEEE5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				615A92D92435075F000AEEE5 /* Station.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		61A3D9FC24198D200071C7E9 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 		61A3DA0724198D200071C7E9 /* Survey Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				615A92D82435071D000AEEE5 /* Models */,
 				61A3DA722425DFB40071C7E9 /* resources */,
 				61A3DA0824198D200071C7E9 /* AppDelegate.swift */,
 				61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */,
@@ -326,6 +337,7 @@
 				615A928C24282382000AEEE5 /* DynamicRouting.swift in Sources */,
 				61A3DA6C241EC5940071C7E9 /* HavingTroubleButtonView.swift in Sources */,
 				61A3DA0B24198D200071C7E9 /* SceneDelegate.swift in Sources */,
+				615A92DA24350760000AEEE5 /* Station.swift in Sources */,
 				615A92D2242AD989000AEEE5 /* StationRouting.swift in Sources */,
 				615A92D02429E6A2000AEEE5 /* ClusterRouting.swift in Sources */,
 				61A3DA412419E3B30071C7E9 /* MapView.swift in Sources */,

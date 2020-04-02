@@ -9,7 +9,7 @@
 import SwiftUI
 struct MainView: View {
     @State private var position = CardPosition.middle
-    @State private var background = BackgroundStyle.solid
+    @State private var background = BackgroundStyle.blur
     var dynamicRouting = DynamicRouting(Day: 1, PreStat: DynamicRouting.baseStat)
     var body: some View {
         ZStack(alignment: Alignment.top) {
@@ -18,8 +18,8 @@ struct MainView: View {
                 VStack {
                     //Text("Slide Over Card").font(.title)
                     //Spacer()
-                    NextStatCardView(routingInstance: self.dynamicRouting)
-                    ScheduleCardView()
+                    NextStatCardView(routing: self.dynamicRouting)
+                    ScheduleCardView(routing: self.dynamicRouting)
                     TroublesCardView()
                 }
             }

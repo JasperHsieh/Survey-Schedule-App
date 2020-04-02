@@ -8,7 +8,8 @@
 
 import Foundation
 
-class VisitLog {
+class VisitLog: Identifiable {
+    var id = UUID()
     var station: String
     var timestamp: Int
     var isRevisit: Bool

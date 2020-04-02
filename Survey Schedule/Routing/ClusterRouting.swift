@@ -13,27 +13,29 @@ class ClusterRouting{
     var clusterStartId = 100
 
     var clusterInfo: JSON
-    var workingTime: Int
+    var workingTime: Int // second
     let dataUtil: DataUtil
     let stationRouting: StationRouting
 
     init(clusterInfo: JSON, workingTime: Int){
         self.clusterInfo = clusterInfo
-        self.workingTime = workingTime
+        self.workingTime = workingTime * 60 * 60
         self.dataUtil = DataUtil()
         self.stationRouting = StationRouting()
     }
 
-    func getNextDaySchedule(info clusterInfo: JSON, workingTime: Int) -> Dictionary<Int, Any>{
+    func getNextDaySchedule(info clusterInfo: JSON, workingTime: Int) -> Dictionary<Int, [VisitLog]>{
         //let statInfo = DataUtil.statInfo
         var clusterInfo = DataUtil.clusterInfo!
         clusterInfo = resetVisitedStatus(jsonObj: clusterInfo)
+        var workingTime = workingTime * 60 * 60
 
         let startStat = "CS25"
         let startTime = 0
         var preStat = startStat
         var visitPath: [VisitLog] = [VisitLog(stat: preStat, timestamp: startTime, isRevisit: false)]
         var day = 1
+        var scheduleDic: [Int: [VisitLog]] = [:]
 
         print("getNextDaySchedule \(workingTime)")
         //while !visitedAll(jsonObj: clusterInfo){
@@ -117,6 +119,9 @@ class ClusterRouting{
             if visitedAll(jsonObj: clusterInfo) || (nextClusterFinishTime > workingTime) {
                 print("----- Day \(day) done -----")
                 print()
+
+                scheduleDic[day] = visitPath
+
                 preStat = startStat
                 visitPath = [VisitLog(stat: startStat, timestamp: startTime, isRevisit: false)]
                 day += 1
@@ -127,7 +132,7 @@ class ClusterRouting{
                 //print(clusterInfo)
             }
         }
-        return Dictionary()
+        return scheduleDic
     }
 
     func visitedAll(jsonObj: JSON) -> Bool{
