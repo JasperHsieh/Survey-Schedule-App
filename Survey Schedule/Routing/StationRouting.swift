@@ -14,8 +14,8 @@ class StationRouting {
     //let N: Int = 30 * 60
     let M: Int = 15 * 60
     let measureTime = 150
-    let dataUtil = DataUtil()
-    let clusterInfo = DataUtil.clusterInfo
+    //let dataUtil = DataUtil()
+    //let clusterInfo = DataUtil.clusterInfo
 
     var lastRepeatTime = 0
 
@@ -49,7 +49,7 @@ class StationRouting {
         if !pathSoFar.isEmpty {
             print("pathSoFar:")
             VisitLog.dumpPath(path: pathSoFar)
-            curTime = pathSoFar.last!.timestamp + dataUtil.getStatsTravelTime(stat1: pathSoFar.last!.station, stat2: statSeq.first!)
+            curTime = pathSoFar.last!.timestamp + getStatsTravelTime(stat1: pathSoFar.last!.station, stat2: statSeq.first!)
             //lastRepeatTime = curTime
             print("Update currentTime to \(curTime)")
             // update repeat time?
@@ -81,7 +81,7 @@ class StationRouting {
                         if curVisitLog.station == visitLog.station {
                             continue
                         }
-                        let curTravelTime = dataUtil.getStatsTravelTime(stat1: curVisitLog.station, stat2: visitLog.station)
+                        let curTravelTime = getStatsTravelTime(stat1: curVisitLog.station, stat2: visitLog.station)
                         if curTravelTime < M && (curTime + curTravelTime - visitLog.timestamp > N) && curTravelTime < minTravelTime {
                             minTravelTime = curTravelTime
                             minVisitLog = visitLog
@@ -107,7 +107,7 @@ class StationRouting {
             // Update current station
             if !statSeq.isEmpty {
                 let nextStat = statSeq[0]
-                let travelToNextTime = dataUtil.getStatsTravelTime(stat1: curVisitLog.station, stat2: nextStat)
+                let travelToNextTime = getStatsTravelTime(stat1: curVisitLog.station, stat2: nextStat)
                 curTime += travelToNextTime
                 curVisitLog = VisitLog(stat: nextStat, timestamp: curTime, isRevisit: false)
             }
@@ -174,7 +174,7 @@ class StationRouting {
         for (i, stat) in statList.enumerated() {
             //print("i=\(i) \(preStat) \(stat)")
             if i > 0 {
-                totalTime += dataUtil.getStatsTravelTime(stat1: preStat, stat2: stat)
+                totalTime += getStatsTravelTime(stat1: preStat, stat2: stat)
             }
             totalTime += measureTime
             preStat = stat

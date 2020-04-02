@@ -30,12 +30,12 @@ struct MasterButtonView: View {
                 Text("Master")
             }
         }.sheet(isPresented: $showingSheet) {
-            SecondView(routing: self.dynamicRouting)
+            ScheduleList(routing: self.dynamicRouting)
         }
     }
 }
 
-struct SecondView: View {
+struct ScheduleList: View {
     @Environment(\.presentationMode) var presentationMode
     //var name: String
     let dynamicRouting: DynamicRouting

@@ -25,7 +25,7 @@ class DynamicRouting{
     var beginDate: Date?
 
     var schedule: [Int: [VisitLog]] = [:]
-    var clusterInfo: JSON = DataUtil.clusterInfo ?? JSON()
+    //var clusterInfo: JSON = DataUtil.clusterInfo ?? JSON()
     var clusterRouting: ClusterRouting
 
     //var beginTime
@@ -34,11 +34,11 @@ class DynamicRouting{
         day = Day
         preStat = PreStat
         //statSequence = stations_everyday[Day] ?? []
-        clusterRouting = ClusterRouting(clusterInfo: self.clusterInfo, workingTime: dayLimit)
+        clusterRouting = ClusterRouting(clusterInfo: clusterInfo!, workingTime: dayLimit)
     }
 
     func getSchedule(){
-        schedule = clusterRouting.getNextDaySchedule(info: DataUtil.clusterInfo!, workingTime: dayLimit)
+        schedule = clusterRouting.getNextDaySchedule(info: clusterInfo!, workingTime: dayLimit)
     }
 
 //    func getNextStation(PreStat: String) -> String{

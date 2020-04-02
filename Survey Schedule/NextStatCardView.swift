@@ -19,7 +19,7 @@ struct NextStatCardView: View {
     let dynamicRouting: DynamicRouting
     let clusterRouting: ClusterRouting
     let stationRouting: StationRouting
-    let dataUtil: DataUtil
+    //let dataUtil: DataUtil
     let timeLimit = 8*60*60
 
     //var isStarted = false
@@ -28,8 +28,8 @@ struct NextStatCardView: View {
     init(routing dynamicRouting: DynamicRouting){
         self.dynamicRouting = dynamicRouting
         self.stationRouting = StationRouting()
-        self.dataUtil = DataUtil()
-        self.clusterRouting = ClusterRouting(clusterInfo: DataUtil.clusterInfo!, workingTime: timeLimit)
+        //self.dataUtil = DataUtil()
+        self.clusterRouting = ClusterRouting(clusterInfo: clusterInfo!, workingTime: timeLimit)
     }
 
     var body: some View {
