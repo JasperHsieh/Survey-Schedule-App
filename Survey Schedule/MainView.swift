@@ -11,6 +11,7 @@ struct MainView: View {
     @State private var position = CardPosition.middle
     @State private var background = BackgroundStyle.blur
     var dynamicRouting = DynamicRouting(Day: 1, PreStat: DynamicRouting.baseStat)
+    //@EnvironmentObject private var dynamicRouting: DynamicRouting
     var body: some View {
         ZStack(alignment: Alignment.top) {
             MapView()
@@ -19,7 +20,7 @@ struct MainView: View {
                     //Text("Slide Over Card").font(.title)
                     //Spacer()
                     NextStatCardView(routing: self.dynamicRouting)
-                    ScheduleCardView(routing: self.dynamicRouting)
+                    ScheduleCardView().environmentObject(self.dynamicRouting)
                     TroublesCardView()
                 }
             }

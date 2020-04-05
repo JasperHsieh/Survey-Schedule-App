@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct ScheduleCardView: View {
-    let dynamicRouting: DynamicRouting
+    @EnvironmentObject private var dynamicRouting: DynamicRouting
 
-    init(routing dynamicRouting: DynamicRouting){
-        self.dynamicRouting = dynamicRouting
-    }
+//    init(routing dynamicRouting: DynamicRouting){
+//        self.dynamicRouting = dynamicRouting
+//    }
 
     var body: some View {
         VStack(){
@@ -26,9 +26,9 @@ struct ScheduleCardView: View {
                 .padding(.top)
             HStack(){
                 Spacer()
-                MasterButtonView(routing: dynamicRouting)
+                MasterButtonView().environmentObject(dynamicRouting)
                 Spacer()
-                AllStationsButtonView()
+                AllStationsButtonView().environmentObject(dynamicRouting)
                 Spacer()
                 Spacer()
                 Spacer()

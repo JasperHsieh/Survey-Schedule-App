@@ -10,7 +10,7 @@ import Foundation
 import SwiftDate
 import SwiftyJSON
 
-class DynamicRouting{
+class DynamicRouting: ObservableObject{
     //let stations_everyday
 
     static let baseStat: String = "CS25"
@@ -19,6 +19,7 @@ class DynamicRouting{
     var isStarted = false
     let dayLimit: Int = 8 // hours
     var startTime = "10:00:00".toDate()
+    @Published var stationsList: [Station]
 
     var day: Int = 0
     var preStat: String
@@ -34,13 +35,13 @@ class DynamicRouting{
         day = Day
         preStat = PreStat
         //statSequence = stations_everyday[Day] ?? []
+        stationsList = getStationsList()
         clusterRouting = ClusterRouting(clusterInfo: clusterInfo!, workingTime: dayLimit)
     }
 
     func getSchedule(){
         schedule = clusterRouting.getNextDaySchedule(info: clusterInfo!, workingTime: dayLimit)
     }
-
 //    func getNextStation(PreStat: String) -> String{
 //        print("getNextStation")
 //        if preStat != PreStat{

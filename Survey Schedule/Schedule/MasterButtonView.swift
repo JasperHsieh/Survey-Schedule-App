@@ -11,11 +11,12 @@ import SwiftDate
 
 struct MasterButtonView: View {
     @State private var showingSheet = false
-    let dynamicRouting: DynamicRouting
+    @EnvironmentObject private var dynamicRouting: DynamicRouting
+    //let dynamicRouting: DynamicRouting
 
-    init(routing dynamicRouting: DynamicRouting){
-        self.dynamicRouting = dynamicRouting
-    }
+//    init(routing dynamicRouting: DynamicRouting){
+//        self.dynamicRouting = dynamicRouting
+//    }
 
     var body: some View {
         Button(action: {
@@ -30,19 +31,20 @@ struct MasterButtonView: View {
                 Text("Master")
             }
         }.sheet(isPresented: $showingSheet) {
-            ScheduleList(routing: self.dynamicRouting)
+            ScheduleList().environmentObject(self.dynamicRouting)
         }
     }
 }
 
 struct ScheduleList: View {
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject private var dynamicRouting: DynamicRouting
     //var name: String
-    let dynamicRouting: DynamicRouting
+    //let dynamicRouting: DynamicRouting
 
-    init(routing dynamicRouting: DynamicRouting){
-        self.dynamicRouting = dynamicRouting
-    }
+//    init(routing dynamicRouting: DynamicRouting){
+//        self.dynamicRouting = dynamicRouting
+//    }
 
     var body: some View {
         //Text("Hello, \(dynamicRouting.schedule[1]![1].station)!")
@@ -50,7 +52,7 @@ struct ScheduleList: View {
 //            self.presentationMode.wrappedValue.dismiss()
 //        }
         NavigationView {
-            List(dynamicRouting.schedule[1] ?? []){ visitLog in ScheduleRow(dynamicRouting: self.dynamicRouting, log: visitLog)
+            List(dynamicRouting.schedule[1] ?? []){ visitLog in ScheduleRow(log: visitLog).environmentObject(self.dynamicRouting)
             }
             .navigationBarTitle(Text("Master Schedule Today"))
             .navigationBarItems(trailing:
@@ -69,14 +71,15 @@ struct ScheduleList: View {
 }
 
 struct ScheduleRow: View {
-    let dynamicRouting: DynamicRouting
+    //let dynamicRouting: DynamicRouting
+    @EnvironmentObject private var dynamicRouting: DynamicRouting
     var log: VisitLog
     //let tmp = dynamicRouting.startTime! + log.timestamp.seconds
-    let timeStamp: String
+    let timeStamp: String = "10:00:01"
     var body: some View {
         HStack {
             Spacer()
-            Text(String(timeStamp))
+            Text(String((self.dynamicRouting.startTime! + log.timestamp.seconds).toFormat("HH:mm:ss")))
                 //.font(.system(size: 30))
                 .frame(width:UIScreen.main.bounds.width * 0.4, alignment: .leading)
             Spacer()
@@ -91,13 +94,13 @@ struct ScheduleRow: View {
             Spacer()
         }
     }
-    init(dynamicRouting: DynamicRouting, log: VisitLog) {
-        self.dynamicRouting = dynamicRouting
+    init(log: VisitLog) {
+        //self.dynamicRouting = dynamicRouting
         self.log = log
         let df = DateFormatter()
         df.dateFormat = "hh:mm:ss"
-        //tmp = df.string(from: dynamicRouting.startTime! + log.timestamp.seconds)
-        timeStamp = (dynamicRouting.startTime! + log.timestamp.seconds).toFormat("HH:mm:ss")
+        //timeStamp = df.string(from: dynamicRouting.startTime! + log.timestamp.seconds)
+        //timeStamp = (self.dynamicRouting.startTime! + log.timestamp.seconds).toFormat("HH:mm:ss")
     }
 }
 

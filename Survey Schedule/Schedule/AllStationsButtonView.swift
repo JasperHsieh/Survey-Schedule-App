@@ -10,7 +10,13 @@ import SwiftUI
 
 struct AllStationsButtonView: View {
     @State private var showingSheet = false
+    @EnvironmentObject private var dynamicRouting: DynamicRouting
+    //let dynamicRouting: DynamicRouting
 
+//    init(routing dynamicRouting: DynamicRouting){
+//        self.dynamicRouting = dynamicRouting
+//    }
+    
     var body: some View {
         Button(action: {
             print("click All Stations")
@@ -24,20 +30,22 @@ struct AllStationsButtonView: View {
                 Text("All Stations")
             }
         }.sheet(isPresented: $showingSheet) {
-            StationList()
+            StationList().environmentObject(self.dynamicRouting)
         }
     }
 }
 
 struct StationList: View {
     @Environment(\.presentationMode) var presentationMode
-    //var stationList: [Station]
+    @EnvironmentObject private var dynamicRouting: DynamicRouting
+    //let dynamicRouting: DynamicRouting
+
     var body: some View {
 
         NavigationView {
-            List(stationsList) { station in
-                NavigationLink(destination: StationDetails(station: station)) {
-                    StationRow(station: station)
+            List(dynamicRouting.stationsList) { station in
+                NavigationLink(destination: StationDetails(station: station).environmentObject(self.dynamicRouting)) {
+                    StationRow(station: station).environmentObject(self.dynamicRouting)
                 }
             }
             .navigationBarTitle(Text("All Stations"))
@@ -59,15 +67,39 @@ struct StationList: View {
 
 struct StationRow: View {
     var station: Station
+    @EnvironmentObject private var dynamicRouting: DynamicRouting
+    //var scheduling: String
     var body: some View {
         HStack {
+            Spacer()
             Text(station.name)
+                .frame(width:UIScreen.main.bounds.width * 0.4, alignment: .leading)
+            Spacer()
+            Spacer()
+            if station.isScheduled {
+                //print("\(station.name) \(station.isScheduled)")
+                Text("Scheduled")
+            } else {
+                Text("Not Scheduled")
+            }
+
+            Spacer()
+//            .frame(width:UIScreen.main.bounds.width * 0.4, alignment: .leading)
         }
+    }
+
+    init(station: Station) {
+        self.station = station
+//        if station.isScheduled {
+//            scheduling = "Scheduled"
+//        } else {
+//            scheduling = "Not Scheduled"
+//        }
     }
 }
 
-struct AllStationsButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        AllStationsButtonView()
-    }
-}
+//struct AllStationsButtonView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AllStationsButtonView()
+//    }
+//}
