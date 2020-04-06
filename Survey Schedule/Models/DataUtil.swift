@@ -65,7 +65,8 @@ func getStationsList()-> [Station] {
     for (station, _) in statInfo! {
         let id = statInfo![station]["id"].stringValue
         let image = "chilkoottrail"
-        let coordinate = CLLocationCoordinate2D(latitude: 37.410686, longitude: -122.059141)
+        let coordinate = CLLocationCoordinate2D(latitude: statInfo![station]["coordinates"][0].doubleValue, longitude: statInfo![station]["coordinates"][1].doubleValue)
+        //let coordinate = CLLocationCoordinate2D(latitude: 37.410686, longitude: -122.059141)
         //let cluster = statInfo![station]["cluster"]
         statList.append(Station(id: id, name: station, image: image, coordinate: coordinate))
     }

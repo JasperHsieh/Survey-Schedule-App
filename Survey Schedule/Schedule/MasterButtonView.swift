@@ -12,11 +12,6 @@ import SwiftDate
 struct MasterButtonView: View {
     @State private var showingSheet = false
     @EnvironmentObject private var dynamicRouting: DynamicRouting
-    //let dynamicRouting: DynamicRouting
-
-//    init(routing dynamicRouting: DynamicRouting){
-//        self.dynamicRouting = dynamicRouting
-//    }
 
     var body: some View {
         Button(action: {

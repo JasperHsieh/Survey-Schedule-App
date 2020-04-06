@@ -508,6 +508,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Survey Schedule/Preview Content\"";
+				DEVELOPMENT_TEAM = 5T4LRZRCN3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Survey Schedule/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -528,6 +529,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Survey Schedule/Preview Content\"";
+				DEVELOPMENT_TEAM = 5T4LRZRCN3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Survey Schedule/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
