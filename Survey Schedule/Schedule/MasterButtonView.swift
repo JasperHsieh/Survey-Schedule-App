@@ -49,7 +49,7 @@ struct ScheduleList: View {
         NavigationView {
             List(dynamicRouting.schedule[1] ?? []){ visitLog in ScheduleRow(log: visitLog).environmentObject(self.dynamicRouting)
             }
-            .navigationBarTitle(Text("Master Schedule Today"))
+            .navigationBarTitle(Text("Master Schedule"))
             .navigationBarItems(trailing:
                 Button(action: {
                     print("Help tapped!")

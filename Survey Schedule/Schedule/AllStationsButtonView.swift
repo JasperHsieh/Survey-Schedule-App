@@ -38,7 +38,7 @@ struct AllStationsButtonView: View {
 struct StationList: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject private var dynamicRouting: DynamicRouting
-    //let dynamicRouting: DynamicRouting
+    @State private var showingAlert = false
 
     var body: some View {
 
@@ -49,20 +49,60 @@ struct StationList: View {
                 }
             }
             .navigationBarTitle(Text("All Stations"))
-            .navigationBarItems(trailing:
-                Button(action: {
-                    print("Help tapped!")
+            .navigationBarItems(
+                leading: Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image("Cancel Img")
-                    .renderingMode(.original)
-                    .resizable()
-                    .frame(width: 30, height: 30)
-                }
+                }, label: { Text("Cancel") }),
+
+                trailing: Button(action: {
+                    self.showingAlert = true
+                }, label: { Text("Apply") })
+                    .alert(isPresented:$showingAlert) {
+                        Alert(title: Text("Are you sure you want to apply the stations?"), message: Text("It will take few minutes to reschedule"), primaryButton: .default(Text("Apply")) {
+                                print("Apply...")
+                            self.applyStationsChange()
+                        }, secondaryButton: .cancel())
+                    }
             )
         }
     }
+//    func handleCancel(){
+//        print("Click cancel")
+//        self.presentationMode.wrappedValue.dismiss()
+//    }
+//
+//    func handleApply(){
+//        print("Click Apply")
+//        self.showingAlert = true
+//    }
 
+    func applyStationsChange() {
+        print("Apply stations change")
+    }
+
+}
+
+
+
+struct NavigationCancelButton: View {
+    @Binding var isPresented: Bool
+    var body: some View {
+        Button(action: {
+            print("Click cancel")
+        }) {
+            Text("Cancel")
+        }
+    }
+}
+
+struct NavigationApplyButton: View {
+    var body: some View {
+        Button(action: {
+            print("Click apply")
+        }) {
+            Text("Apply")
+        }
+    }
 }
 
 struct StationRow: View {
@@ -90,11 +130,6 @@ struct StationRow: View {
 
     init(station: Station) {
         self.station = station
-//        if station.isScheduled {
-//            scheduling = "Scheduled"
-//        } else {
-//            scheduling = "Not Scheduled"
-//        }
     }
 }
 
