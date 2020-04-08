@@ -9,16 +9,29 @@
 import SwiftUI
 
 struct HavingTroubleButtonView: View {
+    @State private var showingSheet = false
+
     var body: some View {
         Button(action: {
-            print("click having tourble")
+            print("click TroubleShooting")
+            self.showingSheet = true
         }){
             Text("Having trouble going to the station?")
-                .fontWeight(.bold)
                 .padding()
                 .background(Color(hex: "#CB395B"))
                 .foregroundColor(.white)
                 .cornerRadius(20)
+        }
+        .actionSheet(isPresented: $showingSheet) {
+            ActionSheet(title: Text("The reason you can't get there"),  buttons:[
+                .default(Text("Can't get there")){
+                    print("Click Can't get there")
+                },
+                .default(Text("End survey today")){
+                    print("Click End survey today")
+                },
+                .cancel()
+            ])
         }
     }
 }

@@ -21,7 +21,7 @@ struct MainView: View {
                     //Spacer()
                     NextStatCardView(routing: self.dynamicRouting)
                     ScheduleCardView().environmentObject(self.dynamicRouting)
-                    TroublesCardView()
+                    TroublesCardView().environmentObject(self.dynamicRouting)
                 }
             }
         }

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct TroublesCardView: View {
+    @EnvironmentObject private var dynamicRouting: DynamicRouting
     var body: some View {
         VStack(){
             Text("Troubleshooting")

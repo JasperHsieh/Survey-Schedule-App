@@ -21,6 +21,7 @@ struct AllStationsButtonView: View {
         Button(action: {
             print("click All Stations")
             self.showingSheet.toggle()
+            self.dynamicRouting.backupStationsSetting()
         }){
             VStack(){
                 Image("All Stations Img")
@@ -78,6 +79,12 @@ struct StationList: View {
 
     func applyStationsChange() {
         print("Apply stations change")
+        if dynamicRouting.isScheduledStationsChanged() {
+
+        }else {
+            print("Stations schedule didn't change")
+        }
+        self.presentationMode.wrappedValue.dismiss()
     }
 
 }
