@@ -40,6 +40,7 @@ struct StationList: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject private var dynamicRouting: DynamicRouting
     @State private var showingAlert = false
+    @State private var showingLoading = false
 
     var body: some View {
 
@@ -60,11 +61,16 @@ struct StationList: View {
                 }, label: { Text("Apply") })
                     .alert(isPresented:$showingAlert) {
                         Alert(title: Text("Are you sure you want to apply the stations?"), message: Text("It will take few minutes to reschedule"), primaryButton: .default(Text("Apply")) {
-                                print("Apply...")
+                            print("Apply...")
                             self.applyStationsChange()
+                            //self.dynamicRouting.getSchedule()
                         }, secondaryButton: .cancel())
                     }
             )
+        }.sheet(isPresented: $showingLoading) {
+            //print("hahaha")
+            LoadingView().environmentObject(self.dynamicRouting)
+            //StationList().environmentObject(self.dynamicRouting)
         }
     }
 //    func handleCancel(){
@@ -80,11 +86,12 @@ struct StationList: View {
     func applyStationsChange() {
         print("Apply stations change")
         if dynamicRouting.isScheduledStationsChanged() {
-
+            self.showingLoading.toggle()
+            //dynamicRouting.getSchedule()
         }else {
             print("Stations schedule didn't change")
         }
-        self.presentationMode.wrappedValue.dismiss()
+        //self.presentationMode.wrappedValue.dismiss()
     }
 
 }

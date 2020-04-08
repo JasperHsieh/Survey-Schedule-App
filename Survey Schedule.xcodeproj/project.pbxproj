@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1ADF1187CDEE636BDC96F92A /* Pods_Survey_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A86CD61C21DAF87A9CD818 /* Pods_Survey_Schedule.framework */; };
+		61470CD0243D65690069895C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61470CCF243D65690069895C /* LoadingView.swift */; };
 		615A92822426CA76000AEEE5 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 615A92812426CA76000AEEE5 /* test.json */; };
 		615A92862426FAD7000AEEE5 /* cluster_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 615A92832426FAD7000AEEE5 /* cluster_info.json */; };
 		615A92872426FAD7000AEEE5 /* stat_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 615A92842426FAD7000AEEE5 /* stat_info.json */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		0B4511DF892270897DD2FD6F /* Pods-Survey Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		3CA31DC08A2C805C7794E953 /* Pods-Survey Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey Schedule.release.xcconfig"; path = "Target Support Files/Pods-Survey Schedule/Pods-Survey Schedule.release.xcconfig"; sourceTree = "<group>"; };
+		61470CCF243D65690069895C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		615A92812426CA76000AEEE5 /* test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		615A92832426FAD7000AEEE5 /* cluster_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cluster_info.json; sourceTree = "<group>"; };
 		615A92842426FAD7000AEEE5 /* stat_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stat_info.json; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				615A92DE2436F044000AEEE5 /* CircleImage.swift */,
 				615A92E02436F0C6000AEEE5 /* StationMapView.swift */,
+				61470CCF243D65690069895C /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				61A3DA5A241EA1B00071C7E9 /* DoneButtonView.swift in Sources */,
 				61A3DA70241F04750071C7E9 /* MainView.swift in Sources */,
 				61A3DA67241EB8C60071C7E9 /* AllStationsButtonView.swift in Sources */,
+				61470CD0243D65690069895C /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
