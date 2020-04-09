@@ -87,6 +87,15 @@ struct StationList: View {
         print("Apply stations change")
         if dynamicRouting.isScheduledStationsChanged() {
             self.showingLoading.toggle()
+            DispatchQueue.global(qos: .userInitiated).async {
+                print("This is run on the background queue")
+                self.dynamicRouting.getSchedule()
+                DispatchQueue.main.async {
+                    print("This is run on the main queue, after the previous code in outer block")
+                    self.showingLoading.toggle()
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+            }
             //dynamicRouting.getSchedule()
         }else {
             print("Stations schedule didn't change")

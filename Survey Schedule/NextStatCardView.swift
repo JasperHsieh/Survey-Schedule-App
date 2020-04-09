@@ -15,6 +15,7 @@ struct NextStatCardView: View {
     @State var nextStation: String = DynamicRouting.baseStat
     @State var nextTravelTime: String = "1:00"
     @State var nextButton: String = "Start"
+    @State private var showingLoading = false
     //var dynamicRouting = DynamicRouting(Day: 1, PreStat: DynamicRouting.baseStat)
     let dynamicRouting: DynamicRouting
     let clusterRouting: ClusterRouting
@@ -60,6 +61,8 @@ struct NextStatCardView: View {
                         .background(Color.green)
                         .foregroundColor(.white)
                         .cornerRadius(20)
+                }.sheet(isPresented: $showingLoading) {
+                    LoadingView().environmentObject(self.dynamicRouting)
                 }
 
                 Spacer()
@@ -75,12 +78,22 @@ struct NextStatCardView: View {
         if !dynamicRouting.isStarted {
             //self.isStarted = true
             print("Start dynamic routing")
+            self.showingLoading.toggle()
             dynamicRouting.isStarted = true
             //clusterRouting.getNextDaySchedule(info: DataUtil.clusterInfo!, workingTime: timeLimit)
-            dynamicRouting.getSchedule()
-            nextButton = "Done"
+            DispatchQueue.global(qos: .userInitiated).async {
+                print("This is run on the background queue")
+                self.dynamicRouting.getSchedule()
+                DispatchQueue.main.async {
+                    print("This is run on the main queue, after the previous code in outer block")
+                    self.nextButton = "Done"
+                    self.showingLoading.toggle()
+                }
+            }
+            //dynamicRouting.getSchedule()
+            //nextButton = "Done"
             let here = Region(calendar: Calendars.gregorian, zone: Zones.current, locale: Locales.englishUnitedStatesComputer)
-            //dynamicRouting.startTime = DateInRegion(Date(), region: here)
+            dynamicRouting.startTime = DateInRegion(Date(), region: here)
             print(dynamicRouting.startTime)
         }
         //
