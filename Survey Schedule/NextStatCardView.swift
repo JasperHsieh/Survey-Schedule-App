@@ -22,7 +22,7 @@ struct NextStatCardView: View {
     let stationRouting: StationRouting
     //let dataUtil: DataUtil
     let timeLimit = 8*60*60
-
+    @Environment(\.colorScheme) var colorScheme
     //var isStarted = false
     //ar nextButton = "Start"
 
@@ -69,7 +69,7 @@ struct NextStatCardView: View {
             }.padding(.bottom)
         }
         .frame(width:UIScreen.main.bounds.width * 0.9/*, height: 200*/)
-        .background(Color.white)
+        .background(colorScheme == .dark ? Color.black : Color.white)
         .cornerRadius(10)
         .padding(.top)
     }

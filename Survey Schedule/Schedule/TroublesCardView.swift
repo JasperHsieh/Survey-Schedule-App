@@ -10,6 +10,8 @@ import SwiftUI
 
 struct TroublesCardView: View {
     @EnvironmentObject private var dynamicRouting: DynamicRouting
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View {
         VStack(){
             Text("Troubleshooting")
@@ -23,7 +25,7 @@ struct TroublesCardView: View {
             HavingTroubleButtonView().padding()
         }
         .frame(width:UIScreen.main.bounds.width * 0.9/*, height: 200*/)
-        .background(Color.white)
+        .background(colorScheme == .dark ? Color.black : Color.white)
         .cornerRadius(10)
         //.padding(.top)
     }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ScheduleCardView: View {
     @EnvironmentObject private var dynamicRouting: DynamicRouting
-
+    @Environment(\.colorScheme) var colorScheme
 //    init(routing dynamicRouting: DynamicRouting){
 //        self.dynamicRouting = dynamicRouting
 //    }
@@ -35,7 +35,7 @@ struct ScheduleCardView: View {
             }.padding(.bottom)
         }
         .frame(width:UIScreen.main.bounds.width * 0.9/*, height: 200*/)
-        .background(Color.white)
+        .background(colorScheme == .dark ? Color.black : Color.white)
         .cornerRadius(10)
         .padding(.bottom)
 
