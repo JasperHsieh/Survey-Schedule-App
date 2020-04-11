@@ -14,6 +14,7 @@ struct Station: Identifiable {
     var id: String
     var name: String
     var isScheduled = true
+    var isVisited = false
     fileprivate var imageName: String
     var locationCoordinate: CLLocationCoordinate2D
 

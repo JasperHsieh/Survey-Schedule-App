@@ -19,6 +19,9 @@ let clusterInfo = readJsonFromFile(filePath: clusterInfoFile)
 let statInfo = readJsonFromFile(filePath: statInfoFile)
 let statTravelTimeInfo = readJsonFromFile(filePath: statTravelTimeFile)
 
+let WorkingHour = 8
+let BaseStation = "CS25"
+
 func readJsonFromFile(filePath: String) -> JSON?{
     //var jsonObj:JSON? = nil
     if let path = Bundle.main.path(forResource: filePath, ofType: "json") {

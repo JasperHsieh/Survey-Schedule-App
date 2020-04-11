@@ -13,8 +13,11 @@ import SwiftyJSON
 class DynamicRouting: ObservableObject{
     //let stations_everyday
 
-    static let baseStat: String = "CS25"
+    //let baseStat: String = "CS25"
     static let N: Int = 2 // hours
+    var currentStation: String = "@^@"
+    var nextStation: String = "NASA"
+    var nextTravelTime: String = "00:00"
 
     var isStarted = false
     let dayLimit: Int = 8 // hours
@@ -24,26 +27,78 @@ class DynamicRouting: ObservableObject{
     @Published var stationsList: [Station]
     var stationListBackUp: [Bool] = []
 
-    var day: Int = 0
-    var preStat: String
+    //var day: Int = 0
+    //var preStat: String
     var beginDate: Date?
 
-    var schedule: [Int: [VisitLog]] = [:]
-    //var clusterInfo: JSON = DataUtil.clusterInfo ?? JSON()
+    var masterSchedule: [[VisitLog]] = [[]]
     var clusterRouting: ClusterRouting
+    var stationRouting: StationRouting
 
     //var beginTime
 
-    init(Day: Int, PreStat: String){
-        day = Day
-        preStat = PreStat
+    init(){
         //statSequence = stations_everyday[Day] ?? []
         stationsList = getStationsList()
         clusterRouting = ClusterRouting(clusterInfo: clusterInfo!, workingTime: dayLimit)
+        stationRouting = StationRouting()
     }
 
-    func getSchedule(){
-        schedule = clusterRouting.getNextDaySchedule(info: clusterInfo!, workingTime: dayLimit)
+    func makeRoutingSchedule(clusters: JSON, workintHour: Int, currentStat: String){
+        masterSchedule = clusterRouting.getCompleteSchedule(info: clusters, workingHour: workintHour, currentStat: currentStat)
+        updateFirstStation()
+    }
+
+    func applyStationsChangeToSchedule() {
+        let clusters = createClusters()
+        print(clusters)
+        masterSchedule = clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: currentStation)
+    }
+
+    func createClusters() -> JSON {
+        var clustersJson = JSON()
+        var tmpDic: [String: [String]] = [:]
+
+        for station in stationsList {
+            if station.isScheduled && !station.isVisited {
+                let cluster = getCluster(station: station)
+                let clusterExists = tmpDic[cluster] != nil
+                if !clusterExists {
+                    tmpDic[cluster] = []
+                }
+                tmpDic[cluster]!.append(station.name)
+            }
+        }
+
+        for (cluster, stations) in tmpDic {
+            print("\(cluster) \(stations)")
+            clustersJson[cluster] = JSON()
+            clustersJson[cluster]["stations"] = JSON(stations)
+            clustersJson[cluster]["start"] = JSON(stationRouting.getStartStat(statList: stations))
+        }
+        return clustersJson
+    }
+
+    func getCluster(station: Station) -> String {
+        if statInfo![station.name].exists() {
+            if statInfo![station.name]["cluster"].exists() {
+                return statInfo![station.name]["cluster"].stringValue
+            } else {
+                print("station \(station.name) cluster not found in statInfo")
+            }
+        } else {
+            print("station \(station.name) not found in statInfo")
+        }
+        return "Not Found"
+    }
+
+    func updateFirstStation() {
+        if masterSchedule.isEmpty || masterSchedule[0].isEmpty {
+            print("Master Schedule is empty")
+            return
+        }
+        let nextVisitLog = masterSchedule[0][0]
+        nextStation = nextVisitLog.station
     }
 
     func backupStationsSetting() {
@@ -64,6 +119,9 @@ class DynamicRouting: ObservableObject{
         return false
     }
 
+    func getNextStation() {
+
+    }
 //    func getNextStation(PreStat: String) -> String{
 //        print("getNextStation")
 //        if preStat != PreStat{

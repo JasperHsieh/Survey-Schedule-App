@@ -47,7 +47,7 @@ struct ScheduleList: View {
 //            self.presentationMode.wrappedValue.dismiss()
 //        }
         NavigationView {
-            List(dynamicRouting.schedule[1] ?? []){ visitLog in ScheduleRow(log: visitLog).environmentObject(self.dynamicRouting)
+            List(dynamicRouting.masterSchedule[0]){ visitLog in ScheduleRow(log: visitLog).environmentObject(self.dynamicRouting)
             }
             .navigationBarTitle(Text("Master Schedule"))
             .navigationBarItems(trailing:

@@ -24,8 +24,8 @@ struct HavingTroubleButtonView: View {
         }
         .actionSheet(isPresented: $showingSheet) {
             ActionSheet(title: Text("The reason you can't get there"),  buttons:[
-                .default(Text("Can't get there")){
-                    print("Click Can't get there")
+                .default(Text("Not going to visit the station")){
+                    print("Click Not going to visit the station")
                 },
                 .default(Text("End survey today")){
                     print("Click End survey today")

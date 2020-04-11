@@ -89,7 +89,8 @@ struct StationList: View {
             self.showingLoading.toggle()
             DispatchQueue.global(qos: .userInitiated).async {
                 print("This is run on the background queue")
-                self.dynamicRouting.getSchedule()
+                self.dynamicRouting.applyStationsChangeToSchedule()
+
                 DispatchQueue.main.async {
                     print("This is run on the main queue, after the previous code in outer block")
                     self.showingLoading.toggle()
@@ -99,6 +100,7 @@ struct StationList: View {
             //dynamicRouting.getSchedule()
         }else {
             print("Stations schedule didn't change")
+            self.presentationMode.wrappedValue.dismiss()
         }
         //self.presentationMode.wrappedValue.dismiss()
     }

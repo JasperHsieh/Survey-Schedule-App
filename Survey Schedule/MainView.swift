@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @State private var position = CardPosition.middle
     @State private var background = BackgroundStyle.blur
-    var dynamicRouting = DynamicRouting(Day: 1, PreStat: DynamicRouting.baseStat)
+    var dynamicRouting = DynamicRouting()
     //@EnvironmentObject private var dynamicRouting: DynamicRouting
     var body: some View {
         ZStack(alignment: Alignment.top) {

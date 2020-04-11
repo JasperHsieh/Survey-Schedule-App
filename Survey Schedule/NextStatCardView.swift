@@ -12,8 +12,8 @@ import SwiftDate
 import Combinatorics
 
 struct NextStatCardView: View {
-    @State var nextStation: String = DynamicRouting.baseStat
-    @State var nextTravelTime: String = "1:00"
+    //@State var nextStation: String = DynamicRouting.baseStat
+    @State var nextTravelTime: String = "00:00"
     @State var nextButton: String = "Start"
     @State private var showingLoading = false
     //var dynamicRouting = DynamicRouting(Day: 1, PreStat: DynamicRouting.baseStat)
@@ -46,11 +46,12 @@ struct NextStatCardView: View {
                 //Image
                 Spacer()
                 Image("Next Station Img").resizable().frame(width: 50, height: 50)
-                Spacer()
+                //Spacer()
                 VStack(alignment: .leading){
-                    Text(nextStation).font(.headline)
+                    Text(dynamicRouting.nextStation).font(.headline)
                     Text(nextTravelTime).foregroundColor(.gray)
                 }
+                .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
                 Spacer()
                 Spacer()
                 //DoneButtonView()
@@ -76,44 +77,28 @@ struct NextStatCardView: View {
     func doneAction(){
         print("Click Done")
         if !dynamicRouting.isStarted {
-            //self.isStarted = true
-            print("Start dynamic routing")
+            // Prepare for start
             self.showingLoading.toggle()
             dynamicRouting.isStarted = true
-            //clusterRouting.getNextDaySchedule(info: DataUtil.clusterInfo!, workingTime: timeLimit)
-            DispatchQueue.global(qos: .userInitiated).async {
-                print("This is run on the background queue")
-                self.dynamicRouting.getSchedule()
-                DispatchQueue.main.async {
-                    print("This is run on the main queue, after the previous code in outer block")
-                    self.nextButton = "Done"
-                    self.showingLoading.toggle()
-                }
-            }
-            //dynamicRouting.getSchedule()
-            //nextButton = "Done"
+            makeSchedule()
             let here = Region(calendar: Calendars.gregorian, zone: Zones.current, locale: Locales.englishUnitedStatesComputer)
             dynamicRouting.startTime = DateInRegion(Date(), region: here)
-            print(dynamicRouting.startTime)
+            //print(dynamicRouting.startTime)
+        } else {
+            // dynamic plan next station
         }
-        //
-        //let statList = DataUtil.clusterInfo!["1"]["stations"].arrayObject
-        //let statList = DataUtil.clusterInfo!["1"]["stations"].arrayValue.map {$0.stringValue}
-        //print("statList: \(statList)")
-        //let statList = ["RE3", "RE35", "RE2", "CS31", "RE40", "COSO3", "RE39"]
-        //stationRouting.getMinTimePermutation(statList: statList)
-        //stationRouting.getVisitPath(statList: statList as! [String], pathSoFar: [])
-        //stationRouting.simulateVisitStations(statList: statList, pathSoFar: [])
-        //let tmp = ["DOR39", "DOR38", "DOR37", "CS8"]
-        //stationRouting.getTotalVisitTime(statList: tmp)
-        //let time = dataUtil.getStatsTravelTime(stat1: statList[0], stat2: statList[1])
-        //print("time: \(time)")
-//        let tmpj: JSON = ["t1": "abc", "t2": "cdf"]
-//        let k = "t1"
-//        if tmpj[k].exists() {
-//            print(tmpj[k])
-//        }
+    }
 
+    func makeSchedule() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            //print("This is run on the background queue")
+            self.dynamicRouting.makeRoutingSchedule(clusters: clusterInfo ?? JSON(), workintHour: WorkingHour, currentStat: BaseStation)
+            DispatchQueue.main.async {
+                //print("This is run on the main queue, after the previous code in outer block")
+                self.nextButton = "Done"
+                self.showingLoading.toggle()
+            }
+        }
     }
 }
 

@@ -122,6 +122,7 @@
 		615A92DD2436F022000AEEE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */,
 				615A92DE2436F044000AEEE5 /* CircleImage.swift */,
 				615A92E02436F0C6000AEEE5 /* StationMapView.swift */,
 				61470CCF243D65690069895C /* LoadingView.swift */,
@@ -152,13 +153,12 @@
 			children = (
 				61A3DA722425DFB40071C7E9 /* Resources */,
 				615A92D82435071D000AEEE5 /* Models */,
+				615A92DD2436F022000AEEE5 /* Views */,
 				61A3DA0824198D200071C7E9 /* AppDelegate.swift */,
 				61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */,
 				61A3DA6F241F04750071C7E9 /* MainView.swift */,
-				61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */,
 				61A3DA402419E3B30071C7E9 /* MapView.swift */,
 				615A92D5242C06BF000AEEE5 /* VisitLog.swift */,
-				615A92DD2436F022000AEEE5 /* Views */,
 				615A92D7242EAEE2000AEEE5 /* Routing */,
 				61A3DA5E241EAF580071C7E9 /* Next Station */,
 				61A3DA5F241EAFC90071C7E9 /* Schedule */,

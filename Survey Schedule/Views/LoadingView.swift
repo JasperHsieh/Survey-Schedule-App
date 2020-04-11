@@ -53,8 +53,9 @@ struct LoadingView: View {
                 .onAppear() {
                     self.amosPulsing.toggle()
             }
-            Text("Calculating")
+            Text("Calculating routes")
             .foregroundColor(.white)
+            .bold()
         }
     }
 }
