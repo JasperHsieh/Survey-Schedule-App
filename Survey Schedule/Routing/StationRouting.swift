@@ -124,8 +124,15 @@ class StationRouting {
             print("statList is empty")
             return ""
         }
-        let minPerm = getMinTimePermutation(statList: statList)
-        return minPerm.first!
+        let start = getStationsStartFromCache(stations: statList)
+        if start != InvalidStation {
+            //print("get start \(start) from cache")
+            return start
+        } else {
+            let minPerm = getMinTimePermutation(statList: statList)
+            setStationsStartToCache(minStations: minPerm)
+            return minPerm.first!
+        }
     }
 
     func getMinTimePermutationWithStart(startStat: String, statList: [String]) -> [String] {

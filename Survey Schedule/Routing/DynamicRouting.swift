@@ -15,7 +15,7 @@ class DynamicRouting: ObservableObject{
 
     //let baseStat: String = "CS25"
     static let N: Int = 2 // hours
-    var currentStation: String = "@^@"
+    var currentStation: String = BaseStation
     var nextStation: String = "NASA"
     var nextTravelTime: String = "00:00"
 
@@ -51,7 +51,7 @@ class DynamicRouting: ObservableObject{
 
     func applyStationsChangeToSchedule() {
         let clusters = createClusters()
-        print(clusters)
+        //print(clusters)
         masterSchedule = clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: currentStation)
     }
 
@@ -71,7 +71,7 @@ class DynamicRouting: ObservableObject{
         }
 
         for (cluster, stations) in tmpDic {
-            print("\(cluster) \(stations)")
+            //print("\(cluster) \(stations)")
             clustersJson[cluster] = JSON()
             clustersJson[cluster]["stations"] = JSON(stations)
             clustersJson[cluster]["start"] = JSON(stationRouting.getStartStat(statList: stations))

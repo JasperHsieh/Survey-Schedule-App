@@ -14,13 +14,16 @@ import CoreLocation
 let clusterInfoFile = "cluster_info"
 let statInfoFile = "stat_info"
 let statTravelTimeFile = "stat_travel_time"
+let statPermCacheFile = "stat_perm_cache"
 
 let clusterInfo = readJsonFromFile(filePath: clusterInfoFile)
 let statInfo = readJsonFromFile(filePath: statInfoFile)
 let statTravelTimeInfo = readJsonFromFile(filePath: statTravelTimeFile)
+var statPermCache = readJsonFromFile(filePath: statPermCacheFile)
 
 let WorkingHour = 8
 let BaseStation = "CS25"
+let InvalidStation = "Mars"
 
 func readJsonFromFile(filePath: String) -> JSON?{
     //var jsonObj:JSON? = nil
@@ -78,6 +81,43 @@ func getStationsList()-> [Station] {
     }
     //print(statList)
     return statList
+}
+
+func getStationsStartFromCache(stations: [String]) -> String {
+    let key = getKey(stations: stations)
+    if statPermCache![key].exists() && statPermCache![key]["start"].exists(){
+        return statPermCache![key]["start"].stringValue
+    } else {
+        return InvalidStation
+    }
+}
+
+func setStationsStartToCache(minStations: [String]) {
+    if minStations.isEmpty {
+        print("minStations is empty")
+        return
+    }
+    let start = minStations[0]
+    var stats = minStations
+    stats.sort {
+        $0 < $1
+    }
+    let key = getKey(stations: stats)
+    if statPermCache![key].exists() {
+        print("Key already exists in statPermCache")
+    }
+    print("Set stations start to cache \(key)")
+    statPermCache![key] = JSON()
+    statPermCache![key]["start"] = JSON(start)
+    statPermCache![key]["min_permutation"] = JSON(minStations)
+}
+
+func getKey(stations: [String]) -> String {
+    var key = ""
+    for stat in stations {
+        key = key + stat + "#"
+    }
+    return key
 }
 
 final class ImageStore {

@@ -23,6 +23,7 @@
 		615A92DF2436F044000AEEE5 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A92DE2436F044000AEEE5 /* CircleImage.swift */; };
 		615A92E12436F0C6000AEEE5 /* StationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615A92E02436F0C6000AEEE5 /* StationMapView.swift */; };
 		615A92E32436F8F0000AEEE5 /* chilkoottrail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 615A92E22436F8F0000AEEE5 /* chilkoottrail.jpg */; };
+		619847D12442E3C7005FA1F3 /* stat_perm_cache.json in Resources */ = {isa = PBXBuildFile; fileRef = 619847D02442E3C7005FA1F3 /* stat_perm_cache.json */; };
 		61A3DA0924198D200071C7E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA0824198D200071C7E9 /* AppDelegate.swift */; };
 		61A3DA0B24198D200071C7E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */; };
 		61A3DA0F24198D210071C7E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A3DA0E24198D210071C7E9 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		615A92DE2436F044000AEEE5 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		615A92E02436F0C6000AEEE5 /* StationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationMapView.swift; sourceTree = "<group>"; };
 		615A92E22436F8F0000AEEE5 /* chilkoottrail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chilkoottrail.jpg; sourceTree = "<group>"; };
+		619847D02442E3C7005FA1F3 /* stat_perm_cache.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stat_perm_cache.json; sourceTree = "<group>"; };
 		61A3DA0524198D200071C7E9 /* Survey Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survey Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A3DA0824198D200071C7E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61A3DA0A24198D200071C7E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				615A92832426FAD7000AEEE5 /* cluster_info.json */,
+				619847D02442E3C7005FA1F3 /* stat_perm_cache.json */,
 				615A92842426FAD7000AEEE5 /* stat_info.json */,
 				615A92852426FAD7000AEEE5 /* stat_travel_time.json */,
 				615A92812426CA76000AEEE5 /* test.json */,
@@ -295,6 +298,7 @@
 				615A92E32436F8F0000AEEE5 /* chilkoottrail.jpg in Resources */,
 				615A92872426FAD7000AEEE5 /* stat_info.json in Resources */,
 				61A3DA1224198D210071C7E9 /* Preview Assets.xcassets in Resources */,
+				619847D12442E3C7005FA1F3 /* stat_perm_cache.json in Resources */,
 				615A92822426CA76000AEEE5 /* test.json in Resources */,
 				61A3DA0F24198D210071C7E9 /* Assets.xcassets in Resources */,
 				615A92882426FAD7000AEEE5 /* stat_travel_time.json in Resources */,
