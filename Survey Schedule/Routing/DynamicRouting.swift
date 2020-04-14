@@ -42,6 +42,7 @@ class DynamicRouting: ObservableObject{
         stationsList = getStationsList()
         clusterRouting = ClusterRouting(clusterInfo: clusterInfo!, workingTime: dayLimit)
         stationRouting = StationRouting()
+        //stationRouting.getMinTimePermutation(statList: clusterInfo!["1"]["stations"].arrayValue.map {$0.stringValue})
     }
 
     func makeRoutingSchedule(clusters: JSON, workintHour: Int, currentStat: String){
@@ -51,7 +52,7 @@ class DynamicRouting: ObservableObject{
 
     func applyStationsChangeToSchedule() {
         let clusters = createClusters()
-        //print(clusters)
+        print(clusters)
         masterSchedule = clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: currentStation)
     }
 

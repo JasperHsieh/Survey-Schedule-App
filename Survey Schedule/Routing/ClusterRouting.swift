@@ -63,7 +63,7 @@ class ClusterRouting{
 
             // Check if we finish next cluster in time
             print()
-            print("*** Checking cluster \(nextCluster) ***")
+            print("*** Checking closest cluster \(nextCluster) ***")
             //var nextClusterVisitPath = stationRouting.getVisitPath(statList: clusterVisit[nextCluster]["stations"].arrayObject as! [String], pathSoFar: visitPath)
             var nextClusterVisitPath = stationRouting.getVisitPath(statList: clusterVisit[nextCluster]["stations"].arrayObject as! [String], pathSoFar: visitPath, cluster: nextCluster)
             let nextClusterLastVisitLog = nextClusterVisitPath.last!

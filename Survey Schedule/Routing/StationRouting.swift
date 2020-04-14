@@ -27,11 +27,10 @@ class StationRouting {
     }
 
     func getVisitPath(statList: [String], pathSoFar: [VisitLog], cluster: String) -> [VisitLog]{
-        let minTimePerm: [String]
-        if clusterInfo![cluster]["min_permutation"].exists() {
-            minTimePerm = clusterInfo![cluster]["min_permutation"].arrayValue.map {$0.stringValue}
-        }else{
+        var minTimePerm: [String] = getMinPermStationFromCache(stations: statList)
+        if minTimePerm.isEmpty {
             minTimePerm = getMinTimePermutation(statList: statList)
+            setMinPermToCache(minPerm: minTimePerm)
         }
         let simulateResult = simulateVisitStations(statList: minTimePerm, pathSoFar: pathSoFar)
         //VisitLog.dumpPath(path: simulateResult)
@@ -124,22 +123,27 @@ class StationRouting {
             print("statList is empty")
             return ""
         }
-        let start = getStationsStartFromCache(stations: statList)
+        let start = getStartStationFromCache(stations: statList)
         if start != InvalidStation {
             //print("get start \(start) from cache")
             return start
         } else {
             let minPerm = getMinTimePermutation(statList: statList)
-            setStationsStartToCache(minStations: minPerm)
+            setMinPermToCache(minPerm: minPerm)
             return minPerm.first!
         }
     }
 
     func getMinTimePermutationWithStart(startStat: String, statList: [String]) -> [String] {
-        //print("getMinTimePermutationWithStart start... \(startStat)")
+        print("getMinTimePermutationWithStart start... \(startStat) \(statList)")
+        var minPerm = getMinPermWithStartStationFromCache(stations: statList)
+        if !minPerm.isEmpty {
+            print("Found in cache \(minPerm)")
+            return minPerm
+        }
+        
         let allPerms = statList.permutations()
         var minTime = Int.max
-        var minPerm: [String] = []
 
         for perm in allPerms {
             if perm[0] != startStat {
