@@ -22,12 +22,12 @@ struct TroublesCardView: View {
                 .frame(width: UIScreen.main.bounds.width * 0.8, /*height: 200,*/ alignment: .topLeading)
                 .padding(.top)
 
-            HavingTroubleButtonView().padding()
+            HavingTroubleButtonView().padding().environmentObject(self.dynamicRouting)
         }
         .frame(width:UIScreen.main.bounds.width * 0.9/*, height: 200*/)
         .background(colorScheme == .dark ? Color.black : Color.white)
         .cornerRadius(10)
-        //.padding(.top)
+        .padding(.bottom)
     }
 }
 

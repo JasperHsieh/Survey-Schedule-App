@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class ClusterRouting{
+    let Debug = false
     var clusterStartId = 100
 
     //var clusterInfo: JSON
@@ -37,7 +38,7 @@ class ClusterRouting{
         var day = 1
         var schedule: [[VisitLog]] = []
 
-        print("getNextDaySchedule \(workingTime)")
+        if(Debug) {print("getNextDaySchedule \(workingTime)")}
 
         while true {
 
@@ -62,8 +63,8 @@ class ClusterRouting{
             }
 
             // Check if we finish next cluster in time
-            print()
-            print("*** Checking closest cluster \(nextCluster) ***")
+            if(Debug) {print()}
+            if(Debug) {print("*** Checking closest cluster \(nextCluster) ***")}
             //var nextClusterVisitPath = stationRouting.getVisitPath(statList: clusterVisit[nextCluster]["stations"].arrayObject as! [String], pathSoFar: visitPath)
             var nextClusterVisitPath = stationRouting.getVisitPath(statList: clusterVisit[nextCluster]["stations"].arrayObject as! [String], pathSoFar: visitPath, cluster: nextCluster)
             let nextClusterLastVisitLog = nextClusterVisitPath.last!
@@ -71,19 +72,19 @@ class ClusterRouting{
 
             if nextClusterFinishTime > workingTime {
                 // Exceed workingTime today, cut cluster
-                print("Exceed workingTime limit, check cutting cluster")
+                if(Debug) {print("Exceed workingTime limit, cut cluster")}
                 for i in (0..<nextClusterVisitPath.count).reversed() {
                     let log = nextClusterVisitPath[i]
                     if log.isRevisit {
-                        print("Ignore repeat station")
+                        if(Debug) {print("Ignore repeat station")}
                         continue
                     }
                     let timeToFinish = log.timestamp + getStatsTravelTime(stat1: log.station, stat2: BaseStation)
                     //print("Checking \()")
-                    print("Checking last station \(log.station) \(timeToFinish)")
+                    if(Debug) {print("Checking last station \(log.station) \(timeToFinish)")}
                     if timeToFinish < workingTime {
                         // Form new cluster from left stations
-                        print("Cut cluster")
+                        if(Debug) {print("Cut cluster")}
                         let newCluster = String(clusterStartId)
                         clusterStartId += 1
                         clusterVisit[newCluster] = JSON()
@@ -92,15 +93,15 @@ class ClusterRouting{
                         for visitLog in Array(nextClusterVisitPath[(i+1)...]) {
                             remainStats.append(visitLog.station)
                         }
-                        print("RemainStats: \(remainStats)")
+                        if(Debug) { print("RemainStats: \(remainStats)")}
                         clusterVisit[newCluster]["stations"] = JSON(remainStats)
                         clusterVisit[newCluster]["start"] = JSON(stationRouting.getStartStat(statList: remainStats))
 
                         // Update cluster info
                         clusterVisit[nextCluster]["visited"] = true
                         nextClusterVisitPath.removeSubrange((i+1)...)
-                        print("Visit next cluster on", terminator: "")
-                        VisitLog.dumpPath(path: nextClusterVisitPath)
+                        if(Debug) {print("Visit next cluster on", terminator: "")}
+                        if(Debug) {VisitLog.dumpPath(path: nextClusterVisitPath)}
                         visitPath.append(contentsOf: nextClusterVisitPath)
                         preStat = log.station
                         break
@@ -108,18 +109,19 @@ class ClusterRouting{
                 }
             }else {
                 // Add next cluster visited path
-                print("Go to cluster \(nextCluster)")
+                if(Debug) {print("Go to cluster \(nextCluster)")}
                 clusterVisit[nextCluster]["visited"] = true
                 visitPath.append(contentsOf: nextClusterVisitPath)
                 preStat = nextClusterLastVisitLog.station
             }
 
-            VisitLog.dumpPath(path: visitPath)
+            if(Debug) {VisitLog.dumpPath(path: visitPath)}
 
             // Reset path value when done today
             if visitedAll(jsonObj: clusterVisit) || (nextClusterFinishTime > workingTime) {
-                print("----- Day \(day) done -----")
-                print()
+                if(true) {print("----- Day \(day) done -----")}
+                if(true) {VisitLog.dumpPath(path: visitPath)}
+                if(true) {print()}
 
                 //scheduleDic[day] = visitPath
                 schedule.append(visitPath)
@@ -134,6 +136,10 @@ class ClusterRouting{
                 //print(clusterVisit)
             }
         }
+//        for day in schedule {
+//            VisitLog.dumpPath(path: day)
+//            print()
+//        }
         return schedule
     }
 
@@ -146,7 +152,7 @@ class ClusterRouting{
                 return false
             }
         }
-        print("All clusters has been visited")
+        if(Debug) {print("All clusters has been visited")}
         return true
     }
 

@@ -15,13 +15,15 @@ class DynamicRouting: ObservableObject{
 
     //let baseStat: String = "CS25"
     static let N: Int = 2 // hours
-    var currentStation: String = BaseStation
+    var preStation: String = BaseStation
     var nextStation: String = "NASA"
     var nextTravelTime: String = "00:00"
 
     var isStarted = false
     let dayLimit: Int = 8 // hours
-    var startTime = "10:00:00".toDate()
+    let defaultTime: Date
+    var beginTime: Date
+    var lastRepeatTime: Date
 
     // Stations list page
     @Published var stationsList: [Station]
@@ -29,7 +31,7 @@ class DynamicRouting: ObservableObject{
 
     //var day: Int = 0
     //var preStat: String
-    var beginDate: Date?
+
 
     var masterSchedule: [[VisitLog]] = [[]]
     var clusterRouting: ClusterRouting
@@ -42,8 +44,14 @@ class DynamicRouting: ObservableObject{
         stationsList = getStationsList()
         clusterRouting = ClusterRouting(clusterInfo: clusterInfo!, workingTime: dayLimit)
         stationRouting = StationRouting()
+
+        defaultTime = getTimeFromStr(time: "2000-01-01 01:01:01+00000")
+        beginTime = getTimeFromStr(time: "2020-01-01 09:00:00+00000")
+        lastRepeatTime = beginTime
         //stationRouting.getMinTimePermutation(statList: clusterInfo!["1"]["stations"].arrayValue.map {$0.stringValue})
     }
+
+
 
     func makeRoutingSchedule(clusters: JSON, workintHour: Int, currentStat: String){
         masterSchedule = clusterRouting.getCompleteSchedule(info: clusters, workingHour: workintHour, currentStat: currentStat)
@@ -53,7 +61,7 @@ class DynamicRouting: ObservableObject{
     func applyStationsChangeToSchedule() {
         let clusters = createClusters()
         print(clusters)
-        masterSchedule = clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: currentStation)
+        masterSchedule = clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: preStation)
     }
 
     func createClusters() -> JSON {
@@ -120,11 +128,9 @@ class DynamicRouting: ObservableObject{
         return false
     }
 
-    func getNextStation() {
+    func getNextStation(){
+        print("getNextStation")
 
-    }
-//    func getNextStation(PreStat: String) -> String{
-//        print("getNextStation")
 //        if preStat != PreStat{
 //            print("Wrong pre stat \(preStat) and \(PreStat)")
 //        }
@@ -141,5 +147,5 @@ class DynamicRouting: ObservableObject{
 //        }
 //
 //        return "USGS Office"
-//    }
+    }
 }

@@ -41,7 +41,7 @@ public enum CardPosition: CGFloat {
         case .middle:
             return UIScreen.main.bounds.height/1.8
         case .top:
-            return 80
+            return 250
         }
     }
 }

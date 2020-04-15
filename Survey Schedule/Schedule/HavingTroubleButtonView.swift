@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct HavingTroubleButtonView: View {
+    @EnvironmentObject private var dynamicRouting: DynamicRouting
     @State private var showingSheet = false
 
     var body: some View {

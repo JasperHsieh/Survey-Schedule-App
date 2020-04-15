@@ -126,7 +126,7 @@ func setMinPermToCache(minPerm: [String]) {
     if statPermCache![key].exists() {
         print("Key already exists in statPermCache")
     }
-    print("Set min permutation to cache \(key)")
+    //print("Set min permutation to cache \(key)")
     statPermCache![key] = JSON()
     statPermCache![key]["start"] = JSON(start)
     statPermCache![key]["min_permutation"] = JSON(minPerm)
@@ -140,6 +140,19 @@ func getKey(stations: [String]) -> String {
         key = key + stat + "#"
     }
     return key
+}
+
+extension Date {
+    func localString(dateStyle: DateFormatter.Style = .long, timeStyle: DateFormatter.Style = .short) -> String {
+        return DateFormatter.localizedString(from: self, dateStyle: dateStyle, timeStyle: timeStyle)
+    }
+}
+
+func getTimeFromStr(time: String) -> Date {
+    let dateFormatter2 = DateFormatter()
+    dateFormatter2.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+    dateFormatter2.dateFormat = "yyyy-MM-dd HH:mm:ssZ"
+    return dateFormatter2.date(from:time)!
 }
 
 final class ImageStore {

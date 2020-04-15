@@ -70,11 +70,11 @@ struct ScheduleRow: View {
     @EnvironmentObject private var dynamicRouting: DynamicRouting
     var log: VisitLog
     //let tmp = dynamicRouting.startTime! + log.timestamp.seconds
-    let timeStamp: String = "10:00:01"
+    //let timeStamp: String = "10:00:01"
     var body: some View {
         HStack {
             Spacer()
-            Text(String((self.dynamicRouting.startTime! + log.timestamp.seconds).toFormat("HH:mm:ss")))
+            Text(String((self.dynamicRouting.beginTime + log.timestamp.seconds).toFormat("HH:mm")))
                 //.font(.system(size: 30))
                 .frame(width:UIScreen.main.bounds.width * 0.4, alignment: .leading)
             Spacer()

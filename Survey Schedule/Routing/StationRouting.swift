@@ -10,6 +10,7 @@ import Foundation
 import Combinatorics
 
 class StationRouting {
+    let Debug = false
     let N: Int = 2 * 60 * 60
     //let N: Int = 30 * 60
     let M: Int = 15 * 60
@@ -43,14 +44,14 @@ class StationRouting {
         var visitPath: [VisitLog] = []
         var statSeq = statList
 
-        print("simulateVisitStations: \(statList), lastRepeat:\(lastRepeatTime), N:\(N)")
+        if(Debug) {print("simulateVisitStations: \(statList), lastRepeat:\(lastRepeatTime), N:\(N)")}
         // Update current path and time
         if !pathSoFar.isEmpty {
-            print("pathSoFar:")
-            VisitLog.dumpPath(path: pathSoFar)
+            if(Debug) {print("pathSoFar:")}
+            if(Debug) {VisitLog.dumpPath(path: pathSoFar)}
             curTime = pathSoFar.last!.timestamp + getStatsTravelTime(stat1: pathSoFar.last!.station, stat2: statSeq.first!)
             //lastRepeatTime = curTime
-            print("Update currentTime to \(curTime)")
+            if(Debug) {print("Update currentTime to \(curTime)")}
             // update repeat time?
         }
 
@@ -69,7 +70,7 @@ class StationRouting {
 
             if curTime - lastRepeatTime > N {
                 // Handle revisit
-                print("Time to revisit \(curTime), last repeat: \(lastRepeatTime)")
+                if(Debug) {print("Time to revisit \(curTime), last repeat: \(lastRepeatTime)")}
                 if visitPath.isEmpty {
                     print("Couldn't find revisit station")
                 } else{
@@ -91,14 +92,14 @@ class StationRouting {
                         curTime += minTravelTime
                         lastRepeatTime = curTime
                         curVisitLog = VisitLog(stat: visitLog.station, timestamp: curTime, isRevisit: true)
-                        print("Revisit \(visitLog.station) \(curTime)")
+                        if(Debug) {print("Revisit \(visitLog.station) \(curTime)")}
                         // Update visit order
                         let tmpStatList = [curVisitLog.station] + statSeq
                         statSeq = getMinTimePermutationWithStart(startStat: curVisitLog.station, statList: tmpStatList)
                         //print("New visit sequence \(statSeq)")
                         continue
                     }else{
-                        print("No valid station to revisit")
+                        if(Debug) {print("No valid station to revisit")}
                     }
                 }
             }
@@ -113,8 +114,8 @@ class StationRouting {
             //VisitLog.dumpPath(path: visitPath)
             //print("\(curTime)")
         }
-        print("Done simulation")
-        VisitLog.dumpPath(path: visitPath)
+        if(Debug) {print("Done simulation")}
+        if(Debug) {VisitLog.dumpPath(path: visitPath)}
         return visitPath
     }
 
@@ -135,10 +136,10 @@ class StationRouting {
     }
 
     func getMinTimePermutationWithStart(startStat: String, statList: [String]) -> [String] {
-        print("getMinTimePermutationWithStart start... \(startStat) \(statList)")
+        //print("getMinTimePermutationWithStart start... \(startStat) \(statList)")
         var minPerm = getMinPermWithStartStationFromCache(stations: statList)
         if !minPerm.isEmpty {
-            print("Found in cache \(minPerm)")
+            //print("Found in cache \(minPerm)")
             return minPerm
         }
         

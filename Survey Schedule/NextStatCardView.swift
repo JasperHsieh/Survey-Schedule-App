@@ -12,8 +12,6 @@ import SwiftDate
 import Combinatorics
 
 struct NextStatCardView: View {
-    //@State var nextStation: String = DynamicRouting.baseStat
-    @State var nextTravelTime: String = "00:00"
     @State var nextButton: String = "Start"
     @State private var showingLoading = false
     //var dynamicRouting = DynamicRouting(Day: 1, PreStat: DynamicRouting.baseStat)
@@ -49,7 +47,7 @@ struct NextStatCardView: View {
                 //Spacer()
                 VStack(alignment: .leading){
                     Text(dynamicRouting.nextStation).font(.headline)
-                    Text(nextTravelTime).foregroundColor(.gray)
+                    Text(dynamicRouting.nextTravelTime).foregroundColor(.gray)
                 }
                 .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
                 Spacer()
@@ -75,17 +73,22 @@ struct NextStatCardView: View {
         .padding(.top)
     }
     func doneAction(){
-        print("Click Done")
+        print("Click Done \(Date())")
         if !dynamicRouting.isStarted {
             // Prepare for start
             self.showingLoading.toggle()
             dynamicRouting.isStarted = true
             makeSchedule()
             let here = Region(calendar: Calendars.gregorian, zone: Zones.current, locale: Locales.englishUnitedStatesComputer)
-            dynamicRouting.startTime = DateInRegion(Date(), region: here)
+            //dynamicRouting.beginTime = DateInRegion(Date(), region: here)
             //print(dynamicRouting.startTime)
         } else {
             // dynamic plan next station
+//            if dynamicRouting.nextStation == BaseStation && dynamicRouting.lastRepeatTime == dynamicRouting.defaultTime {
+//                print("Update begin time")
+//                print(Date().description(with: .current).toDate() )
+//                print(Date().localString().toDate())
+//            }
         }
     }
 
