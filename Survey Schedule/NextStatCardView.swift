@@ -79,7 +79,7 @@ struct NextStatCardView: View {
             dynamicRouting.lastRepeatTime = 0
             print("Update begin time \(dynamicRouting.beginDate)")
         }
-        dynamicRouting.getNextStation()
+        dynamicRouting.HandleDoneAction()
 
         //var tmp1 = Date()
         //var tmp2 = tmp1.addingTimeInterval(60)

@@ -16,7 +16,7 @@ class DynamicRouting: ObservableObject{
     //let baseStat: String = "CS25"
     //static let N: Int = 2 // hours
     var preStation: String = BaseStation
-    var preVisitLog: VisitLog
+    var nextVisitLog: VisitLog
     @Published var nextStation: String = "NASA"
     @Published var nextTravelTime: String = "00:00"
 
@@ -52,7 +52,7 @@ class DynamicRouting: ObservableObject{
         beginDate = getTimeFromStr(time: "2020-01-01 09:00:00+00000")
         lastRepeatTime = 0
 
-        preVisitLog = VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)
+        nextVisitLog = VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)
         //stationRouting.getMinTimePermutation(statList: clusterInfo!["1"]["stations"].arrayValue.map {$0.stringValue})
     }
 
@@ -142,19 +142,27 @@ class DynamicRouting: ObservableObject{
         return false
     }
 
-    func getNextStation(){
-        print("getNextStation")
+    func setStationVisited(station: String) {
+        var index: Int {
+            stationsList.firstIndex(where: {$0.name == station})!
+        }
+        stationsList[index].isVisited = true
+    }
+
+    func HandleDoneAction(){
+        print("[DR] HandleDoneAction")
         // Save preStation visit log
         let currentDate = getCurrentDate()
         let currentTime = getDiffInSec(start: beginDate, end: currentDate)
-        print("beginDate \(beginDate) currentDate \(currentDate)")
-        print("diff \(currentTime)")
+        print("[DR] currentDate \(currentDate)")
+        //print("diff \(currentTime)")
 
-        if preVisitLog.isRevisit {
+        setStationVisited(station: nextVisitLog.station)
+        if nextVisitLog.isRevisit {
             lastRepeatTime = currentTime
         }
-        preVisitLog.timestamp = currentTime
-        currentVisitPath.append(preVisitLog)
+        nextVisitLog.timestamp = currentTime
+        currentVisitPath.append(nextVisitLog)
 
         removePreStation()
 
@@ -167,7 +175,7 @@ class DynamicRouting: ObservableObject{
                 var minVisitLog: VisitLog?
 
                 for visitLog in currentVisitPath {
-                    let curTravelTime = getStatsTravelTime(stat1: preVisitLog.station, stat2: visitLog.station)
+                    let curTravelTime = getStatsTravelTime(stat1: nextVisitLog.station, stat2: visitLog.station)
                     let timeSoFar = getDiffInSec(start: beginDate, end: currentDate)
                     if  curTravelTime < M && (timeSoFar + curTravelTime - visitLog.timestamp > N) && curTravelTime < minTravelTime {
                         minTravelTime = curTravelTime
@@ -175,9 +183,10 @@ class DynamicRouting: ObservableObject{
                     }
                 }
                 if let visitLog = minVisitLog {
-                    preVisitLog = VisitLog(stat: visitLog.station, timestamp: -1, isRevisit: true)
+                    nextVisitLog = VisitLog(stat: visitLog.station, timestamp: -1, isRevisit: true)
                     nextStation = visitLog.station
                     nextTravelTime = getTravelTimeString(sec: minTravelTime)
+                    // Check the next station is last in a cluster
 
                 }
             }
@@ -185,9 +194,9 @@ class DynamicRouting: ObservableObject{
             print("[DR] Go to next station")
             nextStation = getFirstStation()
             print("[DR] nextStation \(nextStation)")
-            let timeToNextStation = getStatsTravelTime(stat1: preVisitLog.station, stat2: nextStation)
+            let timeToNextStation = getStatsTravelTime(stat1: nextVisitLog.station, stat2: nextStation)
             nextTravelTime = getTravelTimeString(sec: timeToNextStation)
-            preVisitLog = VisitLog(stat: nextStation, timestamp: -1, isRevisit: false)
+            nextVisitLog = VisitLog(stat: nextStation, timestamp: -1, isRevisit: false)
         }
     }
 
@@ -207,10 +216,10 @@ class DynamicRouting: ObservableObject{
         }
         // Remove first station
         print("[DR] removePreStation")
-        for day in remainSchedule {
-            VisitLog.dumpPath(path: day)
-            print()
-        }
+//        for day in remainSchedule {
+//            VisitLog.dumpPath(path: day)
+//            print()
+//        }
         let visitPath = remainSchedule[0]
         var newVisitPath: [VisitLog] = []
         if visitPath.count > 1 {
@@ -221,11 +230,11 @@ class DynamicRouting: ObservableObject{
         for (i, _) in remainSchedule.enumerated() {
             if i == 0 {
                 if !newVisitPath.isEmpty {
-                    print("[DR] add newVisitPath")
+                    //print("[DR] add newVisitPath")
                     newRemainSchedule.append(newVisitPath)
                 }
             } else {
-                print("[DR] add remainSchedule")
+                //print("[DR] add remainSchedule")
                 newRemainSchedule.append(remainSchedule[i])
             }
         }
