@@ -25,18 +25,21 @@ class ClusterRouting{
         self.stationRouting = StationRouting()
     }
 
-    func getCompleteSchedule(info clusterInfo: JSON, workingHour: Int, currentStat: String) -> [[VisitLog]]{
+    func getCompleteSchedule(info clusterInfo: JSON, workingHour: Int, currentStat: String) -> [[[VisitLog]]]{
         //let statInfo = DataUtil.statInfo
         //var clusterVisit = DataUtil.clusterInfo!
         var clusterVisit = resetVisitedStatus(jsonObj: clusterInfo)
         let workingTime = workingHour * 60 * 60
 
+        var day = 1
         let startTime = 0
         var preStat = currentStat
         // Check the station isRevisit status while currentStat != CS25
         var visitPath: [VisitLog] = [VisitLog(stat: preStat, timestamp: startTime, isRevisit: false)]
-        var day = 1
-        var schedule: [[VisitLog]] = []
+        var daySchedule: [[VisitLog]] = []
+        var schedule: [[[VisitLog]]] = []
+
+        daySchedule.append(visitPath)
 
         if(Debug) {print("getNextDaySchedule \(workingTime)")}
 
@@ -83,16 +86,19 @@ class ClusterRouting{
                     //print("Checking \()")
                     if(Debug) {print("Checking last station \(log.station) \(timeToFinish)")}
                     if timeToFinish < workingTime {
-                        // Form new cluster from left stations
+                        // Found availabe stations, form new cluster from left stations
                         if(Debug) {print("Cut cluster")}
                         let newCluster = String(clusterStartId)
+
                         clusterStartId += 1
                         clusterVisit[newCluster] = JSON()
                         clusterVisit[newCluster]["visited"] = false
+
                         var remainStats: [String] = []
                         for visitLog in Array(nextClusterVisitPath[(i+1)...]) {
                             remainStats.append(visitLog.station)
                         }
+
                         if(Debug) { print("RemainStats: \(remainStats)")}
                         clusterVisit[newCluster]["stations"] = JSON(remainStats)
                         clusterVisit[newCluster]["start"] = JSON(stationRouting.getStartStat(statList: remainStats))
@@ -100,9 +106,12 @@ class ClusterRouting{
                         // Update cluster info
                         clusterVisit[nextCluster]["visited"] = true
                         nextClusterVisitPath.removeSubrange((i+1)...)
+
                         if(Debug) {print("Visit next cluster on", terminator: "")}
                         if(Debug) {VisitLog.dumpPath(path: nextClusterVisitPath)}
+
                         visitPath.append(contentsOf: nextClusterVisitPath)
+                        daySchedule.append(nextClusterVisitPath)
                         preStat = log.station
                         break
                     }
@@ -112,6 +121,7 @@ class ClusterRouting{
                 if(Debug) {print("Go to cluster \(nextCluster)")}
                 clusterVisit[nextCluster]["visited"] = true
                 visitPath.append(contentsOf: nextClusterVisitPath)
+                daySchedule.append(nextClusterVisitPath)
                 preStat = nextClusterLastVisitLog.station
             }
 
@@ -124,10 +134,12 @@ class ClusterRouting{
                 if(Debug) {print()}
 
                 //scheduleDic[day] = visitPath
-                schedule.append(visitPath)
+                schedule.append(daySchedule)
 
                 preStat = BaseStation
                 visitPath = [VisitLog(stat: BaseStation, timestamp: startTime, isRevisit: false)]
+                daySchedule = []
+                daySchedule.append(visitPath)
                 day += 1
                 stationRouting.resetRepeatTime()
                 if visitedAll(jsonObj: clusterVisit) {
@@ -136,10 +148,7 @@ class ClusterRouting{
                 //print(clusterVisit)
             }
         }
-//        for day in schedule {
-//            VisitLog.dumpPath(path: day)
-//            print()
-//        }
+        VisitLog.dumpMasterSchedule(schedule: schedule)
         return schedule
     }
 

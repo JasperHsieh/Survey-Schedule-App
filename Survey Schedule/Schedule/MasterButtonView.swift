@@ -42,12 +42,19 @@ struct ScheduleList: View {
 //    }
 
     var body: some View {
-        //Text("Hello, \(dynamicRouting.schedule[1]![1].station)!")
 //        Button("Dismiss") {
 //            self.presentationMode.wrappedValue.dismiss()
 //        }
         NavigationView {
-            List(dynamicRouting.masterSchedule[0]){ visitLog in ScheduleRow(log: visitLog).environmentObject(self.dynamicRouting)
+            List {
+                ForEach(dynamicRouting.masterSchedule, id: \.self) { daySchedule in
+                    Section(header: Text("day")) {
+                        ForEach(daySchedule, id: \.self) { clusterSchedule in
+                            ForEach(clusterSchedule, id: \.self) { visitLog in ScheduleRow(log: visitLog).environmentObject(self.dynamicRouting)
+                            }
+                        }
+                    }
+                }
             }
             .navigationBarTitle(Text("Master Schedule"))
             .navigationBarItems(trailing:

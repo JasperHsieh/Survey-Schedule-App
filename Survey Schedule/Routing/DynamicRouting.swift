@@ -34,11 +34,11 @@ class DynamicRouting: ObservableObject{
     //var preStat: String
 
 
-    var masterSchedule: [[VisitLog]] = [[]]
+    var masterSchedule: [[[VisitLog]]] = []
     var clusterRouting: ClusterRouting
     var stationRouting: StationRouting
 
-    var remainSchedule: [[VisitLog]] = [[]]
+    var remainSchedule: [[[VisitLog]]] = [[]]
     var currentVisitPath: [VisitLog] = []
     var currentSchedule: [[VisitLog]] = [[]]
 
@@ -120,7 +120,7 @@ class DynamicRouting: ObservableObject{
             print("Master Schedule is empty")
             return
         }
-        let nextVisitLog = masterSchedule[0][0]
+        let nextVisitLog = masterSchedule[0][0][0]
         nextStation = nextVisitLog.station
     }
 
@@ -144,9 +144,11 @@ class DynamicRouting: ObservableObject{
 
     func setStationVisited(station: String) {
         var index: Int {
-            stationsList.firstIndex(where: {$0.name == station})!
+            stationsList.firstIndex(where: {$0.name == station}) ?? -1
         }
-        stationsList[index].isVisited = true
+        if index != -1 {
+            stationsList[index].isVisited = true
+        }
     }
 
     func HandleDoneAction(){
@@ -202,49 +204,51 @@ class DynamicRouting: ObservableObject{
 
     func getFirstStation() -> String {
         if remainSchedule.isEmpty {
-            print("remain Schedule is Empty")
+            print("[DR] remain Schedule is Empty")
             return "OMG"
         }
-        let visitPath = remainSchedule[0]
+        let visitPath = remainSchedule[0][0]
         return visitPath[0].station
     }
 
     func removePreStation() {
         if remainSchedule.isEmpty {
-            print("remain Schedule is Empty")
+            print("[DR] remain Schedule is Empty")
             return
         }
         // Remove first station
         print("[DR] removePreStation")
-//        for day in remainSchedule {
-//            VisitLog.dumpPath(path: day)
-//            print()
-//        }
-        let visitPath = remainSchedule[0]
-        var newVisitPath: [VisitLog] = []
-        if visitPath.count > 1 {
-            newVisitPath = Array(visitPath[1..<visitPath.count])
+        //VisitLog.dumpMasterSchedule(schedule: remainSchedule)
+
+        let daySchedule = remainSchedule[0]
+        let clusterSchedule = daySchedule[0]
+
+        var newRemainSchedule: [[[VisitLog]]] = []
+        var newDaySchedule: [[VisitLog]] = []
+        var newClusterSchedule: [VisitLog] = []
+
+        if clusterSchedule.count >= 2 {
+            newClusterSchedule = Array(clusterSchedule[1..<clusterSchedule.count])
         }
-        //VisitLog.dumpPath(path: newVisitPath)
-        var newRemainSchedule: [[VisitLog]] = []
-        for (i, _) in remainSchedule.enumerated() {
-            if i == 0 {
-                if !newVisitPath.isEmpty {
-                    //print("[DR] add newVisitPath")
-                    newRemainSchedule.append(newVisitPath)
-                }
-            } else {
-                //print("[DR] add remainSchedule")
-                newRemainSchedule.append(remainSchedule[i])
+
+        if !newClusterSchedule.isEmpty {
+            newDaySchedule.append(newClusterSchedule)
+        }
+        for (i, cluster) in daySchedule.enumerated() {
+            if i > 0 {
+                newDaySchedule.append(cluster)
+            }
+        }
+
+        if !newDaySchedule.isEmpty {
+            newRemainSchedule.append(newDaySchedule)
+        }
+        for (i, day) in remainSchedule.enumerated() {
+            if i > 0 {
+                newRemainSchedule.append(day)
             }
         }
         remainSchedule = newRemainSchedule
-
-//        for day in remainSchedule {
-//            VisitLog.dumpPath(path: day)
-//            print()
-//            break
-//        }
-
+        //VisitLog.dumpMasterSchedule(schedule: remainSchedule)
     }
 }

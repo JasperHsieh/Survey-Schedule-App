@@ -8,7 +8,7 @@
 
 import Foundation
 
-class VisitLog: Identifiable {
+class VisitLog: Identifiable, Hashable {
     var id = UUID()
     var station: String
     var timestamp: Int // arrival time
@@ -17,6 +17,27 @@ class VisitLog: Identifiable {
         self.station = stat
         self.timestamp = timestamp
         self.isRevisit = isRevisit
+    }
+
+    static func == (lhs: VisitLog, rhs: VisitLog) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func dumpMasterSchedule(schedule: [[[VisitLog]]]) {
+        for daySchedule in schedule {
+            for visitPath in daySchedule {
+                print("[", terminator: "")
+                for log in visitPath {
+                    dumpLog(visitLog: log)
+                }
+                print("]", terminator: "")
+            }
+            print()
+        }
     }
 
     static func dumpPath(path visitPath: [VisitLog]) {
