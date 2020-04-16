@@ -23,6 +23,8 @@ let statTravelTimeInfo = readJsonFromFile(filePath: statTravelTimeFile)
 var statPermCache = readJsonFromFile(filePath: statPermCacheFile)
 var statPermStartCache = readJsonFromFile(filePath: statPermStartCacheFile)
 
+let N = 2 * 60 * 60
+let M = 15 * 60
 let WorkingHour = 8
 let BaseStation = "CS25"
 let InvalidStation = "Mars"
@@ -140,19 +142,6 @@ func getKey(stations: [String]) -> String {
         key = key + stat + "#"
     }
     return key
-}
-
-extension Date {
-    func localString(dateStyle: DateFormatter.Style = .long, timeStyle: DateFormatter.Style = .short) -> String {
-        return DateFormatter.localizedString(from: self, dateStyle: dateStyle, timeStyle: timeStyle)
-    }
-}
-
-func getTimeFromStr(time: String) -> Date {
-    let dateFormatter2 = DateFormatter()
-    dateFormatter2.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-    dateFormatter2.dateFormat = "yyyy-MM-dd HH:mm:ssZ"
-    return dateFormatter2.date(from:time)!
 }
 
 final class ImageStore {

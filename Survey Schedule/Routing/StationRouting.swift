@@ -11,9 +11,8 @@ import Combinatorics
 
 class StationRouting {
     let Debug = false
-    let N: Int = 2 * 60 * 60
-    //let N: Int = 30 * 60
-    let M: Int = 15 * 60
+    //let N: Int = 2 * 60 * 60
+    //let M: Int = 15 * 60
     let measureTime = 150
     //let dataUtil = DataUtil()
     //let clusterInfo = DataUtil.clusterInfo

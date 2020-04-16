@@ -119,9 +119,9 @@ class ClusterRouting{
 
             // Reset path value when done today
             if visitedAll(jsonObj: clusterVisit) || (nextClusterFinishTime > workingTime) {
-                if(true) {print("----- Day \(day) done -----")}
-                if(true) {VisitLog.dumpPath(path: visitPath)}
-                if(true) {print()}
+                if(Debug) {print("----- Day \(day) done -----")}
+                if(Debug) {VisitLog.dumpPath(path: visitPath)}
+                if(Debug) {print()}
 
                 //scheduleDic[day] = visitPath
                 schedule.append(visitPath)

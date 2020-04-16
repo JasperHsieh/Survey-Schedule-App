@@ -14,16 +14,17 @@ class DynamicRouting: ObservableObject{
     //let stations_everyday
 
     //let baseStat: String = "CS25"
-    static let N: Int = 2 // hours
+    //static let N: Int = 2 // hours
     var preStation: String = BaseStation
-    var nextStation: String = "NASA"
-    var nextTravelTime: String = "00:00"
+    var preVisitLog: VisitLog
+    @Published var nextStation: String = "NASA"
+    @Published var nextTravelTime: String = "00:00"
 
     var isStarted = false
     let dayLimit: Int = 8 // hours
     let defaultTime: Date
-    var beginTime: Date
-    var lastRepeatTime: Date
+    var beginDate: Date
+    var lastRepeatTime: Int
 
     // Stations list page
     @Published var stationsList: [Station]
@@ -37,7 +38,9 @@ class DynamicRouting: ObservableObject{
     var clusterRouting: ClusterRouting
     var stationRouting: StationRouting
 
-    //var beginTime
+    var remainSchedule: [[VisitLog]] = [[]]
+    var currentVisitPath: [VisitLog] = []
+    var currentSchedule: [[VisitLog]] = [[]]
 
     init(){
         //statSequence = stations_everyday[Day] ?? []
@@ -45,17 +48,28 @@ class DynamicRouting: ObservableObject{
         clusterRouting = ClusterRouting(clusterInfo: clusterInfo!, workingTime: dayLimit)
         stationRouting = StationRouting()
 
-        defaultTime = getTimeFromStr(time: "2000-01-01 01:01:01+00000")
-        beginTime = getTimeFromStr(time: "2020-01-01 09:00:00+00000")
-        lastRepeatTime = beginTime
+        defaultTime = getTimeFromStr(time: "2020-01-01 09:00:00+00000")
+        beginDate = getTimeFromStr(time: "2020-01-01 09:00:00+00000")
+        lastRepeatTime = 0
+
+        preVisitLog = VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)
         //stationRouting.getMinTimePermutation(statList: clusterInfo!["1"]["stations"].arrayValue.map {$0.stringValue})
     }
 
-
+    func makeScheduleInBackground() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            //print("This is run on the background queue")
+            self.makeRoutingSchedule(clusters: clusterInfo ?? JSON(), workintHour: WorkingHour, currentStat: BaseStation)
+            DispatchQueue.main.async {
+                //print("This is run on the main queue, after the previous code in outer block")
+                self.remainSchedule = self.masterSchedule
+                self.updateFirstStation()
+            }
+        }
+    }
 
     func makeRoutingSchedule(clusters: JSON, workintHour: Int, currentStat: String){
         masterSchedule = clusterRouting.getCompleteSchedule(info: clusters, workingHour: workintHour, currentStat: currentStat)
-        updateFirstStation()
     }
 
     func applyStationsChangeToSchedule() {
@@ -130,22 +144,98 @@ class DynamicRouting: ObservableObject{
 
     func getNextStation(){
         print("getNextStation")
+        // Save preStation visit log
+        let currentDate = getCurrentDate()
+        let currentTime = getDiffInSec(start: beginDate, end: currentDate)
+        print("beginDate \(beginDate) currentDate \(currentDate)")
+        print("diff \(currentTime)")
 
-//        if preStat != PreStat{
-//            print("Wrong pre stat \(preStat) and \(PreStat)")
+        if preVisitLog.isRevisit {
+            lastRepeatTime = currentTime
+        }
+        preVisitLog.timestamp = currentTime
+        currentVisitPath.append(preVisitLog)
+
+        removePreStation()
+
+        if currentTime - lastRepeatTime > N {
+            print("[DR] Time to revisit")
+            if currentVisitPath.isEmpty {
+                print("[DR] No visited stations")
+            } else {
+                var minTravelTime = Int.max
+                var minVisitLog: VisitLog?
+
+                for visitLog in currentVisitPath {
+                    let curTravelTime = getStatsTravelTime(stat1: preVisitLog.station, stat2: visitLog.station)
+                    let timeSoFar = getDiffInSec(start: beginDate, end: currentDate)
+                    if  curTravelTime < M && (timeSoFar + curTravelTime - visitLog.timestamp > N) && curTravelTime < minTravelTime {
+                        minTravelTime = curTravelTime
+                        minVisitLog = visitLog
+                    }
+                }
+                if let visitLog = minVisitLog {
+                    preVisitLog = VisitLog(stat: visitLog.station, timestamp: -1, isRevisit: true)
+                    nextStation = visitLog.station
+                    nextTravelTime = getTravelTimeString(sec: minTravelTime)
+
+                }
+            }
+        } else {
+            print("[DR] Go to next station")
+            nextStation = getFirstStation()
+            print("[DR] nextStation \(nextStation)")
+            let timeToNextStation = getStatsTravelTime(stat1: preVisitLog.station, stat2: nextStation)
+            nextTravelTime = getTravelTimeString(sec: timeToNextStation)
+            preVisitLog = VisitLog(stat: nextStation, timestamp: -1, isRevisit: false)
+        }
+    }
+
+    func getFirstStation() -> String {
+        if remainSchedule.isEmpty {
+            print("remain Schedule is Empty")
+            return "OMG"
+        }
+        let visitPath = remainSchedule[0]
+        return visitPath[0].station
+    }
+
+    func removePreStation() {
+        if remainSchedule.isEmpty {
+            print("remain Schedule is Empty")
+            return
+        }
+        // Remove first station
+        print("[DR] removePreStation")
+        for day in remainSchedule {
+            VisitLog.dumpPath(path: day)
+            print()
+        }
+        let visitPath = remainSchedule[0]
+        var newVisitPath: [VisitLog] = []
+        if visitPath.count > 1 {
+            newVisitPath = Array(visitPath[1..<visitPath.count])
+        }
+        //VisitLog.dumpPath(path: newVisitPath)
+        var newRemainSchedule: [[VisitLog]] = []
+        for (i, _) in remainSchedule.enumerated() {
+            if i == 0 {
+                if !newVisitPath.isEmpty {
+                    print("[DR] add newVisitPath")
+                    newRemainSchedule.append(newVisitPath)
+                }
+            } else {
+                print("[DR] add remainSchedule")
+                newRemainSchedule.append(remainSchedule[i])
+            }
+        }
+        remainSchedule = newRemainSchedule
+
+//        for day in remainSchedule {
+//            VisitLog.dumpPath(path: day)
+//            print()
+//            break
 //        }
-//        if beginDate == nil{
-//            beginDate = Date()
-//            print("Begin date: \(beginDate!)")
-//        }
-//        let currentDate = Date()
-//        if let beginDate = beginDate {
-//            let elapsedTime: Int = (currentDate - (beginDate)).hour ?? -1
-//            if  elapsedTime >= DynamicRouting.N{
-//
-//            }
-//        }
-//
-//        return "USGS Office"
+
     }
 }

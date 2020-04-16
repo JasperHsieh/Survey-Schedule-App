@@ -12,10 +12,10 @@ import SwiftDate
 import Combinatorics
 
 struct NextStatCardView: View {
-    @State var nextButton: String = "Start"
+    @EnvironmentObject private var dynamicRouting: DynamicRouting
+    @State var nextButton: String = "Done"
     @State private var showingLoading = false
-    //var dynamicRouting = DynamicRouting(Day: 1, PreStat: DynamicRouting.baseStat)
-    let dynamicRouting: DynamicRouting
+
     let clusterRouting: ClusterRouting
     let stationRouting: StationRouting
     //let dataUtil: DataUtil
@@ -24,8 +24,7 @@ struct NextStatCardView: View {
     //var isStarted = false
     //ar nextButton = "Start"
 
-    init(routing dynamicRouting: DynamicRouting){
-        self.dynamicRouting = dynamicRouting
+    init(){
         self.stationRouting = StationRouting()
         //self.dataUtil = DataUtil()
         self.clusterRouting = ClusterRouting(clusterInfo: clusterInfo!, workingTime: timeLimit)
@@ -73,36 +72,51 @@ struct NextStatCardView: View {
         .padding(.top)
     }
     func doneAction(){
-        print("Click Done \(Date())")
-        if !dynamicRouting.isStarted {
-            // Prepare for start
-            self.showingLoading.toggle()
-            dynamicRouting.isStarted = true
-            makeSchedule()
-            let here = Region(calendar: Calendars.gregorian, zone: Zones.current, locale: Locales.englishUnitedStatesComputer)
-            //dynamicRouting.beginTime = DateInRegion(Date(), region: here)
-            //print(dynamicRouting.startTime)
-        } else {
-            // dynamic plan next station
-//            if dynamicRouting.nextStation == BaseStation && dynamicRouting.lastRepeatTime == dynamicRouting.defaultTime {
-//                print("Update begin time")
-//                print(Date().description(with: .current).toDate() )
-//                print(Date().localString().toDate())
-//            }
+        print("Click Done")
+        if dynamicRouting.nextStation == BaseStation && dynamicRouting.beginDate == dynamicRouting.defaultTime {
+            // Done fist station CS25
+            dynamicRouting.beginDate = getCurrentDate()
+            dynamicRouting.lastRepeatTime = 0
+            print("Update begin time \(dynamicRouting.beginDate)")
         }
+        dynamicRouting.getNextStation()
+
+        //var tmp1 = Date()
+        //var tmp2 = tmp1.addingTimeInterval(60)
+        //print("\(tmp1) \(tmp2)")
+
+
+//        if !dynamicRouting.isStarted {
+//            // Prepare for start
+//            self.showingLoading.toggle()
+//            dynamicRouting.isStarted = true
+//            //makeSchedule()
+////            let here = Region(calendar: Calendars.gregorian, zone: Zones.current, locale: Locales.englishUnitedStatesComputer)
+//            //dynamicRouting.beginTime = DateInRegion(Date(), region: here)
+//            //print(dynamicRouting.startTime)
+//        } else {
+//            // dynamic plan next station
+//            if dynamicRouting.nextStation == BaseStation && dynamicRouting.beginTime == dynamicRouting.defaultTime {
+//                // Done fist station CS25
+//                dynamicRouting.beginTime = getCurrentDate()
+//                dynamicRouting.lastRepeatTime = dynamicRouting.beginTime
+//                print("Update begin time \(dynamicRouting.beginTime)")
+//
+//            }
+//        }
     }
 
-    func makeSchedule() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            //print("This is run on the background queue")
-            self.dynamicRouting.makeRoutingSchedule(clusters: clusterInfo ?? JSON(), workintHour: WorkingHour, currentStat: BaseStation)
-            DispatchQueue.main.async {
-                //print("This is run on the main queue, after the previous code in outer block")
-                self.nextButton = "Done"
-                self.showingLoading.toggle()
-            }
-        }
-    }
+//    func makeSchedule() {
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            //print("This is run on the background queue")
+//            self.dynamicRouting.makeRoutingSchedule(clusters: clusterInfo ?? JSON(), workintHour: WorkingHour, currentStat: BaseStation)
+//            DispatchQueue.main.async {
+//                //print("This is run on the main queue, after the previous code in outer block")
+//                self.nextButton = "Done"
+//                self.showingLoading.toggle()
+//            }
+//        }
+//    }
 }
 
 

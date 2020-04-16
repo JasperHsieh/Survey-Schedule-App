@@ -52,7 +52,7 @@ struct ScheduleList: View {
             .navigationBarTitle(Text("Master Schedule"))
             .navigationBarItems(trailing:
                 Button(action: {
-                    print("Help tapped!")
+                    //print("Help tapped!")
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Image("Cancel Img")
@@ -74,7 +74,7 @@ struct ScheduleRow: View {
     var body: some View {
         HStack {
             Spacer()
-            Text(String((self.dynamicRouting.beginTime + log.timestamp.seconds).toFormat("HH:mm")))
+            Text(String((self.dynamicRouting.beginDate + log.timestamp.seconds).toFormat("HH:mm")))
                 //.font(.system(size: 30))
                 .frame(width:UIScreen.main.bounds.width * 0.4, alignment: .leading)
             Spacer()

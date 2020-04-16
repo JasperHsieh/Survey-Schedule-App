@@ -11,6 +11,7 @@ struct MainView: View {
     @State private var position = CardPosition.middle
     @State private var background = BackgroundStyle.blur
     var dynamicRouting = DynamicRouting()
+    @State private var showingAlert = true
     //@EnvironmentObject private var dynamicRouting: DynamicRouting
     var body: some View {
         ZStack(alignment: Alignment.top) {
@@ -19,11 +20,18 @@ struct MainView: View {
                 VStack {
                     //Text("Slide Over Card").font(.title)
                     //Spacer()
-                    NextStatCardView(routing: self.dynamicRouting)
+                    NextStatCardView().environmentObject(self.dynamicRouting)
                     ScheduleCardView().environmentObject(self.dynamicRouting)
                     TroublesCardView().environmentObject(self.dynamicRouting)
                 }
             }
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Ready to start survey?"), message: Text("Go Go Go"), dismissButton: .default(Text("Start")){
+                    print("alert")
+                self.dynamicRouting.makeScheduleInBackground()
+                }
+            )
         }
         .edgesIgnoringSafeArea(.vertical)
     }

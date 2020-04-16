@@ -11,7 +11,7 @@ import Foundation
 class VisitLog: Identifiable {
     var id = UUID()
     var station: String
-    var timestamp: Int
+    var timestamp: Int // arrival time
     var isRevisit: Bool
     init(stat: String, timestamp: Int, isRevisit: Bool) {
         self.station = stat
