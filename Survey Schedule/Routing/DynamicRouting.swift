@@ -122,6 +122,8 @@ class DynamicRouting: ObservableObject{
         }
         let nextVisitLog = masterSchedule[0][0][0]
         nextStation = nextVisitLog.station
+
+        removeFirstStation()
     }
 
     func backupStationsSetting() {
@@ -166,7 +168,7 @@ class DynamicRouting: ObservableObject{
         nextVisitLog.timestamp = currentTime
         currentVisitPath.append(nextVisitLog)
 
-        removePreStation()
+        //removePreStation()
 
         if currentTime - lastRepeatTime > N {
             print("[DR] Time to revisit")
@@ -184,9 +186,11 @@ class DynamicRouting: ObservableObject{
                         minVisitLog = visitLog
                     }
                 }
-                if let visitLog = minVisitLog {
-                    nextVisitLog = VisitLog(stat: visitLog.station, timestamp: -1, isRevisit: true)
-                    nextStation = visitLog.station
+                if let minVisitLog = minVisitLog {
+                    updateRevisitChangeInMasterSchedule(doneStation: nextVisitLog.station, revisitStation: minVisitLog.station)
+
+                    nextVisitLog = VisitLog(stat: minVisitLog.station, timestamp: -1, isRevisit: true)
+                    nextStation = minVisitLog.station
                     nextTravelTime = getTravelTimeString(sec: minTravelTime)
                     // Check the next station is last in a cluster
 
@@ -194,24 +198,141 @@ class DynamicRouting: ObservableObject{
             }
         } else {
             print("[DR] Go to next station")
-            nextStation = getFirstStation()
+            nextStation = getNextStation()
             print("[DR] nextStation \(nextStation)")
             let timeToNextStation = getStatsTravelTime(stat1: nextVisitLog.station, stat2: nextStation)
             nextTravelTime = getTravelTimeString(sec: timeToNextStation)
             nextVisitLog = VisitLog(stat: nextStation, timestamp: -1, isRevisit: false)
         }
+        removeFirstStation()
     }
 
-    func getFirstStation() -> String {
+    func updateRevisitChangeInMasterSchedule(doneStation: String, revisitStation: String) {
+        var stationsInCluster = getUnvisitedStationsInCluster(doneStation: doneStation)
+        stationsInCluster.insert(revisitStation, at: 0)
+        let newSequence = self.stationRouting.getMinTimePermutationWithStart(startStat: revisitStation, statList: stationsInCluster)
+        let newRevisitSchedule = getRevisitClusterSchedule(from: newSequence)
+
+        var newMasterSchedule: [[[VisitLog]]] = []
+        var newDaySchedule: [[VisitLog]] = []
+        let compareCluster = getNextCluster()
+        var preCluster: [VisitLog] = []
+        var found = false
+        for daySchedule in masterSchedule {
+            newDaySchedule = []
+            for clusterSchedule in daySchedule {
+                if isSameCluster(cluster1: clusterSchedule, cluster2: compareCluster) {
+                    found = true
+                    // Remove pre cluster from tmporary storage
+                    if newDaySchedule.count > 0 {
+                        newDaySchedule = Array(newDaySchedule[0..<daySchedule.count-1])
+                    } else {
+                        var lastDaySchedule = newMasterSchedule[newMasterSchedule.count-1]
+                        newMasterSchedule.removeLast()
+                        if lastDaySchedule.count != 1 {
+                            lastDaySchedule.removeLast()
+                            newMasterSchedule.append(lastDaySchedule)
+                        }
+                    }
+                    // Assemble current cluster
+                    for (i,visitLog) in preCluster.enumerated() {
+                        if visitLog.station == doneStation {
+                            newDaySchedule.append(Array(preCluster[0...i]))
+                            break
+                        }
+                    }
+                    newDaySchedule.append(newRevisitSchedule)
+
+                }
+                newDaySchedule.append(clusterSchedule)
+                preCluster = clusterSchedule
+            }
+            newMasterSchedule.append(newDaySchedule)
+        }
+
+        // Revisit in last cluster
+        if !found {
+            newMasterSchedule.removeLast()
+            newDaySchedule.removeLast()
+            for (i,visitLog) in preCluster.enumerated() {
+                if visitLog.station == doneStation {
+                    newDaySchedule.append(Array(preCluster[0...i]))
+                    break
+                }
+            }
+            newDaySchedule.append(newRevisitSchedule)
+            newMasterSchedule.append(newDaySchedule)
+        }
+        masterSchedule = newMasterSchedule
+    }
+
+    func isSameCluster(cluster1: [VisitLog], cluster2: [VisitLog]) -> Bool{
+        if cluster1.count != cluster2.count {
+            return false
+        }
+        for (vg1, vg2) in zip(cluster1, cluster2) {
+            if vg1.station != vg2.station {
+                return false
+            }
+        }
+        return true
+    }
+
+    func getRevisitClusterSchedule(from stations: [String]) -> [VisitLog] {
+        var visitPath: [VisitLog] = []
+        for (i,station) in stations.enumerated() {
+            // TODO: calculate timestamp
+            if i == 0 {
+                visitPath.append(VisitLog(stat: station, timestamp: 0, isRevisit: true))
+            } else{
+                visitPath.append(VisitLog(stat: station, timestamp: 0, isRevisit: false))
+            }
+        }
+        return visitPath
+    }
+
+    func getUnvisitedStationsInCluster(doneStation: String) -> [String]{
+        if remainSchedule.isEmpty {
+            print("[DR] remain Schedule is Empty")
+            return []
+        }
+        let daySchedule = remainSchedule[0]
+        if daySchedule.count > 0 {
+            var stations: [String] = []
+            for visitLog in daySchedule[0] {
+                if visitLog.station != doneStation && !visitLog.isRevisit {
+                    stations.append(visitLog.station)
+                }
+                return stations
+            }
+        }
+        print("[DR] day schedule is empty")
+        return []
+    }
+
+    func getNextCluster() -> [VisitLog] {
+        if remainSchedule.isEmpty {
+            print("[DR] remain Schedule is Empty")
+            return []
+        }
+        let daySchedule = remainSchedule[0]
+        if daySchedule.count > 1 {
+            return daySchedule[1]
+        }
+        return []
+    }
+
+    func getNextStation() -> String {
         if remainSchedule.isEmpty {
             print("[DR] remain Schedule is Empty")
             return "OMG"
         }
         let visitPath = remainSchedule[0][0]
+        // Skip revisit station?
         return visitPath[0].station
     }
 
-    func removePreStation() {
+    func removeFirstStation() {
         if remainSchedule.isEmpty {
             print("[DR] remain Schedule is Empty")
             return
