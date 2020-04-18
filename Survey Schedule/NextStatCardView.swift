@@ -61,6 +61,7 @@ struct NextStatCardView: View {
                         .cornerRadius(20)
                 }.sheet(isPresented: $showingLoading) {
                     LoadingView().environmentObject(self.dynamicRouting)
+                    //Text("Sheet")
                 }
 
                 Spacer()
@@ -73,13 +74,24 @@ struct NextStatCardView: View {
     }
     func doneAction(){
         print("Click Done")
+        self.showingLoading.toggle()
+        print("showingLoading: \(showingLoading)")
+        dynamicRouting.setNextStationStationVisited()
         if dynamicRouting.nextStation == BaseStation && dynamicRouting.beginDate == dynamicRouting.defaultTime {
             // Done fist station CS25
             dynamicRouting.beginDate = getCurrentDate()
             dynamicRouting.lastRepeatTime = 0
             print("Update begin time \(dynamicRouting.beginDate)")
         }
-        dynamicRouting.HandleDoneAction()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.dynamicRouting.HandleDoneAction()
+            sleep(1)
+            DispatchQueue.main.async {
+                self.dynamicRouting.updateNextStation()
+                self.showingLoading.toggle()
+            }
+        }
+        print("showingLoading: \(showingLoading)")
 
         //var tmp1 = Date()
         //var tmp2 = tmp1.addingTimeInterval(60)

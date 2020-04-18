@@ -63,7 +63,8 @@ class DynamicRouting: ObservableObject{
             DispatchQueue.main.async {
                 //print("This is run on the main queue, after the previous code in outer block")
                 self.remainSchedule = self.masterSchedule
-                self.updateFirstStation()
+                self.updateNextStation()
+                self.removeFirstStation()
             }
         }
     }
@@ -115,15 +116,25 @@ class DynamicRouting: ObservableObject{
         return "Not Found"
     }
 
-    func updateFirstStation() {
+    func updateNextStation() {
         if masterSchedule.isEmpty || masterSchedule[0].isEmpty {
             print("Master Schedule is empty")
             return
         }
-        let nextVisitLog = masterSchedule[0][0][0]
-        nextStation = nextVisitLog.station
 
-        removeFirstStation()
+        for daySchedule in masterSchedule {
+            for clusterSchedule in daySchedule {
+                for visitLog in clusterSchedule {
+                    var index: Int {
+                        stationsList.firstIndex(where: {$0.name == visitLog.station}) ?? -1
+                    }
+                    if !stationsList[index].isVisited {
+                        nextStation = stationsList[index].name
+                        return
+                    }
+                }
+            }
+        }
     }
 
     func backupStationsSetting() {
@@ -144,7 +155,8 @@ class DynamicRouting: ObservableObject{
         return false
     }
 
-    func setStationVisited(station: String) {
+    func setNextStationStationVisited() {
+        let station = nextVisitLog.station
         var index: Int {
             stationsList.firstIndex(where: {$0.name == station}) ?? -1
         }
@@ -161,14 +173,11 @@ class DynamicRouting: ObservableObject{
         print("[DR] currentDate \(currentDate)")
         //print("diff \(currentTime)")
 
-        setStationVisited(station: nextVisitLog.station)
         if nextVisitLog.isRevisit {
             lastRepeatTime = currentTime
         }
         nextVisitLog.timestamp = currentTime
         currentVisitPath.append(nextVisitLog)
-
-        //removePreStation()
 
         if currentTime - lastRepeatTime > N {
             print("[DR] Time to revisit")
@@ -190,19 +199,19 @@ class DynamicRouting: ObservableObject{
                     updateRevisitChangeInMasterSchedule(doneStation: nextVisitLog.station, revisitStation: minVisitLog.station)
 
                     nextVisitLog = VisitLog(stat: minVisitLog.station, timestamp: -1, isRevisit: true)
-                    nextStation = minVisitLog.station
-                    nextTravelTime = getTravelTimeString(sec: minTravelTime)
+                    //nextStation = minVisitLog.station
+                    //nextTravelTime = getTravelTimeString(sec: minTravelTime)
                     // Check the next station is last in a cluster
 
                 }
             }
         } else {
             print("[DR] Go to next station")
-            nextStation = getNextStation()
+            //nextStation = getNextStation()
             print("[DR] nextStation \(nextStation)")
             let timeToNextStation = getStatsTravelTime(stat1: nextVisitLog.station, stat2: nextStation)
-            nextTravelTime = getTravelTimeString(sec: timeToNextStation)
-            nextVisitLog = VisitLog(stat: nextStation, timestamp: -1, isRevisit: false)
+            //nextTravelTime = getTravelTimeString(sec: timeToNextStation)
+            //nextVisitLog = VisitLog(stat: nextStation, timestamp: -1, isRevisit: false)
         }
         removeFirstStation()
     }
