@@ -34,7 +34,13 @@ func getDiffInSec(start: Date, end: Date) -> Int{
 }
 
 func getTravelTimeString(sec: Int) -> String {
+    var hourStr = ""
+    var minStr = ""
     let hour = sec / 3600
     let min = (sec % 3600) / 60
-    return String(hour) + ":" + String(min)
+    if hour > 0 {
+        hourStr = String(hour) + " hr "
+    }
+    minStr = String(min) + " min"
+    return hourStr + minStr
 }

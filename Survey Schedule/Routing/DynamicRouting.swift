@@ -19,6 +19,7 @@ class DynamicRouting: ObservableObject{
     var nextVisitLog: VisitLog
     @Published var nextStation: String = "NASA"
     @Published var nextTravelTime: String = "00:00"
+    @Published var doneLoading: Bool = true
 
     var isStarted = false
     let dayLimit: Int = 8 // hours
@@ -121,7 +122,7 @@ class DynamicRouting: ObservableObject{
             print("Master Schedule is empty")
             return
         }
-
+        var preStation = BaseStation
         for daySchedule in masterSchedule {
             for clusterSchedule in daySchedule {
                 for visitLog in clusterSchedule {
@@ -130,8 +131,11 @@ class DynamicRouting: ObservableObject{
                     }
                     if !stationsList[index].isVisited {
                         nextStation = stationsList[index].name
+                        let timeToNextStation = getStatsTravelTime(stat1: preStation, stat2: nextStation)
+                        nextTravelTime = getTravelTimeString(sec: timeToNextStation)
                         return
                     }
+                    preStation = stationsList[index].name
                 }
             }
         }
@@ -157,6 +161,7 @@ class DynamicRouting: ObservableObject{
 
     func setNextStationStationVisited() {
         let station = nextVisitLog.station
+        print("[DR] set \(station) visited")
         var index: Int {
             stationsList.firstIndex(where: {$0.name == station}) ?? -1
         }
@@ -199,9 +204,6 @@ class DynamicRouting: ObservableObject{
                     updateRevisitChangeInMasterSchedule(doneStation: nextVisitLog.station, revisitStation: minVisitLog.station)
 
                     nextVisitLog = VisitLog(stat: minVisitLog.station, timestamp: -1, isRevisit: true)
-                    //nextStation = minVisitLog.station
-                    //nextTravelTime = getTravelTimeString(sec: minTravelTime)
-                    // Check the next station is last in a cluster
 
                 }
             }
@@ -211,7 +213,7 @@ class DynamicRouting: ObservableObject{
             print("[DR] nextStation \(nextStation)")
             let timeToNextStation = getStatsTravelTime(stat1: nextVisitLog.station, stat2: nextStation)
             //nextTravelTime = getTravelTimeString(sec: timeToNextStation)
-            //nextVisitLog = VisitLog(stat: nextStation, timestamp: -1, isRevisit: false)
+            nextVisitLog = VisitLog(stat: getNextStation(), timestamp: -1, isRevisit: false)
         }
         removeFirstStation()
     }
