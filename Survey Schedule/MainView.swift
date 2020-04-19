@@ -15,7 +15,7 @@ struct MainView: View {
     //@EnvironmentObject private var dynamicRouting: DynamicRouting
     var body: some View {
         ZStack(alignment: Alignment.top) {
-            MapView()
+            MapView(stations: dynamicRouting.stationsList)
             SlideOverCard($position, backgroundStyle: $background) {
                 VStack {
                     //Text("Slide Over Card").font(.title)

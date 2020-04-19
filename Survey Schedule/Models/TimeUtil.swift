@@ -22,7 +22,7 @@ func getTimeFromStr(time: String) -> Date {
 }
 
 func getCurrentDate() -> Date {
-    var currentDate = Date()
+    let currentDate = Date()
     let timezoneOffset =  TimeZone.current.secondsFromGMT()
     let epochDate = currentDate.timeIntervalSince1970
     let timezoneEpochOffset = (epochDate + Double(timezoneOffset))

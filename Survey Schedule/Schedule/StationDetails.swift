@@ -20,7 +20,7 @@ struct StationDetails: View {
 
     var body: some View {
         VStack {
-            StationMapView(coordinate: station.locationCoordinate)
+            StationMapView(coordinate: station.coordinate, station: self.station)
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: CGFloat(300))
 

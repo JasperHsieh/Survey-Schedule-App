@@ -10,6 +10,7 @@ import SwiftUI
 import MapKit
 
 struct MapView: UIViewRepresentable {
+    var stations: [Station]
     var locationManager = CLLocationManager()
     func setupManager() {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -24,11 +25,12 @@ struct MapView: UIViewRepresentable {
         return mapView
     }
     func updateUIView(_ uiView: MKMapView, context: Context) {
+        uiView.addAnnotations(stations)
     }
 }
 
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView()
-    }
-}
+//struct MapView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MapView()
+//    }
+//}

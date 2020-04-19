@@ -46,7 +46,8 @@ struct NextStatCardView: View {
                 //Spacer()
                 VStack(alignment: .leading){
                     Text(dynamicRouting.nextStation).font(.headline)
-                    Text(dynamicRouting.nextTravelTime).foregroundColor(.gray)
+                    Text(dynamicRouting.nextTravelTime)
+                        .foregroundColor(.gray)
                 }
                 .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
                 Spacer()
@@ -54,11 +55,13 @@ struct NextStatCardView: View {
                 //DoneButtonView()
                 Button(action: doneAction){
                     Text(nextButton)
-                        .fontWeight(.bold)
+                        //.fontWeight(.bold)
+                        .frame(minWidth: 50)
+                        .font(.body)
                         .padding()
                         .background(Color.green)
                         .foregroundColor(.white)
-                        .cornerRadius(20)
+                        .cornerRadius(10)
                 }.sheet(isPresented: $showingLoading) {
                     LoadingView().environmentObject(self.dynamicRouting)
                     //Text("Sheet")

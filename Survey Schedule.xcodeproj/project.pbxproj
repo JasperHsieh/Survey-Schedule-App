@@ -128,11 +128,11 @@
 		615A92DD2436F022000AEEE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				61A3DA402419E3B30071C7E9 /* MapView.swift */,
+				615A92E02436F0C6000AEEE5 /* StationMapView.swift */,
 				61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */,
 				615A92DE2436F044000AEEE5 /* CircleImage.swift */,
-				615A92E02436F0C6000AEEE5 /* StationMapView.swift */,
 				61470CCF243D65690069895C /* LoadingView.swift */,
-				61A3DA402419E3B30071C7E9 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -37,7 +37,7 @@ public enum CardPosition: CGFloat {
     func offsetFromTop() -> CGFloat {
         switch self {
         case .bottom:
-            return UIScreen.main.bounds.height - 80
+            return UIScreen.main.bounds.height - 180
         case .middle:
             return UIScreen.main.bounds.height/1.8
         case .top:

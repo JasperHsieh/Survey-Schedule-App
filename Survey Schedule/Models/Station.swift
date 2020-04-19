@@ -9,20 +9,24 @@
 import Foundation
 import CoreLocation
 import SwiftUI
+import MapKit
 
-struct Station: Identifiable {
+class Station: NSObject, Identifiable, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var title: String? = "Title"
     var id: String
     var name: String
     var isScheduled = true
     var isVisited = false
     fileprivate var imageName: String
-    var locationCoordinate: CLLocationCoordinate2D
+    //var locationCoordinate: CLLocationCoordinate2D
 
     init(id: String, name: String, image: String, coordinate: CLLocationCoordinate2D) {
         self.id = id
         self.name = name
         self.imageName = image
-        self.locationCoordinate = coordinate
+        self.coordinate = coordinate
+        self.title = name
     }
 
 }

@@ -11,6 +11,7 @@ import MapKit
 
 struct StationMapView: UIViewRepresentable {
     var coordinate: CLLocationCoordinate2D
+    var station: Station
 
     func makeUIView(context: Context) -> MKMapView {
         MKMapView(frame: .zero)
@@ -20,6 +21,7 @@ struct StationMapView: UIViewRepresentable {
         let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         uiView.setRegion(region, animated: true)
+        uiView.addAnnotation(station)
     }
 }
 
