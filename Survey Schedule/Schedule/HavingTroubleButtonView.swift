@@ -27,6 +27,7 @@ struct HavingTroubleButtonView: View {
             ActionSheet(title: Text("The reason you can't get there"),  buttons:[
                 .default(Text("Not going to visit the station")){
                     print("Click Not going to visit the station")
+                    self.dynamicRouting.handleSkipNextStation()
                 },
                 .default(Text("End survey today")){
                     print("Click End survey today")

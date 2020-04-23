@@ -8,6 +8,7 @@
 
 import SwiftUI
 import SwiftDate
+import CoreLocation
 
 struct MasterButtonView: View {
     @State private var showingSheet = false
@@ -50,7 +51,7 @@ struct ScheduleList: View {
                 ForEach(dynamicRouting.masterSchedule, id: \.self) { daySchedule in
                     Section(header: Text("day")) {
                         ForEach(daySchedule, id: \.self) { clusterSchedule in
-                            ForEach(clusterSchedule, id: \.self) { visitLog in ScheduleRow(log: visitLog).environmentObject(self.dynamicRouting)
+                            ForEach(clusterSchedule, id: \.self) { visitLog in ScheduleRow(log: visitLog, isScheduled: self.dynamicRouting.isStationScheduled(station: visitLog.station)).environmentObject(self.dynamicRouting)
                             }
                         }
                     }
@@ -79,6 +80,8 @@ struct ScheduleRow: View {
     var stationIndex: Int {
         dynamicRouting.stationsList.firstIndex(where: {$0.name == log.station})!
     }
+    var isScheduled: Bool
+    //var station = Station(id: "-1", name: "CMU", image: "CMU", coordinate: CLLocationCoordinate2D(latitude: -1, longitude: -1))
     //let tmp = dynamicRouting.startTime! + log.timestamp.seconds
     //let timeStamp: String = "10:00:01"
     var body: some View {
@@ -95,20 +98,26 @@ struct ScheduleRow: View {
                     Text("(Repeat)")
                         .foregroundColor(Color.gray)
                 }
+                if !isScheduled {
+                    Text("(Skipped)")
+                    .foregroundColor(Color.gray)
+                }
+
             }.frame(width:UIScreen.main.bounds.width * 0.4, alignment: .leading)
             Spacer()
         }
-        .foregroundColor((log.index < dynamicRouting.visitedCount) ? Color.gray: Color.primary)
+        .foregroundColor((log.index < dynamicRouting.scheduleCount) ? Color.gray: Color.primary)
         //.foregroundColor(dynamicRouting.stationsList[stationIndex].isVisited ? Color.gray: Color.primary)
     }
-    init(log: VisitLog) {
-        //self.dynamicRouting = dynamicRouting
-        self.log = log
-        let df = DateFormatter()
-        df.dateFormat = "hh:mm:ss"
-        //timeStamp = df.string(from: dynamicRouting.startTime! + log.timestamp.seconds)
-        //timeStamp = (self.dynamicRouting.startTime! + log.timestamp.seconds).toFormat("HH:mm:ss")
-    }
+//    init(log: VisitLog) {
+//        //self.dynamicRouting = dynamicRouting
+//        self.log = log
+//        let df = DateFormatter()
+//        df.dateFormat = "hh:mm:ss"
+//        //station = self.dynamicRouting.stationsList[self.dynamicRouting.getStationIndex(station: log.station)]
+//        //timeStamp = df.string(from: dynamicRouting.startTime! + log.timestamp.seconds)
+//        //timeStamp = (self.dynamicRouting.startTime! + log.timestamp.seconds).toFormat("HH:mm:ss")
+//    }
 }
 
 //struct MasterButtonView_Previews: PreviewProvider {

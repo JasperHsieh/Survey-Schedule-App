@@ -21,7 +21,7 @@ class DynamicRouting: ObservableObject{
     @Published var nextStation: String = "NASA"
     @Published var nextTravelTime: String = "00:00"
     @Published var doneLoading: Bool = true
-    @Published var visitedCount: Int = 0
+    @Published var scheduleCount: Int = 0
 
     var isStarted = false
     let dayLimit: Int = 8 // hours
@@ -67,7 +67,8 @@ class DynamicRouting: ObservableObject{
             DispatchQueue.main.async {
                 //print("This is run on the main queue, after the previous code in outer block")
                 self.remainSchedule = self.masterSchedule
-                self.updateNextStation()
+                self.setNextVisitLog(station: self.getNextStation(), isRevisit: false)
+                //self.updateNextStation()
                 //self.removeFirstStation()
             }
         }
@@ -89,12 +90,21 @@ class DynamicRouting: ObservableObject{
         masterSchedule = mergeSchedule()
 //        masterSchedule = indexVisitLog(schedule: masterSchedule)
         indexingSchedule()
-        nextVisitLog = VisitLog(stat: getNextStation(), timestamp: -1, isRevisit: false)
+        setNextVisitLog(station: getNextStation(), isRevisit: false)
+        //nextVisitLog = VisitLog(stat: getNextStation(), timestamp: -1, isRevisit: false)
         print("[DR] After applying")
         VisitLog.dumpDaySchedule(daySchedule: remainSchedule[0])
     }
 
-//    func mergeSchedule(remainSchedule: [[[VisitLog]]]) -> [[[VisitLog]]] {
+    func setNextVisitLog(station: String, isRevisit: Bool) {
+        DispatchQueue.main.async {
+            self.nextVisitLog = VisitLog(stat: station, timestamp: -1, isRevisit: isRevisit)
+            self.nextStation = station
+            let timeToNextStation = getStatsTravelTime(stat1: self.preVisitLog.station, stat2: self.nextStation)
+            self.nextTravelTime = getTravelTimeString(sec: timeToNextStation)
+        }
+    }
+
     func mergeSchedule() -> [[[VisitLog]]] {
         print("[DR] mergeSchedule")
         //VisitLog.dumpDaySchedule(daySchedule: remainSchedule[0])
@@ -152,29 +162,29 @@ class DynamicRouting: ObservableObject{
         return "Not Found"
     }
 
-    func updateNextStation() {
-        if masterSchedule.isEmpty || masterSchedule[0].isEmpty {
-            print("Master Schedule is empty")
-            return
-        }
-        var preStation = BaseStation
-        for daySchedule in masterSchedule {
-            for clusterSchedule in daySchedule {
-                for visitLog in clusterSchedule {
-                    var index: Int {
-                        stationsList.firstIndex(where: {$0.name == visitLog.station}) ?? -1
-                    }
-                    if !stationsList[index].isVisited {
-                        nextStation = stationsList[index].name
-                        let timeToNextStation = getStatsTravelTime(stat1: preStation, stat2: nextStation)
-                        nextTravelTime = getTravelTimeString(sec: timeToNextStation)
-                        return
-                    }
-                    preStation = stationsList[index].name
-                }
-            }
-        }
-    }
+//    func updateNextStation() {
+//        if masterSchedule.isEmpty || masterSchedule[0].isEmpty {
+//            print("Master Schedule is empty")
+//            return
+//        }
+//        var preStation = BaseStation
+//        for daySchedule in masterSchedule {
+//            for clusterSchedule in daySchedule {
+//                for visitLog in clusterSchedule {
+//                    var index: Int {
+//                        stationsList.firstIndex(where: {$0.name == visitLog.station}) ?? -1
+//                    }
+//                    if !stationsList[index].isVisited &&  stationsList[index].isScheduled {
+//                        nextStation = stationsList[index].name
+//                        let timeToNextStation = getStatsTravelTime(stat1: preStation, stat2: nextStation)
+//                        nextTravelTime = getTravelTimeString(sec: timeToNextStation)
+//                        return
+//                    }
+//                    preStation = stationsList[index].name
+//                }
+//            }
+//        }
+//    }
 
     func backupStationsSetting() {
         print("backupStationsSetting")
@@ -203,7 +213,7 @@ class DynamicRouting: ObservableObject{
             }
             if index != -1 {
                 self.stationsList[index].isVisited = true
-                self.visitedCount += 1
+                self.scheduleCount += 1
             }
         }
     }
@@ -256,8 +266,8 @@ class DynamicRouting: ObservableObject{
                 if let minVisitLog = minVisitLog {
                     print("[DR] Revisit \(minVisitLog.station)")
                     updateRevisitChangeInMasterSchedule(doneStation: preVisitLog.station, revisitStation: minVisitLog.station)
-
-                    nextVisitLog = VisitLog(stat: minVisitLog.station, timestamp: -1, isRevisit: true)
+                    setNextVisitLog(station: minVisitLog.station, isRevisit: true)
+                    //nextVisitLog = VisitLog(stat: minVisitLog.station, timestamp: -1, isRevisit: true)
 //                    let index = getStationIndex(station: minVisitLog.station)
 //                    stationsList[index].shouldRevisit = true
 
@@ -270,12 +280,12 @@ class DynamicRouting: ObservableObject{
             //let timeToNextStation = getStatsTravelTime(stat1: nextVisitLog.station, stat2: nextStation)
             //nextTravelTime = getTravelTimeString(sec: timeToNextStation)
             removeFirstStation()
-            nextVisitLog = VisitLog(stat: getNextStation(), timestamp: -1, isRevisit: false)
+            setNextVisitLog(station: getNextStation(), isRevisit: false)
+            //nextVisitLog = VisitLog(stat: getNextStation(), timestamp: -1, isRevisit: false)
             print("[DR] nextStation \(nextVisitLog.station)")
         }
         //VisitLog.dumpMasterSchedule(schedule: remainSchedule)
         //VisitLog.dumpDaySchedule(daySchedule: remainSchedule[0])
-        //removeFirstStation()
     }
 
     func updateRevisitChangeInMasterSchedule(doneStation: String, revisitStation: String) {
@@ -504,5 +514,18 @@ class DynamicRouting: ObservableObject{
         }
         remainSchedule = newRemainSchedule
         //VisitLog.dumpMasterSchedule(schedule: remainSchedule)
+    }
+
+    func handleSkipNextStation() {
+        let index = getStationIndex(station: nextStation)
+        stationsList[index].isScheduled = false
+        removeFirstStation()
+        setNextVisitLog(station: getNextStation(), isRevisit: false)
+        self.scheduleCount += 1
+    }
+
+    func isStationScheduled(station: String) -> Bool{
+        let index = getStationIndex(station: station)
+        return stationsList[index].isScheduled
     }
 }
