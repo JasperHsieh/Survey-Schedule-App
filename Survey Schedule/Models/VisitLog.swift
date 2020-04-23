@@ -14,12 +14,14 @@ struct VisitLog: Identifiable, Hashable {
     var timestamp: Int // arrival time
     var isRevisit: Bool
     var index: Int
+    var didVisit: Bool
 
     init(stat: String, timestamp: Int, isRevisit: Bool) {
         self.station = stat
         self.timestamp = timestamp
         self.isRevisit = isRevisit
         self.index = Int.max
+        self.didVisit = false
     }
 
     static func == (lhs: VisitLog, rhs: VisitLog) -> Bool {

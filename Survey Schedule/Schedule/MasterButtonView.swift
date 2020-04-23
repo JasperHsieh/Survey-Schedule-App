@@ -106,7 +106,7 @@ struct ScheduleRow: View {
             }.frame(width:UIScreen.main.bounds.width * 0.4, alignment: .leading)
             Spacer()
         }
-        .foregroundColor((log.index < dynamicRouting.scheduleCount) ? Color.gray: Color.primary)
+        .foregroundColor((log.index < dynamicRouting.currentVisitPath.count) ? Color.gray: Color.primary)
         //.foregroundColor(dynamicRouting.stationsList[stationIndex].isVisited ? Color.gray: Color.primary)
     }
 //    init(log: VisitLog) {

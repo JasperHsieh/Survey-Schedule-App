@@ -21,7 +21,7 @@ class DynamicRouting: ObservableObject{
     @Published var nextStation: String = "NASA"
     @Published var nextTravelTime: String = "00:00"
     @Published var doneLoading: Bool = true
-    @Published var scheduleCount: Int = 0
+    //@Published var scheduleCount: Int = 0
 
     var isStarted = false
     let dayLimit: Int = 8 // hours
@@ -213,7 +213,7 @@ class DynamicRouting: ObservableObject{
             }
             if index != -1 {
                 self.stationsList[index].isVisited = true
-                self.scheduleCount += 1
+                //self.scheduleCount += 1
             }
         }
     }
@@ -241,6 +241,7 @@ class DynamicRouting: ObservableObject{
         if preVisitLog.isRevisit {
             lastRepeatTime = timeSoFar
         }
+        preVisitLog.didVisit = true
         preVisitLog.timestamp = timeSoFar
         currentVisitPath.append(preVisitLog)
 
@@ -253,6 +254,9 @@ class DynamicRouting: ObservableObject{
                 var minVisitLog: VisitLog?
 
                 for visitLog in currentVisitPath {
+                    if !visitLog.didVisit {
+                        continue
+                    }            
                     let curTravelTime = getStatsTravelTime(stat1: preVisitLog.station, stat2: visitLog.station)
                     //print("[DR] \(preVisitLog.station)<->\(visitLog.station) \(curTravelTime)")
                     //let timeSoFar = getDiffInSec(start: beginDate, end: currentDate)
@@ -523,7 +527,7 @@ class DynamicRouting: ObservableObject{
         stationsList[index].isScheduled = false
         removeFirstStation()
         setNextVisitLog(station: getNextStation(), isRevisit: false)
-        self.scheduleCount += 1
+        //self.scheduleCount += 1
     }
 
     func isStationScheduled(station: String) -> Bool{
