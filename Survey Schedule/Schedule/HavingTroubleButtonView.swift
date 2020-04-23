@@ -31,6 +31,7 @@ struct HavingTroubleButtonView: View {
                 },
                 .default(Text("End survey today")){
                     print("Click End survey today")
+                    self.dynamicRouting.handleEndSurvey()
                 },
                 .cancel()
             ])

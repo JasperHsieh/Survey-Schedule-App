@@ -517,6 +517,8 @@ class DynamicRouting: ObservableObject{
     }
 
     func handleSkipNextStation() {
+        print("[DR] Skip \(nextVisitLog.station)")
+        currentVisitPath.append(nextVisitLog)
         let index = getStationIndex(station: nextStation)
         stationsList[index].isScheduled = false
         removeFirstStation()
@@ -527,5 +529,9 @@ class DynamicRouting: ObservableObject{
     func isStationScheduled(station: String) -> Bool{
         let index = getStationIndex(station: station)
         return stationsList[index].isScheduled
+    }
+
+    func handleEndSurvey() {
+        setNextVisitLog(station: BaseStation, isRevisit: false)
     }
 }
