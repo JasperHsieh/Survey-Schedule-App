@@ -76,6 +76,9 @@ struct ScheduleRow: View {
     //let dynamicRouting: DynamicRouting
     @EnvironmentObject private var dynamicRouting: DynamicRouting
     var log: VisitLog
+    var stationIndex: Int {
+        dynamicRouting.stationsList.firstIndex(where: {$0.name == log.station})!
+    }
     //let tmp = dynamicRouting.startTime! + log.timestamp.seconds
     //let timeStamp: String = "10:00:01"
     var body: some View {
@@ -95,6 +98,8 @@ struct ScheduleRow: View {
             }.frame(width:UIScreen.main.bounds.width * 0.4, alignment: .leading)
             Spacer()
         }
+        .foregroundColor((log.index < dynamicRouting.visitedCount) ? Color.gray: Color.primary)
+        //.foregroundColor(dynamicRouting.stationsList[stationIndex].isVisited ? Color.gray: Color.primary)
     }
     init(log: VisitLog) {
         //self.dynamicRouting = dynamicRouting

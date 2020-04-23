@@ -20,6 +20,8 @@ struct LoadingView: View {
     @State private var showingWelcome = false
     @State private var showDetails = false
 
+    static let delay: UInt32 = 2
+
 //    let gradient = AnyView(RadialGradient(gradient: Gradient(colors: [Color.orange
 //    , Color.yellow]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, startRadius: /*@START_MENU_TOKEN@*/5/*@END_MENU_TOKEN@*/, endRadius: /*@START_MENU_TOKEN@*/500/*@END_MENU_TOKEN@*/)
 //    .edgesIgnoringSafeArea(.all))

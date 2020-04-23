@@ -61,7 +61,6 @@ struct StationList: View {
                 }, label: { Text("Apply") })
                     .alert(isPresented:$showingAlert) {
                         Alert(title: Text("Are you sure you want to apply the stations?"), message: Text("It will take few minutes to reschedule"), primaryButton: .default(Text("Apply")) {
-                            print("Apply...")
                             self.applyStationsChange()
                             //self.dynamicRouting.getSchedule()
                         }, secondaryButton: .cancel())
@@ -73,33 +72,25 @@ struct StationList: View {
             //StationList().environmentObject(self.dynamicRouting)
         }
     }
-//    func handleCancel(){
-//        print("Click cancel")
-//        self.presentationMode.wrappedValue.dismiss()
-//    }
-//
-//    func handleApply(){
-//        print("Click Apply")
-//        self.showingAlert = true
-//    }
 
     func applyStationsChange() {
-        print("Apply stations change")
+        print("[AS] Apply stations change")
+        dynamicRouting.doneLoading = false
         if dynamicRouting.isScheduledStationsChanged() {
             self.showingLoading.toggle()
             DispatchQueue.global(qos: .userInitiated).async {
-                print("This is run on the background queue")
                 self.dynamicRouting.applyStationsChangeToSchedule()
-
+                sleep(LoadingView.delay)
                 DispatchQueue.main.async {
-                    print("This is run on the main queue, after the previous code in outer block")
-                    self.showingLoading.toggle()
-                    self.presentationMode.wrappedValue.dismiss()
+                    self.dynamicRouting.doneLoading = true
+                    self.dynamicRouting.updateNextStation()
+                    //self.showingLoading.toggle()
+                    //self.presentationMode.wrappedValue.dismiss()
                 }
             }
             //dynamicRouting.getSchedule()
         }else {
-            print("Stations schedule didn't change")
+            print("[AS] Stations schedule didn't change")
             self.presentationMode.wrappedValue.dismiss()
         }
         //self.presentationMode.wrappedValue.dismiss()

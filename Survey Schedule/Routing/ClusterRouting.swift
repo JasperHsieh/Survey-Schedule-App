@@ -148,7 +148,7 @@ class ClusterRouting{
                 //print(clusterVisit)
             }
         }
-        VisitLog.dumpMasterSchedule(schedule: schedule)
+        //VisitLog.dumpMasterSchedule(schedule: schedule)
         return schedule
     }
 

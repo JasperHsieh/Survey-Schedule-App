@@ -13,10 +13,13 @@ struct VisitLog: Identifiable, Hashable {
     var station: String
     var timestamp: Int // arrival time
     var isRevisit: Bool
+    var index: Int
+
     init(stat: String, timestamp: Int, isRevisit: Bool) {
         self.station = stat
         self.timestamp = timestamp
         self.isRevisit = isRevisit
+        self.index = Int.max
     }
 
     static func == (lhs: VisitLog, rhs: VisitLog) -> Bool {
@@ -41,6 +44,18 @@ struct VisitLog: Identifiable, Hashable {
         }
     }
 
+    static func dumpDaySchedule(daySchedule: [[VisitLog]]) {
+        print("{", terminator: "")
+        for visitPath in daySchedule {
+            print("[", terminator: "")
+            for log in visitPath {
+                dumpLog(visitLog: log)
+            }
+            print("], ", terminator: "")
+        }
+        print("}")
+    }
+
     static func dumpPath(path visitPath: [VisitLog]) {
         for log in visitPath {
             dumpLog(visitLog: log)
@@ -50,7 +65,7 @@ struct VisitLog: Identifiable, Hashable {
     }
 
     static func dumpLog(visitLog: VisitLog) {
-        print("(\(visitLog.station),\(visitLog.timestamp),\(visitLog.isRevisit))", terminator: "")
+        print("(\(visitLog.station),\(visitLog.timestamp),\(visitLog.isRevisit),\(visitLog.index))", terminator: "")
     }
 
 }

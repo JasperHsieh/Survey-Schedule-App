@@ -47,9 +47,11 @@ struct NextStatCardView: View {
                 VStack(alignment: .leading){
                     Text(dynamicRouting.nextStation).font(.headline)
                     Text(dynamicRouting.nextTravelTime)
+                        //.frame(width:60)
                         .foregroundColor(.gray)
                 }
-                .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
+                .frame(width: 90)
+                //.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                 Spacer()
                 Spacer()
                 //DoneButtonView()
@@ -80,7 +82,7 @@ struct NextStatCardView: View {
         self.showingLoading.toggle()
         //print("[NS] showingLoading: \(showingLoading)")
         dynamicRouting.doneLoading = false
-        dynamicRouting.setNextStationStationVisited()
+        //dynamicRouting.setPreStationVisited()
         if dynamicRouting.nextStation == BaseStation && dynamicRouting.beginDate == dynamicRouting.defaultTime {
             // Done fist station CS25
             dynamicRouting.beginDate = getCurrentDate()
@@ -89,7 +91,7 @@ struct NextStatCardView: View {
         }
         DispatchQueue.global(qos: .userInitiated).async {
             self.dynamicRouting.HandleDoneAction()
-            sleep(2)
+            //sleep(LoadingView.delay)
             DispatchQueue.main.async {
                 self.dynamicRouting.doneLoading = true
                 self.dynamicRouting.updateNextStation()
