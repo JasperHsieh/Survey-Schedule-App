@@ -10,12 +10,13 @@ import SwiftUI
 
 struct HavingTroubleButtonView: View {
     @EnvironmentObject private var dynamicRouting: DynamicRouting
-    @State private var showingSheet = false
+    @State private var showingActionSheet = false
+    @State private var showingLoading = false
 
     var body: some View {
         Button(action: {
             print("click TroubleShooting")
-            self.showingSheet = true
+            self.showingActionSheet = true
         }){
             Text("Having trouble going to the station?")
                 .padding()
@@ -23,18 +24,23 @@ struct HavingTroubleButtonView: View {
                 .foregroundColor(.white)
                 .cornerRadius(20)
         }
-        .actionSheet(isPresented: $showingSheet) {
+        .actionSheet(isPresented: $showingActionSheet) {
             ActionSheet(title: Text("The reason you can't get there"),  buttons:[
                 .default(Text("Not going to visit the station")){
                     print("Click Not going to visit the station")
+                    self.showingLoading = true
                     self.dynamicRouting.handleSkipNextStation()
                 },
                 .default(Text("End survey today")){
                     print("Click End survey today")
+                    self.showingLoading = true
                     self.dynamicRouting.handleEndSurvey()
                 },
                 .cancel()
             ])
+        }
+        .sheet(isPresented: $showingLoading) {
+            LoadingView().environmentObject(self.dynamicRouting)
         }
     }
 }

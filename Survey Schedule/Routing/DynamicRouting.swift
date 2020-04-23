@@ -256,7 +256,7 @@ class DynamicRouting: ObservableObject{
                 for visitLog in currentVisitPath {
                     if !visitLog.didVisit {
                         continue
-                    }            
+                    }
                     let curTravelTime = getStatsTravelTime(stat1: preVisitLog.station, stat2: visitLog.station)
                     //print("[DR] \(preVisitLog.station)<->\(visitLog.station) \(curTravelTime)")
                     //let timeSoFar = getDiffInSec(start: beginDate, end: currentDate)
@@ -522,12 +522,14 @@ class DynamicRouting: ObservableObject{
 
     func handleSkipNextStation() {
         print("[DR] Skip \(nextVisitLog.station)")
+        doneLoading = false
         currentVisitPath.append(nextVisitLog)
         let index = getStationIndex(station: nextStation)
         stationsList[index].isScheduled = false
         removeFirstStation()
         setNextVisitLog(station: getNextStation(), isRevisit: false)
         //self.scheduleCount += 1
+        doneLoading = true
     }
 
     func isStationScheduled(station: String) -> Bool{
