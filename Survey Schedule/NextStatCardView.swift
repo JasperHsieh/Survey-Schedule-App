@@ -91,7 +91,7 @@ struct NextStatCardView: View {
         }
         DispatchQueue.global(qos: .userInitiated).async {
             self.dynamicRouting.HandleDoneAction()
-            //sleep(LoadingView.delay)
+            sleep(LoadingView.delay)
             DispatchQueue.main.async {
                 self.dynamicRouting.doneLoading = true
                 //self.dynamicRouting.updateNextStation()

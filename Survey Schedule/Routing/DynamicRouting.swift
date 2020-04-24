@@ -79,21 +79,28 @@ class DynamicRouting: ObservableObject{
         indexingSchedule()
     }
 
-    func applyStationsChangeToSchedule() {
+    func applyStationsChange() {
         print("[DR] Applying change..., preVisitLog: \(preVisitLog.station)")
-        let clusters = createClusters()
-        print(clusters)
-        VisitLog.dumpDaySchedule(daySchedule: remainSchedule[0])
-        remainSchedule = clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: preVisitLog.station)
-        removeFirstStation()
-//        masterSchedule = mergeSchedule(remainSchedule: remainSchedule)
-        masterSchedule = mergeSchedule()
-//        masterSchedule = indexVisitLog(schedule: masterSchedule)
-        indexingSchedule()
-        setNextVisitLog(station: getNextStation(), isRevisit: false)
-        //nextVisitLog = VisitLog(stat: getNextStation(), timestamp: -1, isRevisit: false)
-        print("[DR] After applying")
-        VisitLog.dumpDaySchedule(daySchedule: remainSchedule[0])
+        doneLoading = false
+        DispatchQueue.global(qos: .userInitiated).async {
+            let clusters = self.createClusters()
+            print(clusters)
+            VisitLog.dumpDaySchedule(daySchedule: self.remainSchedule[0])
+            self.remainSchedule = self.clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: self.preVisitLog.station)
+            self.removeFirstStation()
+    //        masterSchedule = mergeSchedule(remainSchedule: remainSchedule)
+            self.masterSchedule = self.mergeSchedule()
+    //        masterSchedule = indexVisitLog(schedule: masterSchedule)
+            self.indexingSchedule()
+            self.setNextVisitLog(station: self.getNextStation(), isRevisit: false)
+            //nextVisitLog = VisitLog(stat: getNextStation(), timestamp: -1, isRevisit: false)
+            print("[DR] After applying")
+            VisitLog.dumpDaySchedule(daySchedule: self.remainSchedule[0])
+            //sleep(LoadingView.delay)
+            DispatchQueue.main.async {
+                self.doneLoading = true
+            }
+        }
     }
 
     func setNextVisitLog(station: String, isRevisit: Bool) {
@@ -290,6 +297,11 @@ class DynamicRouting: ObservableObject{
         }
         //VisitLog.dumpMasterSchedule(schedule: remainSchedule)
         //VisitLog.dumpDaySchedule(daySchedule: remainSchedule[0])
+    }
+
+    func updateRevisitChange(doneStation: String, revisitStation: String) {
+        var stationsInCluster = getUnvisitedStationsInCluster(doneStation: doneStation)
+        stationsInCluster.insert(revisitStation, at: 0)
     }
 
     func updateRevisitChangeInMasterSchedule(doneStation: String, revisitStation: String) {
@@ -539,5 +551,16 @@ class DynamicRouting: ObservableObject{
 
     func handleEndSurvey() {
         setNextVisitLog(station: BaseStation, isRevisit: false)
+        //doneLoading = false
+        DispatchQueue.global(qos: .userInitiated).async {
+            let clusters = self.createClusters()
+            print("[DR] Creating shcedule for tomorrow")
+            self.remainSchedule = self.clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: BaseStation)
+            self.masterSchedule = self.remainSchedule
+            print("[DR] Done creating shcedule for tomorrow")
+            DispatchQueue.main.async {
+                //self.doneLoading = true
+            }
+        }
     }
 }

@@ -61,7 +61,7 @@ struct StationList: View {
                 }, label: { Text("Apply") })
                     .alert(isPresented:$showingAlert) {
                         Alert(title: Text("Are you sure you want to apply the stations?"), message: Text("It will take few minutes to reschedule"), primaryButton: .default(Text("Apply")) {
-                            self.applyStationsChange()
+                            self.applyChange()
                             //self.dynamicRouting.getSchedule()
                         }, secondaryButton: .cancel())
                     }
@@ -73,22 +73,11 @@ struct StationList: View {
         }
     }
 
-    func applyStationsChange() {
+    func applyChange() {
         print("[AS] Apply stations change")
-        dynamicRouting.doneLoading = false
         if dynamicRouting.isScheduledStationsChanged() {
             self.showingLoading.toggle()
-            DispatchQueue.global(qos: .userInitiated).async {
-                self.dynamicRouting.applyStationsChangeToSchedule()
-                sleep(LoadingView.delay)
-                DispatchQueue.main.async {
-                    self.dynamicRouting.doneLoading = true
-                    //self.dynamicRouting.updateNextStation()
-                    //self.showingLoading.toggle()
-                    //self.presentationMode.wrappedValue.dismiss()
-                }
-            }
-            //dynamicRouting.getSchedule()
+            dynamicRouting.applyStationsChange()
         }else {
             print("[AS] Stations schedule didn't change")
             self.presentationMode.wrappedValue.dismiss()
