@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct VisitLog: Identifiable, Hashable {
+class VisitLog: Identifiable, Hashable {
     var id = UUID()
     var station: String
     var timestamp: Int // arrival time
@@ -16,6 +16,7 @@ struct VisitLog: Identifiable, Hashable {
     var index: Int
     var didVisit: Bool
     var date: Date
+    var isSkip: Bool
 
     init(stat: String, timestamp: Int, isRevisit: Bool) {
         self.station = stat
@@ -24,6 +25,7 @@ struct VisitLog: Identifiable, Hashable {
         self.index = Int.max
         self.didVisit = false
         self.date = getTimeFromStr(time: "2020-01-01 09:00:00+00000")
+        self.isSkip = false
     }
 
     static func == (lhs: VisitLog, rhs: VisitLog) -> Bool {
@@ -69,7 +71,8 @@ struct VisitLog: Identifiable, Hashable {
     }
 
     static func dumpLog(visitLog: VisitLog) {
-        print("(\(visitLog.station),\(visitLog.timestamp),\(visitLog.isRevisit),\(visitLog.index))", terminator: "")
+        //print("(\(visitLog.station),\(visitLog.timestamp),\(visitLog.isRevisit),\(visitLog.index), \(visitLog.didVisit), \(visitLog.date))", terminator: "")
+        print("(\(visitLog.station),\(visitLog.didVisit),\(visitLog.isRevisit),\(visitLog.isSkip),\(visitLog.date))", terminator: "")
     }
 
 }

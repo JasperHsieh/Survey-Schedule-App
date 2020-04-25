@@ -29,6 +29,8 @@ let WorkingHour = 8
 let BaseStation = "CS25"
 let InvalidStation = "Mars"
 
+typealias StatIndex = (day: Int, cluster: Int, station: Int)
+
 func readJsonFromFile(filePath: String) -> JSON?{
     //var jsonObj:JSON? = nil
     if let path = Bundle.main.path(forResource: filePath, ofType: "json") {
