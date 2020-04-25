@@ -229,18 +229,30 @@ class DynamicRouting: ObservableObject{
         return index
     }
 
+    func doneVisitStation() {
+        doneLoading = false
+        DispatchQueue.global(qos: .userInitiated).async {
+            sleep(LoadingView.delay)
+            self.HandleDoneAction()
+            DispatchQueue.main.async {
+                self.doneLoading = true
+            }
+        }
+    }
+
     func HandleDoneAction(){
         print("[DR] HandleDoneAction \(nextVisitLog.station)")
         // Save preStation visit log
         let currentDate = getCurrentDate()
         var timeSoFar = getDiffInSec(start: beginDate, end: currentDate)
+        let simulateRevisit = false
         print("[DR] currentDate \(currentDate)")
         //print("diff \(currentTime)")
 
         preVisitLog = nextVisitLog
         setPreStationVisited()
 
-        if preVisitLog.station == "RE4" {
+        if simulateRevisit && preVisitLog.station == "RE4" {
             timeSoFar += 2*60*60
         }
 
@@ -549,13 +561,17 @@ class DynamicRouting: ObservableObject{
     func handleSkipNextStation() {
         print("[DR] Skip \(nextVisitLog.station)")
         doneLoading = false
-        currentVisitPath.append(nextVisitLog)
-        let index = getStationIndex(station: nextStation)
-        stationsList[index].isScheduled = false
-        removeFirstStation()
-        setNextVisitLog(station: getNextStation(), isRevisit: false)
-        //self.scheduleCount += 1
-        doneLoading = true
+        DispatchQueue.global(qos: .userInitiated).async {
+            sleep(LoadingView.delay)
+            self.currentVisitPath.append(self.nextVisitLog)
+            let index = self.getStationIndex(station: self.nextStation)
+            self.stationsList[index].isScheduled = false
+            self.removeFirstStation()
+            self.setNextVisitLog(station: self.getNextStation(), isRevisit: false)
+            DispatchQueue.main.async {
+                self.doneLoading = true
+            }
+        }
     }
 
     func isStationScheduled(station: String) -> Bool{
@@ -564,17 +580,21 @@ class DynamicRouting: ObservableObject{
     }
 
     func handleEndSurvey() {
-        setNextVisitLog(station: BaseStation, isRevisit: false)
-        //doneLoading = false
+        doneLoading = false
+        DispatchQueue.global(qos: .userInitiated).async {
+            sleep(LoadingView.delay)
+            self.setNextVisitLog(station: BaseStation, isRevisit: false)
+            DispatchQueue.main.async {
+                self.doneLoading = true
+            }
+        }
+
         DispatchQueue.global(qos: .userInitiated).async {
             let clusters = self.createClusters()
             print("[DR] Creating shcedule for tomorrow")
             self.remainSchedule = self.clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: BaseStation)
             self.masterSchedule = self.remainSchedule
             print("[DR] Done creating shcedule for tomorrow")
-            DispatchQueue.main.async {
-                //self.doneLoading = true
-            }
         }
     }
 }
