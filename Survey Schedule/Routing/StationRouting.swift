@@ -135,7 +135,7 @@ class StationRouting {
     }
 
     func getMinTimePermutationWithStart(startStat: String, statList: [String]) -> [String] {
-        print("getMinTimePermutationWithStart start... \(startStat) \(statList)")
+        //print("getMinTimePermutationWithStart start... \(startStat) \(statList)")
         var minPerm = getMinPermWithStartStationFromCache(stations: statList)
         if !minPerm.isEmpty {
             //print("Found in cache \(minPerm)")
