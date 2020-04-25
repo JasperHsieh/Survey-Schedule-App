@@ -41,6 +41,9 @@
 		61A3DA6C241EC5940071C7E9 /* HavingTroubleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA6B241EC5940071C7E9 /* HavingTroubleButtonView.swift */; };
 		61A3DA6E241EFC5E0071C7E9 /* TroublesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA6D241EFC5D0071C7E9 /* TroublesCardView.swift */; };
 		61A3DA70241F04750071C7E9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A3DA6F241F04750071C7E9 /* MainView.swift */; };
+		61FEA2DB24538B5800E46A28 /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FEA2DA24538B5800E46A28 /* KeyboardAdaptive.swift */; };
+		61FEA2DF24538B9E00E46A28 /* KeyboardHeightPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FEA2DE24538B9E00E46A28 /* KeyboardHeightPublisher.swift */; };
+		61FEA2E124538C0600E46A28 /* UIResponder+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FEA2E024538C0600E46A28 /* UIResponder+Current.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +84,9 @@
 		61A3DA6B241EC5940071C7E9 /* HavingTroubleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HavingTroubleButtonView.swift; sourceTree = "<group>"; };
 		61A3DA6D241EFC5D0071C7E9 /* TroublesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TroublesCardView.swift; sourceTree = "<group>"; };
 		61A3DA6F241F04750071C7E9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		61FEA2DA24538B5800E46A28 /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
+		61FEA2DE24538B9E00E46A28 /* KeyboardHeightPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHeightPublisher.swift; sourceTree = "<group>"; };
+		61FEA2E024538C0600E46A28 /* UIResponder+Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Current.swift"; sourceTree = "<group>"; };
 		89A86CD61C21DAF87A9CD818 /* Pods_Survey_Schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey_Schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,6 +139,9 @@
 				61A3DA4F241D690F0071C7E9 /* SlideOverCard.swift */,
 				615A92DE2436F044000AEEE5 /* CircleImage.swift */,
 				61470CCF243D65690069895C /* LoadingView.swift */,
+				61FEA2DA24538B5800E46A28 /* KeyboardAdaptive.swift */,
+				61FEA2DE24538B9E00E46A28 /* KeyboardHeightPublisher.swift */,
+				61FEA2E024538C0600E46A28 /* UIResponder+Current.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -358,9 +367,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61FEA2E124538C0600E46A28 /* UIResponder+Current.swift in Sources */,
+				61FEA2DB24538B5800E46A28 /* KeyboardAdaptive.swift in Sources */,
 				615A92E12436F0C6000AEEE5 /* StationMapView.swift in Sources */,
 				61A3DA65241EB7780071C7E9 /* MasterButtonView.swift in Sources */,
 				615A928A242723FC000AEEE5 /* DataUtil.swift in Sources */,
+				61FEA2DF24538B9E00E46A28 /* KeyboardHeightPublisher.swift in Sources */,
 				61A3DA69241EB9750071C7E9 /* ScheduleCardView.swift in Sources */,
 				615A92D6242C06C0000AEEE5 /* VisitLog.swift in Sources */,
 				61A3DA6E241EFC5E0071C7E9 /* TroublesCardView.swift in Sources */,

@@ -36,7 +36,6 @@ class DynamicRouting: ObservableObject{
     //var day: Int = 0
     //var preStat: String
 
-
     var masterSchedule: [[[VisitLog]]] = []
     var clusterRouting: ClusterRouting
     var stationRouting: StationRouting
@@ -234,16 +233,16 @@ class DynamicRouting: ObservableObject{
         print("[DR] HandleDoneAction \(nextVisitLog.station)")
         // Save preStation visit log
         let currentDate = getCurrentDate()
-        let timeSoFar = getDiffInSec(start: beginDate, end: currentDate)
+        var timeSoFar = getDiffInSec(start: beginDate, end: currentDate)
         print("[DR] currentDate \(currentDate)")
         //print("diff \(currentTime)")
 
         preVisitLog = nextVisitLog
         setPreStationVisited()
 
-//        if preVisitLog.station == "RE4" {
-//            timeSoFar += 2*60*60
-//        }
+        if preVisitLog.station == "RE4" {
+            timeSoFar += 2*60*60
+        }
 
         if preVisitLog.isRevisit {
             lastRepeatTime = timeSoFar
@@ -299,9 +298,13 @@ class DynamicRouting: ObservableObject{
         //VisitLog.dumpDaySchedule(daySchedule: remainSchedule[0])
     }
 
-    func updateRevisitChange(doneStation: String, revisitStation: String) {
-        var stationsInCluster = getUnvisitedStationsInCluster(doneStation: doneStation)
-        stationsInCluster.insert(revisitStation, at: 0)
+//    func updateRevisitChange(doneStation: String, revisitStation: String) {
+//        var stationsInCluster = getUnvisitedStationsInCluster(doneStation: doneStation)
+//        stationsInCluster.insert(revisitStation, at: 0)
+//    }
+
+    func removeRevisit() {
+
     }
 
     func updateRevisitChangeInMasterSchedule(doneStation: String, revisitStation: String) {
@@ -487,6 +490,17 @@ class DynamicRouting: ObservableObject{
             return "OMG"
         }
         let visitPath = remainSchedule[0][0]
+//        for day in remainSchedule {
+//            for cluster in day {
+//                for visitLog in cluster {
+//                    if visitLog.isRevisit {
+//
+//                        continue
+//                    }
+//                    return
+//                }
+//            }
+//        }
         // Skip revisit station?
         return visitPath[0].station
     }
