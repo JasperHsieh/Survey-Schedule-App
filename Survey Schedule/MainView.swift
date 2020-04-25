@@ -29,7 +29,7 @@ struct MainView: View {
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("Ready to start survey?"), message: Text("Go Go Go"), dismissButton: .default(Text("Start")){
                     print("alert")
-                self.dynamicRouting.makeScheduleInBackground()
+                self.dynamicRouting.makeInitialSchedule()
                 }
             )
         }

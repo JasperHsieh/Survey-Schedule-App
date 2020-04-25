@@ -87,8 +87,8 @@ struct ScheduleRow: View {
     var body: some View {
         HStack {
             Spacer()
-            Text(String((self.dynamicRouting.beginDate + log.timestamp.seconds).toFormat("HH:mm")))
-            //Text(String((log.date).toFormat("HH:mm")))
+            //Text(String((self.dynamicRouting.beginDate + log.timestamp.seconds).toFormat("HH:mm")))
+            Text(String((log.date).toFormat("HH:mm")))
                 //.font(.system(size: 30))
                 .frame(width:UIScreen.main.bounds.width * 0.4, alignment: .leading)
             Spacer()

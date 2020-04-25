@@ -84,8 +84,7 @@ struct NextStatCardView: View {
         //dynamicRouting.setPreStationVisited()
         if dynamicRouting.nextStation == BaseStation && dynamicRouting.beginDate == dynamicRouting.defaultTime {
             // Done fist station CS25
-            dynamicRouting.beginDate = getCurrentDate()
-            dynamicRouting.lastRepeatTime = 0
+            dynamicRouting.reset()
             print("[NS] Update begin time \(dynamicRouting.beginDate)")
         }
         dynamicRouting.doneVisitStation()
