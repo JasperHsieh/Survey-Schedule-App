@@ -15,6 +15,7 @@ struct VisitLog: Identifiable, Hashable {
     var isRevisit: Bool
     var index: Int
     var didVisit: Bool
+    var date: Date
 
     init(stat: String, timestamp: Int, isRevisit: Bool) {
         self.station = stat
@@ -22,6 +23,7 @@ struct VisitLog: Identifiable, Hashable {
         self.isRevisit = isRevisit
         self.index = Int.max
         self.didVisit = false
+        self.date = getTimeFromStr(time: "2020-01-01 09:00:00+00000")
     }
 
     static func == (lhs: VisitLog, rhs: VisitLog) -> Bool {

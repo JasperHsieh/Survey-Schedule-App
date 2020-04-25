@@ -261,6 +261,7 @@ class DynamicRouting: ObservableObject{
         }
         preVisitLog.didVisit = true
         preVisitLog.timestamp = timeSoFar
+        //preVisitLog.date = currentDate
         currentVisitPath.append(preVisitLog)
 
         if timeSoFar - lastRepeatTime > N {
@@ -590,10 +591,16 @@ class DynamicRouting: ObservableObject{
         }
 
         DispatchQueue.global(qos: .userInitiated).async {
+            print("[DR] Creating shcedule for tomorrow...")
             let clusters = self.createClusters()
-            print("[DR] Creating shcedule for tomorrow")
+            print("[DR] Done reclustering...")
             self.remainSchedule = self.clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: BaseStation)
+
+            let daySchedule = [self.currentVisitPath]
             self.masterSchedule = self.remainSchedule
+            self.masterSchedule.insert(daySchedule, at: 0)
+            self.indexingSchedule()
+            //VisitLog.dumpMasterSchedule(schedule: self.remainSchedule)
             print("[DR] Done creating shcedule for tomorrow")
         }
     }
