@@ -99,7 +99,7 @@ struct ScheduleRow: View {
                     Text("(Repeat)")
                         .foregroundColor(Color.gray)
                 }
-                if !isScheduled {
+                if log.isSkip {
                     Text("(Skipped)")
                     .foregroundColor(Color.gray)
                 }
