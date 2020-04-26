@@ -757,7 +757,9 @@ class DynamicRouting: ObservableObject{
         doneLoading = false
         DispatchQueue.global(qos: .userInitiated).async {
             sleep(LoadingView.delay)
-            self.setNextVisitLog(isRevisit: false)
+            //self.setNextVisitLog(isRevisit: false)
+            self.nextVisitLog = VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)
+            self.setNextStation()
             DispatchQueue.main.async {
                 self.doneLoading = true
             }
@@ -767,12 +769,15 @@ class DynamicRouting: ObservableObject{
             print("[DR] Creating shcedule for tomorrow...")
             let clusters = self.createClusters()
             print("[DR] Done reclustering...")
-            self.remainSchedule = self.clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: BaseStation)
+            let tmrSchedule = self.clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: BaseStation)
 
             let daySchedule = [self.currentVisitPath]
-            self.masterSchedule = self.remainSchedule
+            self.masterSchedule = tmrSchedule
             self.masterSchedule.insert(daySchedule, at: 0)
             self.indexingSchedule()
+            for day in self.today+1..<self.masterSchedule.count {
+                self.applyTimeInterval(day: day)
+            }
             //VisitLog.dumpMasterSchedule(schedule: self.remainSchedule)
             print("[DR] Done creating shcedule for tomorrow")
         }
