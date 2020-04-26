@@ -73,10 +73,11 @@ func getStatsTravelTime(stat1: String, stat2: String) -> Int {
 
 func getStationsList()-> [Station] {
     //print(statInfo)
+    let images:Set = ["turtlerock", "silversalmoncreek", "chilkoottrail", "stmarylake", "twinlake", "lakemcdonald", "yukon_charleyrivers", "icybay", "rainbowlake", "hiddenlake", "chincoteague", "umbagog"]
     var statList: [Station] = []
     for (station, _) in statInfo! {
         let id = statInfo![station]["id"].stringValue
-        let image = "chilkoottrail"
+        let image = images.randomElement()!
         let coordinate = CLLocationCoordinate2D(latitude: statInfo![station]["coordinates"][0].doubleValue, longitude: statInfo![station]["coordinates"][1].doubleValue)
         //let coordinate = CLLocationCoordinate2D(latitude: 37.410686, longitude: -122.059141)
         //let cluster = statInfo![station]["cluster"]

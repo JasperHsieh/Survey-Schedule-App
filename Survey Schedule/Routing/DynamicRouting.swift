@@ -29,7 +29,7 @@ class DynamicRouting: ObservableObject{
     let defaultTime: Date
     var beginDate: Date
     var lastRepeatTime: Int
-    let today: Int
+    var today: Int
 
     // Stations list page
     @Published var stationsList: [Station]
@@ -778,6 +778,7 @@ class DynamicRouting: ObservableObject{
             for day in self.today+1..<self.masterSchedule.count {
                 self.applyTimeInterval(day: day)
             }
+            self.today += 1
             //VisitLog.dumpMasterSchedule(schedule: self.remainSchedule)
             print("[DR] Done creating shcedule for tomorrow")
         }

@@ -117,6 +117,9 @@ struct StationRow: View {
     var body: some View {
         HStack {
             Spacer()
+            station.image
+            .resizable()
+            .frame(width: 50, height: 50)
             Text(station.name)
                 .frame(width:UIScreen.main.bounds.width * 0.4, alignment: .leading)
             Spacer()
