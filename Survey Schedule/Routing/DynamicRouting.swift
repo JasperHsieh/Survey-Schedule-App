@@ -122,6 +122,9 @@ class DynamicRouting: ObservableObject{
 
             self.setStartDate(day: self.today, startDate: self.beginDate)
             self.applyTimeInterval(day: self.today)
+            for day in self.today+1..<self.masterSchedule.count {
+                self.applyTimeInterval(day: day)
+            }
             print("[DR] After applying")
             VisitLog.dumpDaySchedule(daySchedule: self.masterSchedule[0])
             //sleep(LoadingView.delay)
@@ -306,24 +309,20 @@ class DynamicRouting: ObservableObject{
     func HandleDoneAction(){
         print("[DR] HandleDoneAction \(nextVisitLog.station)")
         // Save preStation visit log
-        let currentDate = getCurrentDate()
-        var timeSoFar = getDiffInSec(start: beginDate, end: currentDate)
         let simulateRevisit = false
-        print("[DR] currentDate \(currentDate)")
-        //print("diff \(currentTime)")
+        var currentDate = getCurrentDate()
 
         preVisitLog = nextVisitLog
-        setPreStationVisited()
-
         if simulateRevisit && preVisitLog.station == "RE4" {
-            timeSoFar += 2*60*60
+            currentDate = currentDate + 3.hours
         }
-
+        let timeSoFar = getDiffInSec(start: beginDate, end: currentDate)
+        print("[DR] currentDate \(currentDate)")
+        setPreStationVisited()
         if preVisitLog.isRevisit {
             lastRepeatTime = timeSoFar
         }
         preVisitLog.didVisit = true
-        //preVisitLog.timestamp = timeSoFar
 
         let timeOffset = (currentDate - preVisitLog.date)
         print("[DR] offset \(timeOffset) \(currentDate) \(preVisitLog.date)")
@@ -340,14 +339,17 @@ class DynamicRouting: ObservableObject{
                 var minVisitLog: VisitLog?
 
                 for visitLog in currentVisitPath {
-                    if !visitLog.didVisit {
+                    if !visitLog.didVisit || visitLog.station == preVisitLog.station {
                         continue
                     }
                     let curTravelTime = getStatsTravelTime(stat1: preVisitLog.station, stat2: visitLog.station)
                     //print("[DR] \(preVisitLog.station)<->\(visitLog.station) \(curTravelTime)")
-                    //let timeSoFar = getDiffInSec(start: beginDate, end: currentDate)
                     //let tmp  = timeSoFar + curTravelTime - visitLog.timestamp
                     //print("[DR] tmp \(tmp)")
+
+                    //let time1 = timeSoFar + curTravelTime - visitLog.timestamp
+                    //print("[DR] \(visitLog.station) \(curTravelTime) \(time1)")
+                    //print("[DR] \(visitLog.station) time1=\(time1) timeSoFar=\(timeSoFar) curTravelTime=\(curTravelTime) timestamp=\(visitLog.timestamp) ")
                     if  curTravelTime < M && (timeSoFar + curTravelTime - visitLog.timestamp > N) && curTravelTime < minTravelTime {
                         minTravelTime = curTravelTime
                         minVisitLog = visitLog
@@ -355,13 +357,21 @@ class DynamicRouting: ObservableObject{
                 }
                 if let minVisitLog = minVisitLog {
                     print("[DR] Revisit \(minVisitLog.station)")
-                    //updateRevisitChangeInMasterSchedule(doneStation: preVisitLog.station, revisitStation: minVisitLog.station)
-                    updateRevisitChange(doneStation: preVisitLog.station, revisitStation: minVisitLog.station)
-                    setNextVisitLog(isRevisit: true)
-                    //nextVisitLog = VisitLog(stat: minVisitLog.station, timestamp: -1, isRevisit: true)
-//                    let index = getStationIndex(station: minVisitLog.station)
-//                    stationsList[index].shouldRevisit = true
+                    //updateRevisitChange(doneStation: preVisitLog.station, revisitStation: minVisitLog.station)
+                    let clusters = self.createClusters()
+                    print(clusters)
 
+                    let updatedSchedule = self.clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: minVisitLog.station)
+                    mergeSchedule(updatedSchedule: updatedSchedule)
+
+                    indexingSchedule()
+                    setNextVisitLog(isRevisit: true)
+                    setStartDate(day: today, startDate: beginDate)
+                    updateTimestamp(offset: timeOffset)
+                    applyTimeInterval(day: today)
+                    for day in today+1..<masterSchedule.count {
+                            applyTimeInterval(day: day)
+                    }
                 } else {
                     print("[DR] No valid revisit station. T_T")
                 }
@@ -370,12 +380,11 @@ class DynamicRouting: ObservableObject{
             //print("[DR] Go to next station")
             //removeFirstStation()
             setNextVisitLog(isRevisit: false)
+            updateTimestamp(offset: timeOffset)
         }
         //VisitLog.dumpMasterSchedule(schedule: remainSchedule)
         //VisitLog.dumpDaySchedule(daySchedule: remainSchedule[0])
         //VisitLog.dumpDaySchedule(daySchedule: masterSchedule[0])
-        updateTimestamp(offset: timeOffset)
-        //setNextStation()
         VisitLog.dumpDaySchedule(daySchedule: masterSchedule[0])
     }
 
