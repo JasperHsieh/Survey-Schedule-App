@@ -64,7 +64,9 @@ struct NextStatCardView: View {
                         .background(Color.green)
                         .foregroundColor(.white)
                         .cornerRadius(10)
-                }.sheet(isPresented: $showingLoading) {
+                }
+                .disabled(dynamicRouting.masterSchedule.count <= 0)
+                .sheet(isPresented: $showingLoading) {
                     LoadingView().environmentObject(self.dynamicRouting)
                     //Text("Sheet")
                 }
