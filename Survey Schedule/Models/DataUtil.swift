@@ -16,12 +16,14 @@ let statInfoFile = "stat_info"
 let statTravelTimeFile = "stat_travel_time"
 let statPermCacheFile = "stat_perm_cache"
 let statPermStartCacheFile = "stat_perm_start_cache"
+let statDistFile = "stat_dist"
 
 let clusterInfo = readJsonFromFile(filePath: clusterInfoFile)
 let statInfo = readJsonFromFile(filePath: statInfoFile)
 let statTravelTimeInfo = readJsonFromFile(filePath: statTravelTimeFile)
 var statPermCache = readJsonFromFile(filePath: statPermCacheFile)
 var statPermStartCache = readJsonFromFile(filePath: statPermStartCacheFile)
+let statDist = readJsonFromFile(filePath: statDistFile)
 
 let N = 2 * 60 * 60
 let M = 15 * 60
