@@ -30,6 +30,7 @@ class DynamicRouting: ObservableObject{
     var beginDate: Date
     var lastRepeatTime: Int
     var today: Int
+    var doneToday: Bool
 
     // Stations list page
     @Published var stationsList: [Station]
@@ -61,6 +62,7 @@ class DynamicRouting: ObservableObject{
         nextIdx = (0, 0, 0)
 
         today = 0
+        doneToday = false
         //stationRouting.getMinTimePermutation(statList: clusterInfo!["1"]["stations"].arrayValue.map {$0.stringValue})
     }
 
@@ -329,6 +331,11 @@ class DynamicRouting: ObservableObject{
         preVisitLog.date = currentDate
 
         currentVisitPath.append(preVisitLog)
+
+        if doneToday {
+            doneToday = false
+            return
+        }
 
         if timeSoFar - lastRepeatTime > N {
             print("[DR] Time to revisit")
@@ -771,13 +778,20 @@ class DynamicRouting: ObservableObject{
             print("[DR] Done reclustering...")
             let tmrSchedule = self.clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: BaseStation)
 
-            let daySchedule = [self.currentVisitPath]
+            var daySchedule = [self.currentVisitPath]
+            daySchedule.append([VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)])
+
             self.masterSchedule = tmrSchedule
             self.masterSchedule.insert(daySchedule, at: 0)
             self.indexingSchedule()
             for day in self.today+1..<self.masterSchedule.count {
                 self.applyTimeInterval(day: day)
             }
+            self.setNextVisitLog(isRevisit: false)
+            let travelTime = getStatsTravelTime(stat1: self.preVisitLog.station, stat2: BaseStation)
+            self.nextVisitLog.date = getCurrentDate() + travelTime.seconds
+
+            self.doneToday = true
             self.today += 1
             //VisitLog.dumpMasterSchedule(schedule: self.remainSchedule)
             print("[DR] Done creating shcedule for tomorrow")
