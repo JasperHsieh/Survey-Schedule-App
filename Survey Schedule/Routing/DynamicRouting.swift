@@ -264,6 +264,11 @@ class DynamicRouting: ObservableObject{
         }
         return (-1, -1, -1)
     }
+
+    func isStationScheduled(station: String) -> Bool{
+        let index = getStationIndex(station: station)
+        return stationsList[index].isScheduled
+    }
 }
 
 // Done visiting station
