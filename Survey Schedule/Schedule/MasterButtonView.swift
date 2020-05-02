@@ -48,9 +48,9 @@ struct ScheduleList: View {
 //        }
         NavigationView {
             List {
-                ForEach(dynamicRouting.masterSchedule, id: \.self) { daySchedule in
-                    Section(header: Text("day")) {
-                        ForEach(daySchedule, id: \.self) { clusterSchedule in
+                ForEach(dynamicRouting.masterSchedule.indices, id: \.self) { day in
+                    Section(header: Text("day \(day+1)")) {
+                        ForEach(self.dynamicRouting.masterSchedule[day], id: \.self) { clusterSchedule in
                             ForEach(clusterSchedule, id: \.self) { visitLog in ScheduleRow(log: visitLog, isScheduled: self.dynamicRouting.isStationScheduled(station: visitLog.station)).environmentObject(self.dynamicRouting)
                             }
                         }
