@@ -18,7 +18,7 @@ class Station: NSObject, Identifiable, MKAnnotation {
     var name: String
     var isScheduled = true
     var isVisited = false
-    fileprivate var imageName: String
+    var imageName: String
 
     init(id: String, name: String, image: String, coordinate: CLLocationCoordinate2D) {
         self.id = id
