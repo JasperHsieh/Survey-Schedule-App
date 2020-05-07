@@ -71,7 +71,7 @@ class DynamicRouting: ObservableObject{
             //print("This is run on the background queue")
             //self.makeRoutingSchedule(clusters: clusterInfo ?? JSON(), workintHour: WorkingHour, currentStat: BaseStation)
             self.masterSchedule = self.clusterRouting.getCompleteSchedule(info: clusterInfo ?? JSON(), workingHour: WorkingHour, currentStat: BaseStation)
-            let dummyDay = false
+            let dummyDay = true
             if dummyDay {
                 let tmpDay = [VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false), VisitLog(stat: "CSE1", timestamp: -1, isRevisit: false), VisitLog(stat: "RE4", timestamp: -1, isRevisit: false)]
                 self.masterSchedule.insert([tmpDay], at: 0)
@@ -125,6 +125,7 @@ class DynamicRouting: ObservableObject{
         if statIdx.day != today {
             print("No more stations today")
             setBaseStation()
+            appendTmpBaseStation()
             doneToday = true
             return
         }
@@ -494,6 +495,7 @@ extension DynamicRouting {
         DispatchQueue.global(qos: .userInitiated).async {
             sleep(LoadingView.delay)
             self.setBaseStation()
+            self.appendTmpBaseStation()
             DispatchQueue.main.async {
                 self.doneLoading = true
             }
@@ -507,6 +509,16 @@ extension DynamicRouting {
     func setBaseStation() {
         nextVisitLog = VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)
         setNextStation()
+    }
+
+    func appendTmpBaseStation() {
+        let tmpBase = VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)
+        let travelTime = getStatsTravelTime(stat1: preVisitLog.station, stat2: BaseStation)
+        tmpBase.date = getCurrentDate() + travelTime.seconds
+        var daySchedule = [currentVisitPath]
+        daySchedule.append([tmpBase])
+        masterSchedule.remove(at: 0)
+        masterSchedule.insert(daySchedule, at: 0)
     }
 
     func updateScheduleTomorrow() {
