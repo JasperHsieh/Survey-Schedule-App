@@ -71,8 +71,8 @@ class VisitLog: Identifiable, Hashable {
     }
 
     static func dumpLog(visitLog: VisitLog) {
-        print("(\(visitLog.station),\(visitLog.date),\(visitLog.timestamp),\(visitLog.index))", terminator: "")
-        //print("(\(visitLog.station),\(visitLog.didVisit),\(visitLog.isRevisit),\(visitLog.isSkip),\(visitLog.date))", terminator: "")
+        //print("(\(visitLog.station),\(visitLog.date),\(visitLog.timestamp),\(visitLog.index))", terminator: "")
+        print("(\(visitLog.station),\(visitLog.didVisit),\(visitLog.isRevisit),\(visitLog.isSkip),\(visitLog.date))", terminator: "")
     }
 
 }

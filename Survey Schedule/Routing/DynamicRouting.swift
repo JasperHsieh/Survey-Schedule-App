@@ -71,6 +71,11 @@ class DynamicRouting: ObservableObject{
             //print("This is run on the background queue")
             //self.makeRoutingSchedule(clusters: clusterInfo ?? JSON(), workintHour: WorkingHour, currentStat: BaseStation)
             self.masterSchedule = self.clusterRouting.getCompleteSchedule(info: clusterInfo ?? JSON(), workingHour: WorkingHour, currentStat: BaseStation)
+            let dummyDay = false
+            if dummyDay {
+                let tmpDay = [VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false), VisitLog(stat: "CSE1", timestamp: -1, isRevisit: false), VisitLog(stat: "RE4", timestamp: -1, isRevisit: false)]
+                self.masterSchedule.insert([tmpDay], at: 0)
+            }
             self.indexingSchedule()
             self.applyInitialTimestamp()
 
@@ -115,11 +120,16 @@ class DynamicRouting: ObservableObject{
     }
 
     func setNextVisitLog(isRevisit: Bool) {
-            print("[DR] setNextVisitLog")
-            let statIdx = self.getNextVisitLog()
-            //self.nextVisitLog = VisitLog(stat: station, timestamp: -1, isRevisit: isRevisit)
-            self.nextVisitLog = self.masterSchedule[statIdx.day][statIdx.cluster][statIdx.station]
-            self.nextVisitLog.isRevisit = isRevisit
+        //print("[DR] setNextVisitLog")
+        let statIdx = self.getNextVisitLog()
+        if statIdx.day != today {
+            print("No more stations today")
+            setBaseStation()
+            doneToday = true
+            return
+        }
+        self.nextVisitLog = self.masterSchedule[statIdx.day][statIdx.cluster][statIdx.station]
+        self.nextVisitLog.isRevisit = isRevisit
     }
 
     func setNextStation() {
@@ -282,6 +292,11 @@ extension DynamicRouting {
             DispatchQueue.main.async {
                 self.setNextStation()
                 self.doneLoading = true
+                if self.doneToday {
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        self.updateScheduleTomorrow()
+                    }
+                }
             }
         }
     }
@@ -305,13 +320,16 @@ extension DynamicRouting {
         preVisitLog.didVisit = true
 
         let timeOffset = (currentDate - preVisitLog.date)
-        print("[DR] offset \(timeOffset) \(currentDate) \(preVisitLog.date)")
+        //print("[DR] offset \(timeOffset) \(currentDate) \(preVisitLog.date)")
         preVisitLog.date = currentDate
 
         currentVisitPath.append(preVisitLog)
 
         if doneToday {
             doneToday = false
+            setNextVisitLog(isRevisit: false)
+            VisitLog.dumpDaySchedule(daySchedule: masterSchedule[0])
+            //VisitLog.dumpDaySchedule(daySchedule: masterSchedule[1])
             return
         }
 
@@ -368,6 +386,7 @@ extension DynamicRouting {
             updateTimestamp(offset: timeOffset)
         }
         VisitLog.dumpDaySchedule(daySchedule: masterSchedule[0])
+        //VisitLog.dumpDaySchedule(daySchedule: masterSchedule[1])
     }
 
     func getUnvisitedStationsInCluster() -> [String]{
@@ -474,37 +493,44 @@ extension DynamicRouting {
         doneLoading = false
         DispatchQueue.global(qos: .userInitiated).async {
             sleep(LoadingView.delay)
-            //self.setNextVisitLog(isRevisit: false)
-            self.nextVisitLog = VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)
-            self.setNextStation()
+            self.setBaseStation()
             DispatchQueue.main.async {
                 self.doneLoading = true
             }
         }
 
         DispatchQueue.global(qos: .userInitiated).async {
-            print("[DR] Creating shcedule for tomorrow...")
-            let clusters = self.createClusters()
-            print("[DR] Done reclustering...")
-            let tmrSchedule = self.clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: BaseStation)
-
-            var daySchedule = [self.currentVisitPath]
-            daySchedule.append([VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)])
-
-            self.masterSchedule = tmrSchedule
-            self.masterSchedule.insert(daySchedule, at: 0)
-            self.indexingSchedule()
-            for day in self.today+1..<self.masterSchedule.count {
-                self.applyTimeInterval(day: day)
-            }
-            self.setNextVisitLog(isRevisit: false)
-            let travelTime = getStatsTravelTime(stat1: self.preVisitLog.station, stat2: BaseStation)
-            self.nextVisitLog.date = getCurrentDate() + travelTime.seconds
-
-            self.doneToday = true
-            self.today += 1
-            print("[DR] Done creating shcedule for tomorrow")
+            self.updateScheduleTomorrow()
         }
+    }
+
+    func setBaseStation() {
+        nextVisitLog = VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)
+        setNextStation()
+    }
+
+    func updateScheduleTomorrow() {
+        print("[DR] Creating shcedule for tomorrow...")
+        let clusters = createClusters()
+        print("[DR] Done reclustering...")
+        let tmrSchedule = clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: BaseStation)
+
+        var daySchedule = [currentVisitPath]
+        daySchedule.append([VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)])
+
+        masterSchedule = tmrSchedule
+        masterSchedule.insert(daySchedule, at: 0)
+        indexingSchedule()
+        for day in today+1..<masterSchedule.count {
+            applyTimeInterval(day: day)
+        }
+        setNextVisitLog(isRevisit: false)
+        let travelTime = getStatsTravelTime(stat1: preVisitLog.station, stat2: BaseStation)
+        nextVisitLog.date = getCurrentDate() + travelTime.seconds
+
+        doneToday = true
+        today += 1
+        print("[DR] Done creating shcedule for tomorrow")
     }
 }
 
@@ -542,7 +568,7 @@ extension DynamicRouting {
 
     func updateTimestamp(offset: DateComponents) {
         print("[DR] updateTimestamp \(preVisitLog.date)")
-        print("[DR] \(masterSchedule[nextIdx.day][nextIdx.cluster][nextIdx.station].station)")
+        //print("[DR] \(masterSchedule[nextIdx.day][nextIdx.cluster][nextIdx.station].station)")
         for cluster in 0..<masterSchedule[today].count {
             for log in 0..<masterSchedule[today][cluster].count {
                 if today < nextIdx.day  || (today == nextIdx.day && cluster < nextIdx.cluster) || (today == nextIdx.day && cluster == nextIdx.cluster && log < nextIdx.station) {
