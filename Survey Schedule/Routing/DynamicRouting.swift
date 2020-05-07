@@ -170,7 +170,7 @@ class DynamicRouting: ObservableObject{
         }
 
         for (cluster, stations) in tmpDic {
-            //print("\(cluster) \(stations)")
+            print("Creating cluster \(cluster) \(stations)")
             clustersJson[cluster] = JSON()
             clustersJson[cluster]["stations"] = JSON(stations)
             clustersJson[cluster]["start"] = JSON(stationRouting.getStartStat(statList: stations))
@@ -393,7 +393,7 @@ extension DynamicRouting {
             setNextVisitLog(isRevisit: false)
             updateTimestamp(offset: timeOffset)
         }
-        VisitLog.dumpDaySchedule(daySchedule: masterSchedule[0])
+        //VisitLog.dumpDaySchedule(daySchedule: masterSchedule[0])
         //VisitLog.dumpDaySchedule(daySchedule: masterSchedule[1])
     }
 
@@ -430,7 +430,8 @@ extension DynamicRouting {
         doneLoading = false
         DispatchQueue.global(qos: .userInitiated).async {
             let clusters = self.createClusters()
-            print(clusters)
+            print("[DR] Done reclustering...")
+            //print(clusters)
             //VisitLog.dumpDaySchedule(daySchedule: self.masterSchedule[0])
 
             var updatedSchedule = self.clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: self.preVisitLog.station)
@@ -447,7 +448,7 @@ extension DynamicRouting {
             for day in self.today+1..<self.masterSchedule.count {
                 self.applyTimeInterval(day: day)
             }
-            print("[DR] After applying")
+            print("[DR] Done applying change")
             VisitLog.dumpDaySchedule(daySchedule: self.masterSchedule[0])
             //sleep(LoadingView.delay)
             DispatchQueue.main.async {
@@ -458,7 +459,7 @@ extension DynamicRouting {
     }
 
     func backupStationsSetting() {
-        print("backupStationsSetting")
+        print("[DR] backupStationsSetting")
         stationListBackUp = []
         for station in stationsList {
             stationListBackUp.append(station.isScheduled)
@@ -468,7 +469,7 @@ extension DynamicRouting {
     func isScheduledStationsChanged() -> Bool {
         for (i, station) in stationsList.enumerated() {
             if station.isScheduled != stationListBackUp[i] {
-                print("station \(station.name) changed")
+                print("[DR] station \(station.name) changed")
                 return true
             }
         }

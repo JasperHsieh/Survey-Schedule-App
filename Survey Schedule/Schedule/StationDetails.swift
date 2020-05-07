@@ -32,10 +32,19 @@ struct StationDetails: View {
                 .padding(.bottom, CGFloat(-110))
 
             VStack(alignment: .leading) {
-                Text(station.name)
-                    .font(.title)
-                //Toggle(isOn: $isScheduled) {
-                //Toggle(isOn: $station.isScheduled) {
+                HStack{
+                    Text(station.name)
+                        .font(.title)
+                    Spacer()
+                    if station.isVisited {
+                        Text("Visited")
+                        .foregroundColor(Color.gray)
+                    } else {
+                        Text("Unvisited")
+                        .foregroundColor(Color.gray)
+                    }
+                }.padding(.top)
+                Divider()
                 Toggle(isOn: $dynamicRouting.stationsList[stationIndex].isScheduled) {
                     Text("Include the station to schedule")
                     //dynamicRouting.test()
