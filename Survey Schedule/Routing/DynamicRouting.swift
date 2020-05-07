@@ -71,7 +71,7 @@ class DynamicRouting: ObservableObject{
             //print("This is run on the background queue")
             //self.makeRoutingSchedule(clusters: clusterInfo ?? JSON(), workintHour: WorkingHour, currentStat: BaseStation)
             self.masterSchedule = self.clusterRouting.getCompleteSchedule(info: clusterInfo ?? JSON(), workingHour: WorkingHour, currentStat: BaseStation)
-            let dummyDay = true
+            let dummyDay = false
             if dummyDay {
                 let tmpDay = [VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false), VisitLog(stat: "CSE1", timestamp: -1, isRevisit: false), VisitLog(stat: "RE4", timestamp: -1, isRevisit: false)]
                 self.masterSchedule.insert([tmpDay], at: 0)
@@ -81,6 +81,7 @@ class DynamicRouting: ObservableObject{
 
             VisitLog.dumpDaySchedule(daySchedule: self.masterSchedule[0])
             DispatchQueue.main.async {
+                self.getNextIdx()
                 self.setNextVisitLog(isRevisit: false)
                 self.setNextStation()
                 //self.updateNextStation()
@@ -119,18 +120,29 @@ class DynamicRouting: ObservableObject{
         return schedule
     }
 
-    func setNextVisitLog(isRevisit: Bool) {
-        //print("[DR] setNextVisitLog")
-        let statIdx = self.getNextVisitLog()
-        if statIdx.day != today {
-            print("No more stations today")
-            setBaseStation()
-            appendTmpBaseStation()
-            doneToday = true
-            return
+    func getNextIdx(){
+        //print("[DR] getNextIdx")
+        for day in 0..<masterSchedule.count {
+            for cluster in 0..<masterSchedule[day].count {
+                for i in 0..<masterSchedule[day][cluster].count {
+                    let log = masterSchedule[day][cluster][i]
+                    if !log.didVisit && !log.isSkip {
+                        nextIdx = (day, cluster, i)
+                        return
+                    }
+                }
+            }
         }
-        self.nextVisitLog = self.masterSchedule[statIdx.day][statIdx.cluster][statIdx.station]
-        self.nextVisitLog.isRevisit = isRevisit
+        print("[DR] Cannot find next visitlog")
+        nextIdx = (-1, -1, -1)
+    }
+
+    func setNextVisitLog(isRevisit: Bool) {
+        if nextIdx == (-1, -1, -1) {
+            print("Invalid nextIdx \(nextIdx)")
+        }
+        nextVisitLog = masterSchedule[nextIdx.day][nextIdx.cluster][nextIdx.station]
+        nextVisitLog.isRevisit = isRevisit
     }
 
     func setNextStation() {
@@ -261,21 +273,6 @@ class DynamicRouting: ObservableObject{
         //VisitLog.dumpMasterSchedule(schedule: newSchedule)
     }
 
-    func getNextVisitLog() -> StatIndex {
-        for day in 0..<masterSchedule.count {
-            for cluster in 0..<masterSchedule[day].count {
-                for i in 0..<masterSchedule[day][cluster].count {
-                    let log = masterSchedule[day][cluster][i]
-                    if !log.didVisit && !log.isSkip {
-                        nextIdx = (day, cluster, i)
-                        return nextIdx
-                    }
-                }
-            }
-        }
-        return (-1, -1, -1)
-    }
-
     func isStationScheduled(station: String) -> Bool{
         let index = getStationIndex(station: station)
         return stationsList[index].isScheduled
@@ -327,9 +324,11 @@ extension DynamicRouting {
         currentVisitPath.append(preVisitLog)
 
         if doneToday {
+            print("[DR] Done today")
             doneToday = false
+            getNextIdx()
             setNextVisitLog(isRevisit: false)
-            VisitLog.dumpDaySchedule(daySchedule: masterSchedule[0])
+            //VisitLog.dumpDaySchedule(daySchedule: masterSchedule[0])
             //VisitLog.dumpDaySchedule(daySchedule: masterSchedule[1])
             return
         }
@@ -369,6 +368,7 @@ extension DynamicRouting {
                     mergeSchedule(updatedSchedule: updatedSchedule)
 
                     indexingSchedule()
+                    getNextIdx()
                     setNextVisitLog(isRevisit: true)
                     setStartDate(day: today, startDate: beginDate)
                     updateTimestamp(offset: timeOffset)
@@ -382,7 +382,14 @@ extension DynamicRouting {
             }
         } else {
             //print("[DR] Go to next station")
-            //removeFirstStation()
+            getNextIdx()
+            if nextIdx.day != today {
+                print("[DR] No more stations today")
+                appendBaseStation()
+                doneToday = true
+                return
+            }
+
             setNextVisitLog(isRevisit: false)
             updateTimestamp(offset: timeOffset)
         }
@@ -432,6 +439,7 @@ extension DynamicRouting {
             //self.masterSchedule = self.mergeSchedule()
             self.mergeSchedule(updatedSchedule: updatedSchedule)
             self.indexingSchedule()
+            self.getNextIdx()
             self.setNextVisitLog(isRevisit: false)
 
             self.setStartDate(day: self.today, startDate: self.beginDate)
@@ -481,7 +489,7 @@ extension DynamicRouting {
             self.currentVisitPath.append(self.nextVisitLog)
             let index = self.getStationIndex(station: self.nextStation)
             self.stationsList[index].isScheduled = false
-
+            self.getNextIdx()
             self.setNextVisitLog(isRevisit: false)
             DispatchQueue.main.async {
                 self.setNextStation()
@@ -492,10 +500,10 @@ extension DynamicRouting {
 
     func handleEndSurvey() {
         doneLoading = false
+        doneToday = true
         DispatchQueue.global(qos: .userInitiated).async {
             sleep(LoadingView.delay)
-            self.setBaseStation()
-            self.appendTmpBaseStation()
+            self.appendBaseStation()
             DispatchQueue.main.async {
                 self.doneLoading = true
             }
@@ -506,12 +514,7 @@ extension DynamicRouting {
         }
     }
 
-    func setBaseStation() {
-        nextVisitLog = VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)
-        setNextStation()
-    }
-
-    func appendTmpBaseStation() {
+    func appendBaseStation() {
         let tmpBase = VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)
         let travelTime = getStatsTravelTime(stat1: preVisitLog.station, stat2: BaseStation)
         tmpBase.date = getCurrentDate() + travelTime.seconds
@@ -519,28 +522,29 @@ extension DynamicRouting {
         daySchedule.append([tmpBase])
         masterSchedule.remove(at: 0)
         masterSchedule.insert(daySchedule, at: 0)
+        indexingSchedule()
+        getNextIdx()
+        setNextVisitLog(isRevisit: false)
+        setNextStation()
     }
 
     func updateScheduleTomorrow() {
         print("[DR] Creating shcedule for tomorrow...")
         let clusters = createClusters()
         print("[DR] Done reclustering...")
-        let tmrSchedule = clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: BaseStation)
-
-        var daySchedule = [currentVisitPath]
-        daySchedule.append([VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)])
-
+        var tmrSchedule = clusterRouting.getCompleteSchedule(info: clusters, workingHour: 8, currentStat: BaseStation)
+        VisitLog.dumpDaySchedule(daySchedule: masterSchedule[0])
+        for day in 0...today {
+            tmrSchedule.insert(masterSchedule[day], at: day)
+        }
         masterSchedule = tmrSchedule
-        masterSchedule.insert(daySchedule, at: 0)
         indexingSchedule()
         for day in today+1..<masterSchedule.count {
             applyTimeInterval(day: day)
         }
+        VisitLog.dumpDaySchedule(daySchedule: masterSchedule[0])
+        getNextIdx()
         setNextVisitLog(isRevisit: false)
-        let travelTime = getStatsTravelTime(stat1: preVisitLog.station, stat2: BaseStation)
-        nextVisitLog.date = getCurrentDate() + travelTime.seconds
-
-        doneToday = true
         today += 1
         print("[DR] Done creating shcedule for tomorrow")
     }

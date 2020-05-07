@@ -16,7 +16,7 @@ struct MasterButtonView: View {
 
     var body: some View {
         Button(action: {
-            print("click Master")
+            print("[MB] click Master")
             self.showingSheet.toggle()
         }){
             VStack(){
