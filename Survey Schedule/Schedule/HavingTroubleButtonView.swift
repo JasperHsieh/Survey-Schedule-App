@@ -18,15 +18,16 @@ struct HavingTroubleButtonView: View {
             print("click TroubleShooting")
             self.showingActionSheet = true
         }){
-            Text("Having trouble going to the station?")
+            Text("Change of plans?")
+                .frame(width: 150)
                 .padding()
                 .background(Color(hex: "#CB395B"))
                 .foregroundColor(.white)
-                .cornerRadius(20)
+                .cornerRadius(10)
         }
         .actionSheet(isPresented: $showingActionSheet) {
             ActionSheet(title: Text("The reason you can't get there"),  buttons:[
-                .default(Text("Not going to visit the station")){
+                .default(Text("Skip station")){
                     print("Click Not going to visit the station")
                     self.showingLoading = true
                     self.dynamicRouting.handleSkipNextStation()
