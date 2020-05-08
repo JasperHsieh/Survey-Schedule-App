@@ -83,8 +83,7 @@ struct NextStatCardView: View {
         print("[NS] Click Done")
         self.showingLoading.toggle()
         //print("[NS] showingLoading: \(showingLoading)")
-        //dynamicRouting.setPreStationVisited()
-        if dynamicRouting.nextStation == BaseStation && dynamicRouting.beginDate == dynamicRouting.defaultTime {
+        if dynamicRouting.isFirstStation() {
             // Done fist station CS25
             dynamicRouting.reset()
             print("[NS] Update begin time \(dynamicRouting.beginDate)")

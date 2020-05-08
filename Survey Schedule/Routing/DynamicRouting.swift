@@ -55,7 +55,9 @@ class DynamicRouting: ObservableObject{
         doneToday = false
         //stationRouting.getMinTimePermutation(statList: clusterInfo!["1"]["stations"].arrayValue.map {$0.stringValue})
     }
-
+    /**
+     Reset basic setting when a user done with first station which should be CS25
+     */
     func reset() {
         print("[DR] reset")
         beginDate = getCurrentDate()
@@ -65,17 +67,22 @@ class DynamicRouting: ObservableObject{
         applyTimeInterval(day: today)
         VisitLog.dumpDaySchedule(daySchedule: masterSchedule[0])
     }
-
+    /**
+    Create initial master schedule
+    */
     func makeInitialSchedule() {
         DispatchQueue.global(qos: .userInitiated).async {
             //print("This is run on the background queue")
             //self.makeRoutingSchedule(clusters: clusterInfo ?? JSON(), workintHour: WorkingHour, currentStat: BaseStation)
             self.masterSchedule = self.clusterRouting.getCompleteSchedule(info: clusterInfo ?? JSON(), workingHour: WorkingHour, currentStat: BaseStation)
+
+            // Create dummy day for debuggin
             let dummyDay = false
             if dummyDay {
                 let tmpDay = [VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false), VisitLog(stat: "CSE1", timestamp: -1, isRevisit: false), VisitLog(stat: "RE4", timestamp: -1, isRevisit: false)]
                 self.masterSchedule.insert([tmpDay], at: 0)
             }
+
             self.indexingSchedule()
             self.applyInitialTimestamp()
 
@@ -170,7 +177,7 @@ class DynamicRouting: ObservableObject{
         }
 
         for (cluster, stations) in tmpDic {
-            print("Creating cluster \(cluster) \(stations)")
+            print("[DR] Creating cluster \(cluster) \(stations)")
             clustersJson[cluster] = JSON()
             clustersJson[cluster]["stations"] = JSON(stations)
             clustersJson[cluster]["start"] = JSON(stationRouting.getStartStat(statList: stations))
@@ -281,6 +288,13 @@ class DynamicRouting: ObservableObject{
 
 // Done visiting station
 extension DynamicRouting {
+
+    func isFirstStation() -> Bool {
+        if nextIdx.cluster == 0 && nextIdx.station == 0 {
+            return true
+        }
+        return false
+    }
 
     func doneVisitStation() {
         doneLoading = false
