@@ -25,6 +25,16 @@ class ClusterRouting{
         self.stationRouting = StationRouting()
     }
 
+    /**
+    Insert a cluster in the front of the schedule
+    - Parameters:
+        - clusterInfo: A JSON object represetn the clusters
+        - workingHour: A time interval in hour to limit the routing per day
+        - currentStat: A station name that current at
+    - Returns: An new schedule
+
+     Todo: Replace workingHour with array of workingHours. The workingHour could be different dpends on day
+    */
     func getCompleteSchedule(info clusterInfo: JSON, workingHour: Int, currentStat: String) -> [[[VisitLog]]]{
         //let statInfo = DataUtil.statInfo
         //var clusterVisit = DataUtil.clusterInfo!
@@ -69,7 +79,7 @@ class ClusterRouting{
             if(Debug) {print()}
             if(Debug) {print("*** Checking closest cluster \(nextCluster) ***")}
             //var nextClusterVisitPath = stationRouting.getVisitPath(statList: clusterVisit[nextCluster]["stations"].arrayObject as! [String], pathSoFar: visitPath)
-            var nextClusterVisitPath = stationRouting.getVisitPath(statList: clusterVisit[nextCluster]["stations"].arrayObject as! [String], pathSoFar: visitPath, cluster: nextCluster)
+            var nextClusterVisitPath = stationRouting.getVisitPath(statList: clusterVisit[nextCluster]["stations"].arrayObject as! [String], pathSoFar: visitPath)
             let nextClusterLastVisitLog = nextClusterVisitPath.last!
             let nextClusterFinishTime = nextClusterLastVisitLog.timestamp + getStatsTravelTime(stat1: nextClusterLastVisitLog.station, stat2: BaseStation)
 
@@ -152,6 +162,12 @@ class ClusterRouting{
         return schedule
     }
 
+    /**
+    Check all clusters have been visited
+    - Parameters:
+        - jsonObj: A JSON object represetn the clusters
+    - Returns: true, if all clusters have been visited
+    */
     func visitedAll(jsonObj: JSON) -> Bool{
         for (k, _) in jsonObj{
             //var tmp = jsonObj[k]["visited"]
@@ -165,6 +181,12 @@ class ClusterRouting{
         return true
     }
 
+    /**
+    Set all cluster unvisited
+    - Parameters:
+        - jsonObj: A JSON object represetn the clusters
+    - Returns: A JSON object represents the clusters with the visited value set false
+    */
     func resetVisitedStatus(jsonObj: JSON) -> JSON{
         var jsonObjVisit: JSON = jsonObj
         for (k, _) in jsonObj{
