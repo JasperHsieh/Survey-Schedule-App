@@ -14,6 +14,12 @@ extension Date {
     }
 }
 
+/**
+Get Date object from time string
+- Parameters:
+    - time: The time string with "yyyy-MM-dd HH:mm:ssZ" format
+- Returns: The Date object
+*/
 func getTimeFromStr(time: String) -> Date {
     let dateFormatter2 = DateFormatter()
     dateFormatter2.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
@@ -21,6 +27,10 @@ func getTimeFromStr(time: String) -> Date {
     return dateFormatter2.date(from:time)!
 }
 
+/**
+Get the current date
+- Returns: The Date object that represents current date
+*/
 func getCurrentDate() -> Date {
     let currentDate = Date()
     let timezoneOffset =  TimeZone.current.secondsFromGMT()
@@ -29,10 +39,23 @@ func getCurrentDate() -> Date {
     return Date(timeIntervalSince1970: timezoneEpochOffset)
 }
 
+/**
+Get the difference between Date objects
+ - Parameters:
+    - start: Start date
+    - end: End date
+ - Returns: The difference in seconds
+*/
 func getDiffInSec(start: Date, end: Date) -> Int{
     return Int(end.timeIntervalSince(start))
 }
 
+/**
+Get the current date
+ - Parameters:
+    - sec: travel time in second
+ - Returns: The travel time string on Next Station section
+*/
 func getTravelTimeString(sec: Int) -> String {
     var hourStr = ""
     var minStr = ""

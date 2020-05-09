@@ -195,7 +195,7 @@ class StationRouting {
     }
 
     /**
-    Get the minimum time permutation from station list
+    Get the minimum time permutation of station list
     - Parameters:
         - statList: An array of station name
     - Returns: The minimum time permutation

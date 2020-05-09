@@ -33,6 +33,12 @@ let InvalidStation = "Mars"
 
 typealias StatIndex = (day: Int, cluster: Int, station: Int)
 
+/**
+Read the JSON from file
+- Parameters:
+    - filePath: The file name
+- Returns: A JSON object
+*/
 func readJsonFromFile(filePath: String) -> JSON?{
     //var jsonObj:JSON? = nil
     if let path = Bundle.main.path(forResource: filePath, ofType: "json") {
@@ -53,6 +59,13 @@ func readJsonFromFile(filePath: String) -> JSON?{
     return nil
 }
 
+/**
+Get the travel time between two stations
+- Parameters:
+    - stat1: Start station
+    - stat2: End station
+- Returns: Travel time in second
+*/
 func getStatsTravelTime(stat1: String, stat2: String) -> Int {
     //print("getStatsTravelTime \(stat1) and \(stat2)")
     if stat1 == stat2 {
@@ -73,6 +86,10 @@ func getStatsTravelTime(stat1: String, stat2: String) -> Int {
     return Int.max
 }
 
+/**
+Get the list for all stations
+- Returns: An array of stations
+*/
 func getStationsList()-> [Station] {
     //print(statInfo)
     let images = ["turtlerock", "silversalmoncreek", "chilkoottrail", "stmarylake", "twinlake", "lakemcdonald", "yukon_charleyrivers", "icybay", "rainbowlake", "hiddenlake", "chincoteague", "umbagog"]
@@ -96,6 +113,12 @@ func getStationsList()-> [Station] {
     return statList
 }
 
+/**
+Get the start station of  the minumum time permutation station list
+- Parameters:
+    - stations: An array of station name
+- Returns: The start station name
+*/
 func getStartStationFromCache(stations: [String]) -> String {
     let key = getKey(stations: stations)
     if statPermCache![key].exists() && statPermCache![key]["start"].exists(){
@@ -105,6 +128,12 @@ func getStartStationFromCache(stations: [String]) -> String {
     }
 }
 
+/**
+Get the minimum time permutation of station list from cache
+- Parameters:
+    - stations: An array of station name
+- Returns: The minimum time permutation
+*/
 func getMinPermStationFromCache(stations: [String]) -> [String] {
     let key = getKey(stations: stations)
     if statPermCache![key].exists() && statPermCache![key]["min_permutation"].exists(){
@@ -114,6 +143,12 @@ func getMinPermStationFromCache(stations: [String]) -> [String] {
     }
 }
 
+/**
+Get the minimum time permutation that start with the first station of station list
+- Parameters:
+    - stations: An array of station name
+- Returns: The minimum time permutation start with first station of station list
+*/
 func getMinPermWithStartStationFromCache(stations: [String]) -> [String] {
     let start = stations[0]
     var key = getKey(stations: Array(stations[1..<stations.count]))
@@ -125,6 +160,11 @@ func getMinPermWithStartStationFromCache(stations: [String]) -> [String] {
     }
 }
 
+/**
+Save the minimum time permutation to cache
+- Parameters:
+    - minPerm: The minimum travel time permutation
+*/
 func setMinPermToCache(minPerm: [String]) {
     if minPerm.isEmpty {
         print("minStations is empty")
@@ -143,6 +183,12 @@ func setMinPermToCache(minPerm: [String]) {
     statPermCache![key]["min_permutation"] = JSON(minPerm)
 }
 
+/**
+Get the key of the cache from station list
+- Parameters:
+    - stations: An array of station name
+- Returns: The key for the cache
+*/
 func getKey(stations: [String]) -> String {
     var stats = stations
     stats.sort {$0 < $1}
