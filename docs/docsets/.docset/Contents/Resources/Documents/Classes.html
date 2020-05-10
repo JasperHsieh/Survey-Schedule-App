@@ -14,7 +14,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (67% documented)</p>
+        <p><a href="index.html"> Docs</a> (68% documented)</p>
         <p class="header-right"><a href="https://github.com/JasperHsieh/Survey-Schedule-App"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -166,8 +166,22 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The class handle the routing between clusters. The function getCompleteSchedule will return
-the full schedule given the input clusters, working hour and the current station</p>
+                        <p>The <strong>ClusterRouting</strong> calculates the routing between clusters. The function getCompleteSchedule will return
+the full schedule given the input clusters, working hour and the current station.</p>
+<div class="aside aside-to-do">
+    <p class="aside-title">To do</p>
+    <p>The class should be able to handle different working hour for different days. Also the last repeat should be considered when calling getCompleteSchedule.</p>
+
+</div><div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <p>SeeAlso:</p>
+
+<ul>
+<li>DynamicRouting</li>
+<li>StationRouting</li>
+</ul>
+
+</div>
 
                         <a href="Classes/ClusterRouting.html" class="slightly-smaller">See more</a>
                       </div>
@@ -202,14 +216,9 @@ it&rsquo;s time to revisit previous station, change of station scheduling and en
 
 <p>When a user chagne the scheduling of stations, <strong>DynamicRouting</strong> will also use <strong>ClusterRouting</strong> object
 to calculate the full schedule with the changes and update to master. Same action will happen when a user tap End Survey today.</p>
-<div class="aside aside-todo">
-    <p class="aside-title">Todo</p>
-    <p>Todo:</p>
-
-<ul>
-<li>Make currentVisitPath two dimensional array to represent the visit log for different days</li>
-<li>Should be able to set different working hour for different days</li>
-</ul>
+<div class="aside aside-to-do">
+    <p class="aside-title">To do</p>
+    <p>currentVisitPath should be two dimensional array to represent the visit log for different days.</p>
 
 </div><div class="aside aside-see-also">
     <p class="aside-title">See also</p>
@@ -248,7 +257,14 @@ to calculate the full schedule with the changes and update to master. Same actio
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Represent the station routing handler. The class is responsible for simulating the routing within a cluster</p>
+                        <p>Represent the station routing handler. The <strong>StationRouting</strong> is responsible for simulating the routing within a cluster including finding a revisit station when the time exceed repeat interval</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    
+</div><ul>
+<li>DynamicRouting</li>
+<li>ClusterRouting</li>
+</ul>
 
                         <a href="Classes/StationRouting.html" class="slightly-smaller">See more</a>
                       </div>

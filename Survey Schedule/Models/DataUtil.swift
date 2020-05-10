@@ -14,7 +14,7 @@ import CoreLocation
 /// The file name of original clustering
 let clusterInfoFile = "cluster_info"
 
-/// The information of all stations
+/// The file name of information of all stations
 let statInfoFile = "stat_info"
 
 /// The file name of Staitons travel time

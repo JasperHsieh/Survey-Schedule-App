@@ -10,7 +10,11 @@ import Foundation
 import Combinatorics
 
 /**
- Represent the station routing handler. The class is responsible for simulating the routing within a cluster
+ Represent the station routing handler. The **StationRouting** is responsible for simulating the routing within a cluster including finding a revisit station when the time exceed repeat interval
+
+ - SeeAlso:
+ - DynamicRouting
+ - ClusterRouting
  */
 class StationRouting {
     /// True, if debugging message shows
@@ -42,6 +46,10 @@ class StationRouting {
         - statList: An array of station name
         - pathSoFar: An array of visitlog indicating the path before going to those stations in station list
     - Returns:An array of visitlog represents the optimal routing path
+
+     **Steps**
+     1. Find the minimum travel time permutation of stations
+     2. Use the permutation as a sequence to simulate the station visiting.
     */
     func getVisitPath(statList: [String], pathSoFar: [VisitLog]) -> [VisitLog]{
         var minTimePerm: [String] = getMinPermStationFromCache(stations: statList)
@@ -111,7 +119,7 @@ class StationRouting {
                         }
                     }
                     if let visitLog = minVisitLog {
-                        // Revisit station and update current station and time
+                        /// Revisit station and update current station and time
                         curTime += minTravelTime
                         lastRepeatTime = curTime
                         curVisitLog = VisitLog(stat: visitLog.station, timestamp: curTime, isRevisit: true)

@@ -9,8 +9,14 @@
 import Foundation
 import SwiftyJSON
 /**
- The class handle the routing between clusters. The function getCompleteSchedule will return
- the full schedule given the input clusters, working hour and the current station
+ The **ClusterRouting** calculates the routing between clusters. The function getCompleteSchedule will return
+ the full schedule given the input clusters, working hour and the current station.
+
+ - ToDo: The class should be able to handle different working hour for different days. Also the last repeat should be considered when calling getCompleteSchedule.
+
+ - SeeAlso:
+    - DynamicRouting
+    - StationRouting
  */
 class ClusterRouting{
     /// True, if debugging message shows
@@ -25,6 +31,12 @@ class ClusterRouting{
     /// StationRouting object
     let stationRouting: StationRouting
 
+    /**
+    Initializes a new ClusterRouting.
+     - Parameters:
+        - clusterInfo: The clusters of the stations
+        - workingTime: The working hour per day
+    */
     init(clusterInfo: JSON, workingTime: Int){
         //self.clusterInfo = clusterInfo
         self.workingTime = workingTime * 60 * 60
@@ -40,7 +52,14 @@ class ClusterRouting{
         - currentStat: A station name that current at
     - Returns: An new schedule
 
-     Todo: Replace workingHour with array of workingHours. The workingHour could be different dpends on day
+    **Steps**
+    1. Check the time doesn't exceed time limit
+    2. Go to nearest cluster
+    3. Cut the cluster if you can not visit all station in last cluster
+    4. Finish a day
+    5. Go back to step 1 for another day
+
+    - Todo: Replace workingHour with array of workingHours. The workingHour could be different dpends on day
     */
     func getCompleteSchedule(info clusterInfo: JSON, workingHour: Int, currentStat: String) -> [[[VisitLog]]]{
         //let statInfo = DataUtil.statInfo

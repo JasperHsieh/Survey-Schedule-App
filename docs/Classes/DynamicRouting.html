@@ -14,7 +14,7 @@
     <a title="DynamicRouting Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (67% documented)</p>
+        <p><a href="../index.html"> Docs</a> (68% documented)</p>
         <p class="header-right"><a href="https://github.com/JasperHsieh/Survey-Schedule-App"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -160,14 +160,9 @@ it&rsquo;s time to revisit previous station, change of station scheduling and en
 
 <p>When a user chagne the scheduling of stations, <strong>DynamicRouting</strong> will also use <strong>ClusterRouting</strong> object
 to calculate the full schedule with the changes and update to master. Same action will happen when a user tap End Survey today.</p>
-<div class="aside aside-todo">
-    <p class="aside-title">Todo</p>
-    <p>Todo:</p>
-
-<ul>
-<li>Make currentVisitPath two dimensional array to represent the visit log for different days</li>
-<li>Should be able to set different working hour for different days</li>
-</ul>
+<div class="aside aside-to-do">
+    <p class="aside-title">To do</p>
+    <p>currentVisitPath should be two dimensional array to represent the visit log for different days.</p>
 
 </div><div class="aside aside-see-also">
     <p class="aside-title">See also</p>
@@ -668,6 +663,33 @@ to calculate the full schedule with the changes and update to master. Same actio
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">currentVisitPath</span><span class="p">:</span> <span class="p">[</span><span class="kt">VisitLog</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15Survey_Schedule14DynamicRoutingCACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15Survey_Schedule14DynamicRoutingCACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new dynamicRouting. The original clusters will be obtain from file and the default date will be set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -1259,7 +1281,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Create index for all visitlog in the master schedule</p>
+                        <p>Create index for all visitlog in the master schedule in order to gray out the scheduled station</p>
 
                       </div>
                       <div class="declaration">
@@ -1394,7 +1416,15 @@ to calculate the full schedule with the changes and update to master. Same actio
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Handle done with a station details</p>
+                        <p>Handle done with the measurement of a station</p>
+
+<p><strong>Steps</strong></p>
+
+<ol>
+<li>Save next station to previous station</li>
+<li>Check if it is time to revisit a station</li>
+<li>Choose closest revisit station if exceed repeat time interval. Otherwise go to next station on master schedule</li>
+</ol>
 
                       </div>
                       <div class="declaration">
@@ -1422,6 +1452,14 @@ to calculate the full schedule with the changes and update to master. Same actio
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Handle the stations change</p>
+
+<p><strong>Steps</strong></p>
+
+<ol>
+<li>Re-clustering</li>
+<li>Get full schedule</li>
+<li>Update to the master schedule</li>
+</ol>
 
                       </div>
                       <div class="declaration">
@@ -1506,7 +1544,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Handle the action when Skip Station tapped</p>
+                        <p>Handle the action when Skip Station tapped.</p>
 
                       </div>
                       <div class="declaration">

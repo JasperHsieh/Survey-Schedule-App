@@ -14,7 +14,7 @@
     <a title="ClusterRouting Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (67% documented)</p>
+        <p><a href="../index.html"> Docs</a> (68% documented)</p>
         <p class="header-right"><a href="https://github.com/JasperHsieh/Survey-Schedule-App"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -153,8 +153,22 @@
 
                 </div>
               </div>
-            <p>The class handle the routing between clusters. The function getCompleteSchedule will return
-the full schedule given the input clusters, working hour and the current station</p>
+            <p>The <strong>ClusterRouting</strong> calculates the routing between clusters. The function getCompleteSchedule will return
+the full schedule given the input clusters, working hour and the current station.</p>
+<div class="aside aside-to-do">
+    <p class="aside-title">To do</p>
+    <p>The class should be able to handle different working hour for different days. Also the last repeat should be considered when calling getCompleteSchedule.</p>
+
+</div><div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <p>SeeAlso:</p>
+
+<ul>
+<li>DynamicRouting</li>
+<li>StationRouting</li>
+</ul>
+
+</div>
 
           </section>
           <section class="section task-group-section">
@@ -271,6 +285,64 @@ the full schedule given the input clusters, working hour and the current station
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:15Survey_Schedule14ClusterRoutingC11clusterInfo11workingTimeAC10SwiftyJSON0J0V_Sitcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(clusterInfo:workingTime:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15Survey_Schedule14ClusterRoutingC11clusterInfo11workingTimeAC10SwiftyJSON0J0V_Sitcfc">init(clusterInfo:<wbr>workingTime:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new ClusterRouting.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">clusterInfo</span><span class="p">:</span> <span class="kt">JSON</span><span class="p">,</span> <span class="nv">workingTime</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>clusterInfo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The clusters of the stations</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>workingTime</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The working hour per day</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:15Survey_Schedule14ClusterRoutingC011getCompleteB04info11workingHour11currentStatSaySaySayAA8VisitLogCGGG10SwiftyJSON0O0V_SiSStF"></a>
                     <a name="//apple_ref/swift/Method/getCompleteSchedule(info:workingHour:currentStat:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:15Survey_Schedule14ClusterRoutingC011getCompleteB04info11workingHour11currentStatSaySaySayAA8VisitLogCGGG10SwiftyJSON0O0V_SiSStF">getCompleteSchedule(info:<wbr>workingHour:<wbr>currentStat:<wbr>)</a>
@@ -283,7 +355,20 @@ the full schedule given the input clusters, working hour and the current station
                       <div class="abstract">
                         <p>Caculate the full schedule with the clusterInfo, workingHour and station current at</p>
 
-<p>Todo: Replace workingHour with array of workingHours. The workingHour could be different dpends on day</p>
+<p><strong>Steps</strong></p>
+
+<ol>
+<li>Check the time doesn&rsquo;t exceed time limit</li>
+<li>Go to nearest cluster</li>
+<li>Cut the cluster if you can not visit all station in last cluster</li>
+<li>Finish a day</li>
+<li>Go back to step 1 for another day</li>
+</ol>
+<div class="aside aside-todo">
+    <p class="aside-title">Todo</p>
+    Replace workingHour with array of workingHours. The workingHour could be different dpends on day
+
+</div>
 
                       </div>
                       <div class="declaration">

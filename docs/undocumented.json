@@ -106,20 +106,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/ClusterRouting.swift",
-      "line": 28,
-      "symbol": "ClusterRouting.init(clusterInfo:workingTime:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 86,
-      "symbol": "DynamicRouting.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/SceneDelegate.swift",
       "line": 12,
       "symbol": "SceneDelegate",

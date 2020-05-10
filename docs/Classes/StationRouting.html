@@ -14,7 +14,7 @@
     <a title="StationRouting Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (67% documented)</p>
+        <p><a href="../index.html"> Docs</a> (68% documented)</p>
         <p class="header-right"><a href="https://github.com/JasperHsieh/Survey-Schedule-App"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -153,7 +153,14 @@
 
                 </div>
               </div>
-            <p>Represent the station routing handler. The class is responsible for simulating the routing within a cluster</p>
+            <p>Represent the station routing handler. The <strong>StationRouting</strong> is responsible for simulating the routing within a cluster including finding a revisit station when the time exceed repeat interval</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    
+</div><ul>
+<li>DynamicRouting</li>
+<li>ClusterRouting</li>
+</ul>
 
           </section>
           <section class="section task-group-section">
@@ -254,6 +261,13 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Get the optimal routing path of given station list</p>
+
+<p><strong>Steps</strong></p>
+
+<ol>
+<li>Find the minimum travel time permutation of stations</li>
+<li>Use the permutation as a sequence to simulate the station visiting.</li>
+</ol>
 
                       </div>
                       <div class="declaration">
