@@ -8,7 +8,10 @@
 
 import Foundation
 import SwiftyJSON
-
+/**
+ The class handle the routing between clusters. The function getCompleteSchedule will return
+ the full schedule given the input clusters, working hour and the current station
+ */
 class ClusterRouting{
     /// True, if debugging message shows
     let Debug = false
@@ -30,7 +33,7 @@ class ClusterRouting{
     }
 
     /**
-    Insert a cluster in the front of the schedule
+    Caculate the full schedule with the clusterInfo, workingHour and station current at
     - Parameters:
         - clusterInfo: A JSON object represetn the clusters
         - workingHour: A time interval in hour to limit the routing per day

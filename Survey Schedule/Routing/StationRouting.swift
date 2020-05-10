@@ -9,6 +9,9 @@
 import Foundation
 import Combinatorics
 
+/**
+ Represent the station routing handler. The class is responsible for simulating the routing within a cluster
+ */
 class StationRouting {
     /// True, if debugging message shows
     let Debug = false

@@ -10,6 +10,24 @@ import Foundation
 import SwiftDate
 import SwiftyJSON
 
+/**
+ Represent the dynamic routing handler. The class is reponsible for do the real-time calculation to
+ update the UI station and schedule. The **DynamicRouting** will check the repeat time whenever a user
+ tap Done button and generate the next station. **ClusterRouting** object is used to get the new schedule when
+ it's time to revisit previous station, change of station scheduling and end the survey.
+
+ When a user chagne the scheduling of stations, **DynamicRouting** will also use **ClusterRouting** object
+ to calculate the full schedule with the changes and update to master. Same action will happen when a user tap End Survey today.
+
+ - Todo:
+    - Make currentVisitPath two dimensional array to represent the visit log for different days
+    - Should be able to set different working hour for different days
+
+ - SeeAlso:
+    - ClusterRouting
+    - StationRouting
+
+ */
 class DynamicRouting: ObservableObject{
     /// Previous visit log
     var preVisitLog: VisitLog
