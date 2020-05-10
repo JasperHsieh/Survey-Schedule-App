@@ -11,30 +11,58 @@ import SwiftDate
 import SwiftyJSON
 
 class DynamicRouting: ObservableObject{
-
+    /// Previous visit log
     var preVisitLog: VisitLog
+
+    /// Next visit log
     var nextVisitLog: VisitLog
+
+    /// The index of next visit log on master schedule
     var nextIdx: StatIndex
+
+    /// The next station name that shows in Next Station section
     @Published var nextStation: String = "NASA"
+
+    /// The travel time to next station that shows in Next Station section
     @Published var nextTravelTime: String = "00:00"
+
+    /// The bool indecates whether shows the loading view or not
     @Published var doneLoading: Bool = true
 
-    var isStarted = false
-    let dayLimit: Int = 8 // hours
+    /// The working hour for a day in hours
+    let dayLimit: Int = 8
+
+    /// The default date in the app
     let defaultTime: Date
+
+    /// The date a user done with the first station of a day
     var beginDate: Date
+
+    /// The timestamp that last revisit happened
     var lastRepeatTime: Int
+
+    /// The current day on master schedule
     var today: Int
+
+    /// True, if done with last station, not CS25, on today's schedule
     var doneToday: Bool
 
-    // Stations list page
+    /// Station list
     @Published var stationsList: [Station]
+
+    /// Copy of all stations scheduling
     var stationListBackUp: [Bool] = []
 
+    /// The master schedule
     var masterSchedule: [[[VisitLog]]] = []
+
+    /// The cluster routing object
     var clusterRouting: ClusterRouting
+
+    /// The station routing object
     var stationRouting: StationRouting
 
+    /// Current visit log so far.  TODO: Make currentVisitPath two dimensional array to indicate the visit log for different days
     var currentVisitPath: [VisitLog] = []
 
     init(){
@@ -53,7 +81,6 @@ class DynamicRouting: ObservableObject{
 
         today = 0
         doneToday = false
-        //stationRouting.getMinTimePermutation(statList: clusterInfo!["1"]["stations"].arrayValue.map {$0.stringValue})
     }
     /**
      Reset basic setting when a user done with first station which should be CS25

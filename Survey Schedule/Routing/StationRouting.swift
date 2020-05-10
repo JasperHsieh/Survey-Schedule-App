@@ -10,13 +10,13 @@ import Foundation
 import Combinatorics
 
 class StationRouting {
+    /// True, if debugging message shows
     let Debug = false
-    //let N: Int = 2 * 60 * 60
-    //let M: Int = 15 * 60
-    let measureTime = 150
-    //let dataUtil = DataUtil()
-    //let clusterInfo = DataUtil.clusterInfo
 
+    /// The estimated time to measure a station
+    let measureTime = 150
+
+    /// The timestamp that last revisit happened
     var lastRepeatTime = 0
 
     /**

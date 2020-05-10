@@ -10,12 +10,16 @@ import Foundation
 import SwiftyJSON
 
 class ClusterRouting{
+    /// True, if debugging message shows
     let Debug = false
+
+    /// The new cluster start id
     var clusterStartId = 100
 
-    //var clusterInfo: JSON
-    var workingTime: Int // second
-    //let dataUtil: DataUtil
+    /// The working time per day in seconds
+    var workingTime: Int
+
+    /// StationRouting object
     let stationRouting: StationRouting
 
     init(clusterInfo: JSON, workingTime: Int){

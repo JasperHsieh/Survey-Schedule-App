@@ -11,26 +11,55 @@ import SwiftyJSON
 import SwiftUI
 import CoreLocation
 
+/// The file name of original clustering
 let clusterInfoFile = "cluster_info"
+
+/// The information of all stations
 let statInfoFile = "stat_info"
+
+/// The file name of Staitons travel time
 let statTravelTimeFile = "stat_travel_time"
+
+/// The file name of minimum time permutation of stations
 let statPermCacheFile = "stat_perm_cache"
+
+/// The file name of minimum time permutation of stations with particualr start station
 let statPermStartCacheFile = "stat_perm_start_cache"
-let statDistFile = "stat_dist"
 
+//let statDistFile = "stat_dist"
+
+/// The clusters of stations in JSON
 let clusterInfo = readJsonFromFile(filePath: clusterInfoFile)
-let statInfo = readJsonFromFile(filePath: statInfoFile)
-let statTravelTimeInfo = readJsonFromFile(filePath: statTravelTimeFile)
-var statPermCache = readJsonFromFile(filePath: statPermCacheFile)
-var statPermStartCache = readJsonFromFile(filePath: statPermStartCacheFile)
-let statDist = readJsonFromFile(filePath: statDistFile)
 
+/// The information of all stations in JSON
+let statInfo = readJsonFromFile(filePath: statInfoFile)
+
+/// The travel time between any two stations in JSON
+let statTravelTimeInfo = readJsonFromFile(filePath: statTravelTimeFile)
+
+/// The cache of minimum time permutation of stations
+var statPermCache = readJsonFromFile(filePath: statPermCacheFile)
+
+/// The cache of minimum time permutation of stations wiht particular start station
+var statPermStartCache = readJsonFromFile(filePath: statPermStartCacheFile)
+//let statDist = readJsonFromFile(filePath: statDistFile)
+
+/// The repeat interval
 let N = 2 * 60 * 60
+
+/// Travel time threshhold
 let M = 15 * 60
+
+/// The working hour per day
 let WorkingHour = 8
+
+/// The reference station that should start with and end with
 let BaseStation = "CS25"
+
+/// Invalid station
 let InvalidStation = "Mars"
 
+/// The index of the visit log on master schedule
 typealias StatIndex = (day: Int, cluster: Int, station: Int)
 
 /**

@@ -114,182 +114,56 @@
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 14,
-      "symbol": "clusterInfoFile",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 15,
-      "symbol": "statInfoFile",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 16,
-      "symbol": "statTravelTimeFile",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 17,
-      "symbol": "statPermCacheFile",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 18,
-      "symbol": "statPermStartCacheFile",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 19,
-      "symbol": "statDistFile",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 21,
-      "symbol": "clusterInfo",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 22,
-      "symbol": "statInfo",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 23,
-      "symbol": "statTravelTimeInfo",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 24,
-      "symbol": "statPermCache",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 25,
-      "symbol": "statPermStartCache",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 26,
-      "symbol": "statDist",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 28,
-      "symbol": "N",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 29,
-      "symbol": "M",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 30,
-      "symbol": "WorkingHour",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 31,
-      "symbol": "BaseStation",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 32,
-      "symbol": "InvalidStation",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 34,
-      "symbol": "StatIndex",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 202,
+      "line": 231,
       "symbol": "ImageStore",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 203,
+      "line": 232,
       "symbol": "ImageStore._ImageDictionary",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 204,
+      "line": 233,
       "symbol": "ImageStore.images",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 206,
+      "line": 235,
       "symbol": "ImageStore.scale",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 208,
+      "line": 237,
       "symbol": "ImageStore.shared",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 210,
+      "line": 239,
       "symbol": "ImageStore.image(name:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 216,
+      "line": 245,
       "symbol": "ImageStore.loadImage(name:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
-      "line": 227,
+      "line": 256,
       "symbol": "ImageStore._guaranteeImage(name:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -562,35 +436,7 @@
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/ClusterRouting.swift",
-      "line": 13,
-      "symbol": "ClusterRouting.Debug",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/ClusterRouting.swift",
-      "line": 14,
-      "symbol": "ClusterRouting.clusterStartId",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/ClusterRouting.swift",
-      "line": 17,
-      "symbol": "ClusterRouting.workingTime",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/ClusterRouting.swift",
-      "line": 19,
-      "symbol": "ClusterRouting.stationRouting",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/ClusterRouting.swift",
-      "line": 21,
+      "line": 25,
       "symbol": "ClusterRouting.init(clusterInfo:workingTime:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -604,168 +450,35 @@
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 15,
-      "symbol": "DynamicRouting.preVisitLog",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 16,
-      "symbol": "DynamicRouting.nextVisitLog",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 17,
-      "symbol": "DynamicRouting.nextIdx",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 18,
-      "symbol": "DynamicRouting.nextStation",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 19,
-      "symbol": "DynamicRouting.nextTravelTime",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 20,
-      "symbol": "DynamicRouting.doneLoading",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 22,
-      "symbol": "DynamicRouting.isStarted",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 23,
-      "symbol": "DynamicRouting.dayLimit",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 24,
-      "symbol": "DynamicRouting.defaultTime",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 25,
-      "symbol": "DynamicRouting.beginDate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 26,
-      "symbol": "DynamicRouting.lastRepeatTime",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 27,
-      "symbol": "DynamicRouting.today",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 28,
-      "symbol": "DynamicRouting.doneToday",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 31,
-      "symbol": "DynamicRouting.stationsList",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 32,
-      "symbol": "DynamicRouting.stationListBackUp",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 34,
-      "symbol": "DynamicRouting.masterSchedule",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 35,
-      "symbol": "DynamicRouting.clusterRouting",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 36,
-      "symbol": "DynamicRouting.stationRouting",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 38,
-      "symbol": "DynamicRouting.currentVisitPath",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 40,
+      "line": 68,
       "symbol": "DynamicRouting.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 351,
+      "line": 378,
       "symbol": "DynamicRouting",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 513,
+      "line": 540,
       "symbol": "DynamicRouting",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 576,
+      "line": 603,
       "symbol": "DynamicRouting",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
-      "line": 661,
+      "line": 688,
       "symbol": "DynamicRouting",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
@@ -775,27 +488,6 @@
       "line": 12,
       "symbol": "StationRouting",
       "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/StationRouting.swift",
-      "line": 13,
-      "symbol": "StationRouting.Debug",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/StationRouting.swift",
-      "line": 16,
-      "symbol": "StationRouting.measureTime",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/StationRouting.swift",
-      "line": 20,
-      "symbol": "StationRouting.lastRepeatTime",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
