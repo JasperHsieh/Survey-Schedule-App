@@ -1,0 +1,1608 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/AppDelegate.swift",
+      "line": 12,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/AppDelegate.swift",
+      "line": 16,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/AppDelegate.swift",
+      "line": 23,
+      "symbol": "AppDelegate.application(_:configurationForConnecting:options:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/AppDelegate.swift",
+      "line": 29,
+      "symbol": "AppDelegate.application(_:didDiscardSceneSessions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/DoneButtonView.swift",
+      "line": 11,
+      "symbol": "DoneButtonView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/DoneButtonView.swift",
+      "line": 24,
+      "symbol": "doneAction()",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/DoneButtonView.swift",
+      "line": 32,
+      "symbol": "DoneButtonView_Previews",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/MainView.swift",
+      "line": 10,
+      "symbol": "MainView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/MainView.swift",
+      "line": 11,
+      "symbol": "MainView.position",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/MainView.swift",
+      "line": 12,
+      "symbol": "MainView.background",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/MainView.swift",
+      "line": 13,
+      "symbol": "MainView.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/MainView.swift",
+      "line": 14,
+      "symbol": "MainView.showingAlert",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/MainView.swift",
+      "line": 40,
+      "symbol": "MainView_Previews",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/MainViewController.swift",
+      "line": 11,
+      "symbol": "MainViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/MainViewController.swift",
+      "line": 13,
+      "symbol": "MainViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Clustering.swift",
+      "line": 11,
+      "symbol": "Clustering",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 14,
+      "symbol": "clusterInfoFile",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 15,
+      "symbol": "statInfoFile",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 16,
+      "symbol": "statTravelTimeFile",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 17,
+      "symbol": "statPermCacheFile",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 18,
+      "symbol": "statPermStartCacheFile",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 19,
+      "symbol": "statDistFile",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 21,
+      "symbol": "clusterInfo",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 22,
+      "symbol": "statInfo",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 23,
+      "symbol": "statTravelTimeInfo",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 24,
+      "symbol": "statPermCache",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 25,
+      "symbol": "statPermStartCache",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 26,
+      "symbol": "statDist",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 28,
+      "symbol": "N",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 29,
+      "symbol": "M",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 30,
+      "symbol": "WorkingHour",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 31,
+      "symbol": "BaseStation",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 32,
+      "symbol": "InvalidStation",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 34,
+      "symbol": "StatIndex",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 202,
+      "symbol": "ImageStore",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 203,
+      "symbol": "ImageStore._ImageDictionary",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 204,
+      "symbol": "ImageStore.images",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 206,
+      "symbol": "ImageStore.scale",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 208,
+      "symbol": "ImageStore.shared",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 210,
+      "symbol": "ImageStore.image(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 216,
+      "symbol": "ImageStore.loadImage(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/DataUtil.swift",
+      "line": 227,
+      "symbol": "ImageStore._guaranteeImage(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 14,
+      "symbol": "Station",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 15,
+      "symbol": "Station.coordinate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 16,
+      "symbol": "Station.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 18,
+      "symbol": "Station.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 19,
+      "symbol": "Station.isScheduled",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 20,
+      "symbol": "Station.isVisited",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 21,
+      "symbol": "Station.imageName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 23,
+      "symbol": "Station.init(id:name:image:coordinate:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 33,
+      "symbol": "Station",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 34,
+      "symbol": "Station.image",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 39,
+      "symbol": "Coordinates",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 40,
+      "symbol": "Coordinates.latitude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
+      "line": 41,
+      "symbol": "Coordinates.longitude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/TimeUtil.swift",
+      "line": 12,
+      "symbol": "Date.localString(dateStyle:timeStyle:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 11,
+      "symbol": "VisitLog",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 13,
+      "symbol": "VisitLog.station",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 14,
+      "symbol": "VisitLog.timestamp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 15,
+      "symbol": "VisitLog.isRevisit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 16,
+      "symbol": "VisitLog.index",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 17,
+      "symbol": "VisitLog.didVisit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 18,
+      "symbol": "VisitLog.date",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 19,
+      "symbol": "VisitLog.isSkip",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 21,
+      "symbol": "VisitLog.init(stat:timestamp:isRevisit:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 39,
+      "symbol": "VisitLog.dumpMasterSchedule(schedule:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 53,
+      "symbol": "VisitLog.dumpDaySchedule(daySchedule:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 65,
+      "symbol": "VisitLog.dumpPath(path:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 73,
+      "symbol": "VisitLog.dumpLog(visitLog:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/NextStatCardView.swift",
+      "line": 14,
+      "symbol": "NextStatCardView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/NextStatCardView.swift",
+      "line": 15,
+      "symbol": "NextStatCardView.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/NextStatCardView.swift",
+      "line": 16,
+      "symbol": "NextStatCardView.nextButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/NextStatCardView.swift",
+      "line": 17,
+      "symbol": "NextStatCardView.showingLoading",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/NextStatCardView.swift",
+      "line": 19,
+      "symbol": "NextStatCardView.clusterRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/NextStatCardView.swift",
+      "line": 20,
+      "symbol": "NextStatCardView.stationRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/NextStatCardView.swift",
+      "line": 22,
+      "symbol": "NextStatCardView.timeLimit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/NextStatCardView.swift",
+      "line": 23,
+      "symbol": "NextStatCardView.colorScheme",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/NextStatCardView.swift",
+      "line": 27,
+      "symbol": "NextStatCardView.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/NextStatCardView.swift",
+      "line": 82,
+      "symbol": "NextStatCardView.doneAction()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/ClusterRouting.swift",
+      "line": 12,
+      "symbol": "ClusterRouting",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/ClusterRouting.swift",
+      "line": 13,
+      "symbol": "ClusterRouting.Debug",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/ClusterRouting.swift",
+      "line": 14,
+      "symbol": "ClusterRouting.clusterStartId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/ClusterRouting.swift",
+      "line": 17,
+      "symbol": "ClusterRouting.workingTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/ClusterRouting.swift",
+      "line": 19,
+      "symbol": "ClusterRouting.stationRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/ClusterRouting.swift",
+      "line": 21,
+      "symbol": "ClusterRouting.init(clusterInfo:workingTime:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 13,
+      "symbol": "DynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 15,
+      "symbol": "DynamicRouting.preVisitLog",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 16,
+      "symbol": "DynamicRouting.nextVisitLog",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 17,
+      "symbol": "DynamicRouting.nextIdx",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 18,
+      "symbol": "DynamicRouting.nextStation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 19,
+      "symbol": "DynamicRouting.nextTravelTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 20,
+      "symbol": "DynamicRouting.doneLoading",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 22,
+      "symbol": "DynamicRouting.isStarted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 23,
+      "symbol": "DynamicRouting.dayLimit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 24,
+      "symbol": "DynamicRouting.defaultTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 25,
+      "symbol": "DynamicRouting.beginDate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 26,
+      "symbol": "DynamicRouting.lastRepeatTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 27,
+      "symbol": "DynamicRouting.today",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 28,
+      "symbol": "DynamicRouting.doneToday",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 31,
+      "symbol": "DynamicRouting.stationsList",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 32,
+      "symbol": "DynamicRouting.stationListBackUp",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 34,
+      "symbol": "DynamicRouting.masterSchedule",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 35,
+      "symbol": "DynamicRouting.clusterRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 36,
+      "symbol": "DynamicRouting.stationRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 38,
+      "symbol": "DynamicRouting.currentVisitPath",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 40,
+      "symbol": "DynamicRouting.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 351,
+      "symbol": "DynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 513,
+      "symbol": "DynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 576,
+      "symbol": "DynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/DynamicRouting.swift",
+      "line": 661,
+      "symbol": "DynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/StationRouting.swift",
+      "line": 12,
+      "symbol": "StationRouting",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/StationRouting.swift",
+      "line": 13,
+      "symbol": "StationRouting.Debug",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/StationRouting.swift",
+      "line": 16,
+      "symbol": "StationRouting.measureTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Routing/StationRouting.swift",
+      "line": 20,
+      "symbol": "StationRouting.lastRepeatTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/SceneDelegate.swift",
+      "line": 12,
+      "symbol": "SceneDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/SceneDelegate.swift",
+      "line": 14,
+      "symbol": "SceneDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/SceneDelegate.swift",
+      "line": 17,
+      "symbol": "SceneDelegate.scene(_:willConnectTo:options:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/SceneDelegate.swift",
+      "line": 41,
+      "symbol": "SceneDelegate.sceneDidDisconnect(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/SceneDelegate.swift",
+      "line": 48,
+      "symbol": "SceneDelegate.sceneDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/SceneDelegate.swift",
+      "line": 53,
+      "symbol": "SceneDelegate.sceneWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/SceneDelegate.swift",
+      "line": 58,
+      "symbol": "SceneDelegate.sceneWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/SceneDelegate.swift",
+      "line": 63,
+      "symbol": "SceneDelegate.sceneDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 11,
+      "symbol": "AllStationsButtonView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 12,
+      "symbol": "AllStationsButtonView.showingSheet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 13,
+      "symbol": "AllStationsButtonView.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 39,
+      "symbol": "StationList",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 40,
+      "symbol": "StationList.presentationMode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 41,
+      "symbol": "StationList.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 42,
+      "symbol": "StationList.showingAlert",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 43,
+      "symbol": "StationList.showingLoading",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 76,
+      "symbol": "StationList.applyChange()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 92,
+      "symbol": "NavigationCancelButton",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 93,
+      "symbol": "NavigationCancelButton.isPresented",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 103,
+      "symbol": "NavigationApplyButton",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 113,
+      "symbol": "StationRow",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 114,
+      "symbol": "StationRow.station",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 115,
+      "symbol": "StationRow.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/AllStationsButtonView.swift",
+      "line": 139,
+      "symbol": "StationRow.init(station:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/HavingTroubleButtonView.swift",
+      "line": 11,
+      "symbol": "HavingTroubleButtonView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/HavingTroubleButtonView.swift",
+      "line": 12,
+      "symbol": "HavingTroubleButtonView.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/HavingTroubleButtonView.swift",
+      "line": 13,
+      "symbol": "HavingTroubleButtonView.showingActionSheet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/HavingTroubleButtonView.swift",
+      "line": 14,
+      "symbol": "HavingTroubleButtonView.showingLoading",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/HavingTroubleButtonView.swift",
+      "line": 50,
+      "symbol": "Color.init(hex:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/HavingTroubleButtonView.swift",
+      "line": 76,
+      "symbol": "HavingTroubleButtonView_Previews",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/MasterButtonView.swift",
+      "line": 13,
+      "symbol": "MasterButtonView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/MasterButtonView.swift",
+      "line": 14,
+      "symbol": "MasterButtonView.showingSheet",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/MasterButtonView.swift",
+      "line": 15,
+      "symbol": "MasterButtonView.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/MasterButtonView.swift",
+      "line": 35,
+      "symbol": "ScheduleList",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/MasterButtonView.swift",
+      "line": 36,
+      "symbol": "ScheduleList.presentationMode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/MasterButtonView.swift",
+      "line": 37,
+      "symbol": "ScheduleList.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/MasterButtonView.swift",
+      "line": 76,
+      "symbol": "ScheduleRow",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/MasterButtonView.swift",
+      "line": 78,
+      "symbol": "ScheduleRow.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/MasterButtonView.swift",
+      "line": 79,
+      "symbol": "ScheduleRow.log",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/MasterButtonView.swift",
+      "line": 80,
+      "symbol": "ScheduleRow.stationIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/MasterButtonView.swift",
+      "line": 83,
+      "symbol": "ScheduleRow.isScheduled",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/ScheduleCardView.swift",
+      "line": 11,
+      "symbol": "ScheduleCardView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/ScheduleCardView.swift",
+      "line": 12,
+      "symbol": "ScheduleCardView.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/ScheduleCardView.swift",
+      "line": 13,
+      "symbol": "ScheduleCardView.colorScheme",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/StationDetails.swift",
+      "line": 12,
+      "symbol": "StationDetails",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/StationDetails.swift",
+      "line": 15,
+      "symbol": "StationDetails.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/StationDetails.swift",
+      "line": 16,
+      "symbol": "StationDetails.station",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/StationDetails.swift",
+      "line": 17,
+      "symbol": "StationDetails.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/StationDetails.swift",
+      "line": 18,
+      "symbol": "StationDetails.keyboardHeight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/StationDetails.swift",
+      "line": 20,
+      "symbol": "StationDetails.stationIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/TroublesCardView.swift",
+      "line": 11,
+      "symbol": "TroublesCardView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/TroublesCardView.swift",
+      "line": 12,
+      "symbol": "TroublesCardView.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/TroublesCardView.swift",
+      "line": 13,
+      "symbol": "TroublesCardView.colorScheme",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Schedule/TroublesCardView.swift",
+      "line": 34,
+      "symbol": "TroublesCardView_Previews",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/CircleImage.swift",
+      "line": 11,
+      "symbol": "CircleImage",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/CircleImage.swift",
+      "line": 12,
+      "symbol": "CircleImage.image",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/KeyboardAdaptive.swift",
+      "line": 12,
+      "symbol": "KeyboardAdaptive",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/KeyboardAdaptive.swift",
+      "line": 13,
+      "symbol": "KeyboardAdaptive.bottomPadding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/KeyboardAdaptive.swift",
+      "line": 30,
+      "symbol": "View.keyboardAdaptive()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/KeyboardHeightPublisher.swift",
+      "line": 13,
+      "symbol": "Publishers.keyboardHeight",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/KeyboardHeightPublisher.swift",
+      "line": 26,
+      "symbol": "Notification.keyboardHeight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/LoadingView.swift",
+      "line": 11,
+      "symbol": "LoadingView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/LoadingView.swift",
+      "line": 12,
+      "symbol": "LoadingView.amosPulsing",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/LoadingView.swift",
+      "line": 13,
+      "symbol": "LoadingView.innerPulsing",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/LoadingView.swift",
+      "line": 14,
+      "symbol": "LoadingView.middlePulsing",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/LoadingView.swift",
+      "line": 15,
+      "symbol": "LoadingView.outerPulsing",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/LoadingView.swift",
+      "line": 17,
+      "symbol": "LoadingView.presentationMode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/LoadingView.swift",
+      "line": 18,
+      "symbol": "LoadingView.dynamicRouting",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/LoadingView.swift",
+      "line": 20,
+      "symbol": "LoadingView.showingWelcome",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/LoadingView.swift",
+      "line": 21,
+      "symbol": "LoadingView.showDetails",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/LoadingView.swift",
+      "line": 23,
+      "symbol": "LoadingView.delay",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/LoadingView.swift",
+      "line": 114,
+      "symbol": "LoadingView_Previews",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/MapView.swift",
+      "line": 12,
+      "symbol": "MapView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/MapView.swift",
+      "line": 13,
+      "symbol": "MapView.stations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/MapView.swift",
+      "line": 14,
+      "symbol": "MapView.locationManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/MapView.swift",
+      "line": 15,
+      "symbol": "MapView.setupManager()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 13,
+      "symbol": "SlideOverCard",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 14,
+      "symbol": "SlideOverCard.defaultPosition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 15,
+      "symbol": "SlideOverCard.backgroundStyle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 16,
+      "symbol": "SlideOverCard.content",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 18,
+      "symbol": "SlideOverCard.init(_:backgroundStyle:content:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 29,
+      "symbol": "BackgroundStyle",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 30,
+      "symbol": "BackgroundStyle.blur",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 30,
+      "symbol": "BackgroundStyle.clear",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 30,
+      "symbol": "BackgroundStyle.solid",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 33,
+      "symbol": "CardPosition",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 35,
+      "symbol": "CardPosition.bottom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 35,
+      "symbol": "CardPosition.middle",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 35,
+      "symbol": "CardPosition.top",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 37,
+      "symbol": "CardPosition.offsetFromTop()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 49,
+      "symbol": "DragState",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 51,
+      "symbol": "DragState.inactive",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 52,
+      "symbol": "DragState.dragging(translation:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 54,
+      "symbol": "DragState.translation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 63,
+      "symbol": "DragState.isDragging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 75,
+      "symbol": "Card",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 76,
+      "symbol": "Card.colorScheme",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 77,
+      "symbol": "Card.dragState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 78,
+      "symbol": "Card.position",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 79,
+      "symbol": "Card.backgroundStyle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 80,
+      "symbol": "Card.offset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 82,
+      "symbol": "Card.animation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 86,
+      "symbol": "Card.timer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 131,
+      "symbol": "Card.onDragEnded(drag:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 173,
+      "symbol": "BlurView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 174,
+      "symbol": "BlurView.style",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 195,
+      "symbol": "Handle",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/SlideOverCard.swift",
+      "line": 196,
+      "symbol": "Handle.handleThickness",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/StationMapView.swift",
+      "line": 12,
+      "symbol": "StationMapView",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/StationMapView.swift",
+      "line": 13,
+      "symbol": "StationMapView.coordinate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/StationMapView.swift",
+      "line": 14,
+      "symbol": "StationMapView.station",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/UIResponder+Current.swift",
+      "line": 14,
+      "symbol": "UIResponder.currentFirstResponder",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/UIResponder+Current.swift",
+      "line": 20,
+      "symbol": "UIResponder._currentFirstResponder",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/UIResponder+Current.swift",
+      "line": 22,
+      "symbol": "UIResponder.findFirstResponder(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Views/UIResponder+Current.swift",
+      "line": 26,
+      "symbol": "UIResponder.globalFrame",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule"
+}

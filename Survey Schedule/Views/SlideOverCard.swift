@@ -3,7 +3,7 @@
 //  Survey Schedule
 //
 //  Created by Jasper Hsieh on 3/14/20.
-//  Copyright © 2020 Jasper Hsieh. All rights reserved.
+//  Credit: moifort & ziligy
 //
 
 import SwiftUI
