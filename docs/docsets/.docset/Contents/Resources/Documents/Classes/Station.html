@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ClusterRouting Class Reference</title>
+    <title>Station Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/ClusterRouting" class="dashAnchor"></a>
-    <a title="ClusterRouting Class Reference"></a>
+    <a name="//apple_ref/swift/Class/Station" class="dashAnchor"></a>
+    <a title="Station Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (71% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        ClusterRouting Class Reference
+        Station Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -152,29 +152,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>ClusterRouting</h1>
+            <h1>Station</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ClusterRouting</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">Station</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Identifiable</span><span class="p">,</span> <span class="kt">MKAnnotation</span></code></pre>
 
                 </div>
               </div>
-            <p>The <strong>ClusterRouting</strong> calculates the routing between clusters. The function getCompleteSchedule will return
-the full schedule given the input clusters, working hour and the current station.</p>
-<div class="aside aside-to-do">
-    <p class="aside-title">To do</p>
-    <p>The class should be able to handle different working hour for different days. Also the last repeat should be considered when calling getCompleteSchedule.</p>
-
-</div><div class="aside aside-see-also">
-    <p class="aside-title">See also</p>
-    <p>SeeAlso:</p>
-
-<ul>
-<li>DynamicRouting</li>
-<li>StationRouting</li>
-</ul>
-
-</div>
+            <p>Represent the station that needs to be measured. <strong>Station</strong> contain all the station information including the
+coordinates, name, image,  scheduling and visited or not.</p>
 
           </section>
           <section class="section task-group-section">
@@ -183,9 +169,9 @@ the full schedule given the input clusters, working hour and the current station
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15Survey_Schedule14ClusterRoutingC5DebugSbvp"></a>
-                    <a name="//apple_ref/swift/Property/Debug" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15Survey_Schedule14ClusterRoutingC5DebugSbvp">Debug</a>
+                    <a name="/c:@M@Survey_Schedule@objc(cs)Station(py)coordinate"></a>
+                    <a name="//apple_ref/swift/Property/coordinate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Survey_Schedule@objc(cs)Station(py)coordinate">coordinate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -193,14 +179,14 @@ the full schedule given the input clusters, working hour and the current station
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>True, if debugging message shows</p>
+                        <p>The coordinates of the station in (latitude, longitude)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">Debug</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">coordinate</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span></code></pre>
 
                         </div>
                       </div>
@@ -210,9 +196,9 @@ the full schedule given the input clusters, working hour and the current station
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15Survey_Schedule14ClusterRoutingC14clusterStartIdSivp"></a>
-                    <a name="//apple_ref/swift/Property/clusterStartId" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15Survey_Schedule14ClusterRoutingC14clusterStartIdSivp">clusterStartId</a>
+                    <a name="/s:15Survey_Schedule7StationC2idSSvp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15Survey_Schedule7StationC2idSSvp">id</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -220,14 +206,14 @@ the full schedule given the input clusters, working hour and the current station
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The new cluster start id</p>
+                        <p>Unique id of the station</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">clusterStartId</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -237,9 +223,9 @@ the full schedule given the input clusters, working hour and the current station
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15Survey_Schedule14ClusterRoutingC11workingTimeSivp"></a>
-                    <a name="//apple_ref/swift/Property/workingTime" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15Survey_Schedule14ClusterRoutingC11workingTimeSivp">workingTime</a>
+                    <a name="/s:15Survey_Schedule7StationC4nameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15Survey_Schedule7StationC4nameSSvp">name</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -247,14 +233,14 @@ the full schedule given the input clusters, working hour and the current station
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The working time per day in seconds</p>
+                        <p>Name of the station</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">workingTime</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -264,9 +250,9 @@ the full schedule given the input clusters, working hour and the current station
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15Survey_Schedule14ClusterRoutingC07stationD0AA07StationD0Cvp"></a>
-                    <a name="//apple_ref/swift/Property/stationRouting" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15Survey_Schedule14ClusterRoutingC07stationD0AA07StationD0Cvp">stationRouting</a>
+                    <a name="/s:15Survey_Schedule7StationC11isScheduledSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isScheduled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15Survey_Schedule7StationC11isScheduledSbvp">isScheduled</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -274,14 +260,14 @@ the full schedule given the input clusters, working hour and the current station
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>StationRouting object</p>
+                        <p>Whether the station Is scheduled on the master schedule</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">stationRouting</span><span class="p">:</span> <span class="kt"><a href="../Classes/StationRouting.html">StationRouting</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isScheduled</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -291,9 +277,9 @@ the full schedule given the input clusters, working hour and the current station
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:15Survey_Schedule14ClusterRoutingC11clusterInfo11workingTimeAC10SwiftyJSON0J0V_Sitcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(clusterInfo:workingTime:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15Survey_Schedule14ClusterRoutingC11clusterInfo11workingTimeAC10SwiftyJSON0J0V_Sitcfc">init(clusterInfo:<wbr>workingTime:<wbr>)</a>
+                    <a name="/s:15Survey_Schedule7StationC9isVisitedSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isVisited" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15Survey_Schedule7StationC9isVisitedSbvp">isVisited</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -301,14 +287,68 @@ the full schedule given the input clusters, working hour and the current station
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initializes a new ClusterRouting.</p>
+                        <p>Whether the station is visited or not</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">clusterInfo</span><span class="p">:</span> <span class="kt">JSON</span><span class="p">,</span> <span class="nv">workingTime</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isVisited</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15Survey_Schedule7StationC9imageNameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/imageName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15Survey_Schedule7StationC9imageNameSSvp">imageName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The image name of the station in station details</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">imageName</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15Survey_Schedule7StationC2id4name5image10coordinateACSS_S2SSo22CLLocationCoordinate2DVtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(id:name:image:coordinate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15Survey_Schedule7StationC2id4name5image10coordinateACSS_S2SSo22CLLocationCoordinate2DVtcfc">init(id:<wbr>name:<wbr>image:<wbr>coordinate:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize a new station</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">coordinate</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -319,218 +359,53 @@ the full schedule given the input clusters, working hour and the current station
                             <tr>
                               <td>
                                 <code>
-                                <em>clusterInfo</em>
+                                <em>id</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The clusters of the stations</p>
+                                  <p>A unique id of the station</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>workingTime</em>
+                                <em>name</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The working hour per day</p>
+                                  <p>The name of the station</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>image</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the station image</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coordinate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The location of the station</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:15Survey_Schedule14ClusterRoutingC011getCompleteB04info11workingHour11currentStatSaySaySayAA8VisitLogCGGG10SwiftyJSON0O0V_SiSStF"></a>
-                    <a name="//apple_ref/swift/Method/getCompleteSchedule(info:workingHour:currentStat:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15Survey_Schedule14ClusterRoutingC011getCompleteB04info11workingHour11currentStatSaySaySayAA8VisitLogCGGG10SwiftyJSON0O0V_SiSStF">getCompleteSchedule(info:<wbr>workingHour:<wbr>currentStat:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Caculate the full schedule with the clusterInfo, workingHour and station current at</p>
-
-<p><strong>Steps</strong></p>
-
-<ol>
-<li>Check the time doesn&rsquo;t exceed working hour limit</li>
-<li>Go to nearest cluster</li>
-<li>Cut the cluster if you can not visit all station in last cluster</li>
-<li>Finish a day</li>
-<li>Go back to step 1 for another day</li>
-</ol>
-<div class="aside aside-todo">
-    <p class="aside-title">Todo</p>
-    Replace workingHour with array of workingHours. The workingHour could be different dpends on day
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getCompleteSchedule</span><span class="p">(</span><span class="n">info</span> <span class="nv">clusterInfo</span><span class="p">:</span> <span class="kt">JSON</span><span class="p">,</span> <span class="nv">workingHour</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">currentStat</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[[[</span><span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span><span class="p">]]]</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>clusterInfo</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A JSON object represetn the clusters</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>workingHour</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A time interval in hour to limit the routing per day</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>currentStat</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A station name that current at</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>An new schedule</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:15Survey_Schedule14ClusterRoutingC10visitedAll7jsonObjSb10SwiftyJSON0J0V_tF"></a>
-                    <a name="//apple_ref/swift/Method/visitedAll(jsonObj:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15Survey_Schedule14ClusterRoutingC10visitedAll7jsonObjSb10SwiftyJSON0J0V_tF">visitedAll(jsonObj:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Check all clusters have been visited</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">visitedAll</span><span class="p">(</span><span class="nv">jsonObj</span><span class="p">:</span> <span class="kt">JSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>jsonObj</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A JSON object represetn the clusters</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>true, if all clusters have been visited</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:15Survey_Schedule14ClusterRoutingC18resetVisitedStatus7jsonObj10SwiftyJSON0K0VAH_tF"></a>
-                    <a name="//apple_ref/swift/Method/resetVisitedStatus(jsonObj:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:15Survey_Schedule14ClusterRoutingC18resetVisitedStatus7jsonObj10SwiftyJSON0K0VAH_tF">resetVisitedStatus(jsonObj:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Set all cluster unvisited</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">resetVisitedStatus</span><span class="p">(</span><span class="nv">jsonObj</span><span class="p">:</span> <span class="kt">JSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">JSON</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>jsonObj</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A JSON object represetn the clusters</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A JSON object represents the clusters with the visited value set false</p>
                       </div>
                     </section>
                   </div>

@@ -53,7 +53,7 @@ class ClusterRouting{
     - Returns: An new schedule
 
     **Steps**
-    1. Check the time doesn't exceed time limit
+    1. Check the time doesn't exceed working hour limit
     2. Go to nearest cluster
     3. Cut the cluster if you can not visit all station in last cluster
     4. Finish a day

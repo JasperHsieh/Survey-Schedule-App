@@ -68,6 +68,12 @@ class StationRouting {
         - statList: An array of station name
         - pathSoFar: An array of visitlog indicating the path before going to those stations in station list
     - Returns:An array of visitlog represents the optimal routing path
+
+     **Steps**
+     1. Update current time base on the visited path so far
+     2. Visit a station
+     3. Chack repeat time interval
+     4. Find a revisit station if needed
     */
     func simulateVisitStations(statList: [String], pathSoFar: [VisitLog]) -> [VisitLog] {
 
@@ -76,7 +82,8 @@ class StationRouting {
         var statSeq = statList
 
         if(Debug) {print("simulateVisitStations: \(statList), lastRepeat:\(lastRepeatTime), N:\(N)")}
-        // Update current path and time
+
+        /// Update current path and time base on visited log so far
         if !pathSoFar.isEmpty {
             if(Debug) {print("pathSoFar:")}
             if(Debug) {VisitLog.dumpPath(path: pathSoFar)}
@@ -100,12 +107,12 @@ class StationRouting {
             curTime += measureTime * 3
 
             if curTime - lastRepeatTime > N {
-                // Handle revisit
+                /// Handle revisit a station
                 if(Debug) {print("Time to revisit \(curTime), last repeat: \(lastRepeatTime)")}
                 if visitPath.isEmpty {
                     print("Couldn't find revisit station")
                 } else{
-                    // Find closest revisit station
+                    /// Find closest revisit station
                     var minTravelTime = Int.max
                     var minVisitLog: VisitLog?
                     for visitLog in (visitPath + pathSoFar) {
@@ -135,7 +142,7 @@ class StationRouting {
                 }
             }
 
-            // Update current station
+            /// Update current station
             if !statSeq.isEmpty {
                 let nextStat = statSeq[0]
                 let travelToNextTime = getStatsTravelTime(stat1: curVisitLog.station, stat2: nextStat)

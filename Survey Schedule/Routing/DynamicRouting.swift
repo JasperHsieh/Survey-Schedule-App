@@ -641,7 +641,8 @@ extension DynamicRouting {
 // Troubleshooting
 extension DynamicRouting {
     /**
-     Handle the action when Skip Station tapped.
+     Handle the action when Skip Station tapped. The skipped station will remaine on master schedule and labeled
+     with Skipped. A user should be directed to the next station of the skipped station
     */
     func handleSkipNextStation() {
         print("[DR] Skip \(nextVisitLog.station)")
@@ -669,6 +670,10 @@ extension DynamicRouting {
 
     /**
      Handle the action when End Survey tapped
+
+     **Steps**
+     1. Remove rest of schedule today and append CS25 to it
+     2. Calculcate the schedule for tomorrow in the background
     */
     func handleEndSurvey() {
         doneLoading = false
@@ -692,11 +697,16 @@ extension DynamicRouting {
      Append the base station to the end of visited station and update the master schedule
     */
     func appendBaseStation() {
+        /// Create CS25 visit log
         let tmpBase = VisitLog(stat: BaseStation, timestamp: -1, isRevisit: false)
         let travelTime = getStatsTravelTime(stat1: preVisitLog.station, stat2: BaseStation)
         tmpBase.date = getCurrentDate() + travelTime.seconds
+
+        /// Append the CS25
         var daySchedule = [currentVisitPath]
         daySchedule.append([tmpBase])
+
+        // Update master schedule
         masterSchedule.remove(at: 0)
         masterSchedule.insert(daySchedule, at: 0)
         indexingSchedule()

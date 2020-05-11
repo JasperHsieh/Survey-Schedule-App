@@ -65,21 +65,14 @@
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
-      "line": 14,
-      "symbol": "Station",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "line": 56,
+      "symbol": "Station.image",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
-      "line": 33,
-      "symbol": "Station",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/Station.swift",
-      "line": 39,
+      "line": 61,
       "symbol": "Coordinates",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
@@ -93,9 +86,30 @@
     },
     {
       "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
-      "line": 11,
-      "symbol": "VisitLog",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "line": 65,
+      "symbol": "VisitLog.dumpMasterSchedule(schedule:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 79,
+      "symbol": "VisitLog.dumpDaySchedule(daySchedule:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 91,
+      "symbol": "VisitLog.dumpPath(path:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jasperhsieh/Documents/Courses/Practicum/Survey Schedule/Survey Schedule/Models/VisitLog.swift",
+      "line": 99,
+      "symbol": "VisitLog.dumpLog(visitLog:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {

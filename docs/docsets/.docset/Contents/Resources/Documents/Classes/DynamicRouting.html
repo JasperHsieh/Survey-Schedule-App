@@ -14,7 +14,7 @@
     <a title="DynamicRouting Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (68% documented)</p>
+        <p><a href="../index.html"> Docs</a> (71% documented)</p>
         <p class="header-right"><a href="https://github.com/JasperHsieh/Survey-Schedule-App"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -38,7 +38,13 @@
                 <a href="../Classes/DynamicRouting.html">DynamicRouting</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/Station.html">Station</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/StationRouting.html">StationRouting</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VisitLog.html">VisitLog</a>
               </li>
             </ul>
           </li>
@@ -199,7 +205,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">preVisitLog</span><span class="p">:</span> <span class="kt">VisitLog</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">preVisitLog</span><span class="p">:</span> <span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span></code></pre>
 
                         </div>
                       </div>
@@ -226,7 +232,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">nextVisitLog</span><span class="p">:</span> <span class="kt">VisitLog</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">nextVisitLog</span><span class="p">:</span> <span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span></code></pre>
 
                         </div>
                       </div>
@@ -527,7 +533,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@Published</span>
-<span class="k">var</span> <span class="nv">stationsList</span><span class="p">:</span> <span class="p">[</span><span class="kt">Station</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+<span class="k">var</span> <span class="nv">stationsList</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Station.html">Station</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -581,7 +587,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">masterSchedule</span><span class="p">:</span> <span class="p">[[[</span><span class="kt">VisitLog</span><span class="p">]]]</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">masterSchedule</span><span class="p">:</span> <span class="p">[[[</span><span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span><span class="p">]]]</span></code></pre>
 
                         </div>
                       </div>
@@ -662,7 +668,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">currentVisitPath</span><span class="p">:</span> <span class="p">[</span><span class="kt">VisitLog</span><span class="p">]</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">currentVisitPath</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -772,7 +778,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">mergeSchedule</span><span class="p">(</span><span class="nv">updatedSchedule</span><span class="p">:</span> <span class="p">[[[</span><span class="kt">VisitLog</span><span class="p">]]])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">mergeSchedule</span><span class="p">(</span><span class="nv">updatedSchedule</span><span class="p">:</span> <span class="p">[[[</span><span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span><span class="p">]]])</span></code></pre>
 
                         </div>
                       </div>
@@ -818,7 +824,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">removeFirstStation</span><span class="p">(</span><span class="nv">schedule</span><span class="p">:</span> <span class="p">[[[</span><span class="kt">VisitLog</span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="p">[[[</span><span class="kt">VisitLog</span><span class="p">]]]</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">removeFirstStation</span><span class="p">(</span><span class="nv">schedule</span><span class="p">:</span> <span class="p">[[[</span><span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="p">[[[</span><span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span><span class="p">]]]</span></code></pre>
 
                         </div>
                       </div>
@@ -999,7 +1005,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getCluster</span><span class="p">(</span><span class="nv">station</span><span class="p">:</span> <span class="kt">Station</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getCluster</span><span class="p">(</span><span class="nv">station</span><span class="p">:</span> <span class="kt"><a href="../Classes/Station.html">Station</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -1126,7 +1132,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">removeFirstCluster</span><span class="p">(</span><span class="nv">schedule</span><span class="p">:</span> <span class="p">[[[</span><span class="kt">VisitLog</span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="p">[[[</span><span class="kt">VisitLog</span><span class="p">]]]</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">removeFirstCluster</span><span class="p">(</span><span class="nv">schedule</span><span class="p">:</span> <span class="p">[[[</span><span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="p">[[[</span><span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span><span class="p">]]]</span></code></pre>
 
                         </div>
                       </div>
@@ -1176,7 +1182,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">insertFirstCluster</span><span class="p">(</span><span class="nv">clusterSchedule</span><span class="p">:</span> <span class="p">[</span><span class="kt">VisitLog</span><span class="p">],</span> <span class="nv">schedule</span><span class="p">:</span> <span class="p">[[[</span><span class="kt">VisitLog</span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="p">[[[</span><span class="kt">VisitLog</span><span class="p">]]]</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">insertFirstCluster</span><span class="p">(</span><span class="nv">clusterSchedule</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span><span class="p">],</span> <span class="nv">schedule</span><span class="p">:</span> <span class="p">[[[</span><span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="p">[[[</span><span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span><span class="p">]]]</span></code></pre>
 
                         </div>
                       </div>
@@ -1238,7 +1244,7 @@ to calculate the full schedule with the changes and update to master. Same actio
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getRevisitClusterSchedule</span><span class="p">(</span><span class="n">from</span> <span class="nv">stations</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">VisitLog</span><span class="p">]</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getRevisitClusterSchedule</span><span class="p">(</span><span class="n">from</span> <span class="nv">stations</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/VisitLog.html">VisitLog</a></span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -1544,7 +1550,8 @@ to calculate the full schedule with the changes and update to master. Same actio
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Handle the action when Skip Station tapped.</p>
+                        <p>Handle the action when Skip Station tapped. The skipped station will remaine on master schedule and labeled
+with Skipped. A user should be directed to the next station of the skipped station</p>
 
                       </div>
                       <div class="declaration">
@@ -1572,6 +1579,13 @@ to calculate the full schedule with the changes and update to master. Same actio
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Handle the action when End Survey tapped</p>
+
+<p><strong>Steps</strong></p>
+
+<ol>
+<li>Remove rest of schedule today and append CS25 to it</li>
+<li>Calculcate the schedule for tomorrow in the background</li>
+</ol>
 
                       </div>
                       <div class="declaration">

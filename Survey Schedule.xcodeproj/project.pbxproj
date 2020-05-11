@@ -57,7 +57,6 @@
 		61FEA2F82456031200E46A28 /* silversalmoncreek.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FEA2EC2456031100E46A28 /* silversalmoncreek.jpg */; };
 		61FEA2F92456031200E46A28 /* yukon_charleyrivers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61FEA2ED2456031100E46A28 /* yukon_charleyrivers.jpg */; };
 		61FEA2FB245A908000E46A28 /* stat_dist.json in Resources */ = {isa = PBXBuildFile; fileRef = 61FEA2FA245A908000E46A28 /* stat_dist.json */; };
-		61FEA2FD245A928100E46A28 /* Clustering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FEA2FC245A928100E46A28 /* Clustering.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,7 +113,6 @@
 		61FEA2EC2456031100E46A28 /* silversalmoncreek.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = silversalmoncreek.jpg; sourceTree = "<group>"; };
 		61FEA2ED2456031100E46A28 /* yukon_charleyrivers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yukon_charleyrivers.jpg; sourceTree = "<group>"; };
 		61FEA2FA245A908000E46A28 /* stat_dist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stat_dist.json; sourceTree = "<group>"; };
-		61FEA2FC245A928100E46A28 /* Clustering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clustering.swift; sourceTree = "<group>"; };
 		89A86CD61C21DAF87A9CD818 /* Pods_Survey_Schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey_Schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,7 +153,6 @@
 				6132195B2447AE4B00FFFC22 /* TimeUtil.swift */,
 				615A92D92435075F000AEEE5 /* Station.swift */,
 				615A92D5242C06BF000AEEE5 /* VisitLog.swift */,
-				61FEA2FC245A928100E46A28 /* Clustering.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -441,7 +438,6 @@
 				615A92D2242AD989000AEEE5 /* StationRouting.swift in Sources */,
 				6132195C2447AE4B00FFFC22 /* TimeUtil.swift in Sources */,
 				615A92D02429E6A2000AEEE5 /* ClusterRouting.swift in Sources */,
-				61FEA2FD245A928100E46A28 /* Clustering.swift in Sources */,
 				61A3DA412419E3B30071C7E9 /* MapView.swift in Sources */,
 				61A3DA50241D690F0071C7E9 /* SlideOverCard.swift in Sources */,
 				61A3DA3D2419C3820071C7E9 /* MainViewController.swift in Sources */,
